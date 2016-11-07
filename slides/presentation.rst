@@ -79,14 +79,17 @@ Math
 ----
     Least-squares fit, volume isosurface, histograms, ...
 
-OpenCL Allow the usage of GPU
------------------------------
+OpenCL
+------
+    Parallel computing on GPU
 
 Third-Party external utilities
 ------------------------------
+    Currently *TiffIO*, *six* and *EdfFile*
 
-Utils internal utilities
-------------------------
+Utils
+-----
+    Various utility functions (HTML escaping, weak-references)
 
 Sx
 ---
@@ -159,8 +162,10 @@ Visualization from isoViewer ( prototype status for now. Will be soon integrated
 silx.image
 ##########
 
-bilienear interpolation:
+bilinear interpolation:
 convert an image to a continuous function.
+
+sift: image alignement, using parallel algorithms on GPU
 
 
 ----
