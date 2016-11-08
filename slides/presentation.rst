@@ -208,12 +208,39 @@ First functions using pyopencl
 ----
 
 
+Upcoming features
+#################
+
+fabioh5
+-------
+
+Exposing all data files handled by FabIO, the same way as *h5py* and *spech5*.
+
+.. code-block:: python
+
+    import silx.io.fabioh5
+    f = silx.io.fabioh5.File("foobar.edf")
+
+ArrayWidget
+-----------
+
+Editing 2D data-slices in a N-dimensional array
+
+.. image:: img/arraywidget.png
+    :align: center
+    :width: 50%
+
+
+----
+
+
 This was the first silx tutorial. Please let use know about any ideas to improve it !!!
 
 And if you want to contribute to the project : 
 
 .. image:: img/forkme.png
     :align: center
+    :target: https://github.com/silx-kit/silx
 
 
 

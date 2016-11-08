@@ -1,3 +1,10 @@
+# build files
 *.html
-*.ipynb_checkpoints*
 *.pdf
+
+# jupyter files
+*.ipynb_checkpoints*
+
+# output files created by exercices
+io/If4_TZ3.txt
+io/mydic.h5
