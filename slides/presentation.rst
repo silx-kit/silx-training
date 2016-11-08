@@ -1,15 +1,10 @@
 
-silx Training - 15th November, 2016
-###################################
 
+silx training
+#############
 
-Authors:
-    - pierre.knobel@esrf.fr
-    - valentin.valls@esrf.fr
-    - henri.payno@esrf.fr
-    - jerome.kieffer@esrf.fr
-    - thomas.vincent@esrf.fr
-    - sole@esrf.fr
+15th November, 2016
+-------------------
 
 .. image:: img/silx_logo.png
     :width: 180px
@@ -79,6 +74,11 @@ Math
 ----
     Least-squares fit, volume isosurface, histograms, ...
 
+----
+
+Structure of the silx library
+#############################
+
 OpenCL
 ------
     Parallel computing on GPU
@@ -104,23 +104,6 @@ Plot
     :width: 750px
     :height: 280px
 
-plot1D
--------
-    hands-on \
-    silx.gui.plot.Plot1D
-
-plot2D
-------
-    hands-on \
-    silx.gui.plot.Plot2D
-
-image
------
-
-plot3D
-------
-    to come soon
-
 
 ----
 
@@ -130,7 +113,7 @@ Plot
 
 + backends 
     + matplotlib
-    + openGL
+    + openGL (under development)
 + plot actions
 + mask
 + ROI
@@ -139,33 +122,52 @@ Plot
 
 ----
 
+HDF5 widget
+###########
 
-Marching cubes - silx.math
-##########################
+Tree view for any data format that can be exposed through an *h5py*-like API:
 
+ - HDF5 files (already implemented using *h5py*)
+ - SPEC files (already implemented using *silx.io.spech5*)
+ - all image file formats handled by FabIO (not implemented yet) 
 
-algorithm to generate mesh from a set of iso-vertices
-
-http://paulbourke.net/geometry/polygonise/
-
-Visualization from isoViewer ( prototype status for now. Will be soon integrated into silx )
-
-.. image:: img/marchingCubesThomas.png
+.. image:: img/Hdf5TreeView.png
     :width: 400px
     :align: center
-    :height: 300px
-
 
 ----
 
+Fit widget
+----------
+
+GUI for ``silx.math.fit.fitmanager`` with additional fit configuration widgets
+
+.. image:: img/fitwidget1.png
+    :width: 35%
+    :align: center
+
+.. image:: img/fitconfig.png
+    :width: 30%
+    :align: center
+
+----
 
 silx.image
 ##########
 
-bilinear interpolation:
+bilinear interpolation
+----------------------
+
 convert an image to a continuous function.
 
-sift: image alignement, using parallel algorithms on GPU
+sift
+----
+
+image alignement, using parallel algorithms on GPU
+
+.. image:: img/image-alignement.png
+    :width: 85%
+    :align: center
 
 
 ----
@@ -183,7 +185,44 @@ histogram
 - histogramnd_lut : (N, ) or (N, D) array
     + silx.math.histogram.HistogramndLut
 
-        .. note:: the same as histogramnd but use a look up table (useful if multiple assocaition are needed )
+        .. note:: the same as histogramnd but use a look up table (useful if multiple association are needed )
+
+----
+
+
+silx.math
+#########
+
+fit
+---
+
+- ``silx.math.fit.leastsq``: Levenberg-Marquardt algorithm with constraints on the fitted parameters 
+- ``silx.math.fit.functions``: Model functions
+- ``silx.math.fit.peaks``: Peak search algorithm
+- ``silx.math.fit.filters``: Smoothing, background computation (strip, snip)
+- ``silx.math.fit.fittheories``: Combination of model functions, initial parameters estimation functions relying on peak search and background estimation
+- ``silx.math.fit.fitmanager``: Advanced fit manager using all of the above
+
+----
+
+
+silx.math
+#########
+
+Marching cubes
+--------------
+
+
+Algorithm to generate mesh from a set of iso-vertices
+
+http://paulbourke.net/geometry/polygonise/
+
+Visualization from isoViewer (prototype status for now. Will be soon integrated into silx)
+
+.. image:: img/marchingCubesThomas.png
+    :width: 400px
+    :align: center
+    :height: 300px
 
 
 ----
@@ -207,6 +246,24 @@ First functions using pyopencl
 
 ----
 
+Upcoming features
+#################
+
+3D plot
+-------
+
+OpenGL backend under active development
+
+ArrayWidget
+-----------
+
+Displaying 2D data-slices in a N-dimensional array
+
+.. image:: img/arraywidget.png
+    :align: center
+    :width: 60%
+
+----
 
 Upcoming features
 #################
@@ -221,14 +278,14 @@ Exposing all data files handled by FabIO, the same way as *h5py* and *spech5*.
     import silx.io.fabioh5
     f = silx.io.fabioh5.File("foobar.edf")
 
-ArrayWidget
------------
+BackgroundWidget
+----------------
 
-Editing 2D data-slices in a N-dimensional array
+Widget to configure background filters (used in ``FitWidget``)
 
-.. image:: img/arraywidget.png
-    :align: center
-    :width: 50%
+.. image:: img/bgwidget.png
+   :width: 45%
+   :align: center
 
 
 ----
@@ -246,4 +303,10 @@ And if you want to contribute to the project :
 
 ----
 
-Authors
+Authors:
+    - pierre.knobel@esrf.fr
+    - valentin.valls@esrf.fr
+    - henri.payno@esrf.fr
+    - jerome.kieffer@esrf.fr
+    - thomas.vincent@esrf.fr
+    - sole@esrf.fr
