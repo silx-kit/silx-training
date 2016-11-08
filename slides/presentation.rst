@@ -17,20 +17,29 @@ Overview of the silx project
 
 ----
 
-.. todo:: general stuff, for scientist, python 2 and 3, crossplatform...
-
 Documentation of releases is available at https://pythonhosted.org/silx/
 
 Latest documentation (nightly build) is available at http://www.silx.org/doc/silx/
 
     - silx@esrf.fr
 
+crossplatform
+
+.. image:: img/cross-platform.png
+    :width: 350px
+    :height: 180px
+    :align: left
+
+Python2 (>=2.7), Python3 (>=3.5)
+
+Dependancies: numpy , h5py , ipython , qtconsole , matplotlib
+
 ----
 
 silx project
 ############
 
-.. image:: img/silx_project.jpg
+.. image:: img/silx_project.png
     :width: 700px
     :height: 600px
 
@@ -100,10 +109,17 @@ Sx
 Plot
 ####
 
-.. image:: img/plots.png
-    :width: 750px
-    :height: 280px
+Plot widgets for 1D, 2D and 3D to come
 
+.. image:: img/plot2D.png
+    :width: 400px
+    :height: 300px
+
+- Many tool included 
+    - ROI
+    - Mask widget
+    - qt console
+    - ...
 
 ----
 
@@ -111,14 +127,17 @@ Plot
 Plot
 ####
 
-+ backends 
++ multiple backends 
     + matplotlib
     + openGL (under development)
-+ plot actions
-+ mask
-+ ROI
-+ interaction from a qt console
++ designed for heritage and personnalization by scientists and developers
+    - plot actions
+    - Qt signal/slot
 
+
+.. image:: img/plot_qtconsole.png
+    :width: 400px
+    :height: 300px
 
 ----
 
