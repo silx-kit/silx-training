@@ -23,7 +23,6 @@ Latest documentation (nightly build) is available at http://www.silx.org/doc/sil
 
     - silx@esrf.fr
 
-crossplatform
 
 .. image:: img/cross-platform.png
     :width: 350px
@@ -33,6 +32,8 @@ crossplatform
 Python2 (>=2.7), Python3 (>=3.5)
 
 Dependancies: numpy , h5py , ipython , qtconsole , matplotlib
+
+Release each 3 months
 
 ----
 
