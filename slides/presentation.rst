@@ -144,10 +144,6 @@ Plot
 + backend  
     + currently matplotlib
 
-+ easy to personnalized
-    - plot actions
-    - Qt signal/slot
-
 
 .. image:: img/plot_qtconsole.png
     :width: 400px
@@ -202,14 +198,14 @@ silx.math
 
 histogram
 ---------
-'classical' histogram. Able to a compute distribution of a dataset.
+Multidimensional histogram.
 
-- histogramnd (hands-on) : (N, ) or (N, D) array
+- Histogramnd (hands-on) : (N, ) or (N, D) array
     + silx.math.histogram.Histogramnd
-- histogramnd_lut : (N, ) or (N, D) array
+- HistogramndLut : (N, ) or (N, D) array
     + silx.math.histogram.HistogramndLut
 
-        .. note:: the same as histogramnd but use a look up table (useful if multiple association are needed )
+        .. note:: HistogramndLut is doing the same job as Histogramnnd but is optimized to compute several histograms from data sharing the same coordinates.
 
 ----
 
