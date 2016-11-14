@@ -28,6 +28,8 @@ class DataViewer(qt.QStackedWidget):
 
     def showAsString(self, data):
         """Display a data using text"""
+        if isinstance(data, h5py.Dataset):
+            data = data.value
         self.__text.setText(str(data))
         self.setCurrentIndex(self.__indexText)
 
@@ -45,106 +47,130 @@ class DataViewer(qt.QStackedWidget):
 
     def show(self, data):
         """Display a data using the widget which fit the best"""
-        isAtomic = len(data.shape) == 0
-        isCurve = len(data.shape) == 1 and numpy.issubdtype(data.dtype, numpy.number)
-        isImage = len(data.shape) == 2 and numpy.issubdtype(data.dtype, numpy.number)
-        if isAtomic:
-            self.showAsString(data.value)
-        elif isCurve:
-            self.show1d(data)
-        elif isImage:
-            self.show2d(data)
+        if isinstance(data, (numpy.ndarray, h5py.Dataset)):
+            isAtomic = len(data.shape) == 0
+            isCurve = len(data.shape) == 1 and numpy.issubdtype(data.dtype, numpy.number)
+            isImage = len(data.shape) == 2 and numpy.issubdtype(data.dtype, numpy.number)
+            if isAtomic:
+                self.showAsString(data)
+            elif isCurve:
+                self.show1d(data)
+            elif isImage:
+                self.show2d(data)
+            else:
+                self.showAsString(data)
         else:
-            self.showAsString(data.value)
+            self.showAsString(data)
 
 
-TREE_WIDGET = None
-VIEWER_WIDGET = None
+class Viewer(qt.QMainWindow):
+    """An HDF5 viewer"""
 
-BACKGROUND = None
-FLATFIELD = None
+    def __init__(self, parent=None):
+        qt.QMainWindow.__init__(self, parent)
+        self.setWindowTitle("HDF5 viewer")
 
+        # create a tree and a DataViewer separated by a splitter
+        splitter = qt.QSplitter()
+        self.tree = hdf5.Hdf5TreeView(splitter)
+        self.dataViewer = DataViewer(splitter)
+        splitter.addWidget(self.tree)
+        splitter.addWidget(self.dataViewer)
+        splitter.setStretchFactor(1, 1)
+        splitter.setVisible(True)
+        self.setCentralWidget(splitter)
 
-def computeCorrectedImage(raw):
-    if FLATFIELD is None:
-        raise RuntimeError("No flatfield defined")
-    if BACKGROUND is None:
-        raise RuntimeError("No background defined")
+        #
+        # TODO: Connect onTreeActivated the tree event
+        #
 
-    return numpy.array((raw.value - BACKGROUND.value), dtype=numpy.float32) / (FLATFIELD.value - BACKGROUND.value)
+        #
+        # TODO: Register populateContextMenu to the context menu callback of the tree
+        #
 
+        self.background = None
+        self.flatfield = None
 
-def setBackground(dataset):
-    global BACKGROUND
-    BACKGROUND = dataset
+    def appendFile(self, filename):
+        self.tree.findHdf5TreeModel().insertFile(filename)
 
+    def computeCorrectedImage(self, raw):
+        if self.flatfield is None:
+            raise RuntimeError("Flatfield is not defined")
+        if self.background is None:
+            raise RuntimeError("Background is not defined")
 
-def setFlatField(dataset):
-    global FLATFIELD
-    FLATFIELD = dataset
+        raw = numpy.array(raw, dtype=numpy.float32)
+        flatfield = numpy.array(self.flatfield.value, dtype=numpy.float32)
+        background = self.background.value
+        return (raw - background) / (flatfield - background)
 
+    def setBackground(self, dataset):
+        self.background = dataset
 
-def onTreeActivated():
+    def setFlatField(self, dataset):
+        self.flatfield = dataset
 
-    #
-    # TODO: If the a single dataset is selected and it is an image try to call
-    # computeCorrectedImage and show the result in the viewer
-    #
+    def onTreeActivated(self):
+        selectedObjects = list(self.tree.selectedH5Nodes())
+        if len(selectedObjects) == 0:
+            self.dataViewer.showAsString("Nothing selected")
+            return
+        elif len(selectedObjects) > 1:
+            self.dataViewer.showAsString("Too much things selected")
+            return
+        else:
+            obj = selectedObjects[0]
+            if obj.ntype == h5py.Dataset:
+                isImage = len(obj.shape) == 2 and numpy.issubdtype(obj.dtype, numpy.number)
+                if isImage:
+                    try:
+                        corrected = self.computeCorrectedImage(obj.h5py_object)
+                        self.dataViewer.show(corrected)
+                    except:
+                        self.dataViewer.show(obj.h5py_object)
+                else:
+                    self.dataViewer.show(obj.h5py_object)
+            else:
+                self.dataViewer.showAsString("Path: " + obj.local_name)
 
-    #
-    # TODO: Else show the dataset in the viewer
-    #
+    def populateContextMenu(self, event):
+        """Called to populate the context menu
 
-    pass
+        :param silx.gui.hdf5.Hdf5ContextMenuEvent event: Event
+            containing expected information to populate the context menu
+        """
 
+        selectedObjects = list(event.source().selectedH5Nodes())
+        if len(selectedObjects) == 0:
+            return
+        if len(selectedObjects) > 1:
+            return
+        obj = selectedObjects[0]
+        # obj = event.hoveredObject()
 
-def populateContextMenu(event):
-    """Called to populate the context menu
+        if obj.ntype is not h5py.Dataset:
+            return
 
-    :param silx.gui.hdf5.Hdf5ContextMenuEvent event: Event
-        containing expected information to populate the context menu
-    """
+        menu = event.menu()
 
-    selectedObjects = list(event.source().selectedH5Nodes())
-    if len(selectedObjects) == 0:
-        return
-    if len(selectedObjects) > 1:
-        return
-    obj = selectedObjects[0]
-    # obj = event.hoveredObject()
+        isNumber = obj.shape == tuple() and numpy.issubdtype(obj.dtype, numpy.number)
+        isImage = len(obj.shape) == 2 and numpy.issubdtype(obj.dtype, numpy.number)
 
-    if obj.ntype is not h5py.Dataset:
-        return
+        #
+        # TODO: Create an action connected to setBackground
+        #
 
-    #
-    # TODO: Create an action connected to setBackground
-    #
-
-    #
-    # TODO: Create an action connected to setFlatField
-    #
-
+        #
+        # TODO: Create an action connected to setFlatField
+        #
 
 def main(filenames):
-    global DATA_WIDGET, TREE_WIDGET
     app = qt.QApplication([])
-
-    window = qt.QSplitter()
-    TREE_WIDGET = hdf5.Hdf5TreeView(window)
-    DATA_WIDGET = DataViewer(window)
-    window.addWidget(TREE_WIDGET)
-    window.addWidget(DATA_WIDGET)
-    window.setStretchFactor(1, 1)
-    window.setVisible(True)
-
-    #
-    # TODO: Connect onTreeActivated the tree event
-    #
-
-    #
-    # TODO: Register populateContextMenu to the context menu callback of the tree
-    #
-
+    viewer = Viewer()
+    for filename in filenames:
+        viewer.appendFile(filename)
+    viewer.setVisible(True)
     app.exec_()
 
 

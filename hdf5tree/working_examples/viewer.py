@@ -28,6 +28,8 @@ class DataViewer(qt.QStackedWidget):
 
     def showAsString(self, data):
         """Display a data using text"""
+        if isinstance(data, h5py.Dataset):
+            data = data.value
         self.__text.setText(str(data))
         self.setCurrentIndex(self.__indexText)
 
@@ -45,57 +47,68 @@ class DataViewer(qt.QStackedWidget):
 
     def show(self, data):
         """Display a data using the widget which fit the best"""
-        isAtomic = len(data.shape) == 0
-        isCurve = len(data.shape) == 1 and numpy.issubdtype(data.dtype, numpy.number)
-        isImage = len(data.shape) == 2 and numpy.issubdtype(data.dtype, numpy.number)
-        if isAtomic:
-            self.showAsString(data.value)
-        elif isCurve:
-            self.show1d(data)
-        elif isImage:
-            self.show2d(data)
+        if isinstance(data, (numpy.ndarray, h5py.Dataset)):
+            isAtomic = len(data.shape) == 0
+            isCurve = len(data.shape) == 1 and numpy.issubdtype(data.dtype, numpy.number)
+            isImage = len(data.shape) == 2 and numpy.issubdtype(data.dtype, numpy.number)
+            if isAtomic:
+                self.showAsString(data)
+            elif isCurve:
+                self.show1d(data)
+            elif isImage:
+                self.show2d(data)
+            else:
+                self.showAsString(data)
         else:
-            self.showAsString(data.value)
+            self.showAsString(data)
 
 
-TREE_WIDGET = None
-VIEWER_WIDGET = None
+class Viewer(qt.QMainWindow):
+    """An HDF5 viewer"""
 
+    def __init__(self, parent=None):
+        qt.QMainWindow.__init__(self, parent)
+        self.setWindowTitle("HDF5 viewer")
 
-def onTreeActivated():
-    selectedObjects = list(TREE_WIDGET.selectedH5Nodes())
-    if len(selectedObjects) == 0:
-        print("Nothing selected")
-        return
-    if len(selectedObjects) > 1:
-        print("Too much things selected")
-        return
-    obj = selectedObjects[0]
-    if obj.ntype == h5py.Dataset:
-        VIEWER_WIDGET.show(obj.h5py_object)
-    else:
-        VIEWER_WIDGET.showAsString("Path: " + obj.local_name)
+        # create a tree and a DataViewer separated by a splitter
+        splitter = qt.QSplitter()
+        self.tree = hdf5.Hdf5TreeView(splitter)
+        self.dataViewer = DataViewer(splitter)
+        splitter.addWidget(self.tree)
+        splitter.addWidget(self.dataViewer)
+        splitter.setStretchFactor(1, 1)
+        splitter.setVisible(True)
+        self.setCentralWidget(splitter)
+
+        # connect activated (dbl-click, return key) to a callback
+        self.tree.activated.connect(self.onTreeActivated)
+
+    def appendFile(self, filename):
+        self.tree.findHdf5TreeModel().insertFile(filename)
+
+    def onTreeActivated(self):
+        selectedObjects = list(self.tree.selectedH5Nodes())
+        if len(selectedObjects) == 0:
+            self.dataViewer.showAsString("Nothing selected")
+            return
+        if len(selectedObjects) > 1:
+            self.dataViewer.showAsString("Too much things selected")
+            return
+        obj = selectedObjects[0]
+        if obj.ntype == h5py.Dataset:
+            self.dataViewer.show(obj.h5py_object)
+        else:
+            self.dataViewer.showAsString("Path: " + obj.local_name)
 
 
 def main(filenames):
-    global VIEWER_WIDGET, TREE_WIDGET
     app = qt.QApplication([])
-
-    window = qt.QSplitter()
-    TREE_WIDGET = hdf5.Hdf5TreeView(window)
-    VIEWER_WIDGET = DataViewer(window)
-    window.addWidget(TREE_WIDGET)
-    window.addWidget(VIEWER_WIDGET)
-    window.setStretchFactor(1, 1)
-    window.setVisible(True)
-
-    # connect activated (dbl-click, return key) to a callback
-    TREE_WIDGET.activated.connect(onTreeActivated)
-
+    viewer = Viewer()
     for filename in filenames:
-        TREE_WIDGET.findHdf5TreeModel().insertFile(filename)
-
+        viewer.appendFile(filename)
+    viewer.setVisible(True)
     app.exec_()
 
 
-main(sys.argv[1:])
+if __name__=="__main__":
+    main(sys.argv[1:])

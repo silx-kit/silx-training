@@ -6,23 +6,20 @@ from silx.gui import qt
 from silx.gui import hdf5
 
 
-TREE_WIDGET = None
-
-
 def main(filenames):
-    global DATA_WIDGET, TREE_WIDGET
     app = qt.QApplication([])
 
     window = qt.QSplitter()
-    TREE_WIDGET = hdf5.Hdf5TreeView(window)
-    window.addWidget(TREE_WIDGET)
+    tree = hdf5.Hdf5TreeView(window)
+    window.addWidget(tree)
     window.setVisible(True)
 
+    model = tree.findHdf5TreeModel()
     for filename in filenames:
         #
-        # TODO: Load each filename into the tree
+        # TODO: Load each filename into the model tree
         #
-        pass
+        print("Load %s" % filename)
 
     app.exec_()
 
