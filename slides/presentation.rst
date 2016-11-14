@@ -56,9 +56,9 @@ Latest documentation (nightly build) is available at http://www.silx.org/doc/sil
 
 Python2 (>=2.7), Python3 (>=3.4)
 
-Dependancies: numpy , h5py , ipython , qtconsole , matplotlib
+Dependencies: numpy, matplotlib, PyQt or PySide, h5py, ipython, qtconsole, PyOpenCL
 
-Release each 3 months
+Release every 3 months
 
       
 
@@ -310,9 +310,9 @@ Widget to configure background filters (used in ``FitWidget``)
 ----
 
 
-This was the first silx tutorial. Please let use know about any ideas to improve it !!!
+This was the first silx tutorial. Please let use know about any ideas to improve it!
 
-And if you want to contribute to the project : 
+And if you want to contribute to the project: 
 
 .. image:: img/forkme.png
     :align: center
