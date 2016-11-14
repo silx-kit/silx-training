@@ -21,6 +21,21 @@ silx project
 
 ----
 
+Goals of the project
+###################
+
+- Scientific toolkit for all synchrotron radiation facilities
+
+- Collaborative long term maintenance
+
+- Easy installation (packaging, wheels)
+
+- Release every 3 months
+
+- Free and open source project (MIT license).
+
+----
+
 Timeline
 ########
 
@@ -58,14 +73,12 @@ Python2 (>=2.7), Python3 (>=3.4)
 
 Dependencies: numpy, matplotlib, PyQt or PySide, h5py, ipython, qtconsole, PyOpenCL
 
-Release every 3 months
-
       
 
 ----
 
-Structure of the silx library (1)
-#################################
+Structure of the silx library
+#############################
 
 Graphical User Interface widget
 -------------------------------
@@ -83,61 +96,9 @@ Math
 ----
     Least-squares fit, volume isosurface, histograms, ...
 
-----
-
-Structure of the silx library (2)
-#################################
-
-OpenCL
-------
-    Parallel computing on GPU
-
-Third-Party external utilities
-------------------------------
-    Currently *TiffIO*, *six* and *EdfFile*
-
-Utils
------
-    Various utility functions (HTML escaping, weak-references)
-
 Sx
 ---
     Imports all silx in one go: aim at replacing pylab
-
-----
-
-Plot
-####
-
-Plot widgets for 1D, 2D and 3D to come
-
-.. image:: img/plot2D.png
-    :width: 400px
-    :height: 300px
-
-- Many tool included 
-    - ROI
-    - Mask widget
-    - qt console
-    - ...
-
-----
-
-
-Plot
-####
-
-+ multiple backends 
-    + matplotlib
-    + openGL (under development)
-+ designed for heritage and personnalization by scientists and developers
-    - plot actions
-    - Qt signal/slot
-
-
-.. image:: img/plot_qtconsole.png
-    :width: 400px
-    :height: 300px
 
 ----
 
@@ -153,6 +114,45 @@ Tree view for any data format that can be exposed through an *h5py*-like API:
 .. image:: img/Hdf5TreeView.png
     :width: 400px
     :align: center
+
+----
+
+Plot
+####
+
+- Plot widgets for 1D, 2D
+
+- heritage from PyMca
+
+.. image:: img/plot2D.png
+    :width: 350px
+    :height: 260px
+
+- Many tool included 
+    - ROI
+    - Mask widget
+    - qt console
+    - ...
+
+----
+
+
+Plot
+####
+
+
++ backend  
+    + currently matplotlib
+
++ easy to personnalized
+    - plot actions
+    - Qt signal/slot
+
+
+.. image:: img/plot_qtconsole.png
+    :width: 400px
+    :height: 300px
+
 
 ----
 
@@ -178,6 +178,11 @@ bilinear interpolation
 ----------------------
 
 convert an image to a continuous function.
+
+opencl integration
+------------------
+
+Many function and setup to facilitate the integration of pyopencl in silx throught different platform (windows, linux, mac).
 
 sift
 ----
@@ -224,19 +229,15 @@ fit
 
 ----
 
+Upcoming features (1)
+#####################
 
-silx.math
-#########
+3D plot
+-------
 
-Marching cubes
---------------
+- OpenGL backend
 
-
-Algorithm to generate mesh from a set of iso-vertices
-
-http://paulbourke.net/geometry/polygonise/
-
-Visualization from isoViewer (prototype status for now. Will be soon integrated into silx)
+- isoViewer
 
 .. image:: img/marchingCubesThomas.png
     :width: 400px
@@ -246,32 +247,9 @@ Visualization from isoViewer (prototype status for now. Will be soon integrated 
 
 ----
 
+Upcoming features (2)
+#####################
 
-OpenCL
-######
-
-opencl integration
-------------------
-
-Many function and setup to facilitate the integration of pyopencl in silx throught different platform (windows, linux, mac).
-    - computation of possible kernels size
-    - test of opencl platforms
-    - ...
-
-First functions using pyopencl 
-    - sift
-        + silx.image.sift
-
-
-----
-
-Upcoming features
-#################
-
-3D plot
--------
-
-OpenGL backend under active development
 
 ArrayWidget
 -----------
@@ -284,8 +262,8 @@ Displaying 2D data-slices in a N-dimensional array
 
 ----
 
-Upcoming features
-#################
+Upcoming features (3)
+#####################
 
 fabioh5
 -------
@@ -309,10 +287,7 @@ Widget to configure background filters (used in ``FitWidget``)
 
 ----
 
-
-This was the first silx tutorial. Please let use know about any ideas to improve it!
-
-And if you want to contribute to the project: 
+If you want to contribute to the project: 
 
 .. image:: img/forkme.png
     :align: center
