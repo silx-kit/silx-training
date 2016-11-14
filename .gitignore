@@ -6,11 +6,8 @@
 *.ipynb_checkpoints*
 
 # output files created by exercices
-io/If4_TZ3.txt
-io/mydic.h5
+io/data/If4_TZ3.txt
 *Exo.ipynb
 *Exercise.ipynb
-io/31oct98.h5
-io/concat.h5
-io/mydic.ini
-io/oleg.h5
+io/data/*.h5
+io/data/*.ini
