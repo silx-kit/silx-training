@@ -29,7 +29,7 @@ Latest documentation (nightly build) is available at http://www.silx.org/doc/sil
     :height: 180px
     :align: left
 
-Python2 (>=2.7), Python3 (>=3.5)
+Python2 (>=2.7), Python3 (>=3.4)
 
 Dependancies: numpy , h5py , ipython , qtconsole , matplotlib
 
