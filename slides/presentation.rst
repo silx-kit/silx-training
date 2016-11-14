@@ -12,10 +12,35 @@ silx training
 
 ----
 
-Overview of the silx project
-############################
+silx project
+############
+
+.. image:: img/silx_project.png
+    :width: 700px
+    :height: 600px
 
 ----
+
+Timeline
+########
+
+- 2014: 
+    - Structure of the project
+- 2015: 
+    - May: acceptation of the project within the EBS
+    - December: 1st engineer & 1st scientist
+- 2016:
+    - January: 2nd engineer & 2nd scientist
+    - March: First release: silx v0.1
+    - May: 3rd engineer
+    - July: silx v0.2
+    - October: silx v0.3
+    - November: Training for scientists
+
+----
+
+Resources and requirements
+##########################
 
 Documentation of releases is available at https://pythonhosted.org/silx/
 
@@ -35,38 +60,12 @@ Dependancies: numpy , h5py , ipython , qtconsole , matplotlib
 
 Release each 3 months
 
-----
-
-silx project
-############
-
-.. image:: img/silx_project.png
-    :width: 700px
-    :height: 600px
+      
 
 ----
 
-time scale
-##########
-
-- 2014: 
-    - Structure of the project
-- 2015: 
-    - May: acceptation of the project within the EBS
-    - December: 1st engineer & 1st scientist
-- 2016:
-    - January: 2nd engineer & 2nd scientist
-    - March: First release: silx v0.1
-    - May: 3rd engineer
-    - July: silx v0.2
-    - October: silx v0.3
-    - November: Training for scientists
-
-
-----
-
-Structure of the silx library
-#############################
+Structure of the silx library (1)
+#################################
 
 Graphical User Interface widget
 -------------------------------
@@ -86,8 +85,8 @@ Math
 
 ----
 
-Structure of the silx library
-#############################
+Structure of the silx library (2)
+#################################
 
 OpenCL
 ------
@@ -323,10 +322,26 @@ And if you want to contribute to the project :
 
 ----
 
-Authors:
+Authors
+#######
+
     - pierre.knobel@esrf.fr
     - valentin.valls@esrf.fr
     - henri.payno@esrf.fr
     - jerome.kieffer@esrf.fr
     - thomas.vincent@esrf.fr
     - sole@esrf.fr
+
+----
+
+Training resources
+##################
+
+Exercices:
+
+https://github.com/silx-kit/silx-training
+
+Training data:
+
+      /tmp_14_days/silx-training
+
