@@ -4,6 +4,7 @@
 from silx.gui.plot.PlotActions import PlotAction 
 from silx.math.histogram import Histogramnd 
 from silx.gui.plot import Plot1D
+from silx.gui import qt
 
 import h5py
 import numpy
@@ -29,6 +30,7 @@ class ComputeHistogramAction(PlotAction):
         # TODO ...
         pass
 
+
 def showH5ls(_datapath):
     """show the h5ls window to explore the file"""
     from silx.io.utils import h5ls
@@ -45,10 +47,14 @@ def plotHistogram(image):
 
     from silx.math.histogram import Histogramnd
     histo, w_histo, edges = Histogramnd(image.flatten(), n_bins=256, histo_range=[0,256])
+    plot=Plot1D()
     # ... TODO : plot the histogram1D using silx.gui.plot.Plot1d
 
+    return plot
 
 def main():
+
+    app=qt.QApplication([])
 
     ## load data from data/lena.hdf5
     datapath='data/lena.hdf5'
@@ -57,7 +63,7 @@ def main():
 
     showH5ls(datapath)
 
-    plotHistogram(image)
+    plotimage=plotHistogram(image)
 
     # create a PlotAction which plot the histogram for the current image
     # 
@@ -66,13 +72,19 @@ def main():
     # - doc@ http://www.silx.org/doc/silx/dev/modules/gui/plot/plotactions_examples.html
     #     
 
+    myaction=ComputeHistogramAction(image)
     ## Add this action into the toolBar of the window
     #  TODO ... 
+    toolBar=plotimage.toolBar()
+    # TODO ...
 
 
     # show automatically the histogram when the image change
     # 
     # - using plotImage.sigActiveImageChanged.connect(plotHisto)
     # TODO ...
+
+    plotimage.show()
+    app.exec_()
 
 main()
