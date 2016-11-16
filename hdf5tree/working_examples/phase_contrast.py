@@ -114,7 +114,7 @@ class Viewer(qt.QMainWindow):
             self.dataViewer.showAsString("Nothing selected")
             return
         elif len(selectedObjects) > 1:
-            self.dataViewer.showAsString("Too much things selected")
+            self.dataViewer.showAsString("Too many things selected")
             return
         else:
             obj = selectedObjects[0]
