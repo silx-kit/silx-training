@@ -92,7 +92,7 @@ class Viewer(qt.QMainWindow):
             self.dataViewer.showAsString("Nothing selected")
             return
         if len(selectedObjects) > 1:
-            self.dataViewer.showAsString("Too many things selected")
+            self.dataViewer.showAsString("Too much things selected")
             return
         obj = selectedObjects[0]
         if obj.ntype == h5py.Dataset:
