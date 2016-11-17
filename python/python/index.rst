@@ -6,5 +6,12 @@ Python for data analysis
 
 ----
 
+.. include:: functions.rst
 
+----
 
+.. include:: classes.rst
+
+----
+
+.. include:: modules.rst
