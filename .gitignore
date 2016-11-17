@@ -11,3 +11,6 @@ io/data/If4_TZ3.txt
 *Exercise.ipynb
 io/data/*.h5
 io/data/*.ini
+
+# editors auto-backup files
+*~
