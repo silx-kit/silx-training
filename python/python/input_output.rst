@@ -58,15 +58,18 @@ File as iterator
 
 Files can behave as iterators over readlines
 
-    .. code-block:: python
-        
-        for oneLine in open('myoutputfile'):
-            print(oneLine)
+.. code-block:: python
+    
+    for oneLine in open('myoutputfile'):
+        print(oneLine)
 
-    will display:
-        first line
-        second line
-        ...
+
+will display:
+
+    first line
+
+    second line
+    ...
 
 - Very concise typing
     - efficient reading 
@@ -105,7 +108,7 @@ Create a programme wich ask for the name and the age and then display it
 
     >>> What is your name ?
     polo
-     >>> How old are you ? 
+    >>> How old are you ? 
     22
     >>> Your name is polo and you are 22 years old
 
