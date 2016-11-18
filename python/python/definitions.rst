@@ -10,14 +10,8 @@ Definitions
 
 ----
 
-Primitive types, basic operations
----------------------------------
-
-
-----
-
-Basic types:
-^^^^^^^^^^^^
+Primitive types
+---------------
 
 - Integers:
     - Fixed length (32 or 64 bits): 
@@ -54,7 +48,7 @@ Basic types:
 ----
 
 Basic operations
-^^^^^^^^^^^^^^^^
+----------------
 
 - Primary operations: ``+ - * / % //``
     - warning: 
@@ -103,8 +97,6 @@ Basic operations
 
 Composed types
 --------------
-
-----
 
 Strings
 ^^^^^^^
@@ -165,8 +157,8 @@ Strings
     
 ----
 
-Useful methods
-""""""""""""""
+Useful string methods
+"""""""""""""""""""""
 
 - ``len(str)``
     - returns the length of the string
@@ -484,10 +476,8 @@ Everything is object
 
 ---- 
 
-Control structures: blocks, branching, loops
---------------------------------------------
-
-----
+Control structures
+-------------------
 
 Code structure
 ^^^^^^^^^^^^^^
