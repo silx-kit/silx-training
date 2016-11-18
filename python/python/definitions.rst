@@ -295,33 +295,8 @@ Operations on lists
     >>> list(zip(L1, L2))
     [(1, 2), (3, 4), (5, 6)]
 
-* A list is a reference to a block of memory
-.. image:: img/warning.png
-    :width: 50px
-    :align: left
 
-.. code-block:: python
-
-    >>> L3 = L2
-    >>> L3[1] = 100
-    >>> print(L3)     # as expected
-    [2, 100, 6]
-    >>> print(L2)     # !
-    [2, 100, 6]
-
-*L2* and *L3* are two *labels* pointing to the **same data** (same memory block)
-
-.. code-block:: python
-
-    >>> L3 = L2[:]              # creates a new list
-    >>> L3 = copy.deepcopy(L2)  # more explicit
-
-
-
-
-    
-    
-
+ 
 ----
 
 Tuple
@@ -475,16 +450,245 @@ Everything is object
      >>> dir(a) ; dir(5)
      ['__class__', '__delattr__', '__dir__', '__doc__',...]
      >>> help(str)
-     ... (long help message)
+     ...
      >>> type(True)
      <class 'bool'>
      >>> id(a)
      140318487896256
 
+.. image:: img/warning.png
+    :width: 50px
+    :align: left
 
-----
+.. code-block:: python
+    :emphasize-lines: 2, 6, 7
+
+    >>> L2 = [2, 4, 6]
+    >>> L3 = L2
+    >>> L3[1] = 100
+    >>> print(L3)     # as expected
+    [2, 100, 6]
+    >>> print(L2)     # !
+    [2, 100, 6]
+
+*L2* and *L3* are two *references* pointing to the **same data** (same memory block)
+
+.. code-block:: python
+
+    >>> L3 = L2[:]              # creates a copy of the data
+    >>> L3 = copy.deepcopy(L2)  # more explicit
+
+---- 
 
 Control structures: blocks, branching, loops
 --------------------------------------------
+
+----
+
+Code structure
+^^^^^^^^^^^^^^
+
+Python uses white-spaces and indentation to establish code block structure whereas other programming languages uses braces { }.
+
+- Clearly indicates the beginning of a block 
+- Coding style is mostly uniform. Use **4 spaces** instead of <tabs> 
+- Code structure is much more readable and clear.
+
+.. code-block:: python
+
+    Block 1
+    ...
+    Header making new block:
+        Block 2
+        ...
+        Header making new block:
+            Block 2
+            ...
+        Block 2 (continuation)
+        ...
+    Block 1 continuation
+    ...
+
+----
+
+Branching
+^^^^^^^^^
+
+- Condition branching are made with *if elif else* statements
+
+.. code-block:: python
+    :emphasize-lines: 5, 7, 11
+
+    >>> a = -1
+    >>> b = 2
+    >>> c = 1
+    >>> q2 = b * b - 4.0 * a * c
+    >>> if q2 < 0:
+    ...     print("No real solution")
+    ... elif q2 > 0:
+    ...     x1 = (-b + math.sqrt(q2)) / (2.0 * a)
+    ...     x2 = (-b - math.sqrt(q2)) / (2.0 * a)
+    ...     print("Two solutions %.2f and %.2f" % (x1, x2))
+    ... else:
+    ...     x = -b / (2.0 * a)
+    ...     print("One solution: %.2f" % x)
+    ... 
+    Two solutions -0.41 and 2.41
+
+- Can be nested (too much nesting is bad for readability) 
+
+----
+
+Loops
+^^^^^
+
+For loop
+"""""""""
+
+- iterate over a sequence (list, tuple, char in string, keys in dict, …)
+- no indexes, directly the object in the sequence
+
+.. code-block:: python
+    :emphasize-lines: 2
+
+    >>> ingredients = ["spam", "eggs", "ham", "sausages"]
+    >>> for food in ingredients:
+    ...     print("I like %s" % food)
+    ... 
+    I like spam
+    I like eggs
+    ...
+
+----
+
+While loop
+"""""""""""
+
+- Iterate while a condition is fulfilled
+
+.. code-block:: python
+    :emphasize-lines: 4
+
+    >>> a, b = 175, 3650
+    >>> stop = False
+    >>> possible_divisor = max(a, b) / 2.0
+    >>> while possible_divisor >= 1 and not stop:
+    ...     if a % possible_divisor == 0 and b % possible_divisor == 0:
+    ...         print("Found greatest common divisor: %d" % possible_divisor)
+    ...         stop = True
+    ...     possible_divisor = possible_divisor - 1
+    ...
+    Found greatest common divisor: 25
+
+
+- Make sure the condition becomes unfulfilled, else it could result in infinite loops: 
+ 
+.. code-block:: python
+
+    >>> while True: print("I will print this forever")
+
+----
+
+Useful commands in loops
+"""""""""""""""""""""""""
+
+- ``continue``: go directly to the next iteration of the most inner loop
+
+.. code-block:: python
+    :emphasize-lines: 4
+    
+    for i in range(100):
+        if not i % 7 == 0:
+            print("%d is *not* a multiple of 7" % i)
+            continue
+        print("%d is a multiple of 7" % i)
+
+- ``break``: quit the most inner loop
+
+.. code-block:: python
+    :emphasize-lines: 6
+
+    n = 112
+    # divide n by 2 until this does no longer return an integer
+    while True:
+        if n % 2 != 0:
+            print("%d is not a multiple of 2" % n)
+            break
+        print("%d is a multiple of 2" % n)
+        n = n / 2
+            
+- ``pass``: a block cannot be empty; ``pass`` is a command that does nothing
+- ``else``: block executed after the normal exit of the loop
+
+----
+
+Practice: Fibonacci series
+""""""""""""""""""""""""""
+
+- Fibonacci:
+    - Each element is the sum of the previous two elements
+    - The first two elements are 0 and 1
+
+- Calculate all elements in this series up to 1000, put them in a list, then print the list.
+
+``[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597]``
+
+----
+
+- solution 1:
+
+.. code-block:: python
+
+    a, b = 0, 1
+    res = [a, b]
+    while b < 1000: 
+        a, b = b, a + b
+        res.append(b)
+
+    print(res)
+
+- solution 2:
+    
+.. code-block:: python
+
+    res = [0, 1]
+    next_element = 1
+    while next_element < 1000: 
+        res.append(next_element)
+        next_element = res[-2] + res[-1]
+
+    print(res)
+
+
+----
+
+enumerate and zip
+""""""""""""""""""
+
+- use ``enumerate()`` if indices are needed (0-based!)
+
+.. code-block:: python
+
+    >>> print("I like following foods:")
+    >>> for idx, food in enumerate(ingredients):
+    ...     print("%d. %s" % (idx + 1, food))
+    ... 
+    1. spam
+    2. eggs
+
+
+- ``zip()`` is a convenient way to loop over multiple sequences
+
+.. code-block:: python
+
+    >>> subjects = ["Roses", "Violets", "Sugar"]
+    >>> verbs = ["are", "are", "is"]
+    >>> adjectives = ["red,", "blue,", "sweet."] 
+    >>> for s, v, a in zip(subjects, verbs, adjectives):
+    ...     print("%s %s %s" % (s, v, a))
+    ...  
+    Roses are red,
+    Violets are blue,
+    Sugar is sweet.
 
 
