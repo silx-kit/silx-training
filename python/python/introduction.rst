@@ -30,7 +30,7 @@ Examples of applications in Python
 - Scientific programs:
     - PyMol, Sage
 
-- Web framewframeworks:
+- Web frameworks:
     - Django, Zope, Plone, …
 
 - Graphical user interfaces & visualization:

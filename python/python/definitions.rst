@@ -113,7 +113,7 @@ Strings
     
     >>> "I am a string"
     >>> 'Me too'
-    >>> """"I am a 
+    >>> """I am a 
     ... mutli-line string""" 
     >>> 'a multi-line string\ncan also be defined like that'
 
@@ -306,7 +306,7 @@ Tuple
 
     >>> help(tuple)
 
-* Tuple are immutable lists
+* Tuples are immutable lists
 
 .. code-block:: python
 
@@ -321,7 +321,7 @@ Tuple
 
 * Use ``list(tuple)`` or ``tuple(list)`` to convert
 
-* Tuples are not defined by presence of "``(…)``", but by presence of "``,``"
+* Tuples are not defined by presence of parenthesis "``()``", but by presence of comma "``,``"
 
 .. code-block:: python
 
@@ -335,7 +335,7 @@ Tuple
 List and tuple comprehensions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Conveniant and elegant way of creating lists and tuples, very *pythonic*
+* Very *pythonic* and conveniant way of creating lists and tuples
 
 .. code-block:: python
     
@@ -376,7 +376,7 @@ Iterator
     >>> r[2]
     2
 
-- Convert to list for convenience of use, unless performance is a concern
+- Convert to list for convenience of use, if access to elements in non-sequential order is needed
 
 .. code-block:: python
 
@@ -404,13 +404,17 @@ Mapping Types: Dictionaries
 
 .. code-block:: python
 
-	>>> dico = { 'key1': 'value1', 2: 'val2', math.pi: 3.14}
+	>>> dico = {'key1': 'value1', 
+                    2: 'val2',
+                    math.pi: 3.14}
 	>>> dico['key1']
         'value1'
+
 	>>> dico.keys()
 	dict_keys([3.1415926535897931, 'key1', 2])  # Iterator in Python3!
 	>>> dico.values()
 	dict_values([3.1400000000000001, 'value1', 'val2']) # Iterator in Python3!
+
 	>>> 'key1' in dico
 	True
 	>>> len(dico)
@@ -430,7 +434,7 @@ Everything is object
 - In Python everything is object (inherits from ``object``)
 
 
-- Names are just labels attached to an object
+- Names are just labels, references, attached to an object
     - Memory is freed when the number of references drops to 0
  
 - ``dir(obj)``: list the attributes of an object
@@ -476,7 +480,7 @@ Everything is object
 .. code-block:: python
 
     >>> L3 = L2[:]              # creates a copy of the data
-    >>> L3 = copy.deepcopy(L2)  # more explicit
+    >>> L3 = copy.deepcopy(L2)  # same, more explicit
 
 ---- 
 
@@ -535,15 +539,13 @@ Branching
     ... 
     Two solutions -0.41 and 2.41
 
+- Can have many ``elif``'s (not recommended)
 - Can be nested (too much nesting is bad for readability) 
 
 ----
 
-Loops
-^^^^^
-
 For loop
-"""""""""
+^^^^^^^^
 
 - iterate over a sequence (list, tuple, char in string, keys in dict, …)
 - no indexes, directly the object in the sequence
@@ -562,7 +564,7 @@ For loop
 ----
 
 While loop
-"""""""""""
+^^^^^^^^^^
 
 - Iterate while a condition is fulfilled
 

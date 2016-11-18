@@ -44,21 +44,21 @@ Definition of the function :
 
         import math
         def polynom(a, b, c):
-        delta=b*b - 4.0*a*c
-        solutions=[]
-        if delta > 0 :
-            solutions.append(b+math.sqrt(delta) / (2.0*a))
-            solutions.append(b-math.sqrt(delta) / (2.0*a))
-        elif delta == 0 :
-            solutions.append(b/(2.0*a))
-        return solutions
+            delta=b*b - 4.0*a*c
+            solutions=[]
+            if delta > 0 :
+                solutions.append((-b + math.sqrt(delta)) / (2.0*a))
+                solutions.append((-b - math.sqrt(delta)) / (2.0*a))
+            elif delta == 0 :
+                solutions.append(b/(2.0*a))
+            return solutions
 
 
 Call of the function : 
 
     .. code-block:: python
 
-        solution(1, 2, -3)
+        polynom(1, 2, -3)
 
 ----
 
@@ -73,8 +73,8 @@ function parameter (1)
             print('my parameter is %s' % myparam)
 
     
-    - myfunction() return my parameter is 5
-    - myfunction('toto') return my parameter is toto
+    - ``myfunction()`` prints "my parameter is 5"
+    - ``myfunction('toto')`` prints "my parameter is toto"
 
 - any parameters
 
@@ -117,12 +117,30 @@ function parameter (2)
 
 .. warning:: Never use mutable object as default parameter !!!
 
-    If the parameter is a mutable, is default value should generally be None (immutable)
+    If the parameter is a mutable, its default value should generally be None (immutable)
 
-    .. image:: img/functionwithmutabledefaultparam.png
-        :width: 500px
-        :height: 250px
-        :align: center
+    .. code-block:: python
+
+	    >>> def bad_append(default_list=[]):
+            ...    """Append 1 to provided list and return it.
+            ...    If no list is given as parameter, use empty list."""
+	    ...    default_list.append(1)
+	    ...    return default_list
+	    ... 
+	    >>> print(bad_append())
+	    >>> print(bad_append())
+	    >>> print(bad_append())
+	    [1]
+	    [1, 1]
+	    [1, 1, 1]
+
+	    >>> def good_append(default_list=None):
+	    ...    if default_list is None:
+	    ...         return [1]
+	    ...     default_list.append(1)
+	    ...     return default_list
+	    ...
+
 
 
 ----
