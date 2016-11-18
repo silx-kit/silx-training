@@ -30,3 +30,16 @@ Python for data analysis
 ----
 
 .. include:: modules.rst
+
+----
+
+.. include:: input_output.rst
+
+----
+
+.. include:: exceptions.rst
+
+----
+
+.. include:: extra_informations.rst
+

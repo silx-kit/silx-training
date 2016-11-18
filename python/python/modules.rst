@@ -1,4 +1,3 @@
-=======
 Modules
 =======
 
@@ -16,7 +15,7 @@ Create libraries with your functions.
 
 ----
 
-.. image:: img/mylibrary.png
+.. image:: img/mymodule.png
     :width: 550px
     :height: 620px
 
@@ -73,9 +72,39 @@ Standard modules
     
 "Batteries included philosophy"
 
-.. image:: img/mylibrary.png
-    :width: 50px
-    :height: 120px
-    :align: right
+
+- Standard modules provided by Python:
+    - Modules sys, os, shutil, glob, copy
+    - Modules string, re, collections
+    - Modules math, random, decimal
+    - Module time, datetime 
+    - Internet access with email, urllib2, smtplib 
+    - Mutli-core programming with multiprocessing, threading, thread
+    - Handle compressed archives with gzip, bz2, zlib, zipfile, tarfile
+    - Execute another program with subprocess, shlex
+    - Quality control with unittest and doctest
+    - Performance control with timeit, profile and cProfile
+    - Logging capabilities: logging
+
+
+----
+
+Standard modules
+----------------
+
+
+- General purpose mathematics libraries:
+    - NumPy
+    - SciPy
+- Input/Output libraries to handle data acquired at ESRF
+    - EdfFile
+    - SpecFile
+    - FabIO
+    - H5py
+- Visualisation libraries (curves, images, ...)
+    - Matplotlib
+- Image handling library:
+    - Python Imaging Library
+    - PIL Became Pillow with Python 3
 
 

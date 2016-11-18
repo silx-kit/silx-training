@@ -1,6 +1,6 @@
-=======
 Classes
 =======
+
 Classes are out of the scope of the training ( used for Object Oriented approach)
 
 Definition
