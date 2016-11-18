@@ -1,7 +1,7 @@
 Definitions
 ===========
 
-**types, operations, loops, conditions**
+----
 
 1. Primitive types, basic operations
 2. Composed types: Strings, lists, tuples, dictionaries
@@ -12,6 +12,7 @@ Definitions
 
 Primitive types, basic operations
 ---------------------------------
+
 
 ----
 
@@ -152,6 +153,16 @@ Strings
     >>> '123'[3]
     IndexError: string index out of range
 
+- Negative indexing to refer to element starting from the end
+
+.. code-block:: python
+    
+    >>> my_str = 'abcd'
+    >>> my_str[-2]
+    'c'
+    >>> my_str[-4] == my_str[0]
+    True
+    
 ----
 
 Useful methods
@@ -180,19 +191,296 @@ Useful methods
 
 ----
 
+List
+^^^^
 
-List and Tuple
-^^^^^^^^^^^^^^
+.. code-block:: python
+
+    >>> help(list)
+
+* Lists can contain any type of objects
+
+.. code-block:: python
+    
+    >>> a=['my string',True, 5+7] ; a; len(a)
+    ['my string', True, 12]
+    3
+    >>> import math
+    >>> a.append(math.pi) ; a ; len(a)
+    ['my string', True, 12, 3.141592653589793]
+    4
+    >>> list(range(10)) ; 
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    >>> list(range(5,12,2))
+    [5, 7, 9, 11]
+    >>>
+    >>> l_str = list('My string')
+    >>> l_str
+    ['M', 'y', ' ', 's', 't', 'r', 'i', 'n', 'g']
+    >>> ''.join(l_str)
+    'My string'
+
+----
+
+Useful methods for lists
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: python
+
+    >>> L = ['spam', 'eggs', 'sausages']
+
+- ``append``: add one element at the end
+
+.. code-block:: python
+
+    >>> L.append("spam"); print(L)
+    ['spam', 'eggs', 'sausages', 'spam']
+
+- ``insert``: insert one element at a given index
+
+.. code-block:: python
+
+    >>> L.insert(2, "spam"); print(L)
+    ['spam', 'eggs', 'spam', 'sausages', 'spam']
+
+- ``index``: find first index containing a value
+
+.. code-block:: python
+
+    >>> L.index("spam"); L.index("sausages");
+    0
+    3
+    
+----
+
+- ``count()``
+
+.. code-block:: python
+
+    >>> L.count("spam"); L.count("sausages");
+    3
+    1
+
+- ``pop()``: remove and return one element by index
+
+.. code-block:: python
+
+    >>> L.pop()
+    'spam'
+    >>> L.pop(3)
+    'sausages'
+
+- ``remove()``: remove an element by value
+
+.. code-block:: python
+
+    >>> L.remove("eggs")
+    >>> L.remove("eggs")
+    ValueError: list.remove(x): x not in list
+
+- ``sort()``, ``reverse()``: In place methods (no return value, original list is changed)
+
+----
+
+Operations on lists
+^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: python
+
+    >>> L1, L2 = [1, 3, 5], [2, 4, 6] 
+    >>> L1 + L2
+    [1, 3, 5, 2, 4, 6]
+    >>> L1 *3
+    [1, 3, 5, 1, 3, 5, 1, 3, 5]
+    >>> list(zip(L1, L2))
+    [(1, 2), (3, 4), (5, 6)]
+
+* A list is a reference to a block of memory
+.. image:: img/warning.png
+    :width: 50px
+    :align: left
+
+.. code-block:: python
+
+    >>> L3 = L2
+    >>> L3[1] = 100
+    >>> print(L3)     # as expected
+    [2, 100, 6]
+    >>> print(L2)     # !
+    [2, 100, 6]
+
+*L2* and *L3* are two *labels* pointing to the **same data** (same memory block)
+
+.. code-block:: python
+
+    >>> L3 = L2[:]              # creates a new list
+    >>> L3 = copy.deepcopy(L2)  # more explicit
+
+
+
+
+    
+    
+
+----
+
+Tuple
+^^^^^
+
+.. code-block:: python
+
+    >>> help(tuple)
+
+* Tuple are immutable lists
+
+.. code-block:: python
+
+    >>> mytuple = ('spam', 'eggs', 5, math.pi, 'sausages')
+    >>> mytuple[0] ; mytuple[-1]
+    'spam'
+    'sausages'
+    >>> mytuple[3] = "ham"
+    TypeError: 'tuple' object does not support item assignment
+
+* Tuples are faster than lists, but less convenient
+
+* Use ``list(tuple)`` or ``tuple(list)`` to convert
+
+* Tuples are not defined by presence of "``(…)``", but by presence of "``,``"
+
+.. code-block:: python
+
+    >>> valid_tuple = 'spam', 'eggs', 5, math.pi, 'sausages'
+    >>> valid_tuple_one_element = 'spam',
+    >>> print(valid_tuple_one_element)
+    ('spam',)
+
+----
+
+List and tuple comprehensions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Conveniant and elegant way of creating lists and tuples, very *pythonic*
+
+.. code-block:: python
+    
+    >>> [x for x in range(10) if x**3 - 15*x**2 + 71*x == 105]
+    [3, 5, 7]
+    >>> tuple(math.sqrt(x) for x in range(5))
+    (0.0, 1.0, 1.4142135623730951, 1.7320508075688772, 2.0)
+
+* Alternative way to create the previous tuple: use ``map`` (functional programming)
+
+.. code-block:: python
+
+    >>> list(map(math.sqrt, range(10)))
+
+
+----
+
+Iterator
+^^^^^^^^
+
+- Like a list, but generates elements on demand: *fast*, *low-memory usage*
+
+.. code-block:: python
+
+    >>> r = range(10)
+    >>> print(r)
+    range(0, 10)
+    >>> m = map(math.sqrt, range(10))
+    >>> print(m)
+    <map object at 0x7f9e719331d0>
+
+- Often, elements cannot be accessed by index (OK for `range`, not for `map`)
+
+.. code-block:: python
+
+    >>> m[2]
+    TypeError: 'map' object is not subscriptable
+    >>> r[2]
+    2
+
+- Convert to list for convenience of use, unless performance is a concern
+
+.. code-block:: python
+
+    >>> list(r)
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    >>> [x for x in m]
+    [0.0, 1.0, 1.4142135623730951, ...]
 
 ----
 
 Mapping Types: Dictionaries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+- Dictionaries associate a key to a value:
+    - Key must be *hashable*, i.e. any object that is unmutable
+    - Also known as  *hash table*
+
+- Dictionaries are not ordered (``OrderedDict`` exist as well)
+
+.. code-block:: python
+
+    >>> help(dict)
+
+----
+
+.. code-block:: python
+
+	>>> dico = { 'key1': 'value1', 2: 'val2', math.pi: 3.14}
+	>>> dico['key1']
+        'value1'
+	>>> dico.keys()
+	dict_keys([3.1415926535897931, 'key1', 2])  # Iterator in Python3!
+	>>> dico.values()
+	dict_values([3.1400000000000001, 'value1', 'val2']) # Iterator in Python3!
+	>>> 'key1' in dico
+	True
+	>>> len(dico)
+	3
+	>>> dico[math.e] 	
+        KeyError: 2.718281828459045	
+        >>> dico.get(math.e, 2.7)  # returns a default value if key not in dict
+	2.7
+	>>> myDict = dico.copy()
+	>>> myDict.pop('key1')  # return 'value1', remove 'key1':'value1'
+
 ----
 
 Everything is object
 --------------------
+
+- In Python everything is object (inherits from ``object``)
+
+
+- Names are just labels attached to an object
+    - Memory is freed when the number of references drops to 0
+ 
+- ``dir(obj)``: list the attributes of an object
+
+
+- ``help(obj)``: prints the help of the object
+
+- ``type(obj)``: get the type of an object
+
+- ``id(obj)``: gets the memory adress of an object
+
+----
+
+.. code-block:: python
+     
+     >>> a=object()
+     >>> dir(a) ; dir(5)
+     ['__class__', '__delattr__', '__dir__', '__doc__',...]
+     >>> help(str)
+     ... (long help message)
+     >>> type(True)
+     <class 'bool'>
+     >>> id(a)
+     140318487896256
+
 
 ----
 

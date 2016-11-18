@@ -92,7 +92,6 @@ Python in a notebook
     >>> sys.executable
     '/usr/bin/python3'
 
-----
 
 
 
