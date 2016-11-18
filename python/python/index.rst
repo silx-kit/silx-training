@@ -4,6 +4,9 @@ Python for data analysis
 
 ----
 
+.. image:: img/Python_logo_and_wordmark.png
+
+
 1. Introduction to Python
 2. Definitions: types, operations, loops, conditions
 3. Functions
