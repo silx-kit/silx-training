@@ -3,7 +3,8 @@ Modules
 
 ----
 
-Create libraries with your functions.
+Create modules with your functions
+----------------------------------
 
 .. warning:: Start each new python file with the following lines : 
 
@@ -15,13 +16,19 @@ Create libraries with your functions.
 
 ----
 
+Example of a module
+^^^^^^^^^^^^^^^^^^^
+
 .. image:: img/mymodule.png
     :width: 550px
     :height: 620px
 
 ----
 
-..note :: 
+Documentation generator
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note:: 
     
     ':param', ':type',  etc can be used for
     formatting documentation using automatic documentation generators like : 
@@ -29,6 +36,7 @@ Create libraries with your functions.
 
 - Sphinx ( http://www.sphinx-doc.org/en/1.4.8/ )
 - Epydoc ( https://pypi.python.org/pypi/epydoc/ )
+- Doxygen ( http://www.stack.nl/~dimitri/doxygen/)
 
 
 ----

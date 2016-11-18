@@ -45,7 +45,6 @@ ipython for interactive python
 - Integrated profiling tool: %timeit myfunction()
 
 - Pylab extenstion: '$ ipython --pylab' or '%pylab' directly in a ipython console
-
     - Auto import many modules:
         - numpy as np
         - from pylab import *
@@ -93,7 +92,7 @@ Integrated Development Environment
     - PyCharm
     - sublime-text
 
-
+----
 
 Zen of python
 -------------

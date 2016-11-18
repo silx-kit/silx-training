@@ -101,6 +101,15 @@ Exercise
 
 Create a programme wich ask for the name and the age and then display it
 
+.. code-block:: bash
+
+    >>> What is your name ?
+    polo
+     >>> How old are you ? 
+    22
+    >>> Your name is polo and you are 22 years old
+
+
 ----
 
 Solution

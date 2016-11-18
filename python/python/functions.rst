@@ -3,8 +3,11 @@ Functions
 
 ----
 
-Definition
-----------
+How to create a function?
+-------------------------
+
+Definition in the source code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 use the 'def' statement to define a new function
 
@@ -13,8 +16,8 @@ use the 'def' statement to define a new function
         def myfunction(myparam):
             print('my parameter is %s' % myparam)
 
-Documentation    
--------------
+Documentation of the function
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: img/documentationOfAFunction.png
     :width: 600px
