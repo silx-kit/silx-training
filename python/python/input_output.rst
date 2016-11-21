@@ -127,28 +127,6 @@ Solution
         age=input()
         print("Your name is %s and you are %s years old" % (name, age))
 
-----
-
-TODO : deplacer cette splide
-
-Formatting strings
-------------------
-
-C type
-^^^^^^
-    .. code-block:: python
-
-        '%s %i %d %f %8.3f'%(5,5,5,5,5)
-    return '5 5 5 5.000000    5.000'
-
-Python formatting
-^^^^^^^^^^^^^^^^^
-
-    .. code-block:: python
-
-        '{2} {1} {2} {0}'.format('a','b','c')
-    return 'c b c a'
-
 
 ----
 
@@ -256,12 +234,3 @@ Solution
                 
         return result
 
-----
-
-
-
-TODO : Parler des differences python2 / python3 pour les strings
-
-Python2         Python3
-string (default)    →   bytes
-unicode     →   string (default) 
