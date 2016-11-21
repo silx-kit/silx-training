@@ -4,7 +4,7 @@ Definitions
 ----
 
 1. Primitive types, basic operations
-2. Composed types: Strings, lists, tuples, dictionaries
+2. Composed types: strings, lists, tuples, dictionaries
 3. Everything is an object
 4. Control structures: blocks, branching, loops
 
@@ -15,21 +15,23 @@ Primitive types
 
 Integers:
 ^^^^^^^^^
+
 - Fixed length (32 or 64 bits): ``-2, 1, 6452``
-- Long integer (arbitrary length):  
+- Long integer (arbitrary length):
     - ``-2L, 1L, 6452L, -9223372036854775808L (sys.maxsize + 1)``
 
 Floating point numbers:
 ^^^^^^^^^^^^^^^^^^^^^^^
-- 64 bits by default (double-precision): 3.1415926535897931, 2.7182818284590451
+
+- 64 bits (double-precision): 3.1415926535897931, 2.7182818284590451
 
 Complex numbers:
 ^^^^^^^^^^^^^^^^
-- 3+4j 
+- 3+4j
 
 Booleans:
-^^^^^^^^^  
-- ``True False``
+^^^^^^^^^
+- ``True`` and ``False``
 
 None
 ^^^^
@@ -55,10 +57,11 @@ Basic operations
 ----------------
 
 - Primary operations: ``+ - * / % //``
-    - warning: 
+    - warning:
         - Python 2: ``3 / 2 = 1``
         - Python 3: ``3 / 2 = 1.5``
         - Explicitely use ``//`` for integer division
+        - Get use to Python3 syntax
 
 - Power, absolute value, …
     - ``a**b``, ``pow(a, b)``, ``abs(a)``
@@ -68,7 +71,7 @@ Basic operations
 - Logical operators: ``and   or   not   xor``
 
 - Bitwise operators: ``&   ^   |   <<   >>``
- 
+
 
 ----
 
@@ -158,6 +161,12 @@ Strings
     'c'
     >>> my_str[-4] == my_str[0]
     True
+
+- help associated to strings: print all functions (methods) of strings
+
+.. code-block:: python
+    
+    >>> help(str)
     
 ----
 
@@ -166,22 +175,22 @@ Useful string methods
 
 - ``len(str)``
     - returns the length of the string
-- ``str.find(subStr), str.index(subStr)`` 
+- ``str.find(subStr), str.index(subStr)``
     - returns the starting index. Find may return ``-1`` if not found, index fails.
-- ``str.replace(str1, str2)`` 
-    - replaces str1 with str2 in string 
-- ``str.split()`` 
+- ``str.replace(str1, str2)``
+    - replaces str1 with str2 in string
+- ``str.split()``
     - splits the string in a list of words
 
 ----
 
-- ``str.startswith(sub), str.endswith(sub)`` 
+- ``str.startswith(sub), str.endswith(sub)``
     - returns ``True`` if main string ``str`` starts with ``sub``-string
-- ``str.isalnum(), str.isalpha(), str.isdigit()`` 
+- ``str.isalnum(), str.isalpha(), str.isdigit()``
     - returns ``True`` if the chain is alphanumeric, only letter or only numbers
-- ``str.strip(), str.rstrip(), lstrip()`` 
+- ``str.strip(), str.rstrip(), lstrip()``
     - removes spaces at the extremites of the string (R and L variant for Right/Left)
-- ``str.upper(), str.lower, str.swapcase`` 
+- ``str.upper(), str.lower, str.swapcase``
     - Converts to all upper-case, all lowercase, swap case
 
 
@@ -198,22 +207,28 @@ List
 
 .. code-block:: python
     
-    >>> a=['my string',True, 5+7] ; a; len(a)
+    >>> a = ['my string',True, 5+7]
+    >>> print(a)
     ['my string', True, 12]
+    >>> print(len(a))
     3
+    
     >>> import math
-    >>> a.append(math.pi) ; a ; len(a)
+    >>> a.append(math.pi) 
+    >>>  print(a) 
     ['my string', True, 12, 3.141592653589793]
+    >>> print(len(a))
     4
+    
     >>> list(range(10)) ; 
     [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     >>> list(range(5,12,2))
     [5, 7, 9, 11]
-    >>>
+    
     >>> l_str = list('My string')
-    >>> l_str
+    >>> print(l_str)
     ['M', 'y', ' ', 's', 't', 'r', 'i', 'n', 'g']
-    >>> ''.join(l_str)
+    >>> print(''.join(l_str))
     'My string'
 
 ----
@@ -229,22 +244,25 @@ Useful methods for lists
 
 .. code-block:: python
 
-    >>> L.append("spam"); print(L)
+    >>> L.append("spam")
+    >>> print(L)
     ['spam', 'eggs', 'sausages', 'spam']
 
 - ``insert``: insert one element at a given index
 
 .. code-block:: python
 
-    >>> L.insert(2, "spam"); print(L)
+    >>> L.insert(2, "spam")
+    >>> print(L)
     ['spam', 'eggs', 'spam', 'sausages', 'spam']
 
 - ``index``: find first index containing a value
 
 .. code-block:: python
 
-    >>> L.index("spam"); L.index("sausages");
+    >>> L.index("spam")
     0
+    >>> L.index("sausages")
     3
     
 ----
@@ -253,8 +271,9 @@ Useful methods for lists
 
 .. code-block:: python
 
-    >>> L.count("spam"); L.count("sausages");
+    >>> L.count("spam")
     3
+    >>> L.count("sausages");
     1
 
 - ``pop()``: remove and return one element by index
@@ -275,6 +294,9 @@ Useful methods for lists
     ValueError: list.remove(x): x not in list
 
 - ``sort()``, ``reverse()``: In place methods (no return value, original list is changed)
+
+    - WARNING, this deletes the list: ``L = L.sort()``
+
 
 ----
 
@@ -313,7 +335,7 @@ Tuple
     >>> mytuple[3] = "ham"
     TypeError: 'tuple' object does not support item assignment
 
-* Tuples are faster than lists, but less convenient
+* Tuples are (slightly) faster than lists, but less convenient
 
 * Use ``list(tuple)`` or ``tuple(list)`` to convert
 
@@ -328,24 +350,38 @@ Tuple
 
 ----
 
-List and tuple comprehensions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+List & tuple comprehension
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Very *pythonic* and conveniant way of creating lists and tuples
+* Very *pythonic* and convenient way of creating lists and tuples
 
 .. code-block:: python
+
+    >>> [2*x+1 for x in range(5)] 
+    [1, 3, 5, 7, 9]
+    
+    >>> tuple(math.sqrt(x) for x in range(5))
+    (0.0, 1.0, 1.4142135623730951, 1.7320508075688772, 2.0)
     
     >>> [x for x in range(10) if x**3 - 15*x**2 + 71*x == 105]
     [3, 5, 7]
-    >>> tuple(math.sqrt(x) for x in range(5))
-    (0.0, 1.0, 1.4142135623730951, 1.7320508075688772, 2.0)
+    
 
-* Alternative way to create the previous tuple: use ``map`` (functional programming)
+* An alternative to functional programming: ``lambda``,  ``map`` & ``filter``
+
+  - less *pythonic* and harder to read.
+  - ``Lambda``, ``map`` and ``filter`` are reserved keywords, they should not be
+    used as variable names.
+  - Functional programming is no more faster than list comprehension
 
 .. code-block:: python
-
-    >>> list(map(math.sqrt, range(10)))
-
+   
+    >>> list(map(math.sqrt, range(5)))
+    [0.0, 1.0, 1.4142135623730951, 1.7320508075688772, 2.0]
+    
+    >>> list(filter(lambda x: x**3 - 15*x**2 + 71*x == 105, range(10)))
+    [3, 5, 7]
+    
 
 ----
 
@@ -363,7 +399,7 @@ Iterator
     >>> print(m)
     <map object at 0x7f9e719331d0>
 
-- Often, elements cannot be accessed by index (OK for `range`, not for `map`)
+- Often, elements cannot be accessed by index (`range`, is an exception !)
 
 .. code-block:: python
 
@@ -432,7 +468,7 @@ Everything is object
 
 - Names are just labels, references, attached to an object
     - Memory is freed when the number of references drops to 0
- 
+
 - ``dir(obj)``: list the attributes of an object
 
 
@@ -478,18 +514,18 @@ Everything is object
     >>> L3 = L2[:]              # creates a copy of the data
     >>> L3 = copy.deepcopy(L2)  # same, more explicit
 
----- 
+----
 
 Control structures
--------------------
+------------------
 
 Code structure
 ^^^^^^^^^^^^^^
 
 Python uses white-spaces and indentation to establish code block structure whereas other programming languages uses braces { }.
 
-- Clearly indicates the beginning of a block 
-- Coding style is mostly uniform. Use **4 spaces** instead of <tabs> 
+- Clearly indicates the beginning of a block
+- Coding style is mostly uniform. Use **4 spaces** instead of <tabs>
 - Code structure is much more readable and clear.
 
 .. code-block:: python
@@ -534,7 +570,7 @@ Branching
     Two solutions -0.41 and 2.41
 
 - Can have many ``elif``'s (not recommended)
-- Can be nested (too much nesting is bad for readability) 
+- Can be nested (too much nesting is bad for readability)
 
 ----
 
@@ -577,8 +613,8 @@ While loop
     Found greatest common divisor: 25
 
 
-- Make sure the condition becomes unfulfilled, else it could result in infinite loops: 
- 
+- Make sure the condition becomes unfulfilled, else it could result in infinite loops:
+
 .. code-block:: python
 
     >>> while True: print("I will print this forever")
@@ -586,7 +622,7 @@ While loop
 ----
 
 Useful commands in loops
-"""""""""""""""""""""""""
+""""""""""""""""""""""""
 
 - ``continue``: go directly to the next iteration of the most inner loop
 
@@ -644,7 +680,7 @@ Practice: Fibonacci series
     print(res)
 
 - solution 2:
-    
+
 .. code-block:: python
 
     res = [0, 1]
@@ -659,7 +695,7 @@ Practice: Fibonacci series
 ----
 
 enumerate and zip
-""""""""""""""""""
+"""""""""""""""""
 
 - use ``enumerate()`` if indices are needed (0-based!)
 
