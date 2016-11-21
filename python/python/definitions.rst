@@ -220,27 +220,27 @@ python2 vs python3
 
 in python3 :
 
-- strings are Unicode by default 
+- strings are Unicode by default
 - there is a clear separation between bytes and unicode (not in python2)
 
 some outputs in python 2 and python 3:
 
-+------------------------+------------------------+
-| python2                | python3                | 
-+========================+========================+
-| >>> print(type('b'))   | >>> print(type('b'))   |
-| <class 'str'>          | <class 'str'>          |
-|                        |                        |
-| >>> print(type(b'b'))  | >>> print(type(b'b'))  |
-| <type 'str'>           | <class 'bytes'>        |
-|                        |                        |
-| >>> str(b'3')==b'3'    | >>> str(b'3')==b'3'    |
-| True                   | False                  |
-|                        |                        |
-| >>> b'123'[1] == b'2'  | >>> b'123'[1] == 50    |
-| True                   | True                   |
-|                        |                        |
-+------------------------+------------------------+
++-----------------------+-----------------------+-+
+| python2               | python3               | |
++=======================+=======================+=+
+| >>> print(type('b'))  | >>> print(type('b'))  | |
+| <class 'str'>         | <class 'str'>         | |
+|                       |                       | |
+| >>> print(type(b'b')) | >>> print(type(b'b')) | |
+| <type 'str'>          | <class 'bytes'>       | |
+|                       |                       | |
+| >>> str(b'3')==b'3'   | >>> str(b'3')==b'3'   | |
+| True                  | False                 | |
+|                       |                       | |
+| >>> b'123'[1] == b'2' | >>> b'123'[1] == 50   | |
+| True                  | True                  | |
+|                       |                       | |
++-----------------------+-----------------------+-+
 
 ----
 
@@ -343,7 +343,7 @@ Useful methods for lists
 
 - ``sort()``, ``reverse()``: In place methods (no return value, original list is changed)
 
-    - WARNING, this deletes the list: ``L = L.sort()``
+    - **Warning**: this deletes the list: ``L = L.sort()``
 
 
 ----
@@ -482,34 +482,48 @@ Mapping Types: Dictionaries
 
 ----
 
+Dictionaries: examples
+^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
 
-	>>> dico = {'key1': 'value1', 
+    >>> dico = {'key1': 'value1', 
                     2: 'val2',
                     math.pi: 3.14}
-	>>> dico['key1']
-        'value1'
+    
+    >>> print(dico['key1'])
+    'value1'
 
-	>>> dico.keys()
-	dict_keys([3.1415926535897931, 'key1', 2])  # Iterator in Python3!
-	>>> dico.values()
-	dict_values([3.1400000000000001, 'value1', 'val2']) # Iterator in Python3!
+    >>> print(list(dico.keys()))
+    [3.1415926535897931, 'key1', 2]
+    
+    >>> print(list(dico.values()))
+    [3.1400000000000001, 'value1', 'val2']
+    
 
-	>>> 'key1' in dico
-	True
-	>>> len(dico)
-	3
-	>>> dico[math.e] 	
-        KeyError: 2.718281828459045	
-        >>> dico.get(math.e, 2.7)  # returns a default value if key not in dict
-	2.7
-	>>> myDict = dico.copy()
-	>>> myDict.pop('key1')  # return 'value1', remove 'key1':'value1'
+**Nota:** `keys` and `values` are iterators in Python3!
+
+.. code-block:: python
+
+    >>> 'key1' in dico
+    True
+    
+    >>> len(dico)
+    3
+    
+    >>> dico[math.e]     
+        KeyError: 2.718281828459045    
+    
+    >>> dico.get(math.e, 2.7)  # returns a default value if key not in dict
+    2.7
+    
+    >>> myDict = dico.copy()
+    
+    >>> myDict.pop('key1')  # return 'value1', remove 'key1':'value1'
 
 ----
 
-Everything is object
---------------------
+Everything is object (1/3)
+--------------------------
 
 - In Python everything is object (inherits from ``object``)
 
@@ -528,21 +542,42 @@ Everything is object
 
 ----
 
+Everything is object (2/3)
+--------------------------
+
 .. code-block:: python
      
      >>> a=object()
-     >>> dir(a) ; dir(5)
+     
+     >>> print(dir(a))
      ['__class__', '__delattr__', '__dir__', '__doc__',...]
-     >>> help(str)
-     ...
+     
      >>> type(True)
-     <class 'bool'>
+     <class `bool`>
+     
+     >>> type(a)
+     <type 'object'>
+     
      >>> id(a)
      140318487896256
 
+     >>> b = 5
+     >>> c = 5
+     print(id(b), id(c))
+     (34636024, 34636024)
+     >>> id(b) == id(c)
+     True
+     >>> b is c
+     True
+     
+-----
+
+Everything is object (3/3)
+--------------------------
+
 .. image:: img/warning.png
     :width: 50px
-    :align: left
+    :align: right
 
 .. code-block:: python
     :emphasize-lines: 2, 6, 7
@@ -554,13 +589,23 @@ Everything is object
     [2, 100, 6]
     >>> print(L2)     # !
     [2, 100, 6]
+    >>> id(L3) == id(L2)
+    True
 
 *L2* and *L3* are two *references* pointing to the **same data** (same memory block)
 
 .. code-block:: python
 
     >>> L3 = L2[:]              # creates a copy of the data
-    >>> L3 = copy.deepcopy(L2)  # same, more explicit
+    >>> id(L3) == id(L2)
+    False
+     
+    >>> import copy
+    >>> L4 = copy.deepcopy(L2)  # same, more explicit
+    >>> id(L4) == id(L2)
+    False
+
+**Warning:** This is very error prone when manipulating any mutable objects.
 
 ----
 
@@ -570,11 +615,10 @@ Control structures
 Code structure
 ^^^^^^^^^^^^^^
 
-Python uses white-spaces and indentation to establish code block structure whereas other programming languages uses braces { }.
+Python uses a column (:) at the end of the line and 4 white-spaces indentation
+to establish code block structure.
+Many other programming languages uses braces { }.
 
-- Clearly indicates the beginning of a block
-- Coding style is mostly uniform. Use **4 spaces** instead of <tabs>
-- Code structure is much more readable and clear.
 
 .. code-block:: python
 
@@ -590,6 +634,14 @@ Python uses white-spaces and indentation to establish code block structure where
         ...
     Block 1 continuation
     ...
+
+The advantage
+^^^^^^^^^^^^^
+
+- Clearly indicates the beginning of a block
+- Coding style is mostly uniform. Use **4 spaces**, never <tabs>
+- Code structure is much more readable and clear.
+
 
 ----
 
@@ -665,7 +717,8 @@ While loop
 
 .. code-block:: python
 
-    >>> while True: print("I will print this forever")
+    >>> while True: 
+    ...     print("I will print this forever")
 
 ----
 
@@ -695,10 +748,10 @@ Useful commands in loops
             print("%d is not a multiple of 2" % n)
             break
         print("%d is a multiple of 2" % n)
-        n = n / 2
+        n = n // 2
             
 - ``pass``: a block cannot be empty; ``pass`` is a command that does nothing
-- ``else``: block executed after the normal exit of the loop
+- ``else``: block executed after the normal exit of the loop.
 
 ----
 
@@ -711,11 +764,13 @@ Practice: Fibonacci series
 
 - Calculate all elements in this series up to 1000, put them in a list, then print the list.
 
-``[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597]``
+``[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987]``
 
 ----
 
-- solution 1:
+Fibonacci series: solutions
+"""""""""""""""""""""""""""
+Solution 1:
 
 .. code-block:: python
 
@@ -725,9 +780,9 @@ Practice: Fibonacci series
         a, b = b, a + b
         res.append(b)
 
-    print(res)
+    print(res[:-1])
 
-- solution 2:
+Solution 2: Shorter ... but is it faster ?
 
 .. code-block:: python
 
@@ -737,15 +792,27 @@ Practice: Fibonacci series
         res.append(next_element)
         next_element = res[-2] + res[-1]
 
+    print(res[:-1)
+
+Solution 3: Without dropping the last element
+
+.. code-block:: python
+
+    a, b = 0, 1
+    res = [a,]
+    while b < 1000: 
+        res.append(b)
+        a, b = b, a + b
+
     print(res)
 
 
 ----
 
-enumerate and zip
+Enumerate and zip
 """""""""""""""""
 
-- use ``enumerate()`` if indices are needed (0-based!)
+- use ``enumerate()`` to get the indices of an iterator (0-based!)
 
 .. code-block:: python
 
