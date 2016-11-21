@@ -423,3 +423,22 @@ Preconized library according to the use case and the file format.
       </table>
    </body>
    </html>
+
+----
+
+Exercise
+--------
+
+1. Read the EDF file ``medipix.edf``.
+2. Process the data
+
+   - Create a mask for all the values below 10%.
+   - With the above mask, set the affected pixels to 10%.
+   - Optionally do the same for values above 90%.
+   - This clamp values between 10% and 90%
+
+3. Store the source, the mask of changed pixels and the result inside ``process.h5``, as below.
+
+.. image:: images/exercise-result.png
+
+4. Load ``process.h5`` and list the root content
