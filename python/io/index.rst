@@ -100,7 +100,7 @@ Option 1: PyMCA
    edf = EdfFile.EdfFile(filename, access='rb')
    edf.GetNumImages()       # get the number of images in file
    data = edf.GetData(0)    # reads the first image
-   info = edf.GetHeader(0)  # reads the first header
+   header = edf.GetHeader(0)  # reads the first header
 
 ``PyMca5.PyMca.EdfFile`` provides read access to image formats like ADSC,
 MarCCD, PilatusCBF.
@@ -143,11 +143,11 @@ Option 1: PyMCA
    edf = EdfFile.EdfFile(new_filename, access='a+')
 
    # writes the first image
-   info ['Title'] = 'Test Image 1'
+   header['Title'] = 'Test Image 1'
    edf.WriteImage(header, data)
 
    # writes a second image
-   info ['Title'] = 'Test Image 2'
+   header['Title'] = 'Test Image 2'
    edf.WriteImage(header, data * 2, Append=1)
 
 ----

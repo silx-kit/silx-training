@@ -244,7 +244,7 @@ EDF using FabIO
 ---------------
 
 ``Silx`` **will** provide an HDF5-like mapping for raster images using based
-on ``FabIO``. But ``FabIO``.
+on ``FabIO``.
 
 Reading files
 +++++++++++++
@@ -319,20 +319,19 @@ Using PyMCA
    .. code-block:: python
 
       # instead of:
-      from PyMca5.PyMca import EdfFile
-      # prefer using:
-      from silx.third_party import EdfFile
-
-   .. code-block:: python
-
-      # instead of:
       from PyMca5.PyMca import specfilewrapper
       # prefer using:
       from silx.io import specfilewrapper
 
+   .. code-block:: python
+
+      # instead of:
+      from PyMca5.PyMca import EdfFile
+      # prefer using fabio
+
 ----
 
-File convertion
+File conversion
 ---------------
 
 - with fabio
