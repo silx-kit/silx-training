@@ -116,13 +116,13 @@ Read example
 
       import silx.io.utils
 
-      h5file = silx.io.utils.load('test.h5')
+      h5file = silx.io.utils.load('data/test.h5')
 
       # print available names at the first level
       print(h5file['/'].keys())
 
-      # reaching available data of the first group
-      dataset = h5file['/diff_map_0000/data']
+      # reaching a dataset from a sub group
+      dataset = h5file['/diff_map_0000/data/map']
 
       # using size and types to not read the full stored data
       print(dataset.shape, dataset.size, dataset.dtype)
@@ -152,7 +152,7 @@ Write example
       data.shape = 100, 100
 
       # write
-      h5file = h5py.File('myfirstone.h5', access='w')
+      h5file = h5py.File('my_first_one.h5', access='w')
 
       # write data into a dataset from the root
       h5file['/data1'] = data
@@ -268,7 +268,7 @@ Python example
 
       import silx.io.utils
 
-      specdata = silx.io.utils.load('31oct98.dat')
+      specdata = silx.io.utils.load('data/oleg.dat')
 
       # print available scans
       print(specdata['/'].keys())
@@ -301,12 +301,12 @@ Reading files
 
       import fabio
 
-      image = fabio.open("filename.edf")
+      image = fabio.open("data/medipix.edf")
 
       # here is the data as a numpy array
       image.data
 
-      # here is the header as key-value dictonary
+      # here is the header as key-value dictionary
       image.header
 
 ``FabIO`` also support multi-frames (more than one image in a single file).
@@ -388,7 +388,7 @@ File conversion
 
       import fabio
 
-      image = fabio.open('filename.edf')
+      image = fabio.open('data/medipix.edf')
       image = image.convert('tif')
       image.save('filename.tif')
 
@@ -398,7 +398,7 @@ File conversion
 
       from silx.io.spectoh5 import write_spec_to_h5
 
-      write_spec_to_h5('input.spe', 'output.h5', mode='w')
+      write_spec_to_h5('data/oleg.dat', 'oleg.h5', mode='w')
 
 There is advanced spec conversionin the silx IO tutorial:
 https://github.com/silx-kit/silx-training/blob/master/silx/io/io.pdf
