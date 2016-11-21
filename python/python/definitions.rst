@@ -41,11 +41,17 @@ None
     >>> a, b = 5, 5.0
     >>> a == b
     True
+
     >>> type(a); type(b)
     <type 'int'>
     <type 'float'>
+
+    >>> a is b
+    False
+    
     >>> a is None
     False
+
     >>> None is None
     True
 
@@ -392,7 +398,7 @@ List and tuple comprehensions
 
 .. code-block:: python
 
-    >>> list(map(math.sqrt, range(10)))
+    >>> list(map(math.sqrt, range(5)))
 
 
 ----
@@ -666,7 +672,7 @@ Useful commands in loops
 
 ----
 
-Practice: Fibonacci series
+Exercise: Fibonacci series
 """"""""""""""""""""""""""
 
 - Fibonacci:
