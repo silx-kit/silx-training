@@ -5,7 +5,7 @@ Input/output
 ----
 
 Accessing ESRF data
--------------------
+===================
 
 ESRF data come in (too many) different formats:
 
@@ -22,10 +22,10 @@ already switched.
 ----
 
 Getting ready to access ESRF data
----------------------------------
+=================================
 
 Option 1
-++++++++
+--------
 
 Python modules for data access developed by the BCU.
 
@@ -46,10 +46,10 @@ sources.
 ----
 
 Getting ready to access ESRF data
----------------------------------
+=================================
 
 Option 2
-++++++++
+--------
 
 FabIO provides access to several image data formats.
 
@@ -68,7 +68,7 @@ Already installed on most ESRF computers
 ----
 
 Reading SPEC files
-------------------
+==================
 
 .. code-block:: python
 
@@ -88,10 +88,10 @@ Reading SPEC files
 ----
 
 Reading EDF files
------------------
+=================
 
 Option 1: PyMCA
-+++++++++++++++
+---------------
 
 .. code-block:: python
 
@@ -108,10 +108,10 @@ MarCCD, PilatusCBF.
 ----
 
 Reading EDF files
------------------
+=================
 
 Option 2: fabio
-+++++++++++++++
+---------------
 
 .. code-block:: python
 
@@ -124,10 +124,10 @@ Option 2: fabio
 ----
 
 Writing EDF files
------------------
+=================
 
 Option 1: PyMCA
-+++++++++++++++
+---------------
 
 .. code-block:: python
 
@@ -153,10 +153,10 @@ Option 1: PyMCA
 ----
 
 Writing EDF files
------------------
+=================
 
 Option 2: fabio
-+++++++++++++++
+---------------
 
 .. code-block:: python
 
@@ -171,7 +171,7 @@ Option 2: fabio
 ----
 
 Converting files
-----------------
+================
 
 Convert data:
 
@@ -193,17 +193,18 @@ http://dx.doi.org/10.1107/S0021889813000150
 ----
 
 Exercise
---------
+========
 
 1. Read the EDF file ``medipix.edf``.
-2. Create a mask for all the values above a certain threshold.
-3. Using the above mask, set the affected pixels to a particular value.
+2. Create a mask for all the values under 10%.
+3. Using the above mask, set the affected pixels to 10%.
+4. Optionally do the same for values above 90%.
 4. Force all the original image data to be between 10% and 90% of the maximum.
 
 ----
 
 Basic HDF5 access using h5py
-----------------------------
+============================
 
 .. code-block:: python
 
@@ -228,7 +229,7 @@ Basic HDF5 access using h5py
 ----
 
 Using ESRF Widgets
-------------------
+==================
 
 ESRF widgets use PyQt4. 
 We need to start ``ipython`` with the ``-q4thread`` flag for interactive use:
