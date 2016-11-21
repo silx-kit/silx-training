@@ -50,7 +50,7 @@ There is many ways to import modules / from module
 
         import mymodule
         mymodule.myfunction()
-        
+
         import mymodule as module
         module.myfunction()
 
@@ -58,8 +58,8 @@ There is many ways to import modules / from module
         pow2()
 
         # ! import all from a module can be dangerous because
-        # it will polutes the local name-space
-        from mymodule import *      
+        # it will pollutes the local name-space
+        from mymodule import *
         pow2()
         anyfunction()
 
@@ -77,42 +77,39 @@ You can also access to the attributes of the module
 
 Standard modules
 ----------------
-    
+
 "Batteries included philosophy"
 
-
-- Standard modules provided by Python:
-    - Modules sys, os, shutil, glob, copy
-    - Modules string, re, collections
-    - Modules math, random, decimal
-    - Module time, datetime 
-    - Internet access with email, urllib2, smtplib 
-    - Mutli-core programming with multiprocessing, threading, thread
-    - Handle compressed archives with gzip, bz2, zlib, zipfile, tarfile
-    - Execute another program with subprocess, shlex
-    - Quality control with unittest and doctest
-    - Performance control with timeit, profile and cProfile
-    - Logging capabilities: logging
+- Modules sys, os, shutil, glob, copy
+- Modules string, re, collections
+- Modules math, random, decimal
+- Module time, datetime
+- Internet access with email, urllib2, smtplib
+- Multi-core programming with multiprocessing, threading, thread
+- Handle compressed archives with gzip, bz2, zlib, zipfile, tarfile
+- Execute another program with subprocess, shlex
+- Quality control with unittest and doctest
+- Performance control with timeit, profile and cProfile
+- Logging capabilities: logging
 
 
 ----
 
-Standard modules
-----------------
+Non standard modules
+--------------------
 
 
 - General purpose mathematics libraries:
     - NumPy
     - SciPy
 - Input/Output libraries to handle data acquired at ESRF
-    - EdfFile
-    - SpecFile
+    - EdfFile/SpecFile
     - FabIO
     - H5py
-- Visualisation libraries (curves, images, ...)
+- Visualization libraries (curves, images, ...)
     - Matplotlib
+    - Silx
 - Image handling library:
-    - Python Imaging Library
-    - PIL Became Pillow with Python 3
+    - Python Imaging Library (PIL → Pillow)
 
-
+They will be introduced this afternoon.
