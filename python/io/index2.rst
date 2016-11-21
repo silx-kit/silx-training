@@ -352,12 +352,64 @@ Overview
 
 Preconized library according to the use case and the file format.
 
-==================  ======  =======
-   Format           Read    Write
-------------------  ------  -------
-HDF5                silx    h5py
-spec                silx    not a good idea
-edf                 fabio   fabio
-tiff                fabio   fabio
-other image format  fabio   fabio
-==================  ======  =======
+.. raw:: html
+
+   <html>
+   <head>
+   <style>
+
+   .default-table {
+      width:100%;
+      border-collapse: collapse;
+      border: 1px solid black;
+      background-color: white;
+   }
+
+   .default-table th {
+      background-color: #cce;
+      border: 1px solid black;
+      padding: 1em;
+   }
+
+   .default-table td {
+      border: 1px solid black;
+      padding: 0.5em;
+   }
+
+   </style>
+   </head>
+   <body>
+      <table class="default-table">
+      <tr>
+         <th>Formats</th>
+         <th>Read</th>
+         <th>Write</th>
+      </tr>
+      <tr>
+         <td>HDF5</td>
+         <td>silx/h5py</td>
+         <td>h5py</td>
+      </tr>
+      <tr>
+         <td>Specfile</td>
+         <td>silx</td>
+         <td>not a good idea</td>
+      </tr>
+      <tr>
+         <td>EDF</td>
+         <td>fabio</td>
+         <td>fabio</td>
+      </tr>
+      <tr>
+         <td>TIFF</td>
+         <td>fabio</td>
+         <td>fabio</td>
+      </tr>
+      <tr>
+         <td>Other images</td>
+         <td>fabio</td>
+         <td>fabio</td>
+      </tr>
+      </table>
+   </body>
+   </html>
