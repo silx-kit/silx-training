@@ -8,7 +8,11 @@ __authors__ = [ "Pierre Knobel", "Jerome Kieffer", "Henri Payno",
 __date__ = "17/11/2016"
 __license__ = "MIT"
 
-import math
+
+def sqrt(x):
+    "Return the square root of x"
+    return x**0.5
+
 def polynom(a, b, c):
     """Compute the polygon of order two
     :param a:a value of the polynom
@@ -20,8 +24,8 @@ def polynom(a, b, c):
     delta=b*b - 4.0*a*c
     solutions=[]
     if delta > 0 :
-        solutions.append(b+math.sqrt(delta) / (2.0*a))
-        solutions.append(b-math.sqrt(delta) / (2.0*a))
+        solutions.append(b+sqrt(delta) / (2.0*a))
+        solutions.append(b-sqrt(delta) / (2.0*a))
     elif delta == 0 :
         solutions.append(b/(2.0*a))
     return solutions
