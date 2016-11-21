@@ -184,6 +184,54 @@ Useful string methods
 - ``str.upper(), str.lower, str.swapcase`` 
     - Converts to all upper-case, all lowercase, swap case
 
+----
+
+Formatting strings
+------------------
+
+C type
+^^^^^^
+    .. code-block:: python
+
+        '%s %i %d %f %8.3f'%(5,5,5,5,5)
+    return '5 5 5 5.000000    5.000'
+
+Python formatting
+^^^^^^^^^^^^^^^^^
+
+    .. code-block:: python
+
+        '{2} {1} {2} {0}'.format('a','b','c')
+    return 'c b c a'
+
+----
+
+python2 vs python3
+""""""""""""""""""
+
+in python3 :
+
+- strings are Unicode by default 
+- there is a clear separation between bytes and unicode (not in python2)
+
+some outputs in python 2 and python 3:
+
++------------------------+------------------------+
+| python2                | python3                | 
++========================+========================+
+| >>> print(type('b'))   | >>> print(type('b'))   |
+| <class 'str'>          | <class 'str'>          |
+|                        |                        |
+| >>> print(type(b'b'))  | >>> print(type(b'b'))  |
+| <type 'str'>           | <class 'bytes'>        |
+|                        |                        |
+| >>> str(b'3')==b'3'    | >>> str(b'3')==b'3'    |
+| True                   | False                  |
+|                        |                        |
+| >>> b'123'[1] == b'2'  | >>> b'123'[1] == 50    |
+| True                   | True                   |
+|                        |                        |
++------------------------+------------------------+
 
 ----
 
