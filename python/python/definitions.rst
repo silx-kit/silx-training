@@ -279,6 +279,8 @@ List
     >>> print(''.join(l_str))
     'My string'
 
+    ...
+
 ----
 
 Useful methods for lists
@@ -319,10 +321,8 @@ Useful methods for lists
 
 .. code-block:: python
 
-    >>> L.count("spam")
+    >>> L.count("spam") return
     3
-    >>> L.count("sausages");
-    1
 
 - ``pop()``: remove and return one element by index
 
@@ -482,8 +482,8 @@ Mapping Types: Dictionaries
 
 ----
 
-Dictionaries: examples
-^^^^^^^^^^^^^^^^^^^^^^
+Dictionaries: examples (1)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
 
     >>> dico = {'key1': 'value1', 
@@ -501,6 +501,11 @@ Dictionaries: examples
     
 
 **Nota:** `keys` and `values` are iterators in Python3!
+
+----
+
+Dictionaries: examples (2)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -793,6 +798,11 @@ Solution 2: Shorter ... but is it faster ?
         next_element = res[-2] + res[-1]
 
     print(res[:-1)
+
+----
+
+Fibonacci series: solutions
+"""""""""""""""""""""""""""
 
 Solution 3: Without dropping the last element
 

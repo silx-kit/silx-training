@@ -230,8 +230,9 @@ Solution
                     result.append([float(i) for i in words])               
         return result
 
+----
 
-Solution - The same reading bytes
+Solution - The same 'reading bytes'
 ^^^^^^^^
 
 .. code-block:: python

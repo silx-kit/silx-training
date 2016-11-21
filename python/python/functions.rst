@@ -160,14 +160,11 @@ You can defined anonymous functions :
 .. code-block:: python
 
     pow2=lambda x: x*x
+    ...
     plot(range(100), list(map(lambda x: numpy.log10(x), range(100)) ))
 
 
-.. image:: img/lambda_function.png
-    :width: 500px
-    :height: 400px
-
-**Nota:** We don't expect you to use lambda, but this is just to explain why:
+**Nota:** We don't expect you to use lambda, but this is just to explain why you can get the following error:
 
 .. code-block:: python
 

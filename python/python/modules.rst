@@ -6,12 +6,11 @@ Modules
 Create modules with your functions
 ----------------------------------
 
-.. warning:: Start each new python file with the following lines : 
+A good practice is to start each new python file with the following line to specify the file encoding : 
 
     .. code-block:: python
 
-        #!/usr/bin/env python
-        # coding: utf8
+        # coding: utf-8
 
 
 ----
