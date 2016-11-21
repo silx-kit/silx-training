@@ -56,16 +56,18 @@ bg=white</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>150</x>
+      <x>90</x>
       <y>480</y>
-      <w>100</w>
-      <h>80</h>
+      <w>160</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>Dataset
 -
 + value
 + type
 + shape
++ compression
++ compression_args
 bg=white</panel_attributes>
     <additional_attributes/>
   </element>
