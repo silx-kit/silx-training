@@ -155,24 +155,20 @@ Solution - writing
 
 ----
 
-
 Solution - reading
 ^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
+    # reading
     f=open('myoutputfile', mode='r')
-    # read the first line
+    # read the first line with the name
     firstline=f.readline()
-    # read the year
-    year=f.read(4)
-    # read the date separator (-)
-    f.read(1)
-    # read the month
-    month=f.read(2)
+    # read the second line with the date
+    secondline=f.readline()
+    month=secondline.split('-')[1]
     print("month is %s"%month)
     f.close()
-
 
 ----
 
@@ -233,7 +229,6 @@ Solution
                     result.append([float(i) for i in words])
                 
         return result
-
 
 
 Solution - The same reading bytes
