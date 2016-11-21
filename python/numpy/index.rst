@@ -8,8 +8,7 @@
  Introduction to Numpy
 ***********************
 
-V. A. Sole
-ESRF Software Group
+Credits: V. A. Sole, ESRF Software Group
 
 -----
 
@@ -20,55 +19,50 @@ Summary
 #. Numpy
 #. Creation of arrays
 #. Array methods and functions
-#. Linear algebra
+#. Numpy modules
 
 -----
 
 Introduction
 ============
 
-\
+0. **Introduction**
+#. Numpy
+#. Creation of arrays
+#. Array methods and functions
+#. Numpy modules
 
 -----
 
-Basic operations
-----------------
+Python: Basic operations
+------------------------
 
-\+
-    Addition
-\-
-    Substraction
-\/
-    Division
-\**
-    Exponentiation (I prefer to use pow(a, b) instead of a**b)
-abs(x)
-    Absolute value of x
+- ``+`` Addition
+- ``-`` Substraction
+- ``/`` Division
+- ``**`` Exponentiation (alternative to ``a**b``: ``pow(a, b)``)
+- ``abs(x)`` Absolute value of x
 
-
-%
-    Remainder of a/b
-\/\/
-    Integer part of a/b
+- ``%`` Remainder of a/b
+- ``\\`` Integer part of a/b
 
 -----
 
-Basic high level data types
----------------------------
+Python: Basic high level data types
+-----------------------------------
 
-- Numbers: 10, 10.0, 1.0e+01,  ( 10.0+3j )
-- Strings, Unicode: “Hello World!”, u”Hello World!”
-- Lists: [‘abc’, 3, “x”]
-- Tuples: (‘abc’, 3, ‘x’)
-- Dictionnaries: {‘key1’:’abc’, ‘key2’: 3, ‘key3’:’x’}
+- Numbers: ``10, 10.0, 1.0e+01, ( 10.0+3j )``
+- Strings, Unicode: ``"Hello World!", u"Hello World!"``
+- Lists: ``['abc', 3, "x"]``
+- Tuples: ``('abc', 3, 'x')``
+- Dictionnaries: ``{'key1':'abc', 'key2': 3, 'key3': 'x'}``
 
 -----
 
 Exercice - 1
 ------------
 
-Use python as a simple calculator.
-Start the python interpreter and try the previous operations on different numbers (integers, floats, ... ).
+Use python as a simple calculator and try the basic operations on different numbers (integers, floats, ... ).
 
 Operating with other data types. At the python prompt (``In [ ]:`` or ``>>>``), type:
 
@@ -76,9 +70,9 @@ Operating with other data types. At the python prompt (``In [ ]:`` or ``>>>``), 
 
     a = [1, 2, 3]
 
-What is the result of ``2 * a[2]`` ?
+What is the result of ``2 * a[2]``?
 
-What is the result of ``2 * a``  ?
+What is the result of ``2 * a``?
 
 Combine operations and data types and comment your findings.
 
@@ -87,16 +81,16 @@ Combine operations and data types and comment your findings.
 Conclusion
 ----------
 
-Without additional libraries, python is almost useless for scientific computing
+Without additional libraries, python is almost useless for scientific computing.
 
 -----
 
 Scientist's Swiss knife
 -----------------------
 
-The ``numpy`` module
+The ``numpy`` package
 
-``IPython`` provides an improved interpreter environment
+``IPython``/``jupyter`` provides an improved interpreter environment
 
 ``matplotlib`` provides high quality graphics
 
@@ -106,6 +100,18 @@ The ``numpy`` module
 
 Numpy
 =====
+
+0. Introduction
+#. **Numpy**
+#. Creation of arrays
+#. Array methods and functions
+#. Numpy modules
+
+-----
+
+Numpy
+-----
+
 
 ``numpy`` is THE library providing number crunching capabilities to Python
 
@@ -139,6 +145,17 @@ It can be interfaced with other languages
 
 -----
 
+Creation of arrays
+==================
+
+0. Introduction
+#. Numpy
+#. **Creation of arrays**
+#. Array methods and functions
+#. Linear algebra
+
+-----
+
 Array creation - 1
 ------------------
 
@@ -169,34 +186,34 @@ Also specifying the type of element:
 Array creation - 2
 ------------------
 
-Besides using array, one can create arrays using **dedicated methods**:
+Besides using ``numpy.array``, one can create arrays using **dedicated methods**:
 
-``numpy.empty(dimensions_tuple, dtype=numpy.float)``:
+numpy.empty(dimensions_tuple, dtype=numpy.float):
 
 .. code-block:: python
 
   >>> a = numpy.empty((2, 4), dtype=numpy.float)
 
-``numpy.zeros(dimensions_tuple, dtype=numpy.float)``:
+numpy.zeros(dimensions_tuple, dtype=numpy.float):
 
 .. code-block:: python
 
   >>> a = numpy.zeros((2, 4), dtype=numpy.float)
 
-``numpy.ones(dimensions_tuple, dtype=numpy.float)``:
+numpy.ones(dimensions_tuple, dtype=numpy.float):
 
 .. code-block:: python
 
   >>> a = numpy.ones((3, 5), dtype=numpy.int)
 
-``numpy.arange(start, end, step)``:
+numpy.arange(start, end, step):
 
 .. code-block:: python
 
   >>> a = numpy.arange(10.)
   >>> b = numpy.arange(1, 10, 2)
 
-``numpy.identity(n, dtype=numpy.float)``:
+numpy.identity(n, dtype=numpy.float):
 
 .. code-block:: python
 
@@ -211,10 +228,10 @@ Array creation - 3
 
 .. code-block:: python
 
-  >>> def initFunction(i, j):
-  ...     return 100. + 10 * i + j
+  >>> def init_function(row, col):
+  ...     return 100. + 10 * row + col
 
-  >>> c = numpy.fromfunction(initFunction, (5,3))
+  >>> c = numpy.fromfunction(init_function, (5,3))
   >>> c
   array([[100., 101., 102.],
          [110., 111., 112.],
@@ -235,7 +252,7 @@ Array creation - 3
 Exercice - 2
 ------------
 
-Use python as a simple calculator. Start the python interpreter and try the basic operations on different arrays of numbers (integers, floats, ...).
+Use python as a simple calculator and try the basic operations on different arrays of numbers (integers, floats, ...).
 
 At the python prompt (``In [ ]:`` or ``>>>``), type:
 
@@ -247,6 +264,7 @@ At the python prompt (``In [ ]:`` or ``>>>``), type:
 
 - What is the result of ``2 * a[2]``?
 - What is the result of ``2 * a``?
+
 - What is the result of ``2 * b[2]``?
 - What is the result of ``2 * b``?
 - What is the result of ``b / 2``?
@@ -311,7 +329,7 @@ The elements of an array may contain any other object. Try the following:
 
 **Record Arrays**
 
-They allows access to the data using named fields.
+They allow access to the data using named fields.
 Imagine your data being a spreadsheet, the field names would be the column heading.
 
 .. code-block:: python
@@ -358,28 +376,6 @@ It is a Read and Write attribute.
 Array attributes - 2
 --------------------
 
-**flat**
-
-1D view of the array.
-
-It does not modify the array.
-
-It is an iterator.
-
-.. code-block:: python
-
-  >>> a = numpy.arange(10.)
-  >>> a.shape = (2, 5)
-  array([[0, 1, 2, 3, 4],
-         [5, 6, 7, 8, 9]])
-  >>> a.flat
-  <numpy.flatiter object at ...>
-
------
-
-Array attributes - 3
---------------------
-
 **T**
 
 It returns a transposed view of the array
@@ -388,7 +384,7 @@ It returns a transposed view of the array
 
   >>> b = a.T
 
-Exists also as function
+Exists also as method and a function:
 
 .. code-block:: python
 
@@ -397,28 +393,28 @@ Exists also as function
 
 -----
 
-Array attribues - 4
+Array attribues - 3
 -------------------
 
 **advances attributes**: nothing is hidden
 
-- ``data``: The read/write buffer containing actually the data
-- ``flags``: Information about the contiguity of the data in the buffer
 - ``itemsize``: Size of a single item, also the size of dtype
-- ``nbytes``: Size in bytes occupied bu the buffer in memory: size*itemsize
-- ``ndim``: Number of dimensions of the nd_array: len(shape)
 - ``size``: Total number of element in the nd_array: prod(shape)
 - ``strides``: Tuple of bytes to step in each dimension when traversing an array
+- ``flags``: Information about the contiguity of the data in the buffer
+- ``nbytes``: Size in bytes occupied by the buffer in memory: size*itemsize
+- ``ndim``: Number of dimensions of the nd_array: len(shape)
+- ``data``: The read/write buffer containing actually the data
 
 -----
 
 Indexing - 1
 ------------
 
-One can select elements as with any other Python sequence.
+One can select elements as with any other Python sequence:
 
 - Indexing starts at 0 for each array dimension
-- Indexes can be negative: x[-1] is the same as x[len(x) -1]
+- Indexes can be negative: x[-1] is the same as x[len(x) - 1]
 
 The output refers to the original array and usually it is not contiguous in memory.
 
@@ -473,6 +469,17 @@ Exercice - 3
 
 -----
 
+Array methods and functions
+===========================
+
+0. Introduction
+#. Numpy
+#. Creation of arrays
+#. **Array methods and functions**
+#. Numpy modules
+
+-----
+
 Methods - 1
 -----------
 
@@ -480,12 +487,11 @@ There are methods associated to the arrays -> ``dir(a)`` where a is an array
 
 - ``a.min()`` Returns the minimum of the array
 - ``a.max()`` Returns the maximum of the array
-- ``a.size`` Returns the number of elements of the array
 - ``a.sort()`` Returns an array with the sorted elements
 - ``a.sum()`` Returns the sum of the elements of the array
 - ``a.sum(axis=None, dtype=None, out=None)`` Perform the sum along a specified axis
 
-There are functions associated to the module -> ``dir(numpy)``
+There are functions associated to the module: ``dir(numpy)``
 Many methods are available in both forms:
 
 .. code-block:: python
@@ -512,13 +518,9 @@ Returns a new sorted array
 
 Complete function defined as ``argsort(a, axis=-1, kind=‘quicksort’, order=None)``
 
-Try ``numpy.argsort(numpy.zeros(10.))``
-
-WARNING: Consider setting the kind to ``'mergesort'``
-
 -----
 
-Methods - 3
+Methods - 4
 -----------
 
 - ``numpy.loadtxt(filename)	 # Load data from a text file.``
@@ -575,7 +577,7 @@ Original:
 2x2 binned:
 
 ========== ===========
-  1+2+3+4    3+4+7+8
+  1+2+5+6    3+4+7+8
 9+10+13+14 11+12+15+16
 ========== ===========
 
@@ -592,6 +594,24 @@ Other common operations are:
 - ``numpy.inner(a, b)`` Inner product
 - ``numpy.outer(a, b)`` Outer product
 
+
+- ``mean``, ``std``, ``median``, ``percentile``
+- ``sum``, ``cumsum``
+- ``cos``, ``sin``, ``arctan``, ...
+- ``linspace``, ``interp``
+- ...
+
+-----
+
+Numpy modules
+=============
+
+0. Introduction
+#. Numpy
+#. Creation of arrays
+#. Array methods and functions
+#. **Numpy modules**
+
 -----
 
 Linear Algebra - numpy.linalg
@@ -600,14 +620,16 @@ Linear Algebra - numpy.linalg
 As usual, ``dir()`` and ``help()`` are your friends...
 The operations you will usually use:
 
-- ``det(x)`` Determinant of x
-- ``eig(x)`` Returns the eigenvalues and eigenvectors of x
-- ``eigh(x)`` Idem profiting of x being a hermitian matrix
-- ``inv(x)`` Inverse matrix of x
-- ``svd(x)`` Singular value decomposition of x
-- ``dot(a, b)`` Standard linear algebra matrix multiplication
-- ``inner(a, b)`` Inner product
-- ``outer(a, b)`` Outer product
+- ``numpy.linalg.det(x)`` Determinant of x
+- ``numpy.linalg.eig(x)`` Returns the eigenvalues and eigenvectors of x
+- ``numpy.linalg.eigh(x)`` Idem profiting of x being a hermitian matrix
+- ``numpy.linalg.inv(x)`` Inverse matrix of x
+- ``numpy.linalg.svd(x)`` Singular value decomposition of x
+
+
+- ``numpy.dot(a, b)`` Standard linear algebra matrix multiplication
+- ``numpy.inner(a, b)`` Inner product
+- ``numpy.outer(a, b)`` Outer product
 
 -----
 
@@ -658,22 +680,13 @@ Polynomials in NumPy can be created, manipulated, and even fitted.
 Polynomial Package
 ^^^^^^^^^^^^^^^^^^
 
-Using the Convenience Classes |br|
-Polynomial Module (numpy.polynomial.polynomial) |br|
-Chebyshev Module (numpy.polynomial.chebyshev) |br|
-Legendre Module (numpy.polynomial.legendre) |br|
-Laguerre Module (numpy.polynomial.laguerre) |br|
-Hermite Module, "Physicists" (numpy.polynomial.hermite) |br|
-HermiteE Module, "Probabilists" (numpy.polynomial.hermite_e) |br|
-
-Old package Poly1d
-^^^^^^^^^^^^^^^^^^
-
-Basics |br|
-Fitting |br|
-Calculus |br|
-Arithmetic |br|
-Warnings |br|
+- Using the Convenience Classes
+- Polynomial Module (``numpy.polynomial.polynomial``)
+- Chebyshev Module (``numpy.polynomial.chebyshev``)
+- Legendre Module (``numpy.polynomial.legendre``)
+- Laguerre Module (``numpy.polynomial.laguerre``)
+- Hermite Module, "Physicists" (``numpy.polynomial.hermite``)
+- HermiteE Module, "Probabilists" (``numpy.polynomial.hermite_e``)
 
 -----
 
@@ -683,6 +696,8 @@ Exercice - 5
 #. Write a function ``fill_array(height, width)`` to generate an array of dimension (height, width) in which X[row, column] = cos(row) * sin(column)
 
 #. Time it for n=1000, m = 1000
+
+#. Extra: Do the same for X[row, column] = cos(row) + sin(column)
 
 -----
 
@@ -746,6 +761,8 @@ practical_fill   0.014922
 optimized_fill   0.004526
 ================ ==================
 
+Done on Intel(R) Xeon(R) CPU E5-1650 @ 3.50GHz.
+
 -----
 
 Many more modules and documentation
@@ -785,13 +802,3 @@ Thanks to Nicolas Rougier: https://github.com/rougier/numpy-100:
 #. Subtract the mean of each row of a matrix
 #. How to I sort an array by the nth column ?
 #. Find the nearest value from a given value in an array
-
------
-
-A more complex problem...
--------------------------
-
-.. image:: exercice_resistor_grid.png
-   :align: center
-
-http://imgs.xkcd.com/comics/nerd_sniping.png

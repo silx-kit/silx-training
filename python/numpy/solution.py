@@ -148,6 +148,37 @@ def exercice_5():
     assert numpy.all(numpy.equal(data1, data))
 
 
+def ex5_extra_inefficient_add_fill(height, width):
+    data = numpy.empty((height, width), dtype=numpy.float)
+    for row in range(int(height)):
+        for col in range(int(width)):
+            data[row, col] = numpy.cos(row) + numpy.sin(col)
+    return data
+
+
+def ex5_extra_add_fill(height, width):
+    width_sin = numpy.sin(numpy.arange(width))
+    height_cos = numpy.cos(numpy.arange(height))
+    data = numpy.atleast_2d(height_cos).T + numpy.atleast_2d(width_sin)
+    return data
+
+
+def exercice_5_extra():
+    """
+    Extra: Do the same for X[row, column] = cos(row) + sin(column)
+    """
+    height, width = 1000, 1000
+
+    start_time = time.time()
+    data1 = ex5_extra_inefficient_add_fill(height, width)
+    print('inefficient add fill took about %f s' % (time.time() - start_time))
+
+    start_time = time.time()
+    data = ex5_extra_add_fill(height, width)
+    print('add fill took about %f s' % (time.time() - start_time))
+    assert numpy.all(numpy.equal(data1, data))
+
+
 if __name__ == "__main__":
     print(exercice_3_1.__doc__)
     exercice_3_1()
@@ -163,3 +194,6 @@ if __name__ == "__main__":
 
     print(exercice_5.__doc__)
     exercice_5()
+
+    print(exercice_5_extra.__doc__)
+    exercice_5_extra()
