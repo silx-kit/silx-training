@@ -4,7 +4,7 @@ Definitions
 ----
 
 1. Primitive types, basic operations
-2. Composed types: Strings, lists, tuples, dictionaries
+2. Composed types: strings, lists, tuples, dictionaries
 3. Everything is an object
 4. Control structures: blocks, branching, loops
 
@@ -15,21 +15,23 @@ Primitive types
 
 Integers:
 ^^^^^^^^^
+
 - Fixed length (32 or 64 bits): ``-2, 1, 6452``
-- Long integer (arbitrary length):  
+- Long integer (arbitrary length):
     - ``-2L, 1L, 6452L, -9223372036854775808L (sys.maxsize + 1)``
 
 Floating point numbers:
 ^^^^^^^^^^^^^^^^^^^^^^^
-- 64 bits by default (double-precision): 3.1415926535897931, 2.7182818284590451
+
+- 64 bits (double-precision): 3.1415926535897931, 2.7182818284590451
 
 Complex numbers:
 ^^^^^^^^^^^^^^^^
-- 3+4j 
+- 3+4j
 
 Booleans:
-^^^^^^^^^  
-- ``True False``
+^^^^^^^^^
+- ``True`` and ``False``
 
 None
 ^^^^
@@ -55,10 +57,11 @@ Basic operations
 ----------------
 
 - Primary operations: ``+ - * / % //``
-    - warning: 
+    - warning:
         - Python 2: ``3 / 2 = 1``
         - Python 3: ``3 / 2 = 1.5``
         - Explicitely use ``//`` for integer division
+        - Get use to Python3 syntax
 
 - Power, absolute value, …
     - ``a**b``, ``pow(a, b)``, ``abs(a)``
@@ -68,7 +71,7 @@ Basic operations
 - Logical operators: ``and   or   not   xor``
 
 - Bitwise operators: ``&   ^   |   <<   >>``
- 
+
 
 ----
 
@@ -158,6 +161,12 @@ Strings
     'c'
     >>> my_str[-4] == my_str[0]
     True
+
+- help associated to strings: print all functions (methods) of strings
+
+.. code-block:: python
+    
+    >>> help(str)
     
 ----
 
@@ -166,22 +175,22 @@ Useful string methods
 
 - ``len(str)``
     - returns the length of the string
-- ``str.find(subStr), str.index(subStr)`` 
+- ``str.find(subStr), str.index(subStr)``
     - returns the starting index. Find may return ``-1`` if not found, index fails.
-- ``str.replace(str1, str2)`` 
-    - replaces str1 with str2 in string 
-- ``str.split()`` 
+- ``str.replace(str1, str2)``
+    - replaces str1 with str2 in string
+- ``str.split()``
     - splits the string in a list of words
 
 ----
 
-- ``str.startswith(sub), str.endswith(sub)`` 
+- ``str.startswith(sub), str.endswith(sub)``
     - returns ``True`` if main string ``str`` starts with ``sub``-string
-- ``str.isalnum(), str.isalpha(), str.isdigit()`` 
+- ``str.isalnum(), str.isalpha(), str.isdigit()``
     - returns ``True`` if the chain is alphanumeric, only letter or only numbers
-- ``str.strip(), str.rstrip(), lstrip()`` 
+- ``str.strip(), str.rstrip(), lstrip()``
     - removes spaces at the extremites of the string (R and L variant for Right/Left)
-- ``str.upper(), str.lower, str.swapcase`` 
+- ``str.upper(), str.lower, str.swapcase``
     - Converts to all upper-case, all lowercase, swap case
 
 ----
@@ -211,27 +220,27 @@ python2 vs python3
 
 in python3 :
 
-- strings are Unicode by default 
+- strings are Unicode by default
 - there is a clear separation between bytes and unicode (not in python2)
 
 some outputs in python 2 and python 3:
 
-+------------------------+------------------------+
-| python2                | python3                | 
-+========================+========================+
-| >>> print(type('b'))   | >>> print(type('b'))   |
-| <class 'str'>          | <class 'str'>          |
-|                        |                        |
-| >>> print(type(b'b'))  | >>> print(type(b'b'))  |
-| <type 'str'>           | <class 'bytes'>        |
-|                        |                        |
-| >>> str(b'3')==b'3'    | >>> str(b'3')==b'3'    |
-| True                   | False                  |
-|                        |                        |
-| >>> b'123'[1] == b'2'  | >>> b'123'[1] == 50    |
-| True                   | True                   |
-|                        |                        |
-+------------------------+------------------------+
++-----------------------+-----------------------+-+
+| python2               | python3               | |
++=======================+=======================+=+
+| >>> print(type('b'))  | >>> print(type('b'))  | |
+| <class 'str'>         | <class 'str'>         | |
+|                       |                       | |
+| >>> print(type(b'b')) | >>> print(type(b'b')) | |
+| <type 'str'>          | <class 'bytes'>       | |
+|                       |                       | |
+| >>> str(b'3')==b'3'   | >>> str(b'3')==b'3'   | |
+| True                  | False                 | |
+|                       |                       | |
+| >>> b'123'[1] == b'2' | >>> b'123'[1] == 50   | |
+| True                  | True                  | |
+|                       |                       | |
++-----------------------+-----------------------+-+
 
 ----
 
@@ -246,22 +255,28 @@ List
 
 .. code-block:: python
     
-    >>> a=['my string',True, 5+7] ; a; len(a)
+    >>> a = ['my string',True, 5+7]
+    >>> print(a)
     ['my string', True, 12]
+    >>> print(len(a))
     3
+    
     >>> import math
-    >>> a.append(math.pi) ; a ; len(a)
+    >>> a.append(math.pi) 
+    >>>  print(a) 
     ['my string', True, 12, 3.141592653589793]
+    >>> print(len(a))
     4
+    
     >>> list(range(10)) ; 
     [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     >>> list(range(5,12,2))
     [5, 7, 9, 11]
-    >>>
+    
     >>> l_str = list('My string')
-    >>> l_str
+    >>> print(l_str)
     ['M', 'y', ' ', 's', 't', 'r', 'i', 'n', 'g']
-    >>> ''.join(l_str)
+    >>> print(''.join(l_str))
     'My string'
 
 ----
@@ -277,22 +292,25 @@ Useful methods for lists
 
 .. code-block:: python
 
-    >>> L.append("spam"); print(L)
+    >>> L.append("spam")
+    >>> print(L)
     ['spam', 'eggs', 'sausages', 'spam']
 
 - ``insert``: insert one element at a given index
 
 .. code-block:: python
 
-    >>> L.insert(2, "spam"); print(L)
+    >>> L.insert(2, "spam")
+    >>> print(L)
     ['spam', 'eggs', 'spam', 'sausages', 'spam']
 
 - ``index``: find first index containing a value
 
 .. code-block:: python
 
-    >>> L.index("spam"); L.index("sausages");
+    >>> L.index("spam")
     0
+    >>> L.index("sausages")
     3
     
 ----
@@ -301,8 +319,9 @@ Useful methods for lists
 
 .. code-block:: python
 
-    >>> L.count("spam"); L.count("sausages");
+    >>> L.count("spam")
     3
+    >>> L.count("sausages");
     1
 
 - ``pop()``: remove and return one element by index
@@ -323,6 +342,9 @@ Useful methods for lists
     ValueError: list.remove(x): x not in list
 
 - ``sort()``, ``reverse()``: In place methods (no return value, original list is changed)
+
+    - **Warning**: this deletes the list: ``L = L.sort()``
+
 
 ----
 
@@ -361,7 +383,7 @@ Tuple
     >>> mytuple[3] = "ham"
     TypeError: 'tuple' object does not support item assignment
 
-* Tuples are faster than lists, but less convenient
+* Tuples are (slightly) faster than lists, but less convenient
 
 * Use ``list(tuple)`` or ``tuple(list)`` to convert
 
@@ -376,24 +398,38 @@ Tuple
 
 ----
 
-List and tuple comprehensions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+List & tuple comprehension
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Very *pythonic* and conveniant way of creating lists and tuples
+* Very *pythonic* and convenient way of creating lists and tuples
 
 .. code-block:: python
+
+    >>> [2*x+1 for x in range(5)] 
+    [1, 3, 5, 7, 9]
+    
+    >>> tuple(math.sqrt(x) for x in range(5))
+    (0.0, 1.0, 1.4142135623730951, 1.7320508075688772, 2.0)
     
     >>> [x for x in range(10) if x**3 - 15*x**2 + 71*x == 105]
     [3, 5, 7]
-    >>> tuple(math.sqrt(x) for x in range(5))
-    (0.0, 1.0, 1.4142135623730951, 1.7320508075688772, 2.0)
+    
 
-* Alternative way to create the previous tuple: use ``map`` (functional programming)
+* An alternative to functional programming: ``lambda``,  ``map`` & ``filter``
+
+  - less *pythonic* and harder to read.
+  - ``Lambda``, ``map`` and ``filter`` are reserved keywords, they should not be
+    used as variable names.
+  - Functional programming is no more faster than list comprehension
 
 .. code-block:: python
-
-    >>> list(map(math.sqrt, range(10)))
-
+   
+    >>> list(map(math.sqrt, range(5)))
+    [0.0, 1.0, 1.4142135623730951, 1.7320508075688772, 2.0]
+    
+    >>> list(filter(lambda x: x**3 - 15*x**2 + 71*x == 105, range(10)))
+    [3, 5, 7]
+    
 
 ----
 
@@ -411,7 +447,7 @@ Iterator
     >>> print(m)
     <map object at 0x7f9e719331d0>
 
-- Often, elements cannot be accessed by index (OK for `range`, not for `map`)
+- Often, elements cannot be accessed by index (`range`, is an exception !)
 
 .. code-block:: python
 
@@ -446,41 +482,55 @@ Mapping Types: Dictionaries
 
 ----
 
+Dictionaries: examples
+^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
 
-	>>> dico = {'key1': 'value1', 
+    >>> dico = {'key1': 'value1', 
                     2: 'val2',
                     math.pi: 3.14}
-	>>> dico['key1']
-        'value1'
+    
+    >>> print(dico['key1'])
+    'value1'
 
-	>>> dico.keys()
-	dict_keys([3.1415926535897931, 'key1', 2])  # Iterator in Python3!
-	>>> dico.values()
-	dict_values([3.1400000000000001, 'value1', 'val2']) # Iterator in Python3!
+    >>> print(list(dico.keys()))
+    [3.1415926535897931, 'key1', 2]
+    
+    >>> print(list(dico.values()))
+    [3.1400000000000001, 'value1', 'val2']
+    
 
-	>>> 'key1' in dico
-	True
-	>>> len(dico)
-	3
-	>>> dico[math.e] 	
-        KeyError: 2.718281828459045	
-        >>> dico.get(math.e, 2.7)  # returns a default value if key not in dict
-	2.7
-	>>> myDict = dico.copy()
-	>>> myDict.pop('key1')  # return 'value1', remove 'key1':'value1'
+**Nota:** `keys` and `values` are iterators in Python3!
+
+.. code-block:: python
+
+    >>> 'key1' in dico
+    True
+    
+    >>> len(dico)
+    3
+    
+    >>> dico[math.e]     
+        KeyError: 2.718281828459045    
+    
+    >>> dico.get(math.e, 2.7)  # returns a default value if key not in dict
+    2.7
+    
+    >>> myDict = dico.copy()
+    
+    >>> myDict.pop('key1')  # return 'value1', remove 'key1':'value1'
 
 ----
 
-Everything is object
---------------------
+Everything is object (1/3)
+--------------------------
 
 - In Python everything is object (inherits from ``object``)
 
 
 - Names are just labels, references, attached to an object
     - Memory is freed when the number of references drops to 0
- 
+
 - ``dir(obj)``: list the attributes of an object
 
 
@@ -492,21 +542,42 @@ Everything is object
 
 ----
 
+Everything is object (2/3)
+--------------------------
+
 .. code-block:: python
      
      >>> a=object()
-     >>> dir(a) ; dir(5)
+     
+     >>> print(dir(a))
      ['__class__', '__delattr__', '__dir__', '__doc__',...]
-     >>> help(str)
-     ...
+     
      >>> type(True)
-     <class 'bool'>
+     <class `bool`>
+     
+     >>> type(a)
+     <type 'object'>
+     
      >>> id(a)
      140318487896256
 
+     >>> b = 5
+     >>> c = 5
+     print(id(b), id(c))
+     (34636024, 34636024)
+     >>> id(b) == id(c)
+     True
+     >>> b is c
+     True
+     
+-----
+
+Everything is object (3/3)
+--------------------------
+
 .. image:: img/warning.png
     :width: 50px
-    :align: left
+    :align: right
 
 .. code-block:: python
     :emphasize-lines: 2, 6, 7
@@ -518,27 +589,36 @@ Everything is object
     [2, 100, 6]
     >>> print(L2)     # !
     [2, 100, 6]
+    >>> id(L3) == id(L2)
+    True
 
 *L2* and *L3* are two *references* pointing to the **same data** (same memory block)
 
 .. code-block:: python
 
     >>> L3 = L2[:]              # creates a copy of the data
-    >>> L3 = copy.deepcopy(L2)  # same, more explicit
+    >>> id(L3) == id(L2)
+    False
+     
+    >>> import copy
+    >>> L4 = copy.deepcopy(L2)  # same, more explicit
+    >>> id(L4) == id(L2)
+    False
 
----- 
+**Warning:** This is very error prone when manipulating any mutable objects.
+
+----
 
 Control structures
--------------------
+------------------
 
 Code structure
 ^^^^^^^^^^^^^^
 
-Python uses white-spaces and indentation to establish code block structure whereas other programming languages uses braces { }.
+Python uses a column (:) at the end of the line and 4 white-spaces indentation
+to establish code block structure.
+Many other programming languages uses braces { }.
 
-- Clearly indicates the beginning of a block 
-- Coding style is mostly uniform. Use **4 spaces** instead of <tabs> 
-- Code structure is much more readable and clear.
 
 .. code-block:: python
 
@@ -554,6 +634,14 @@ Python uses white-spaces and indentation to establish code block structure where
         ...
     Block 1 continuation
     ...
+
+The advantage
+^^^^^^^^^^^^^
+
+- Clearly indicates the beginning of a block
+- Coding style is mostly uniform. Use **4 spaces**, never <tabs>
+- Code structure is much more readable and clear.
+
 
 ----
 
@@ -582,7 +670,7 @@ Branching
     Two solutions -0.41 and 2.41
 
 - Can have many ``elif``'s (not recommended)
-- Can be nested (too much nesting is bad for readability) 
+- Can be nested (too much nesting is bad for readability)
 
 ----
 
@@ -625,16 +713,17 @@ While loop
     Found greatest common divisor: 25
 
 
-- Make sure the condition becomes unfulfilled, else it could result in infinite loops: 
- 
+- Make sure the condition becomes unfulfilled, else it could result in infinite loops:
+
 .. code-block:: python
 
-    >>> while True: print("I will print this forever")
+    >>> while True: 
+    ...     print("I will print this forever")
 
 ----
 
 Useful commands in loops
-"""""""""""""""""""""""""
+""""""""""""""""""""""""
 
 - ``continue``: go directly to the next iteration of the most inner loop
 
@@ -659,10 +748,10 @@ Useful commands in loops
             print("%d is not a multiple of 2" % n)
             break
         print("%d is a multiple of 2" % n)
-        n = n / 2
+        n = n // 2
             
 - ``pass``: a block cannot be empty; ``pass`` is a command that does nothing
-- ``else``: block executed after the normal exit of the loop
+- ``else``: block executed after the normal exit of the loop.
 
 ----
 
@@ -675,11 +764,13 @@ Practice: Fibonacci series
 
 - Calculate all elements in this series up to 1000, put them in a list, then print the list.
 
-``[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597]``
+``[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987]``
 
 ----
 
-- solution 1:
+Fibonacci series: solutions
+"""""""""""""""""""""""""""
+Solution 1:
 
 .. code-block:: python
 
@@ -689,10 +780,10 @@ Practice: Fibonacci series
         a, b = b, a + b
         res.append(b)
 
-    print(res)
+    print(res[:-1])
 
-- solution 2:
-    
+Solution 2: Shorter ... but is it faster ?
+
 .. code-block:: python
 
     res = [0, 1]
@@ -701,15 +792,27 @@ Practice: Fibonacci series
         res.append(next_element)
         next_element = res[-2] + res[-1]
 
+    print(res[:-1)
+
+Solution 3: Without dropping the last element
+
+.. code-block:: python
+
+    a, b = 0, 1
+    res = [a,]
+    while b < 1000: 
+        res.append(b)
+        a, b = b, a + b
+
     print(res)
 
 
 ----
 
-enumerate and zip
-""""""""""""""""""
+Enumerate and zip
+"""""""""""""""""
 
-- use ``enumerate()`` if indices are needed (0-based!)
+- use ``enumerate()`` to get the indices of an iterator (0-based!)
 
 .. code-block:: python
 

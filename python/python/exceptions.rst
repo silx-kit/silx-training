@@ -12,6 +12,9 @@ Definition
     .. image:: img/exceptionsoutput.png
         :width: 500px
         :height: 400px
+
+- ZeroDivisionError, NameError, TypError are all exceptions
+
 ----
 
 

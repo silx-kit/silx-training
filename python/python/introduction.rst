@@ -6,19 +6,19 @@ Introduction to Python
 Presentation of Python
 ----------------------
 
-- Computer language invented by Guido van Rossum in 1989 
-    - Guido is still managing the development of Python 
+- Computer language invented by Guido van Rossum in 1989
+    - Guido is still managing the development of Python
     - Massively used at Dropbox & Google (employers of Guido)
 
-- Open source 
-    - BSD-like license  
+- Open source
+    - BSD-like license
     - Means free for you
     - Guaranteed to stay free
 
-- Portable 
+- Portable
     - Runs on any computer you may have access to
 
-- Easily extendable 
+- Easily extendible
     - in C, Fortran, …
     - Once compiled, can be as fast as C
 
@@ -33,14 +33,16 @@ Examples of applications in Python
 - Web frameworks:
     - Django, Zope, Plone, …
 
+- Scripting in large application:
+    - Blender, gimp, …
+
 - Graphical user interfaces & visualization:
-    - Blender, 
-    - Bindings to gtk, Qt, Tcl/Tk, wxWidgets, 
-    - Libraries for visualization:  gnuplot, matplotlib, VTK
+    - Bindings to gtk, Qt, Tcl/Tk, wxWidgets, …
+    - Libraries for visualization: gnuplot, matplotlib, VTK
 
 - Scientific libraries:
     - Numpy, Scipy, (Scientific Python, numarray, Numeric, …)
-    
+
 - More locally developed programs (ESRF driven):
     - PyMca, PyHST, EDNA, MxCube, PyFAI, FabIO …
 
@@ -49,7 +51,7 @@ Examples of applications in Python
 Python for data-analysis
 ------------------------
 
-- Python can be learnt in a couple of days
+- Python can be learned in a couple of days
 - Ideal for prototyping
 - Alternative to Matlab
 - Python is free
@@ -74,11 +76,11 @@ Python in a notebook
     - Create a new notebook
 
 - Command in the notebook:
-    - Shift-enter to execute a cell	 
+    - Shift-enter to execute a cell
 
 - Play with the notebook:
     - What is the result of 4+7/2?
-    - What python version is used? Where is the python interpreter on located on the machine?
+    - What Python version is used? Where is the Python interpreter on located on the machine?
 
 ----
 

@@ -4,7 +4,7 @@ ESRF Python training
 
 **for synchrotron scientists**
 
-Updated 17/12/2015
+Updated 21/11/2016
 
 ----
 
