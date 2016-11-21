@@ -12,7 +12,7 @@ Updated 21/11/2016
 
 .. include:: numpy/index.rst
 
-.. include:: io/index2.rst
+.. include:: io/index.rst
 
 
 
