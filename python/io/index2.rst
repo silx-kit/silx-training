@@ -334,8 +334,7 @@ Using PyMCA
 File conversion
 ---------------
 
-- with fabio
-- with fabio-convert
+- With FabIO (or the command-line ``fabio-convert``)
 
    .. code-block:: python
 
@@ -344,6 +343,17 @@ File conversion
       image = fabio.open('filename.edf')
       image = image.convert('tif')
       image.save('filename.tif')
+
+- ``Silx`` provides helper to convert specfile to HDF5.
+
+   .. code-block:: python
+
+      from silx.io.spectoh5 import write_spec_to_h5
+
+      write_spec_to_h5('input.spe', 'output.h5', mode='w')
+
+There is advanced spec conversionin the silx IO tutorial:
+https://github.com/silx-kit/silx-training/blob/master/silx/io/io.pdf
 
 ----
 
