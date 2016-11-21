@@ -152,9 +152,15 @@ lambda function
 ---------------
 
 
-You can defined function 'on the fly' :
+You can defined anonymous functions :
 
-    .. code-block:: python
+.. code-block:: python
 
-        pow2 = lambda x: x*x
+    pow2=lambda x: x*x
+    plot(range(100), list(map(lambda x: numpy.log10(x), range(100)) ))
+
+
+.. image:: img/lambda_function.png
+    :width: 500px
+    :height: 400px
 
