@@ -234,3 +234,43 @@ Solution
                 
         return result
 
+
+
+Solution - The same reading bytes
+^^^^^^^^
+
+.. code-block:: python
+
+    def readspr_b(filepath):
+        "Read a fit2d ascii spread file"
+        if not os.path.isfile(filepath):
+            print("No such file %s"%filepath)
+            return None
+        
+        result=[]
+        xsize=0
+        ysize=0
+        lines=open(filepath, 'rb').readlines()
+        for idx, line in enumerate(lines):
+            strippedline=line.decode('utf-8').strip()
+            # if this is a commented line
+            if strippedline.startswith('#'):
+                continue
+
+            words=strippedline.split()
+            if (len(words)==8) and (words[2:6]==["Start", "pixel", "=", "("]):
+                xsize=int(words[0])
+                ysize=int(words[1])
+                print("Dimensions of the size are (%s, %s)"%(xsize, ysize))
+                break
+                
+        if xsize is not None and ysize is not None:
+            for line in lines[idx+1:]:
+                words=line.decode('utf-8').split()
+                if len(words) != xsize:
+                    print("Error !!! Expected entries are %s, got %s"%(xsize, len(words)))
+                    return None
+                else:
+                    result.append([float(i) for i in words])
+                
+        return result
