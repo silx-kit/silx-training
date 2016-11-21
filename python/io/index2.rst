@@ -11,13 +11,18 @@ ESRF data come in (too many) different formats:
 
 - Specfile
 - EDF
+- HDF5
+
+and specific detector formats:
+
 - MarCCD
 - Pilatus CBF
-- HDF5
+- Dectris Eiger
 - …
 
-HDF5 is expected to become the standard ESRF data format. Some beamlines have
-already switched.
+HDF5 is expected to become the standard ESRF data format.
+Some beamlines have already switched.
+
 ----
 
 Getting ready to access ESRF data
@@ -155,25 +160,27 @@ Write example
       # write data into a dataset from group1
       h5file['/group1/data2'] = data
 
-      f.close()
+      h5file.close()
 
 ----
 
 HDF5 tools
 ----------
 
-- h5dump
-- h5py
-- silx
-- PyMCA
-- The HDF group provides a web page `with more tools <https://support.hdfgroup.org/HDF5/doc/RM/Tools.html>`_.
+- ``h5ls``, ``h5dump``, ``hdfview``
+- ``h5py``
+- ``silx``
+- ``PyMCA``
+- The HDF group provides a web page with more tools
+  https://support.hdfgroup.org/HDF5/doc/RM/Tools.html
 
 ----
 
 Specfile using silx
 -------------------
 
-``Silx`` provides access to spec files using an HDF5-like mapping.
+``Silx`` provides access to spec files using an HDF5-like mapping. It is a
+subset of the HDF5 model.
 
 HDF5-like mapping
 +++++++++++++++++
@@ -274,15 +281,18 @@ Python example
       ydata = specdata['/94.1/measurement/bpmi']
 
 For more information and examples you can read the
-`silx IO tutorial <https://github.com/silx-kit/silx-training/blob/master/silx/io/io.pdf>`_.
+silx IO tutorial:
+https://github.com/silx-kit/silx-training/blob/master/silx/io/io.pdf
 
 ----
 
 EDF using FabIO
 ---------------
 
-``Silx`` **will** provide an HDF5-like mapping for raster images using based
-on ``FabIO``.
+- ``Silx`` **will** provide an HDF5-like mapping for raster images based
+  on ``FabIO``.
+- It is not yet available
+- Use FabIO
 
 Reading files
 +++++++++++++
@@ -351,7 +361,7 @@ Using PyMCA
 
 - PyMCA as Python library was previously often used
 - Now it is deprecated
-- Prefer using ``silx``
+- Prefer using ``silx`` or ``FabIO``
 
 
    .. code-block:: python
