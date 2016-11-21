@@ -14,7 +14,7 @@ How to open a file ?
 
         f=open(filename, mode='r')
 
-modes can be: 
+modes can be:
     - “r” for read-only mode
     - “w” for write mode
     - “a” for append mode
@@ -24,7 +24,7 @@ modes can be:
 
 Common methods for all file objects:
     - seek(pos) → Moves to a given position in the file
-    - f.close() → close the file    
+    - f.close() → close the file
 
 
 ----
@@ -60,7 +60,7 @@ Files can behave as iterators over readlines
 
 .. code-block:: python
     
-    for oneLine in open('myoutputfile'):
+    for oneLine in open('myfilename'):
         print(oneLine)
 
 
@@ -72,30 +72,33 @@ will display:
     ...
 
 - Very concise typing
-    - efficient reading 
-    - limited memory footprint 
-    - file is not fully loaded in memory: only one line
+    - efficient reading
+    - limited memory footprint
+    - file is not fully loaded in memory: only one line at a time
 
 
----- 
+----
 
 
 Interaction with the console
 ----------------------------
 
+
 - Output to the console:
     - print(str) used to be a statement (now function behaviour is enforced)
-    - sys.stdout is a file: <open file '<stdout>', mode 'w' at 0x7f63919fe150>
+    - sys.stdout is a file opend in write mode:
+      *<open file '<stdout>', mode 'w' at 0x7f63919fe150>*
     - sys.stdout.write(str+os.linesep) equivalent to print(str)
+
+
+
+- Input from the console:
+    - input() reads the standard input and returns a string (*raw_input* in python2)
+    - sys.stdin is a file open in read mode:
+      *<open file '<stdin>', mode 'r' at 0x7f63919fe0c0>*
 
 - Stdin, stdout and stderr are just opened files …
 
-- Input from the console:
-    - input() reads the standard input and returns a string (raw_input in python2)
-    - input(prompt)  equivalent to eval(raw_input(prompt))
-    - sys.stdin is a file open in read mode:
-    - <open file '<stdin>', mode 'r' at 0x7f63919fe0c0>
-    - eval('5+6') evaluates a string representing python code DANGEROUS !!! 
 
 ----
 
@@ -133,11 +136,12 @@ Solution
 Exercise
 ^^^^^^^^
 
-    write into a file :
-        - your name
-        - the current date
-        
-    read the month of the date only using the functions given by the file object (the one returned by open(...))
+write into a file :
+    - your name
+    - the current date
+
+Then read back this file and parse it to retrieve the month of the date.
+Use only the functions given by the file object (the one returned by open(...))
 
 
 ----
@@ -179,25 +183,25 @@ Solution - reading
 Exercise
 ^^^^^^^^
 
-- Read an ascii spreadsheet written by fit2d:
-    - The first non commented line looks like:
-        - 512 512 Start pixel = ( 1 1 )
+Read an ascii spreadsheet written by fit2d:
+
+- The first non commented line looks like:
+    - 512 512 Start pixel = ( 1 1 )
     - Then 512 values per line, 512 lines
-    - Read the file as a list of lists
-    - Example file in : data/example.spr
+- Read the file as a list of lists
+- Example file in : data/example.spr
 
 
 
-    .. image:: img/fit2d_ascii_file.png
-        :width: 700px
-        :height: 400px
+.. image:: img/fit2d_ascii_file.png
+    :width: 700px
+    :height: 400px
 
 
 ----
 
 Solution
 ^^^^^^^^
-
 .. code-block:: python
 
     def readspr(filepath):
@@ -205,7 +209,6 @@ Solution
         if not os.path.isfile(filepath):
             print("No such file %s"%filepath)
             return None
-        
         result=[]
         xsize=0
         ysize=0
@@ -215,14 +218,12 @@ Solution
             # if this is a commented line
             if strippedline.startswith('#'):
                 continue
-                
             words=strippedline.split()
             if(len(words)==8) and (words[2:6]==["Start", "pixel", "=", "("]):
                 xsize=int(words[0])
                 ysize=int(words[1])
                 print("Dimensions of the size are (%s, %s)" %(xsize, ysize))
                 break
-                
         if xsize is not None and ysize is not None:
             for line in lines[idx+1:]:
                 words=line.split()
@@ -230,7 +231,6 @@ Solution
                     print("Error !!! Expected entries are %s, got %s"%(xsize, len(words)))
                     return None
                 else:
-                    result.append([float(i) for i in words])
-                
+                    result.append([float(i) for i in words])               
         return result
 

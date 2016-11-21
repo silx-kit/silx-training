@@ -1,4 +1,4 @@
-extra informations
+Extra informations
 ==================
 
 ----
@@ -15,10 +15,10 @@ Python interpreter's advanced options
 
 Some useful option for the C-Python interpreter:
 
-- - d to switch to debug mode
-- - i enter  interactive  mode  after executing  the command (can be suefull for debugging)
-- - v verbose mode (tells when modules are imported)
-- - u to enforce stdout/stderr unbuffered (when multi-threaded)
+- \-d to switch to debug mode
+- \-i enter  interactive  mode  after executing  the command (can be suefull for debugging)
+- \-v verbose mode (tells when modules are imported)
+- \-u to enforce stdout/stderr unbuffered (when multi-threaded)
 
 
 under linux :
@@ -37,10 +37,10 @@ more details and command at :
 ipython (1)
 ^^^^^^^^^^^
 
+Interactive Python interpreter, the ancestor of Jupyter
+
 Pylab mode for ipython
 """"""""""""""""""""""
-
-ipython for interactive python
 
 - Integrated profiling tool: %timeit myfunction()
 
@@ -69,7 +69,7 @@ Alternative consoles
         $ jupyter-notebook
 
 - qtconsole
-    
+
     .. code-block:: bash
 
         $ ipython qtconsole
@@ -80,14 +80,13 @@ Alternative consoles
 Integrated Development Environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- python centric editors:
+- Python centric editors:
     - IDLE: Python/TK GUI oftently provided by default with python
-
     - Spyder Python/Qt designed to have a Matlab look & feel
         - Available under WinPython
 
 - General editors
-    - vim, Emacs, nedit, ... have colour highlighting for python
+    - vim, Emacs, nedit, ... have color highlighting for Python
     - PyDev module of Eclipse
     - PyCharm
     - sublime-text
