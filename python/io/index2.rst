@@ -360,9 +360,7 @@ Using PyMCA
 ===========
 
 - PyMCA as Python library was previously often used
-- Now it is deprecated
-- Prefer using ``silx`` or ``FabIO``
-
+- Now prefer using ``silx`` or ``FabIO``
 
    .. code-block:: python
 
