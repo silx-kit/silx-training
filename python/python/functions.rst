@@ -19,6 +19,9 @@ use the 'def' statement to define a new function
 Documentation of the function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+One should use a *doc-string*, i.e. a string defining what the function does as
+first statement of the function:
+
 .. image:: img/documentationOfAFunction.png
     :width: 600px
     :height: 200px
@@ -46,7 +49,7 @@ Definition of the function :
             return x**(0.5)
 
         def polynom(a, b, c):
-            delta=b*b - 4.0*a*c
+            delta = b*b - 4.0*a*c
             solutions=[]
             if delta > 0 :
                 solutions.append((-b - sqrt(delta)) / (2.0*a))
@@ -56,7 +59,7 @@ Definition of the function :
             return solutions
 
 
-Call of the function : 
+Call of the function :
 
     .. code-block:: python
 
@@ -74,14 +77,14 @@ function parameter (1)
         def myfunction(myparam=5):
             print('my parameter is %s' % myparam)
 
-    
+
     - ``myfunction()`` prints "my parameter is 5"
     - ``myfunction('toto')`` prints "my parameter is toto"
 
 - any parameters
 
-    - The parameter preceded by a star is a list containing all un-named arguments 
-    - The parameter preceded by two stars is a dictionary  containing all named arguments 
+    - The parameter preceded by a star is a list containing all un-named arguments
+    - The parameter preceded by two stars is a dictionary  containing all named arguments
 
 
 ----
@@ -89,7 +92,7 @@ function parameter (1)
 function parameter (2)
 ----------------------
 
-    Example of a function with 'any parameters' 
+    Example of a function with 'any parameters'
 
     .. code-block:: python
 
@@ -104,7 +107,7 @@ function parameter (2)
                 print('got %s named argument ' %len(argdict))
                 for key in argdict :
                     print('- name = %s , value = %s ' % (key, argdict[key]))
-            
+
 
     .. image:: img/function_anyparameteroutput.png
         :width: 600px
@@ -158,3 +161,14 @@ You can defined function 'on the fly' :
 
         pow2 = lambda x: x*x
 
+**Nota:** We don't expect you to use lambda, but this is just to explain why:
+
+.. code-block:: python
+
+    >>> lambda = 1.3e-10
+    File "<stdin>", line 1
+         lambda = 1.3e-10
+               ^
+    SyntaxError: invalid syntax
+
+Indeed *lambda* is a **reserved keyword**
