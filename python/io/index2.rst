@@ -18,6 +18,44 @@ ESRF data come in (too many) different formats:
 
 HDF5 is expected to become the standard ESRF data format. Some beamlines have
 already switched.
+----
+
+Getting ready to access ESRF data
+---------------------------------
+
+Python modules for data access developed by the DAU.
+
+- ``silx``
+
+  - Started in 2015
+  - Will provides input/output for PyMCA
+  - Also provides fitting, image processing, plotting, a set of widgets…
+  - Managed by the DAU
+
+- ``FabIO``
+
+  - Provides access to several image data formats
+  - Developed as part of the Fable project, initially an ID11 development.
+  - Now managed by the DAU
+
+Silx projet: http://www.silx.org/
+
+----
+
+Getting ready to access ESRF data
+---------------------------------
+
+Already available for most ESRF computers
+
+   >>> apt-get install python-silx python-fabio
+
+Available for Windows, Linux, Mac OS X
+
+   >>> pip install silx fabio
+
+Also available from source code (under MIT license)
+
+- GitHub: https://github.com/silx-kit
 
 ----
 
