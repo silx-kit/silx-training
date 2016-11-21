@@ -17,3 +17,5 @@ io/data/*.ini
 
 # ignore hidden files
 .*
+
+Introduction.ipynb

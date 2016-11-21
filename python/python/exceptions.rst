@@ -21,7 +21,7 @@ Definition
 Catching exceptions
 -------------------
 
-code to deal woth exceptions
+code to deal with exceptions
 
     .. code-block:: python
 

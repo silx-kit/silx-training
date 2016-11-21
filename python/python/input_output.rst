@@ -23,8 +23,8 @@ modes can be:
 
 
 Common methods for all file objects:
-    - seek(pos) → Moves to a given position in the file
     - f.close() → close the file
+    - seek(pos) → Moves to a given position in the file
 
 
 ----
@@ -105,7 +105,7 @@ Interaction with the console
 Exercise
 --------
 
-Create a programme wich ask for the name and the age and then display it
+Create a function asking for the name and the age of the user and then display it
 
 .. code-block:: bash
 

@@ -13,8 +13,10 @@ use the 'def' statement to define a new function
 
     .. code-block:: python
 
-        def myfunction(myparam):
-            print('my parameter is %s' % myparam)
+        def myadd(myparam1, myparam2):
+            print('my first parameter is %s' % myparam1)
+            print('my second parameter is %s' % myparam2)
+            return myparam1 + myparam2
 
 Documentation of the function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -84,8 +86,9 @@ function parameter (1)
 - any parameters
 
     - The parameter preceded by a star is a list containing all un-named arguments
+        - ``myfunction(*unamedargs)``
     - The parameter preceded by two stars is a dictionary  containing all named arguments
-
+        - ``myfunction(**namedargs)``
 
 ----
 

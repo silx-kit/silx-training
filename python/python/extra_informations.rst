@@ -3,15 +3,11 @@ Extra informations
 
 ----
 
-Editors and IDE
----------------
+Python interpreter's 
+--------------------
 
-.. image:: img/Python_logo_and_wordmark.png
-
-----
-
-Python interpreter's advanced options
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+advanced options
+^^^^^^^^^^^^^^^^
 
 Some useful option for the C-Python interpreter:
 
@@ -31,6 +27,13 @@ under linux :
 more details and command at :
     - https://docs.python.org/3/tutorial/interpreter.html
     - https://docs.python.org/3/using/cmdline.html#using-on-general
+
+----
+
+Editors and IDE
+---------------
+
+.. image:: img/Python_logo_and_wordmark.png
 
 ----
 
@@ -74,6 +77,7 @@ Alternative consoles
 
         $ ipython qtconsole
 
+.. note:: %pylab also works from those consoles
 
 ----
 
