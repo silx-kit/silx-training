@@ -16,9 +16,9 @@ Presentation of Python
     - Guaranteed to stay free
 
 - Portable 
-    -Runs on any computer you may have access to
+    - Runs on any computer you may have access to
 
-- Easily extensible 
+- Easily extendable 
     - in C, Fortran, …
     - Once compiled, can be as fast as C
 
@@ -77,14 +77,14 @@ Python in a notebook
     - Shift-enter to execute a cell	 
 
 - Play with the notebook:
-    - What is the result of 4+7/2 ?
-    - What is the python used ?
+    - What is the result of 4+7/2?
+    - What python version is used? Where is the python interpreter on located on the machine?
 
 ----
 
 .. code-block:: python
     
-    >>> 4 + 7 / 2
+    >>> 4. + 7. / 2.
     7.5
     >>> import sys
     >>> sys.version
