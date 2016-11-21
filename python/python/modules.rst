@@ -24,22 +24,6 @@ Example of a module
 
 ----
 
-Documentation generator
-^^^^^^^^^^^^^^^^^^^^^^^
-
-.. note:: 
-    
-    ':param', ':type',  etc can be used for
-    formatting documentation using automatic documentation generators like : 
-    
-
-- Sphinx ( http://www.sphinx-doc.org/en/1.4.8/ )
-- Epydoc ( https://pypi.python.org/pypi/epydoc/ )
-- Doxygen ( http://www.stack.nl/~dimitri/doxygen/)
-
-
-----
-
 import
 ------
 
@@ -112,3 +96,19 @@ Non standard modules
     - Python Imaging Library (PIL → Pillow)
 
 They will be introduced this afternoon.
+
+----
+
+Documentation generator
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note:: 
+    
+    ':param', ':type',  etc can be used for
+    formatting documentation using automatic documentation generators like : 
+    
+
+- Sphinx ( http://www.sphinx-doc.org/en/1.4.8/ )
+- Epydoc ( https://pypi.python.org/pypi/epydoc/ )
+- Doxygen ( http://www.stack.nl/~dimitri/doxygen/)
+
