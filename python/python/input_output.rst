@@ -155,15 +155,113 @@ Python formatting
 Exercise
 ^^^^^^^^
 
-    Read an ascii file
-    TODO
+    write into a file :
+        - your name
+        - the current date
+        
+    read the month of the date only using the functions given by the file object (the one returned by open(...))
 
 
 ----
+
+Solution - writing
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: python
+
+    f=open('myoutputfile', mode='w')
+    f.write('Henri\n')
+    import datetime
+    f.write(str(datetime.datetime.now()))
+    f.close()
+
+----
+
+
+Solution - reading
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: python
+
+    f=open('myoutputfile', mode='r')
+    # read the first line
+    firstline=f.readline()
+    # read the year
+    year=f.read(4)
+    # read the date separator (-)
+    f.read(1)
+    # read the month
+    month=f.read(2)
+    print("month is %s"%month)
+    f.close()
+
+
+----
+
+Exercise
+^^^^^^^^
+
+- Read an ascii spreadsheet written by fit2d:
+    - The first non commented line looks like:
+        - 512 512 Start pixel = ( 1 1 )
+    - Then 512 values per line, 512 lines
+    - Read the file as a list of lists
+    - Example file in : data/example.spr
+
+
+
+    .. image:: img/fit2d_ascii_file.png
+        :width: 700px
+        :height: 400px
+
+
+----
+
+Solution
+^^^^^^^^
+
+.. code-block:: python
+
+    def readspr(filepath):
+        "Read a fit2d ascii spread file"
+        if not os.path.isfile(filepath):
+            print("No such file %s"%filepath)
+            return None
+        
+        result=[]
+        xsize=0
+        ysize=0
+        lines=open(filepath, 'r').readlines()
+        for idx, line in enumerate(lines):
+            strippedline=line.strip()
+            # if this is a commented line
+            if strippedline.startswith('#'):
+                continue
+                
+            words=strippedline.split()
+            if(len(words)==8) and (words[2:6]==["Start", "pixel", "=", "("]):
+                xsize=int(words[0])
+                ysize=int(words[1])
+                print("Dimensions of the size are (%s, %s)" %(xsize, ysize))
+                break
+                
+        if xsize is not None and ysize is not None:
+            for line in lines[idx+1:]:
+                words=line.split()
+                if len(words) != xsize:
+                    print("Error !!! Expected entries are %s, got %s"%(xsize, len(words)))
+                    return None
+                else:
+                    result.append([float(i) for i in words])
+                
+        return result
+
+----
+
+
 
 TODO : Parler des differences python2 / python3 pour les strings
 
 Python2         Python3
 string (default)    →   bytes
 unicode     →   string (default) 
-
