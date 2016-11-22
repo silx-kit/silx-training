@@ -221,26 +221,26 @@ python2 vs python3
 in python3 :
 
 - strings are Unicode by default
-- there is a clear separation between bytes and unicode (not in python2)
+- there is a clear separation between bytes and strings (not in python2)
 
-some outputs in python 2 and python 3:
-
-+-----------------------+-----------------------+-+
-| python2               | python3               | |
-+=======================+=======================+=+
-| >>> print(type('b'))  | >>> print(type('b'))  | |
-| <class 'str'>         | <class 'str'>         | |
-|                       |                       | |
-| >>> print(type(b'b')) | >>> print(type(b'b')) | |
-| <type 'str'>          | <class 'bytes'>       | |
-|                       |                       | |
-| >>> str(b'3')==b'3'   | >>> str(b'3')==b'3'   | |
-| True                  | False                 | |
-|                       |                       | |
-| >>> b'123'[1] == b'2' | >>> b'123'[1] == 50   | |
-| True                  | True                  | |
-|                       |                       | |
-+-----------------------+-----------------------+-+
++-----------------------+-----------------------+
+| python2               | python3               |
++=======================+=======================+
+| >>> print(type('a'))  | >>> print(type('a'))  |
+| <class 'str'>         | <class 'str'>         |
+|                       |                       |
+| >>> print(type(b'a')) | >>> print(type(b'a')) |
+| <type 'str'>          | <class 'bytes'>       |
+|                       |                       |
+| >>> '3' is b'3'       | >>> '3' is b'3'       |
+| True                  | False                 |
+|                       |                       |
+| >>> '3' is u'3'       | >>> '3' is u'3'       |
+| False                 | True                  |
+|                       |                       |
+| >>> list(b"abc")      | >>> list(b"abc")      |
+| ['a', 'b', 'c']       | [97, 98, 99]          |
++-----------------------+-----------------------+
 
 ----
 
