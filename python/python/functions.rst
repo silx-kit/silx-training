@@ -129,24 +129,24 @@ function parameter (2)
 
     .. code-block:: python
 
-	    >>> def bad_append(default_list=[]):
+	    >>> def bad_append(any_list=[]):
             ...    """Append 1 to provided list and return it.
             ...    If no list is given as parameter, use empty list."""
-	    ...    default_list.append(1)
-	    ...    return default_list
+	    ...    any_list.append(1)
+	    ...    return any_list
 	    ... 
 	    >>> print(bad_append())
+       [1]
 	    >>> print(bad_append())
-	    >>> print(bad_append())
-	    [1]
 	    [1, 1]
+       >>> print(bad_append())
 	    [1, 1, 1]
 
-	    >>> def good_append(default_list=None):
-	    ...    if default_list is None:
-	    ...         return [1]
-	    ...     default_list.append(1)
-	    ...     return default_list
+	    >>> def good_append(any_list=None):
+	    ...    if any_list is None:
+	    ...         any_list = []
+	    ...     any_list.append(1)
+	    ...     return any_list
 	    ...
 
 
