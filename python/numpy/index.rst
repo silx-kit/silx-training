@@ -493,7 +493,7 @@ There are methods associated to the arrays -> ``dir(a)`` where a is an array
 
 - ``a.min()`` Returns the minimum of the array
 - ``a.max()`` Returns the maximum of the array
-- ``a.sort()`` Returns an array with the sorted elements
+- ``a.sort()`` Sorts an array in-place: returns None
 - ``a.sum()`` Returns the sum of the elements of the array
 - ``a.sum(axis=None, dtype=None, out=None)`` Perform the sum along a specified axis
 
