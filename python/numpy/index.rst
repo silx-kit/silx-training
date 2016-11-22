@@ -4,9 +4,9 @@
    <br />
 
 
-***********************
- Introduction to Numpy
-***********************
+*********************
+Introduction to Numpy
+*********************
 
 Credits: V. A. Sole, ESRF Software Group
 
@@ -212,6 +212,12 @@ numpy.arange(start, end, step):
 
   >>> a = numpy.arange(10.)
   >>> b = numpy.arange(1, 10, 2)
+
+numpy.slinspace(start, end, step):
+
+.. code-block:: python
+
+  >>> a = numpy.arange(-10, 10, 201)
 
 numpy.identity(n, dtype=numpy.float):
 
