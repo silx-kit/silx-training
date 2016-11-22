@@ -552,7 +552,7 @@ Everything is object (2/3)
 
 .. code-block:: python
      
-     >>> a=object()
+     >>> a = object()
      
      >>> print(dir(a))
      ['__class__', '__delattr__', '__dir__', '__doc__',...]
