@@ -536,12 +536,12 @@ Everything is object (1/3)
 - Names are just labels, references, attached to an object
     - Memory is freed when the number of references drops to 0
 
-- ``dir(obj)``: list the attributes of an object
+- ``dir(obj)``: lists the attributes of an object
 
 
 - ``help(obj)``: prints the help of the object
 
-- ``type(obj)``: get the type of an object
+- ``type(obj)``: gets the type of an object
 
 - ``id(obj)``: gets the memory adress of an object
 
