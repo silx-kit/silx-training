@@ -61,7 +61,7 @@ Basic operations
         - Python 2: ``3 / 2 = 1``
         - Python 3: ``3 / 2 = 1.5``
         - Explicitely use ``//`` for integer division
-        - Get use to Python3 syntax
+        - Get used to Python3 syntax
 
 - Power, absolute value, …
     - ``a**b``, ``pow(a, b)``, ``abs(a)``
