@@ -790,6 +790,10 @@ Active mailing list where you can ask your questions:
 
 numpy-discussion@scipy.org
 
+Internal data-analysis mailing list
+
+data-analysis@esrf.fr
+
 -----
 
 Some more exercises
