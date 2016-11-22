@@ -68,7 +68,7 @@ Basic operations
 
 - Comparison: ``is   ==   !=   is not  >  >=  <  <=``
 
-- Logical operators: ``and   or   not   xor``
+- Logical operators: ``and   or   not``
 
 - Bitwise operators: ``&   ^   |   <<   >>``
 
