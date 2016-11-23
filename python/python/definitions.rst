@@ -43,11 +43,17 @@ None
     >>> a, b = 5, 5.0
     >>> a == b
     True
+
     >>> type(a); type(b)
     <type 'int'>
     <type 'float'>
+
+    >>> a is b
+    False
+    
     >>> a is None
     False
+
     >>> None is None
     True
 
@@ -760,7 +766,7 @@ Useful commands in loops
 
 ----
 
-Practice: Fibonacci series
+Exercise: Fibonacci series
 """"""""""""""""""""""""""
 
 - Fibonacci:
