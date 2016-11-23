@@ -12,13 +12,16 @@ Definition
     .. image:: img/exceptionsoutput.png
         :width: 500px
         :height: 400px
+
+- ZeroDivisionError, NameError, TypError are all exceptions
+
 ----
 
 
 Catching exceptions
 -------------------
 
-code to deal woth exceptions
+code to deal with exceptions
 
     .. code-block:: python
 

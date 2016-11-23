@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-# coding: utf8
+# coding: utf-8
 
 """This is a simple demonstration library"""
 
@@ -24,10 +23,10 @@ def polynom(a, b, c):
     delta=b*b - 4.0*a*c
     solutions=[]
     if delta > 0 :
-        solutions.append(b+sqrt(delta) / (2.0*a))
-        solutions.append(b-sqrt(delta) / (2.0*a))
+        solutions.append(-b+sqrt(delta) / (2.0*a))
+        solutions.append(-b-sqrt(delta) / (2.0*a))
     elif delta == 0 :
-        solutions.append(b/(2.0*a))
+        solutions.append(-b/(2.0*a))
     return solutions
 
 def pow2(x):
