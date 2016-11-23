@@ -667,7 +667,7 @@ Other common operations are:
 - ``mean``, ``std``, ``median``, ``percentile``
 - ``sum``, ``cumsum``
 - ``cos``, ``sin``, ``arctan``, ...
-- ``linspace``, ``interp``
+- ``interp``
 - ...
 
 -----
