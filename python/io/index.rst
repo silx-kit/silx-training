@@ -90,7 +90,7 @@ The container is mostly structured with:
 - **Dataset**: a multidimensional array of data elements
 - And other features (links, attributes, datatypes)
 
-.. image:: images/hdf5_model.svg
+.. image:: images/hdf5_model.png
 
 ----
 
@@ -185,7 +185,7 @@ subset of the HDF5 model.
 HDF5-like mapping
 -----------------
 
-.. image:: images/spech5_model.svg
+.. image:: images/spech5_model.png
 
 ----
 
