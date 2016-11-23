@@ -1,3 +1,8 @@
+.. Ideas for updating the training:
+   - Make a list of numpy functions/modules to give an overview
+     Classify by kind rather than attribute/method
+     See https://docs.scipy.org/doc/numpy/reference/index.html for classification
+   - Make more 'realistic' exercices (e.g., substract 2 images instead of x-y)
 
 .. |br| raw:: html
 
