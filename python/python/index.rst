@@ -16,6 +16,11 @@ Python for data analysis
 
 ----
 
+Based on Loïc Gouarin's work: Les bases du language python
+http://calcul.math.cnrs.fr/Documents/Ecoles/2010/les_bases.pdf
+
+----
+
 .. include:: introduction.rst
 
 ----

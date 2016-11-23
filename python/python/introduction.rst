@@ -18,7 +18,7 @@ Presentation of Python
 - Portable
     - Runs on any computer you may have access to
 
-- Easily extendible
+- Easily extendable. The 'glue' language.
     - in C, Fortran, …
     - Once compiled, can be as fast as C
 
@@ -88,6 +88,10 @@ Python in a notebook
     
     >>> 4. + 7. / 2.
     7.5
+
+    >>> 4+7//2
+    7
+
     >>> import sys
     >>> sys.version
     '3.4.2 (default, Oct  8 2014, 10:45:20) \n[GCC 4.9.1]'
