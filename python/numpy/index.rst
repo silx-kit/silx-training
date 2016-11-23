@@ -4,9 +4,9 @@
    <br />
 
 
-***********************
- Introduction to Numpy
-***********************
+*********************
+Introduction to Numpy
+*********************
 
 Credits: V. A. Sole, ESRF Software Group
 
@@ -212,6 +212,12 @@ numpy.arange(start, end, step):
 
   >>> a = numpy.arange(10.)
   >>> b = numpy.arange(1, 10, 2)
+
+numpy.slinspace(start, end, step):
+
+.. code-block:: python
+
+  >>> a = numpy.arange(-10, 10, 201)
 
 numpy.identity(n, dtype=numpy.float):
 
@@ -487,7 +493,7 @@ There are methods associated to the arrays -> ``dir(a)`` where a is an array
 
 - ``a.min()`` Returns the minimum of the array
 - ``a.max()`` Returns the maximum of the array
-- ``a.sort()`` Returns an array with the sorted elements
+- ``a.sort()`` Sorts an array in-place: returns None
 - ``a.sum()`` Returns the sum of the elements of the array
 - ``a.sum(axis=None, dtype=None, out=None)`` Perform the sum along a specified axis
 
@@ -783,6 +789,10 @@ http://www.scipy.org/Cookbook
 Active mailing list where you can ask your questions:
 
 numpy-discussion@scipy.org
+
+Internal data-analysis mailing list
+
+data-analysis@esrf.fr
 
 -----
 
