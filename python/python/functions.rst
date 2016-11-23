@@ -36,7 +36,8 @@ Hands on
 --------
 
 Write a function that takes a, b and c as imput and return the list of solutions for:
-    :math:`{a.x^2}+b.x+c=0`
+
+:math:`{a.x^2}+b.x+c=0`
 
 ----
 
