@@ -112,6 +112,12 @@ def ex5_optimized_fill(height, width):
     return numpy.outer(height_cos, width_sin)
 
 
+def ex5_atleast_2d_fill(height, width):
+    sine = numpy.sin(numpy.arange(width))
+    cosine = numpy.cos(numpy.arange(height))
+    return numpy.atleast_2d(sine) * numpy.atleast_2d(cosine).T
+
+
 def exercice_5():
     """
     Exercice 5
@@ -145,6 +151,11 @@ def exercice_5():
     start_time = time.time()
     data = ex5_optimized_fill(height, width)
     print('optimized fill took about %f s' % (time.time() - start_time))
+    assert numpy.all(numpy.equal(data1, data))
+
+    start_time = time.time()
+    data = ex5_atleast_2d_fill(height, width)
+    print('atleast_2d fill took about %f s' % (time.time() - start_time))
     assert numpy.all(numpy.equal(data1, data))
 
 
