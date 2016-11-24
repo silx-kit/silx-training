@@ -12,7 +12,7 @@ from silx.gui import hdf5
 class DataViewer(qt.QStackedWidget):
     """Widget to display any kind of data"""
 
-    def __init__(self, parent):
+    def __init__(self, parent=None):
         """Constructor"""
         super(DataViewer, self).__init__(parent)
 
@@ -120,5 +120,5 @@ def main(filenames):
     viewer.setVisible(True)
     app.exec_()
 
-
-main(sys.argv[1:])
+if __name__ == "__main__":
+    main(sys.argv[1:])

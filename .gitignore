@@ -5,6 +5,7 @@ build
 
 # jupyter files
 *.ipynb_checkpoints*
+__pycache__
 
 # output files created by exercices
 io/data/If4_TZ3.txt
@@ -20,3 +21,4 @@ io/data/*.ini
 .*
 
 Introduction.ipynb
+
