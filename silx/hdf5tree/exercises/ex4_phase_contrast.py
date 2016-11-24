@@ -80,6 +80,9 @@ class Viewer(qt.QMainWindow):
         splitter.setVisible(True)
         self.setCentralWidget(splitter)
 
+        self.background = None
+        self.flatfield = None
+
         #
         # TODO: Connect onTreeActivated the tree event
         #
@@ -87,9 +90,6 @@ class Viewer(qt.QMainWindow):
         #
         # TODO: Register populateContextMenu to the context menu callback of the tree
         #
-
-        self.background = None
-        self.flatfield = None
 
     def appendFile(self, filename):
         self.tree.findHdf5TreeModel().insertFile(filename)
