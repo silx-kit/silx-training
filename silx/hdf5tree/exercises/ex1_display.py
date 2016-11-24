@@ -23,5 +23,7 @@ def main(filenames):
 
     app.exec_()
 
+if __name__ == "__main__":
+    main(sys.argv[1:])
 
 main(sys.argv[1:])
