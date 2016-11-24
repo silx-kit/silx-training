@@ -9,10 +9,8 @@ from silx.gui import hdf5
 def main(filenames):
     app = qt.QApplication([])
 
-    window = qt.QSplitter()
-    tree = hdf5.Hdf5TreeView(window)
-    window.addWidget(tree)
-    window.setVisible(True)
+    tree = hdf5.Hdf5TreeView()
+    tree.setVisible(True)
 
     model = tree.findHdf5TreeModel()
     for filename in filenames:
