@@ -10,7 +10,7 @@ Definition
 
     class Myclass2(Myclass1):
         "Simple class inheriting from Myclass1"
-        def __init(self, param):
+        def __init__(self, param):
             Myclass1.__init__()
             self.param=param
 

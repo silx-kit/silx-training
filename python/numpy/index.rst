@@ -1,12 +1,17 @@
+.. Ideas for updating the training:
+   - Make a list of numpy functions/modules to give an overview
+     Classify by kind rather than attribute/method
+     See https://docs.scipy.org/doc/numpy/reference/index.html for classification
+   - Make more 'realistic' exercices (e.g., substract 2 images instead of x-y)
 
 .. |br| raw:: html
 
    <br />
 
 
-***********************
- Introduction to Numpy
-***********************
+*********************
+Introduction to Numpy
+*********************
 
 Credits: V. A. Sole, ESRF Software Group
 
@@ -212,6 +217,12 @@ numpy.arange(start, end, step):
 
   >>> a = numpy.arange(10.)
   >>> b = numpy.arange(1, 10, 2)
+
+numpy.linspace(start, stop, num, endpoint=True):
+
+.. code-block:: python
+
+  >>> a = numpy.linspace(-10, 10, 201)
 
 numpy.identity(n, dtype=numpy.float):
 
@@ -464,8 +475,30 @@ The indexation argument can be a logical array:
 Exercice - 3
 ------------
 
-#. Calculate the element-wise difference between 2 arrays X and Y?
+0. Calculate the element-wise difference between 2 arrays X and Y?
 #. Provide an expression to calculate the difference X[i+1]-X[i] for all the elements of the 1D array X.
+
+-----
+
+Solution - 3
+------------
+
+Calculate the element-wise difference between 2 arrays X and Y:
+
+.. code-block:: python
+
+  x = numpy.arange(10)
+  y = numpy.arange(1, 11)
+
+  difference = x - y
+
+Provide an expression to calculate the difference X[i+1]-X[i] for all the elements of the 1D array X:
+
+.. code-block:: python
+
+  x = numpy.arange(10)
+
+  difference = x[1:] - x[:-1]
 
 -----
 
@@ -487,7 +520,7 @@ There are methods associated to the arrays -> ``dir(a)`` where a is an array
 
 - ``a.min()`` Returns the minimum of the array
 - ``a.max()`` Returns the maximum of the array
-- ``a.sort()`` Returns an array with the sorted elements
+- ``a.sort()`` Sorts an array in-place: returns None
 - ``a.sum()`` Returns the sum of the elements of the array
 - ``a.sum(axis=None, dtype=None, out=None)`` Perform the sum along a specified axis
 
@@ -496,8 +529,10 @@ Many methods are available in both forms:
 
 .. code-block:: python
 
-  b = numpy.copy(a)  # explicit copy of array a
-  b = numpy.array(a, copy = True)  # explicit copy of array a
+  # explicit copy of array a:
+  b = a.copy()
+  b = numpy.copy(a)
+  b = numpy.array(a, copy=True)
 
 -----
 
@@ -520,7 +555,7 @@ Complete function defined as ``argsort(a, axis=-1, kind=‘quicksort’, order=N
 
 -----
 
-Methods - 4
+Methods - 3
 -----------
 
 - ``numpy.loadtxt(filename)	 # Load data from a text file.``
@@ -562,24 +597,58 @@ New object pointing to the same buffer:
 Exercice - 4
 ------------
 
-#. Generate a 100 x 100 array with elements in increasing order
-#. Perform a 2 x 2 binning. Just for reminder, a binning operation consists in:
+Goal: Perform a 2x2 binning of an image.
 
+0. First perform the binning of a 1D array of 100 elements:
+   ``1 2 3 4`` -> ``1+2 3+4``
+#. Generate a 100x100 array with elements in increasing order
+#. Perform a 2x2 binning:
+   
 Original:
-
+   
 == == == ==
- 1  2  3  4
- 5  6  7  8
- 9 10 11 12
+1  2  3  4
+5  6  7  8
+9  10 11 12
 13 14 15 16
 == == == ==
-
+   
 2x2 binned:
-
+   
 ========== ===========
-  1+2+5+6    3+4+7+8
+1+2+5+6    3+4+7+8
 9+10+13+14 11+12+15+16
 ========== ===========
+
+-----
+
+Solution - 4
+------------
+
+1D array binning:
+
+.. code-block:: python
+
+  data = numpy.arange(100)
+  binned = data[::2] + data[1::2]
+
+2x2 binning:
+
+.. code-block:: python
+
+  data = numpy.arange(10000).reshape(100, 100)
+  binned = data[::2, ::2] + data[::2, 1::2] + \
+           data[1::2, ::2] + data[1::2, 1::2]
+
+2x2 binning alternative:
+
+.. code-block:: python
+
+  height, width = 100, 100
+  data = numpy.arange(height * width).reshape(height, width)
+  reshaped_data = data.reshape(height // 2, 2, width // 2, 2)
+  binned = reshaped_data.sum(axis=3).sum(axis=1)
+
 
 -----
 
@@ -598,7 +667,7 @@ Other common operations are:
 - ``mean``, ``std``, ``median``, ``percentile``
 - ``sum``, ``cumsum``
 - ``cos``, ``sin``, ``arctan``, ...
-- ``linspace``, ``interp``
+- ``interp``
 - ...
 
 -----
@@ -693,7 +762,7 @@ Polynomial Package
 Exercice - 5
 ------------
 
-#. Write a function ``fill_array(height, width)`` to generate an array of dimension (height, width) in which X[row, column] = cos(row) * sin(column)
+0. Write a function ``fill_array(height, width)`` to generate an array of dimension (height, width) in which X[row, column] = cos(row) * sin(column)
 
 #. Time it for n=1000, m = 1000
 
@@ -701,8 +770,8 @@ Exercice - 5
 
 -----
 
-Correction - 5
---------------
+Solution - 5
+------------
 
 .. code-block:: python
 
@@ -731,8 +800,8 @@ Correction - 5
 
 -----
 
-Correction - 5
---------------
+Solution - 5
+------------
 
 .. code-block:: python
 
@@ -747,26 +816,39 @@ Correction - 5
       height_cos = numpy.cos(numpy.arange(height))
       return numpy.outer(height_cos, width_sin)
 
-Speed is a question of algorithms.
+  def atleast_2d_fill(height, width):
+      sine = numpy.sin(numpy.arange(width))
+      cosine = numpy.cos(numpy.arange(height))
+      return numpy.atleast_2d(sine) * numpy.atleast_2d(cosine).T
 
-It is not just a question of languages.
+-----
+
+Solution - 5
+------------
+
+Speed is a question of algorithm.
+
+It is not just a question of language.
+
+Benchmark:
 
 ================ ==================
 Implementation   Duration (seconds)
 ================ ==================
-inefficient_fill 5.038374
-naive_fill       0.886195
-clever_fill      0.016798
-practical_fill   0.014922
-optimized_fill   0.004526
+inefficient_fill 5.052937
+naive_fill       0.886003
+clever_fill      0.016836
+practical_fill   0.014959
+optimized_fill   0.004497
+atleast_2d_fill  0.005262
 ================ ==================
 
 Done on Intel(R) Xeon(R) CPU E5-1650 @ 3.50GHz.
 
 -----
 
-Many more modules and documentation
------------------------------------
+Resources
+---------
 
 Complete reference material:
 
@@ -784,6 +866,10 @@ Active mailing list where you can ask your questions:
 
 numpy-discussion@scipy.org
 
+Internal data-analysis mailing list
+
+data-analysis@esrf.fr
+
 -----
 
 Some more exercises
@@ -791,7 +877,7 @@ Some more exercises
 
 Thanks to Nicolas Rougier: https://github.com/rougier/numpy-100:
 
-#. Create a 5x5 matrix with values 1,2,3,4 just below the diagonal
+0. Create a 5x5 matrix with values 1,2,3,4 just below the diagonal
 #. Create a 8x8 matrix and fill it with a checkerboard pattern
 #. Normalize a 5x5 random matrix
 #. Create a 5x5 matrix with row values ranging from 0 to 4

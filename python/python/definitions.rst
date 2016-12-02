@@ -43,11 +43,17 @@ None
     >>> a, b = 5, 5.0
     >>> a == b
     True
+
     >>> type(a); type(b)
     <type 'int'>
     <type 'float'>
+
+    >>> a is b
+    False
+    
     >>> a is None
     False
+
     >>> None is None
     True
 
@@ -61,14 +67,14 @@ Basic operations
         - Python 2: ``3 / 2 = 1``
         - Python 3: ``3 / 2 = 1.5``
         - Explicitely use ``//`` for integer division
-        - Get use to Python3 syntax
+        - Get used to Python3 syntax
 
 - Power, absolute value, …
     - ``a**b``, ``pow(a, b)``, ``abs(a)``
 
 - Comparison: ``is   ==   !=   is not  >  >=  <  <=``
 
-- Logical operators: ``and   or   not   xor``
+- Logical operators: ``and   or   not``
 
 - Bitwise operators: ``&   ^   |   <<   >>``
 
@@ -536,12 +542,12 @@ Everything is object (1/3)
 - Names are just labels, references, attached to an object
     - Memory is freed when the number of references drops to 0
 
-- ``dir(obj)``: list the attributes of an object
+- ``dir(obj)``: lists the attributes of an object
 
 
 - ``help(obj)``: prints the help of the object
 
-- ``type(obj)``: get the type of an object
+- ``type(obj)``: gets the type of an object
 
 - ``id(obj)``: gets the memory adress of an object
 
@@ -552,7 +558,7 @@ Everything is object (2/3)
 
 .. code-block:: python
      
-     >>> a=object()
+     >>> a = object()
      
      >>> print(dir(a))
      ['__class__', '__delattr__', '__dir__', '__doc__',...]
@@ -760,7 +766,7 @@ Useful commands in loops
 
 ----
 
-Practice: Fibonacci series
+Exercise: Fibonacci series
 """"""""""""""""""""""""""
 
 - Fibonacci:

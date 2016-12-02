@@ -58,6 +58,29 @@ You can also access to the attributes of the module
 
 ----
 
+Exercise - write a module 
+-------------------------
+
+
+0. create a new file mymodule.py, set file encoding and documentation
+
+1. add a function into this file like polynom(a, b, c) defined previously
+
+2. execute this file as a script:
+    - using:
+
+    .. code-block:: python
+
+        if __name__ == '__main__':
+            # operations to be executed
+
+    - execute python mymodule.py
+
+3. load this module from a python console (ipython, jupyter-notebook ... ) and import your module. 
+4. execute the function from the console.
+
+----
+
 Standard modules
 ----------------
 

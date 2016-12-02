@@ -11,12 +11,19 @@ Definition in the source code
 
 use the 'def' statement to define a new function
 
-    .. code-block:: python
+.. code-block:: python
 
-        def myadd(myparam1, myparam2):
-            print('my first parameter is %s' % myparam1)
-            print('my second parameter is %s' % myparam2)
-            return myparam1 + myparam2
+    def myadd(myparam1, myparam2):
+        print('my first parameter is %s' % myparam1)
+        print('my second parameter is %s' % myparam2)
+        return myparam1 + myparam2
+
+Call of a function
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: python
+
+    res=myadd(myparam1=12, myparam1=6)
 
 Documentation of the function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -24,21 +31,41 @@ Documentation of the function
 One should use a *doc-string*, i.e. a string defining what the function does as
 first statement of the function:
 
-.. image:: img/documentationOfAFunction.png
-    :width: 600px
-    :height: 200px
+.. code-block:: python
 
+    def myadd(myparam1, myparam2):
+        "return the addition of the two input parameters"
+        print('my first parameter is %s' % myparam1)
+        print('my second parameter is %s' % myparam2)
+        return myparam1 + myparam2    
 
+    myadd.__doc__  # or help(myadd)
+    'return the addition of the two input parameters'
+    
 ----
 
 
 Hands on
 --------
 
-Write a function that takes a, b and c as imput and return the list of solutions for:
-    :math:`{a.x^2}+b.x+c=0`
+Write a function that takes a, b and c as imput and return the list of solutions (in :math:`\mathbf{R}`) for:
+
+:math:`{a.x^2}+b.x+c=0` 
+
+Reminder :
+
+- :math:`{\Delta}={b^2}-4*{ac}`
+- if :math:`{\Delta}>0` then the equation has two solutions
+    + :math:`\frac{-b - {\sqrt{\Delta}}}{2a}`
+    + :math:`\frac{-b + {\sqrt{\Delta}}}{2a}`
+- if :math:`{\Delta}=0` the the equation has one solution
+    + :math:`\frac{-b}{2a}`
+- if :math:`{\Delta}<0` then there is no solution
+- square root of x can be obtained by x**(0.5)
+
 
 ----
+
 
 Solution
 --------
@@ -57,7 +84,7 @@ Definition of the function :
                 solutions.append((-b - sqrt(delta)) / (2.0*a))
                 solutions.append((-b + sqrt(delta)) / (2.0*a))
             elif delta == 0 :
-                solutions.append(b/(2.0*a))
+                solutions.append(-b/(2.0*a))
             return solutions
 
 
@@ -129,24 +156,24 @@ function parameter (2)
 
     .. code-block:: python
 
-	    >>> def bad_append(default_list=[]):
+	    >>> def bad_append(any_list=[]):
             ...    """Append 1 to provided list and return it.
             ...    If no list is given as parameter, use empty list."""
-	    ...    default_list.append(1)
-	    ...    return default_list
+	    ...    any_list.append(1)
+	    ...    return any_list
 	    ... 
 	    >>> print(bad_append())
+       [1]
 	    >>> print(bad_append())
-	    >>> print(bad_append())
-	    [1]
 	    [1, 1]
+       >>> print(bad_append())
 	    [1, 1, 1]
 
-	    >>> def good_append(default_list=None):
-	    ...    if default_list is None:
-	    ...         return [1]
-	    ...     default_list.append(1)
-	    ...     return default_list
+	    >>> def good_append(any_list=None):
+	    ...    if any_list is None:
+	    ...         any_list = []
+	    ...     any_list.append(1)
+	    ...     return any_list
 	    ...
 
 
