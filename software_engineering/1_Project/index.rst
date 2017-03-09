@@ -164,9 +164,12 @@ Tools
 Version Control System
 ----------------------
 
-.. image:: phd101212s.gif
-   :alt: Why use a version control system
+.. image:: http://www.phdcomics.com/comics/archive/phd101212s.gif
+   :alt: Why use a version control system?
+   :align: center
    :width: 400
+
+Image from http://phdcomics.com/comics/archive_print.php?comicid=1531
 
 
 ----
