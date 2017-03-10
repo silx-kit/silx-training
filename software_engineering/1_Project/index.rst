@@ -34,10 +34,10 @@ Structure your code
       * libraries are reuseable
 
    - Separate GUI from calculation:
-      *  Otherwise maintenance become a nightmare
+      *  Otherwise maintenance becomes a nightmare
       *  allows to change the front-end
 
-   - Define a licenses for your work.
+   - Define a license for your work.
 
 ----
 
@@ -88,14 +88,15 @@ By 2020, the support of Python2 will end.
 Supporting Python3 is a must have today.
 
 Look at the download statistics of projects like
-`WinPython <https://sourceforge.net/projects/winpython/files/>`_: 3900 downloads for Python_3.4 vs 2300 for Python_2.7
+`WinPython <https://sourceforge.net/projects/winpython/files/>`_: 3600 downloads/week for Python_3.5 vs 1600 for Python_2.7
 
-Today, in 2015, one should not start a Python2 (only) project.
+Today, in 2017, one should not start a Python2 (only) project.
 To ensure a smoother transition, and acquire the Python3 requested practices:
 
 .. code-block:: python
 
-   from __future__ import division, absolute_import, print_function #, unicode_literals
+   from __future__ import division, absolute_import, \
+       print_function #, unicode_literals
 
 Use the `six library <https://pypi.python.org/pypi/six>`_ to provide code that
 runs both under Python2 and Python3.
@@ -241,9 +242,15 @@ and can be useful for professional placement.
 Alternatives
 ------------
 
-The alternative to github for non-public projects is
-`GitLab <http://gitlab.esrf.fr>`_ which offers similar feature to GitHub,
-but ESRF only.
+The alternative to github for ESRF projects is
+`GitLab <https://gitlab.esrf.fr>`_ which offers similar feature to GitHub.
+
+You can select a privacy level for your projects.
+
+.. image:: images/gitlab_privacy.png
+    :align: center
+
+Public projects can be seen from outside: https://gitlab.esrf.fr/public
 
 ----
 
