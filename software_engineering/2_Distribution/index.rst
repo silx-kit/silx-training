@@ -21,7 +21,7 @@ Outline
 
 References:
 
-* https://python-packaging-user-guide.readthedocs.org/en/latest/
+* https://packaging.python.org/
 * https://docs.python.org/3.5/distutils/index.html
 
 ---------------
