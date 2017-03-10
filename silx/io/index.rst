@@ -68,6 +68,32 @@ We tries to follow NeXus convention to display data or to expose data.
 
 ----
 
+Specfile with silx
+==================
+
+``Silx`` provides access to spec files using an HDF5-like mapping. It uses a
+subset of the HDF5 model, based on NeXus.
+
+HDF5-like mapping
+-----------------
+
+.. image:: img/spech5_arrows.png
+
+----
+
+EDF with silx
+=============
+
+``Silx`` provides access to EDF files (and other format supported by `FabIO`)
+using an HDF5-like mapping. It is a subset of the HDF5 model, based on NeXus.
+
+HDF5-like mapping
+-----------------
+
+.. image:: img/fabioh5_arrows.png
+
+----
+
 Silx IO API
 ===========
 
@@ -98,14 +124,20 @@ Silx IO API
 
 Based on HDF5 and `h5py` module API.
 
-Test objects
-------------
+Common properties
+-----------------
 
    .. code-block:: python
+
+      # get the node path
+      obj.name
 
       # test object type
       if silx.io.is_file(obj):
          print("this is a root file")
+
+         # path of the file from the file system
+         obj.filename
 
       if silx.io.is_group(obj):
          # BTW a file is a group
@@ -176,24 +208,11 @@ Data access
 
 ----
 
-Specfile using silx
-===================
+Silx IO API
+===========
 
-``Silx`` provides access to spec files using an HDF5-like mapping. It is a
-subset of the HDF5 model.
-
-HDF5-like mapping
------------------
-
-.. image:: img/spech5_arrows.png
-
-----
-
-Specfile using silx
-===================
-
-Python example
---------------
+Specfile example
+----------------
 
    .. code-block:: python
 
@@ -208,33 +227,17 @@ Python example
       print(h5like['/94.1/measurement'].keys())
 
       # get data from measurement
-      xdata = h5like['/94.1/measurement/Epoch']
-      ydata = h5like['/94.1/measurement/bpmi']
-
-For more information and examples you can read the
-silx IO tutorial:
-https://github.com/silx-kit/silx-training/blob/master/silx/io/io.pdf
+      time = h5like['/94.1/measurement/Epoch']
+      bpm = h5like['/94.1/measurement/bpmi']
+      mca = h5like['/94.1/measurement/mca_0/data']
 
 ----
 
-EDF using silx
-==============
+Silx IO API
+===========
 
-``Silx`` provides access to EDF files using an HDF5-like mapping. It is a
-subset of the HDF5 model. It is not done for hi-efficiency computation.
-
-HDF5-like mapping
------------------
-
-.. image:: img/fabioh5_arrows.png
-
-----
-
-EDF using silx
-==============
-
-Reading files
--------------
+EDF example
+-----------
 
    .. code-block:: python
 
@@ -243,30 +246,73 @@ Reading files
       h5like = silx.io.open("data/medipix.edf")
 
       # here is the data as a cube using numpy array
+      # it's a cube of images * number of frames
       data = h5like["/scan_0/instrument/detector_0/data"]
-      # number of frames
-      len(data)
-      # data of the first image
+      # here is the first image
       data[0]
 
-      # here is names of motors...
-      print(h5like["/scan_0/instrument/positioners"].keys())
-      # ... counters...
-      print(h5like["/scan_0/instrument/measurement"].keys())
-      # ... and other metadata
-      print(h5like["/scan_0/instrument/detector_0/others"].keys())
+      # groups containing datasets of motors, counters
+      # and others metadata from the EDF header
+      motors   = h5like["/scan_0/instrument/positioners"]
+      counters = h5like["/scan_0/instrument/measurement"]
+      others   = h5like["/scan_0/instrument/detector_0/others"]
+
+      # reach a monitor named 'mon'
+      # it's a vector of values * number of frames
+      monitor = counters["mon"]
+      # here is the monitor value at the first frame
+      monitor[0]
 
 ----
 
 HDF5 tree
 =========
 
+Tree view which allow to browse HDF5 file content.
+
+.. image:: img/hdf5tree_legend.png
+
+Provides:
+
+- Mouse click event
+- Customable content menu
+- Customable columns
+
 ----
 
-Dataviewer
+DataViewer
 ==========
 
+.. image:: img/dataviewer_legend.png
+
 ----
 
-Exercise
-========
+DataViewer
+==========
+
+Example
+-------
+
+   .. code-block:: python
+
+      import silx.gui.data.DataViewerFrame
+      viewer = silx.gui.data.DataViewerFrame.DataViewerFrame()
+      viewer.setVisible(True)
+
+
+      # Let's display a random cube
+      import numpy
+      data = numpy.random.rand(100, 100, 100)
+      viewer.setData(data)
+
+
+      # Let's display an HDF5 dataset
+      import silx.io
+      h5like = silx.io.open("data/ID16B_diatomee.h5")
+      dataset = h5like["/data/0299"]
+      viewer.setData(dataset)
+
+----
+
+Exercises
+=========
