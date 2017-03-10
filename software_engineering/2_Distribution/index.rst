@@ -22,7 +22,7 @@ Outline
 References:
 
 * https://packaging.python.org/
-* https://docs.python.org/3.5/distutils/index.html
+* https://docs.python.org/3.5/distributing/index.html
 
 ---------------
 
