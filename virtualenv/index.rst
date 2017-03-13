@@ -161,8 +161,8 @@ PyQt5 wheels are provided for some Python version (OK for Python 3.5 & 3.6):
 
     pip install PyQt5
 
-This method can lead to bad performances on linux, because ``pip`` preferably
-installs manylinux wheels when they are available.
+``pip`` preferably installs precompiled wheels when they are available
+for your platform.
 
 ----
 
@@ -178,13 +178,15 @@ sources and all their dependencies (unless they are already installed).
 
 This can be complicated.
 
-Example for *numpy* (download *numpy-1.12.1rc1.zip* from https://pypi.python.org/pypi/numpy#downloads):
+Example for *numpy*:
 
 .. code-block:: shell
 
     unzip numpy-1.12.1rc1.zip
     cd numpy-1.12.1rc1/
     pip install .
+
+(download *numpy-1.12.1rc1.zip* from https://pypi.python.org/pypi/numpy#downloads)
 
 ----
 
@@ -203,8 +205,10 @@ Python 2.7
 
 .. code-block:: shell
 
-    ln -s /usr/lib/python2.7/dist-packages/PyQt4 myvenv/lib/python2.7/site-packages/
-    ln -s /usr/lib/python2.7/dist-packages/sip.so myvenv/lib/python2.7/site-packages/
+    ln -s /usr/lib/python2.7/dist-packages/PyQt4 \
+        myvenv/lib/python2.7/site-packages/
+    ln -s /usr/lib/python2.7/dist-packages/sip.so \
+        myvenv/lib/python2.7/site-packages/
 
 
 Python 3.4
@@ -212,8 +216,10 @@ Python 3.4
 
 .. code-block:: shell
 
-    ln -s /usr/lib/python3/dist-packages/PyQt4 myvenv/lib/python3.4/site-packages/
-    ln -s /usr/lib/python3/dist-packages/sip.cpython-34m-x86_64-linux-gnu.so myvenv/lib/python3.4/site-packages/
+    ln -s /usr/lib/python3/dist-packages/PyQt4 \
+        myvenv/lib/python3.4/site-packages/
+    ln -s /usr/lib/python3/dist-packages/sip.cpython-34m-x86_64-linux-gnu.so \
+        myvenv/lib/python3.4/site-packages/
 
 
 ----
@@ -243,6 +249,54 @@ Run tests
 
     >>> import silx.test
     >>> silx.test.run_tests()
+
+----
+
+
+Tools for virtual environments
+------------------------------
+
+Managing multiple virtual environments
+
+- `Python Env Wrapper (pew) <https://pypi.python.org/pypi/pew>`_ (shell agnostic)
+- `virtualenvwrapper <https://pypi.python.org/pypi/virtualenvwrapper/>`_ (bourne shell only)
+
+.. code-block:: shell
+
+    $ pew ls
+    venv1 venv2 venv3
+    $ pew workon venv1
+    Launching subshell in virtual environment. Type 'exit'
+    or 'Ctrl+D' to return.
+    $ which python
+    /home/arthur/.virtualenvs/venv1/bin/python
+
+More than 20 commands available
+
+.. code-block:: shell
+
+    $ pew help
+
+----
+
+Alternatives to virtualenv
+--------------------------
+
+Other isolated Python environments exist:
+
+ - `Anaconda <https://www.continuum.io/downloads>`_, includes over 100 of the
+  most popular Python, R and Scala packages for data science
+
+      - conda create -n myenv python
+
+ - `WinPython <http://winpython.github.io/>`_, Python distribution for scientific and educational usage
+ (Windows 7/8/10).
+
+      - download and unzip as many environments as needed
+
+----
+
+
 
 
 
