@@ -3,8 +3,8 @@
 silx training
 #############
 
-15th November, 2016
--------------------
+15th March, 2017
+----------------
 
 .. image:: img/silx_logo.png
     :width: 180px
@@ -39,9 +39,9 @@ Goals of the project
 Timeline
 ########
 
-- 2014: 
+- 2014:
     - Structure of the project
-- 2015: 
+- 2015:
     - May: acceptation of the project within the EBS
     - December: 1st engineer & 1st scientist
 - 2016:
@@ -51,6 +51,12 @@ Timeline
     - July: silx v0.2
     - October: silx v0.3
     - November: Training for scientists
+- 2017:
+    - February: silx v0.4
+    - March: Training for scientists
+    - May: silx v0.5
+
+.. Fixme: single page
 
 ----
 
@@ -71,7 +77,7 @@ Latest documentation (nightly build) is available at http://www.silx.org/doc/sil
 
 Python2 (>=2.7), Python3 (>=3.4)
 
-Dependencies: numpy, matplotlib, PyQt or PySide, h5py, ipython, qtconsole, PyOpenCL
+Dependencies: numpy, matplotlib, PyQt or PySide, h5py, ipython, qtconsole, PyOpenCL, PyOpenGL
 
       
 
@@ -102,187 +108,6 @@ Sx
 
 ----
 
-HDF5 widget
-###########
-
-Tree view for any data format that can be exposed through an *h5py*-like API:
-
- - HDF5 files (already implemented using *h5py*)
- - SPEC files (already implemented using *silx.io.spech5*)
- - all image file formats handled by FabIO (not implemented yet) 
-
-.. image:: img/Hdf5TreeView.png
-    :width: 400px
-    :align: center
-
-----
-
-Plot
-####
-
-- Plot widgets for 1D, 2D
-
-- heritage from PyMca
-
-.. image:: img/plot2D.png
-    :width: 350px
-    :height: 260px
-
-- Many tool included 
-    - ROI
-    - Mask widget
-    - qt console
-    - ...
-
-----
-
-
-Plot
-####
-
-
-+ backend  
-    + currently matplotlib
-
-
-.. image:: img/plot_qtconsole.png
-    :width: 400px
-    :height: 300px
-
-
-----
-
-Fit widget
-----------
-
-GUI for ``silx.math.fit.fitmanager`` with additional fit configuration widgets
-
-.. image:: img/fitwidget1.png
-    :width: 35%
-    :align: center
-
-.. image:: img/fitconfig.png
-    :width: 30%
-    :align: center
-
-----
-
-silx.image
-##########
-
-bilinear interpolation
-----------------------
-
-convert an image to a continuous function.
-
-opencl integration
-------------------
-
-Many function and setup to facilitate the integration of pyopencl in silx throught different platform (windows, linux, mac).
-
-sift
-----
-
-image alignement, using parallel algorithms on GPU
-
-.. image:: img/image-alignement.png
-    :width: 85%
-    :align: center
-
-
-----
-
-
-silx.math
-#########
-
-histogram
----------
-Multidimensional histogram.
-
-- Histogramnd (hands-on) : (N, ) or (N, D) array
-    + silx.math.histogram.Histogramnd
-- HistogramndLut : (N, ) or (N, D) array
-    + silx.math.histogram.HistogramndLut
-
-        .. note:: HistogramndLut is doing the same job as Histogramnnd but is optimized to compute several histograms from data sharing the same coordinates.
-
-----
-
-
-silx.math
-#########
-
-fit
----
-
-- ``silx.math.fit.leastsq``: Levenberg-Marquardt algorithm with constraints on the fitted parameters 
-- ``silx.math.fit.functions``: Model functions
-- ``silx.math.fit.peaks``: Peak search algorithm
-- ``silx.math.fit.filters``: Smoothing, background computation (strip, snip)
-- ``silx.math.fit.fittheories``: Combination of model functions, initial parameters estimation functions relying on peak search and background estimation
-- ``silx.math.fit.fitmanager``: Advanced fit manager using all of the above
-
-----
-
-Upcoming features (1)
-#####################
-
-3D plot
--------
-
-- OpenGL backend
-
-- isoViewer
-
-.. image:: img/marchingCubesThomas.png
-    :width: 400px
-    :align: center
-    :height: 300px
-
-
-----
-
-Upcoming features (2)
-#####################
-
-
-ArrayWidget
------------
-
-Displaying 2D data-slices in a N-dimensional array
-
-.. image:: img/arraywidget.png
-    :align: center
-    :width: 60%
-
-----
-
-Upcoming features (3)
-#####################
-
-fabioh5
--------
-
-Exposing all data files handled by FabIO, the same way as *h5py* and *spech5*.
-
-.. code-block:: python
-
-    import silx.io.fabioh5
-    f = silx.io.fabioh5.File("foobar.edf")
-
-BackgroundWidget
-----------------
-
-Widget to configure background filters (used in ``FitWidget``)
-
-.. image:: img/bgwidget.png
-   :width: 45%
-   :align: center
-
-
-----
-
 If you want to contribute to the project: 
 
 .. image:: img/forkme.png
@@ -290,18 +115,19 @@ If you want to contribute to the project:
     :target: https://github.com/silx-kit/silx
 
 
-
 ----
 
 Authors
 #######
 
-    - pierre.knobel@esrf.fr
-    - valentin.valls@esrf.fr
-    - henri.payno@esrf.fr
     - jerome.kieffer@esrf.fr
-    - thomas.vincent@esrf.fr
+    - pierre.knobel@esrf.fr
+    - damien.naudet@esrf.fr
+    - pierre.paleo@esrf.fr
+    - henri.payno@esrf.fr
     - sole@esrf.fr
+    - valentin.valls@esrf.fr
+    - thomas.vincent@esrf.fr
 
 ----
 
