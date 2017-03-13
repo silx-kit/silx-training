@@ -191,8 +191,8 @@ Example for *numpy* (download *numpy-1.12.1rc1.zip* from https://pypi.python.org
 Symbolic link to library (linux)
 --------------------------------
 
-If no wheel is available for your environment, and compiling from scratch is to complicated, it can be simpler to
-just add symbolic links in the virtual environment, pointing to the libraries  already installed on the system.
+If no wheel is available for your environment, and compiling from scratch is too complicated, it can be simpler to
+just add symbolic links in the virtual environment, pointing to the libraries already installed on the system.
 
 You also need to add links for the dependencies of the required libraries.
 
