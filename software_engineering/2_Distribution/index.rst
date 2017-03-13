@@ -21,7 +21,7 @@ Outline
 
 References:
 
-* https://python-packaging-user-guide.readthedocs.org/en/latest/
+* https://packaging.python.org/
 * https://docs.python.org/3.5/distutils/index.html
 
 ---------------
@@ -80,7 +80,7 @@ Add information about the author, emails and classifiers like:
 
    setup(name='silx',
          version='0.0.1',
-         url="https://github.com/silex-kit/silx",
+         url="https://github.com/silx-kit/silx",
          author="data analysis unit",
          author_email="silx@esrf.fr",
          classifiers = ["Development Status :: 1 - Planning",
@@ -112,7 +112,7 @@ Actual registration (2/2):
 .. code-block:: shell
     python setup.py register
 
-All information should now be availabe online.
+All information should now be available online.
 It is advised to separate classifiers in a dedicated list.
 
 List of available `classifiers <https://pypi.python.org/pypi?%3Aaction=list_classifiers>`_
@@ -147,10 +147,10 @@ Modify your setup.py accordingly.
          author_email="silx@esrf.fr",
          classifiers = classifiers,
          description="Software library for X-Ray data analysis",
-         packages=["silx", "silx.io", "silx.third_party", "silx.visu"],
+         packages=["silx", "silx.io", "silx.third_party", "silx.gui"],
          )
 
-In this example the *io*, *third_party* and *visu* sub-packages have also been
+In this example the *io*, *third_party* and *gui* sub-packages have also been
 declared.
 
 ----
@@ -176,7 +176,7 @@ Install your package with
 .........................
 .. code-block:: shell
 
-    python setup.py install
+    python setup.py install  # or better: pip install . 
 
 Create a binary package with
 ............................
@@ -184,7 +184,7 @@ Create a binary package with
 
     python setup.py bdist
 
-And alos binary packages can be *exe* and *msi* under Windows, *zip* under MacOSX,
+And also binary packages can be *exe* and *msi* under Windows, *zip* under MacOSX,
 *tar.gz* or *rpm* under linux, ...
 
 Nota:
@@ -205,7 +205,7 @@ Dependency management is available at 3 different levels:
 * from Debian packages
 
 Dependencies allow the user to know what other library is required.
-Those requirement can be build requirement or use requirement:
+Those requirements can be build requirements or use requirements:
 *install_requires* and *setup_requires*:
 
 .. code-block:: python
@@ -248,8 +248,8 @@ Dependencies defined in the setup.py are naturally propagated to packages (Debia
 Building packages
 -----------------
 
-Packages are the best way to distribute a library, regardless to the operating system.
-For (graphical) application Fat-binaries may be a better choice, especially under Windows and MacOSX and will be discussed in next chapter
+Packages are the best way to distribute a library, regardless of the operating system.
+For (graphical) applications, fat-binaries may be a better choice, especially under Windows and MacOSX and will be discussed in next chapter
 
 There are 2 kind of packages to be distinguished:
 
