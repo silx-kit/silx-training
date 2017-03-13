@@ -52,7 +52,7 @@ Mask
    :width: 90%
    :align: center
 
-- can saved/loaded
+- can be saved/loaded
 - demo
 
 ----
@@ -60,10 +60,10 @@ Mask
 silx.gui.plot.PlotAction
 ========================
 
-- useful to add feature into a PlotWindow
+- useful to add features into a PlotWindow
 - exercise : silx-training/plot/PlotInteractionExercise
 - documentation : http://www.silx.org/doc/silx/dev/modules/gui/plot/plotactions_examples.html
-- examples : see silx/examples/shiftPlotAction.py
+- example : see silx/examples/shiftPlotAction.py
 
 ----
 
