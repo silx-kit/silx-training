@@ -98,6 +98,46 @@ Mask
 
 ----
 
+silx.gui.plot.PlotAction
+========================
+
+
+- useful to add features into a PlotWindow
+- exercise : silx-training/plot/PlotInteractionExercise
+- documentation : http://www.silx.org/doc/silx/dev/modules/gui/plot/plotactions_examples.html
+- example : see silx/examples/shiftPlotAction.py
+
+
+----
+
+silx.gui.plot.StackView
+=======================
+
+- display 3D volume as a stack of 2D images
+- example code source : profile 1D, 2D : dimensions
+- demo
+
+.. image:: img/stackView.png
+   :width: 65%
+   :align: center
+
+
+----
+
+imageview
+=========
+
+- imageview
+    + script to display an image in an ImageViewMainWindow
+    + script in silx/examples/imageview.py
+
+
+.. image:: img/imageView.png
+   :width: 55%
+   :align: center
+
+----    
+
 silx.gui.plot3d
 ###############
 
@@ -203,52 +243,7 @@ Upcoming features
 - Surface plot
 - Tests and continuous integration
 
-----
 
-PlotActions
-===========
-
-silx.gui.plot.PlotAction
-========================
-
-silx.gui.plot.Plot3DAction
-========================
-
-
-- useful to add features into a PlotWindow
-- exercise : silx-training/plot/PlotInteractionExercise
-- documentation : http://www.silx.org/doc/silx/dev/modules/gui/plot/plotactions_examples.html
-- example : see silx/examples/shiftPlotAction.py
-
-
-----
-
-silx.gui.plot.StackView
-=======================
-
-- display 3D volume as a stack of 2D images
-- example code source : profile 1D, 2D : dimensions
-- demo
-
-.. image:: img/stackView.png
-   :width: 65%
-   :align: center
-
-
-----
-
-imageview
-=========
-
-- imageview
-    + script to display an image in an ImageViewMainWindow
-    + script in silx/examples/imageview.py
-
-
-.. image:: img/imageView.png
-   :width: 55%
-   :align: center
-    
 .. ----
 
 .. - PeriodicTable
