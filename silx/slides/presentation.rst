@@ -51,6 +51,8 @@ Timeline
     - July: silx v0.2
     - October: silx v0.3
     - November: Training for scientists
+- 2017:
+    - February: silx v0.4
 
 ----
 

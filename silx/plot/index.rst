@@ -7,6 +7,51 @@
    }
    </style>
 
+Plot
+####
+
+----
+
+Plot
+####
+
+
+- Plot widgets for 1D, 2D, 3D
+
+- plot1D, plot2D are heritages from PyMca
+
+.. image:: img/plot2DSinogram.png
+    :width: 350px
+    :height: 220px
+
+- Many tool included 
+    - ROI
+    - Mask widget
+    - qt console
+    - profile 1D, 2D
+    - ...
+
+----
+
+Plot
+####
+
+
++ backend Plot1D-2D 
+    + currently matplotlib
+    + openGL to come
+
++ backend Plot3D
+    + openGL
+
+
+.. image:: img/plot_qtconsole.png
+    :width: 400px
+    :height: 300px
+
+
+----
+
 
 silx.gui.plot.Plot1D
 ====================
