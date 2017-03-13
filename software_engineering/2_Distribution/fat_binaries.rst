@@ -10,7 +10,7 @@ Standalone self-contained applications or installers.
 Beware:
 
 - Fat binaries are fat.
-- You are redistributing (many) other people work, so take care about licences.
+- You are redistributing (many) other people's work, so take care about licences.
 
 ------
 
@@ -23,7 +23,7 @@ Principle:
 
 - Analyze a script to find its dependencies (i.e., its imports).
 - Collect all dependencies and python interpreter in a directory.
-- Add a launcher and eventually bundle every thing in a single file or installer.
+- Add a launcher and eventually bundle everything in a single file or installer.
 
 Issues:
 
@@ -31,7 +31,7 @@ Issues:
 - All runtime dependencies must be included (including external libraries wrapped by Python packages).
 - Data files cannot be guessed and need to be explicitly added.
 
-Test on a different computer.
+Test the result on a different computer than the one used for packaging.
 
 ------
 
