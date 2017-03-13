@@ -46,7 +46,7 @@ Timeline
     - December: 1st engineer & 1st scientist
 - 2016:
     - Releases: silx v0.1 (March), v0.2 (July), v0.3 (October)
-    - Team: 2nd engineer & 2nd scientist (January),  3rd engineer(May)
+    - Team: 2nd engineer & 2nd scientist (January),  3rd engineer (May)
     - November: First training for scientists
 
 - 2017:
@@ -139,12 +139,12 @@ Today's training
     - silx IO API
     - data widgets: HDF5 tree and DataViewer
 2. Plot widgets
-    - Plot1D, Plot2D, ImageView, StackView
-    - ROI, Mask
+    - Plot1D, Plot2D,
+    - ImageView, StackView
     - plot3d widgets
 3. Processing
-    - SIFT (image alignement)
-    - histograms
+    - SIFT (image alignment)
+    - histogram
     - fit
 
 ----
@@ -155,7 +155,6 @@ If you want to contribute to the project:
     :align: center
     :target: https://github.com/silx-kit/silx
 
-----
 ----
 
 Authors
