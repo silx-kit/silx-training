@@ -30,7 +30,7 @@ What kinds of tests?
 - **Integration tests**: Test from the developer point of view.
   Test that the code is integrated correctly with some external system or libraries.
 - **Functional tests**: Test from a user point of view.
-  Call a script, use the public API of a pacakge, test from the GUI.
+  Call a script, use the public API of a package, test from the GUI.
 
 ------
 
@@ -92,14 +92,14 @@ Tests folder structure:
           tests/
               __init__.py
               test_module1.py
-              subpackage/
+          subpackage/
+              __init__.py
+              module1.py
+              module2.py
+              tests/
                   __init__.py
-                  module1.py
-                  module2.py
-                  tests/
-                      __init__.py
-                      test_module1.py
-                      test_module2.py
+                  test_module1.py
+                  test_module2.py
       scripts/
           my_script.py
           my_other_script.py
