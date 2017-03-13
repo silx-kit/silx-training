@@ -8,7 +8,7 @@ Virtual environments for Python
 What is a virtual environment
 -----------------------------
 
-Virtual Python environment.
+A Virtual Environment is a tool to keep the dependencies required by different projects in separate places, by creating virtual Python environments for them.
 
 Each can have a different version of Python, and a different set of libraries.
 
@@ -24,8 +24,8 @@ Purposes
 - Users and production servers:
 
   - installing new software with modern library dependencies, without breaking older software relying on older versions of the same libraries
-  - ensuring your installed libraries don't interfere with other users' libraries, when sharing a workstation and a user account
-  - sharing an environment, isolated from the system and users libraries, between different users 
+  - ensuring your installed libraries do not interfere with other users' libraries, when sharing a workstation and a user account
+  - sharing an environment, isolated from the system and users libraries, between different users
 
 - Developers:
 
@@ -50,7 +50,7 @@ Python 2
 Python 3
 ********
 
-Already shipped as a standard library (Python > 3.3): ``venv``
+Already shipped as a standard library (Python >= 3.3): ``venv``
 
 ----
 
@@ -76,9 +76,9 @@ Python 3
 
 .. note::
 
-    This fails on Debian 8 and some Ubuntu versions due to a broken ``pyvenv``.
+    On Debian 8 and some Ubuntu versions, ``virtualenv`` is provided by the package *python-virtualenv*, ``pyvenv`` is provided by *python3-venv*.
 
-    Alternative using Python 2's virtualenv:
+    Alternative using Python 2's virtualenv for Python3 environment:
 
     .. code-block:: shell
     
@@ -136,8 +136,6 @@ Installing libraries
 --------------------
 
 Let's install *silx* and its dependencies.
-
-.. FIXME: export all_proxy="http://proxy.xxxx.fr:xxxx/"   (why is this needed? Else, error: "Missing dependencies for SOCKS support.")
 
 Some dependencies can simply be installed from pypi:
 
