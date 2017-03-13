@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>170</y>
+      <w>210</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Image
+bg=#ccccee
+fg=black
+--
++data (2d)
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>50</y>
+      <w>230</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>Frame 1
+bg=white
+fg=black
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>270</y>
+      <w>210</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Header
+bg=#ccccee
+fg=black
+
+layer=1
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>240</y>
+      <w>230</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Frame 2
+bg=white
+fg=black
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>80</y>
+      <w>210</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Header
+bg=#ccccee
+fg=black
+--
++key/value
++motor_mne/motor_pos
++counter_mne/counter_pos
+layer=1
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>310</y>
+      <w>210</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Image
+bg=#ccccee
+fg=black
+layer=1
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>20</y>
+      <w>250</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>EDF file (fabio)
+bg=#ccccee
+
+layer=-1
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>80</y>
+      <w>210</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>instrument
+bg=#ccccee
+fg=black
+
+layer=1
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>260</y>
+      <w>210</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>measurement
+bg=#ccccee
+fg=black
+
+layer=1
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>210</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>positioners
+bg=white
+fg=black
+
+layer=2
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>110</y>
+      <w>190</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>detector_0
+--
++data (3d)
+bg=white
+fg=black
+
+layer=3
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>410</x>
+      <y>20</y>
+      <w>250</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>Nexus file
+bg=#ccccee
+
+layer=-2
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>160</y>
+      <w>170</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>others
+bg=#ccccee
+fg=black
+
+layer=10
+
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>290</y>
+      <w>190</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>image_0
+(link to detector_0)
+bg=white
+fg=black
+
+layer=2
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>50</y>
+      <w>230</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>scan_0
+
+bg=white
+fg=black
+layer=0
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

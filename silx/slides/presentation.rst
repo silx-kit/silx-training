@@ -53,7 +53,6 @@ Timeline
     - Releases: silx v0.4 (February), planned v0.5 (May)
     - March: Second training for scientists
 
-
 ----
 
 Resources and requirements

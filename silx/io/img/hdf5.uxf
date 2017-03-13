@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>220</x>
+      <y>110</y>
+      <w>230</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Group
+-
++ dataset: data
+bg=white
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>220</x>
+      <y>230</y>
+      <w>230</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Group
+bg=white
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>230</x>
+      <y>160</y>
+      <w>210</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Group
+bg=#ccccee
+fg=black
+--
++dataset: data
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>80</y>
+      <w>250</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>HDF5 File
+bg=#ccccee
+
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
