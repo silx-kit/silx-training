@@ -129,8 +129,9 @@ Common properties
 
    .. code-block:: python
 
-      # get the node path
-      obj.name
+      obj.name   # the path name
+      obj.parent # the direct container of the object
+      obj.file   # the file container of the object
 
       # test object type
       if silx.io.is_file(obj):
@@ -280,6 +281,29 @@ Provides:
 
 ----
 
+HDF5 tree
+=========
+
+Example
+-------
+
+Tree view which allow to browse HDF5 file content.
+
+   .. code-block:: python
+
+      import silx.gui.hdf5
+      tree = silx.gui.hdf5.Hdf5TreeView()
+      model = tree.findHdf5TreeModel()
+
+      # Insert a filename
+      model.insertFile("data/test.h5")
+
+      # Insert an HDF5 node
+      h5 = silx.io.open("data/test.h5")
+      model.insertH5pyObject(h5)
+
+----
+
 DataViewer
 ==========
 
@@ -316,3 +340,16 @@ Example
 
 Exercises
 =========
+
+This exercises are based on phase contrast acquisition data.
+
+You can find it as notebook, or as Python files.
+
+- **Exercise 1**:
+    - Browse the data file
+- **Exercise 2**:
+    - Compute the correction
+- **Exercise 3**:
+    - Create a viewer
+- **Exercise 4**:
+    - Custom the viewer to display corrected images
