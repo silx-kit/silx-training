@@ -25,7 +25,7 @@ Purposes
 
   - installing new software with modern library dependencies, without breaking older software relying on older versions of the same libraries
   - ensuring your installed libraries don't interfere with other users' libraries, when sharing a workstation and a user account
-  - running applications created for different versions of Python
+  - sharing an environment, isolated from the system and users libraries, between different users 
 
 - Developers:
 
@@ -91,7 +91,9 @@ Python 3
     
         python3 -m venv --without-pip myvenv
         source myvenv/bin/activate
-        # download and install setuptools and pip from source packages
+        # install pip
+        curl https://bootstrap.pypa.io/get-pip.py 
+	python get-pip.py
 
 ----
 
