@@ -24,7 +24,7 @@ Specific purposes
 - Users and production servers:
 
   - installing new software with modern library dependencies, without breaking older software relying on older versions of the same libraries
-  - ensuring your installed libraries do not interfere with other users' libraries, when sharing a workstation and a user account
+  - ensuring your installed libraries do not interfere with other users' libraries, when sharing a workstation and a user account (bad practice!)
   - sharing an environment, isolated from the system and users libraries, between different users
 
 - Developers:
@@ -47,10 +47,19 @@ Python 2
     
     pip install virtualenv --user
 
+.. note::
+
+    On Debian 8 and some Ubuntu versions, ``virtualenv`` is provided by the package *python-virtualenv*.
+
 Python 3
 ********
 
 Already shipped as a standard library (Python >= 3.3): ``venv``
+
+.. note::
+
+    ``pyvenv``, provided by the *python3-venv* debian package, was the Python 3 equivalent to
+    ``virtualenv``. It is now deprecated in favor of ``venv``, presented in next slide.
 
 ----
 
@@ -73,10 +82,6 @@ Python 3
     
     python3 -m venv myvenv
 
-.. note::
-
-    On Debian 8 and some Ubuntu versions, ``virtualenv`` is provided by the package *python-virtualenv*,
-    ``pyvenv`` is provided by *python3-venv*.
 
 ----
 
@@ -91,7 +96,7 @@ Alternative using Python 2's virtualenv for Python3 environment:
     virtualenv --python=/usr/bin/python3.4 myvenv
 
 Alternative by installing pip separately from ``myvenv``, if the regular method
-causes an error:
+causes an error (try installing *python3-venv* first, if you can):
 
 .. code-block:: shell
 
@@ -164,16 +169,19 @@ installs manylinux wheels when they are available.
 Installing from sources
 -----------------------
 
+Wheels are precompiled packages. On linux, manylinux wheels are often provided to
+simplify installing packages. These wheels are compiled with old tools and libraries,
+to maximize compatibility with linux distributions. This affects performances negatively.
+
 When performance matters, you should install packages by compiling their
-sources and all their dependencies.
+sources and all their dependencies (unless they are already installed).
 
 This can be complicated.
 
-Example for *numpy*:
+Example for *numpy* (download *numpy-1.12.1rc1.zip* from https://pypi.python.org/pypi/numpy#downloads):
 
 .. code-block:: shell
 
-    wget https://pypi.python.org/packages/0b/84/2b79ab0ca3a95442ae14847b50fc437438df8792dce1adb798695de22845/numpy-1.12.1rc1.zip
     unzip numpy-1.12.1rc1.zip
     cd numpy-1.12.1rc1/
     pip install .
