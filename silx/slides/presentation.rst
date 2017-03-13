@@ -45,18 +45,14 @@ Timeline
     - May: acceptation of the project within the EBS
     - December: 1st engineer & 1st scientist
 - 2016:
-    - January: 2nd engineer & 2nd scientist
-    - March: First release: silx v0.1
-    - May: 3rd engineer
-    - July: silx v0.2
-    - October: silx v0.3
-    - November: Training for scientists
-- 2017:
-    - February: silx v0.4
-    - March: Training for scientists
-    - May: silx v0.5
+    - Releases: silx v0.1 (March), v0.2 (July), v0.3 (October)
+    - Team: 2nd engineer & 2nd scientist (January),  3rd engineer(May)
+    - November: First training for scientists
 
-.. Fixme: single page
+- 2017:
+    - Releases: silx v0.4 (February), planned v0.5 (May)
+    - March: Second training for scientists
+
 
 ----
 
@@ -86,13 +82,41 @@ Dependencies: numpy, matplotlib, PyQt or PySide, h5py, ipython, qtconsole, PyOpe
 Structure of the silx library
 #############################
 
-Graphical User Interface widget
--------------------------------
-    Plot, image display, mask, HDF5 tree view, fit configuration
+::
+
+ silx
+     gui
+         data
+         fit
+         hdf5
+         plot
+         plot3d
+         qt
+         widgets
+     images
+         sift
+     io
+         fabioh5
+         spech5
+         spectoh5
+     math
+         fit
+         histogram
+         marchingcubes
+     sx
+
+----
+
+Main features
+#############
+
+Graphical User Interface widgets
+--------------------------------
+    Plot, image display, mask, HDF5 tree view, fit configuration, Plot3d, Periodic table
 
 Image processing tools
 ----------------------
-    Image interpolation, registration and drawing primitives
+    Image interpolation, registration and drawing primitives, image alignment
 
 Input / Output
 --------------
@@ -108,13 +132,31 @@ Sx
 
 ----
 
+Today's training
+----------------
+
+1. Input/output
+    - data structure
+    - silx IO API
+    - data widgets: HDF5 tree and DataViewer
+2. Plot widgets
+    - Plot1D, Plot2D, ImageView, StackView
+    - ROI, Mask
+    - plot3d widgets
+3. Processing
+    - SIFT (image alignement)
+    - histograms
+    - fit
+
+----
+
 If you want to contribute to the project: 
 
 .. image:: img/forkme.png
     :align: center
     :target: https://github.com/silx-kit/silx
 
-
+----
 ----
 
 Authors
