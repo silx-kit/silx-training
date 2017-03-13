@@ -8,18 +8,18 @@ Virtual environments for Python
 What is a virtual environment
 -----------------------------
 
-A Virtual Environment is a tool to keep the dependencies required by different projects in separate places, by creating virtual Python environments for them.
+A Virtual Environment is a tool to keep the dependencies required by different projects in
+separate places, by creating virtual Python environments for them.
 
 Each can have a different version of Python, and a different set of libraries.
 
-Lightweight (not as many duplicated libraries as fat binaries).
-
+It's main purpose is to create an isolated environment.
 
 ----
 
 
-Purposes
---------
+Specific purposes
+-----------------
 
 - Users and production servers:
 
@@ -29,7 +29,7 @@ Purposes
 
 - Developers:
 
-  - testing installer scripts (are all necessary dependencies installed on a blank system?)
+  - testing installer scripts (are all necessary dependencies correctly installed on a blank system?)
   - testing that your software works with different sets of libraries (e.g PyQt4, PyQt5, PySide), or different versions of a single library
 
 Using virtualenv for testing is fine for a few specific tests and for prototyping, but in the long term this goal is better achieved with *continuous integration*.
@@ -66,7 +66,6 @@ Python 2
     
     virtualenv myvenv
 
-
 Python 3
 *********
 
@@ -76,24 +75,30 @@ Python 3
 
 .. note::
 
-    On Debian 8 and some Ubuntu versions, ``virtualenv`` is provided by the package *python-virtualenv*, ``pyvenv`` is provided by *python3-venv*.
+    On Debian 8 and some Ubuntu versions, ``virtualenv`` is provided by the package *python-virtualenv*,
+    ``pyvenv`` is provided by *python3-venv*.
 
-    Alternative using Python 2's virtualenv for Python3 environment:
+----
 
-    .. code-block:: shell
-    
-        # pip install virtualenv --user
-        virtualenv --python=/usr/bin/python3.4 myvenv
+Creating a virtualenv (alternatives)
+------------------------------------
 
-    Alternative by installing pip separately from ``myvenv``:
+Alternative using Python 2's virtualenv for Python3 environment:
 
-    .. code-block:: shell
-    
-        python3 -m venv --without-pip myvenv
-        source myvenv/bin/activate
-        # install pip
-        curl https://bootstrap.pypa.io/get-pip.py 
-	python get-pip.py
+.. code-block:: shell
+
+    # pip install virtualenv --user
+    virtualenv --python=/usr/bin/python3.4 myvenv
+
+Alternative by installing pip separately from ``myvenv``, if the regular method
+causes an error:
+
+.. code-block:: shell
+
+    python3 -m venv --without-pip myvenv
+    source myvenv/bin/activate
+    # install pip
+    curl https://bootstrap.pypa.io/get-pip.py | python
 
 ----
 
@@ -107,7 +112,7 @@ Activating a virtual env
 While this virtual environment is active:
 
     - the command ``python`` calls the python installed in ``myvenv``, and it is not aware of user libraries outside the environment.
-    - the command ``pip`` installs new libraries  inside the environment
+    - the command ``pip`` installs new libraries inside the environment
 
 To deactivate the environment later, use the following command:
 
@@ -121,7 +126,7 @@ To deactivate the environment later, use the following command:
 Upgrade pip, setuptools and wheel
 ---------------------------------
 
-This step ensures that you will be able to install modern software and libraries, if your Python 2 version is outdated.
+This step ensures that you will be able to install modern software and libraries, if your Python version is outdated.
 
 .. code-block:: shell
 
@@ -135,7 +140,7 @@ This step ensures that you will be able to install modern software and libraries
 Installing libraries
 --------------------
 
-Let's install *silx* and its dependencies.
+As an exercise, let's install *silx* and its dependencies.
 
 Some dependencies can simply be installed from pypi:
 
@@ -151,14 +156,39 @@ PyQt5 wheels are provided for some Python version (OK for Python 3.5 & 3.6):
 
     pip install PyQt5
 
+This method can lead to bad performances on linux, because ``pip`` preferably
+installs manylinux wheels when they are available.
+
+----
+
+Installing from sources
+-----------------------
+
+When performance matters, you should install packages by compiling their
+sources and all their dependencies.
+
+This can be complicated.
+
+Example for *numpy*:
+
+.. code-block:: shell
+
+    wget https://pypi.python.org/packages/0b/84/2b79ab0ca3a95442ae14847b50fc437438df8792dce1adb798695de22845/numpy-1.12.1rc1.zip
+    unzip numpy-1.12.1rc1.zip
+    cd numpy-1.12.1rc1/
+    pip install .
+
 ----
 
 Symbolic link to library (linux)
 --------------------------------
 
-If no PyQt wheel is available for your environment, it can be complicated to compile it from scratch.
+If no wheel is available for your environment, and compiling from scratch is to complicated, it can be simpler to
+just add symbolic links in the virtual environment, pointing to the libraries  already installed on the system.
 
-A "simple" solution is to create a symbolic link in the environment's library path, pointing to a PyQt version already installed on the system.
+You also need to add links for the dependencies of the required libraries.
+
+Example for *PyQt4* (depends on *sip*):
 
 Python 2.7
 **********
