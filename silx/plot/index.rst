@@ -17,7 +17,7 @@ silx.gui.plot.Plot1D
 
 .. _Plot1D: http://www.silx.org/doc/silx/dev/modules/gui/plot/plotwindow.html#silx.gui.plot.PlotWindow.Plot1D
 
-- draw curves, histograms, 
+- draw curves, histograms, select colormap, scales, etc...
 - documentation : Plot1D_
 - tutorial : http://www.silx.org/doc/silx/dev/modules/gui/plot/getting_started.html
 - hands on (silx-training/silx/plot/Plot1DExercise)
@@ -37,6 +37,7 @@ silx.gui.plot.Plot2D
 - exercise : silx-training/plot/Plot2DExercise.ipynb
 - documentation : Plot2D_
 - tutorial : http://www.silx.org/doc/silx/dev/modules/gui/plot/getting_started.html
+- demo / hands on (silx-training/silx/plot/Plot2DExercise)
 
 .. image:: img/Plot2D.png
    :width: 60%
