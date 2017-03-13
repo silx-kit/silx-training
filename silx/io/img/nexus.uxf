@@ -7,7 +7,7 @@
       <x>190</x>
       <y>140</y>
       <w>230</w>
-      <h>280</h>
+      <h>330</h>
     </coordinates>
     <panel_attributes>NXentry (scan)
 bg=white
@@ -102,15 +102,15 @@ layer=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>190</x>
-      <y>430</y>
-      <w>230</w>
+      <x>200</x>
+      <y>420</y>
+      <w>210</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>NXsubentry
-bg=white
+bg=#ccccee
 fg=black
-layer=-1</panel_attributes>
+layer=0</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
