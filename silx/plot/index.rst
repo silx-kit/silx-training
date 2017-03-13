@@ -7,10 +7,6 @@
    }
    </style>
 
-Plot
-####
-
-----
 
 silx.gui.plot.Plot1D
 ====================
