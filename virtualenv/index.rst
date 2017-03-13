@@ -169,11 +169,12 @@ installs manylinux wheels when they are available.
 Installing from sources
 -----------------------
 
-Wheels are precompiled packages. On linux, manylinux wheels are often provided to
-simplify installing packages. These wheels are compiled with old tools and libraries,
-to maximize compatibility with linux distributions. This affects performances negatively.
+Wheels are precompiled packages ready to install. 
+They remove th burden of having to install a compiler on systems like Windows (or MacOS)
+On linux, *manylinux wheels* are available and simplify the installation of packages. 
+These wheels are compiled with old tools and libraries, trading performances (~20% slower) for compatibility with any linux distributions.
 
-When performance matters, you should install packages by compiling their
+When performance matters, you should install packages by re-compiling their
 sources and all their dependencies (unless they are already installed).
 
 This can be complicated.
