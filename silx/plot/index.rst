@@ -1,20 +1,12 @@
-.. raw:: html
 
-   <!-- Patch landslide slides background color --!>
-   <style type="text/css">
-   div.slide {
-       background: #fff;
-   }
-   </style>
-
+****
 Plot
-####
+****
 
 ----
 
 Plot
-####
-
+====
 
 - Plot widgets for 1D, 2D, 3D
 
@@ -34,8 +26,7 @@ Plot
 ----
 
 Plot
-####
-
+====
 
 + backend Plot1D-2D 
     + currently matplotlib
@@ -49,12 +40,10 @@ Plot
     :width: 400px
     :height: 300px
 
-
 ----
 
-
 silx.gui.plot.Plot1D
-====================
+--------------------
 
 .. _Plot1D: http://www.silx.org/doc/silx/dev/modules/gui/plot/plotwindow.html#silx.gui.plot.PlotWindow.Plot1D
 
@@ -70,7 +59,7 @@ silx.gui.plot.Plot1D
 ----
 
 silx.gui.plot.Plot2D
-====================
+--------------------
 
 .. _Plot2D: http://www.silx.org/doc/silx/dev/modules/gui/plot/plotwindow.html#silx.gui.plot.PlotWindow.Plot2D
 
@@ -87,7 +76,7 @@ silx.gui.plot.Plot2D
 ----
 
 Mask
-====
+----
 
 .. image:: img/mask.png
    :width: 90%
@@ -99,8 +88,7 @@ Mask
 ----
 
 silx.gui.plot.PlotAction
-========================
-
+------------------------
 
 - useful to add features into a PlotWindow
 - exercise : silx-training/plot/PlotInteractionExercise
@@ -111,7 +99,7 @@ silx.gui.plot.PlotAction
 ----
 
 silx.gui.plot.StackView
-=======================
+-----------------------
 
 - display 3D volume as a stack of 2D images
 - example code source : profile 1D, 2D : dimensions
@@ -125,7 +113,7 @@ silx.gui.plot.StackView
 ----
 
 imageview
-=========
+---------
 
 - imageview
     + script to display an image in an ImageViewMainWindow
@@ -139,7 +127,7 @@ imageview
 ----    
 
 silx.gui.plot3d
-###############
+===============
 
 Widgets for 3D visualisation
 
@@ -150,7 +138,7 @@ Widgets for 3D visualisation
 ----
 
 Content
-=======
+-------
 
 High-level widgets to visualize data in 3D:
 
@@ -182,7 +170,7 @@ Based on an internal 3D scene structure over OpenGL.
 ----
 
 Demo
-====
+----
 
 `example/viewer3DVolume.py <https://github.com/silx-kit/silx/blob/master/examples/viewer3DVolume.py>`_
 
@@ -193,7 +181,7 @@ Demo
 ----
 
 Dependencies
-============
+------------
 
 - PyQt.QtOpenGL
 - PyOpenGL 3.x
@@ -202,7 +190,7 @@ Dependencies
 ----
 
 Sample code
-===========
+-----------
 
 .. code-block:: python
 
@@ -234,7 +222,7 @@ Sample code
 ----
 
 Upcoming features
-=================
+-----------------
 
 - Threaded iso-surface computation
 - Visual improvements: e.g., ticks and label layout
