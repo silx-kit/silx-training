@@ -1,4 +1,5 @@
 
+SLIDES = introduction io plot processing conclusion
 
 PNGS_FROM_SVGS=$(shell find | grep \\.svg | sed -e 's/svg$$/png/g')
 
@@ -7,7 +8,7 @@ PNGS_FROM_SVGS=$(shell find | grep \\.svg | sed -e 's/svg$$/png/g')
 %.png: %.svg
 	inkscape -z $< -e $@
 
-build/html/%.html: %/index.rst
+build/html/%.html: %/index.rst png
 	@mkdir -p build/html
 	cd $(dir $<);landslide --embed -d ../$@ index.rst
 
@@ -17,9 +18,9 @@ build/pdf/%.pdf: %/index.rst
 
 png: $(PNGS_FROM_SVGS)
 
-html: build/html/io.html
+html: $(patsubst %,build/html/%.html, $(SLIDES))
 
-build/pdf/slides.pdf: build/pdf/io.pdf
+build/pdf/slides.pdf: $(patsubst %,build/pdf/%.pdf, $(SLIDES))
 	pdfunite $^ $@
 
 pdf: build/pdf/slides.pdf
