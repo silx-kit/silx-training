@@ -280,22 +280,36 @@ More than 20 commands available
 
 ----
 
-Alternatives to virtualenv
---------------------------
+Alternatives: Anaconda
+----------------------
 
-Other isolated Python environments exist:
+`Anaconda <https://www.continuum.io/downloads>`_
 
- - `Anaconda <https://www.continuum.io/downloads>`_, includes over 100 of the
-  most popular Python, R and Scala packages for data science
+Includes over 100 of the most popular Python, R and Scala packages for data science.
 
-      - conda create -n myenv python
+Uses its own package manager (``conda install``), but can use ``pip`` as well for packages
+not managed by conda (e.g. *silx*).
 
- - `WinPython <http://winpython.github.io/>`_, Python distribution for scientific and educational usage
- (Windows 7/8/10).
+Separating different environments: ``conda create -n myenv python``
 
-      - download and unzip as many environments as needed
+
+`Miniconda <https://conda.io/miniconda.html>`_
+
+Smaller version of Anaconda with Python, conda and essential packages (numpy)
 
 ----
+
+Alternatives: WinPython
+-----------------------
+
+`WinPython <http://winpython.github.io/>`_
+
+Python distribution for scientific and educational usage
+
+Only for Windows 7/8/10
+
+Install as many isolated and self-consistent environments as needed.
+
 
 
 
