@@ -292,7 +292,7 @@ Then a ``suite`` function collecting all tests in a package (i.e., directory).
 
    # __init__.py or test_all.py
 
-   from . import test_round
+   from . import test_builtin_round
    ...
 
    def suite():
