@@ -31,8 +31,8 @@ silx.math
 - Fit:
 
   - Levenberg-Marquardt algorithm to fit a function, with optional constraints on the fitted parameters
-  - Fit functions and background functions manager
-  - Fit functions (C code wrapped in Cython)
+  - Manager for fit functions and background functions
+  - Built-in fit functions (C code wrapped in Cython)
   - Non-analytical background filters (C code wrapped with Cython)
 
 - Marching cubes: algorithm to compute iso-surface in a 3D volume (used in ``silx.gui.plot3d``)
