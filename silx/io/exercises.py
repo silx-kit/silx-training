@@ -34,11 +34,15 @@ def main_ex1():
     #
     # EXERCISE: Display it with the data viwer
     #
+
     import silx.gui.data.DataViewerFrame
     viewer = silx.gui.data.DataViewerFrame.DataViewerFrame()
     ...
     viewer.setVisible(True)
 
+    return tree, viewer
+
+###############################################################
 
 def main_ex2():
 
@@ -63,7 +67,10 @@ def main_ex2():
     # EXERCISE: Display it with the data viewer
     #
 
+    viewer = ...
     ...
+    return viewer
+
 
 ###############################################################
 

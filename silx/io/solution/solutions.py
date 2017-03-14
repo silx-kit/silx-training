@@ -9,8 +9,16 @@ import silx.gui.data.DataViewerFrame
 
 def main_ex1():
 
+    #
+    # EXERCISE: Open the file 'data/ID16B_diatomee.h5'
+    #
+
     import silx.io
     h5 = silx.io.open("data/ID16B_diatomee.h5")
+
+    #
+    # EXERCISE: Display the file into the HDF5 tree
+    #
 
     from silx.gui import hdf5
     tree = hdf5.Hdf5TreeView()
@@ -18,7 +26,15 @@ def main_ex1():
     model.insertH5pyObject(h5)
     tree.setVisible(True)
 
+    #
+    # EXERCISE: Access to one frame of the image
+    #
+
     print(h5["/data/0000"])
+
+    #
+    # EXERCISE: Display it with the data viwer
+    #
 
     import silx.gui.data.DataViewerFrame
     viewer = silx.gui.data.DataViewerFrame.DataViewerFrame()
@@ -36,13 +52,25 @@ def main_ex2():
         flatfield = numpy.array(flatfield, dtype=numpy.float32)
         return (data - background) / (flatfield - background)
 
+    #
+    # EXERCISE: Reach one data frame, a background and a flatfield from 'data/ID16B_diatomee.h5'
+    #
+
     import silx.io
     h5 = silx.io.open("data/ID16B_diatomee.h5")
     data = h5["/data/0000"][...]
     background = h5["/background/0000"][...]
     flatfield = h5["/flatfield/0000"][...]
 
+    #
+    # EXERCISE: Compute the corrected image
+    #
+
     corrected = correctedImage(data, background, flatfield)
+
+    #
+    # EXERCISE: Display it with the data viewer
+    #
 
     import silx.gui.data.DataViewerFrame
     viewer = silx.gui.data.DataViewerFrame.DataViewerFrame()
@@ -72,18 +100,31 @@ class ViewerEx3(qt.QMainWindow):
         splitter.addWidget(self.viewer)
         splitter.setStretchFactor(1, 1)
 
+        #
+        # EXERCISE: Connect the callback onTreeActivated (bellow)
+        #           to a mouse event from the tree
+        #
+
         self.tree.activated.connect(self.onTreeActivated)
 
         return splitter
 
     def onTreeActivated(self):
+
+        #
+        # EXERCISE: Reach selected objects from the tree
+        #
+
         selectedObjects = list(self.tree.selectedH5Nodes())
+
+        #
+        # EXERCISE: Provide it to the data viewer
+        #
+
         if len(selectedObjects) == 0:
             self.viewer.setData("Nothing selected")
-
         elif len(selectedObjects) > 1:
             self.viewer.setData("Too much things selected")
-
         obj = selectedObjects[0]
         self.viewer.setData(obj)
 
@@ -139,12 +180,25 @@ class ViewerEx4(ViewerEx3):
         """
         :param h5data: H5py dataset selected from the group /data/
         """
+
+        #
+        # EXERCISE: Return the background image from the dataset
+        #
+
         return h5data.file["/background/0000"][...]
 
     def getFlatField(self, h5data):
         """
         :param h5data: H5py dataset selected from the group /data/
         """
+
+        #
+        # EXERCISE: Return the flatfield image from the dataset
+        #
+        #           1) you can return a flatfield by default
+        #           2) you can return the closest flat field according to the index of the data
+        #           3) you can return an interpolation of the 2 flatfields according to the index of the data
+
         # return self.getFlatField1(h5data)
         # return self.getFlatField2(h5data)
         return self.getFlatField3(h5data)
