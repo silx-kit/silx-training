@@ -1,6 +1,7 @@
 
+*************************
 silx training: Conclusion
-#########################
+*************************
 
 silx packages::
 
@@ -30,7 +31,7 @@ On going development: release every 3 months
 ----
 
 silx resources
----------------
+==============
 
 - Homepage: http://www.silx.org/
 
@@ -45,6 +46,6 @@ silx resources
 ----
 
 Thanks for your participation!
-------------------------------
+==============================
 
 Questions?

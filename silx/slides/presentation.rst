@@ -1,10 +1,10 @@
 
-
+*************
 silx training
-#############
+*************
 
 15th March, 2017
-----------------
+================
 
 .. image:: img/silx_logo.png
     :width: 180px
@@ -13,7 +13,7 @@ silx training
 ----
 
 silx project
-############
+============
 
 .. image:: img/silx_project.png
     :width: 700px
@@ -22,7 +22,7 @@ silx project
 ----
 
 Goals of the project
-###################
+====================
 
 - Scientific toolkit for all synchrotron radiation facilities
 
@@ -37,7 +37,7 @@ Goals of the project
 ----
 
 Timeline
-########
+========
 
 - 2014:
     - Structure of the project
@@ -56,7 +56,7 @@ Timeline
 ----
 
 Resources and requirements
-##########################
+==========================
 
 Documentation of releases is available at https://pythonhosted.org/silx/
 
@@ -79,7 +79,7 @@ Dependencies: numpy, matplotlib, PyQt or PySide, h5py, ipython, qtconsole, PyOpe
 ----
 
 Structure of the silx library
-#############################
+=============================
 
 ::
 
@@ -107,7 +107,7 @@ Structure of the silx library
 ----
 
 Main features
-#############
+=============
 
 Graphical User Interface widgets
 --------------------------------
@@ -132,7 +132,7 @@ Sx
 ----
 
 Today's training
-----------------
+================
 
 1. Input/output
     - data structure
@@ -158,7 +158,7 @@ If you want to contribute to the project:
 ----
 
 Authors
-#######
+=======
 
     - jerome.kieffer@esrf.fr
     - pierre.knobel@esrf.fr
@@ -172,7 +172,7 @@ Authors
 ----
 
 Training resources
-##################
+==================
 
 Exercices:
 
