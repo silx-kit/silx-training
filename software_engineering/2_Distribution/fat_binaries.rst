@@ -5,12 +5,13 @@ Fat binaries
 Standalone self-contained applications or installers.
 
 - Include Python interpreter and all dependencies.
-- Fits Windows and Mac OS X application distribution, as unlike Linux they lack a dependency management tools.
+- Fits Windows and MacOS application distribution, as unlike Linux they lack a dependency management tools.
 
 Beware:
 
 - Fat binaries are fat.
-- You are redistributing (many) other people's work, so take care about licences.
+- You are redistributing (many) other people's work, so take care about licences
+  (e.g., numpy compiled with Intel's Math Kernel Library).
 
 ------
 
@@ -38,73 +39,17 @@ Test the result on a different computer than the one used for packaging.
 Tools
 .....
 
-- `PyInstaller <http://www.pyinstaller.org/>`_: Cross-platform
 - `cx_Freeze <http://cx-freeze.readthedocs.org/>`_: Cross-platform
 - `py2app <https://pythonhosted.org/py2app/>`_: Mac OS X
 
 \ 
 
+- `PyInstaller <http://www.pyinstaller.org/>`_: Cross-platform
 - `Platypus <http://www.sveinbjorn.org/platypus>`_: Mac OS X
 - `pynsist <https://pypi.python.org/pypi/pynsist>`_: Windows
 - `py2exe <https://pypi.python.org/pypi/py2exe/>`_: Windows
 - `bbFreeze <https://pypi.python.org/pypi/bbfreeze>`_: Windows, Linux
 - `pex <https://github.com/pantsbuild/pex>`_: Linux, Mac OS X
-
-------
-
-PyInstaller
-...........
-
-`PyInstaller <http://www.pyinstaller.org/>`_ is a command line tool to freeze Python scripts into executables.
-
-Its goal is to integrate specific stuff for 3rd-party packages (e.g., PyQt, matplotlib) and Windows Runtime.
-
-It is cross-platform.
-
-------
-
-PyInstaller QuickStart
-......................
-
-How-to make an application from a script:
-
-- Install the Python of your choice and the script dependencies.
-- Install PyInstaller: ``pip install PyInstaller``
-- Run: ``pyinstaller <script>.py``
-- It performs the analysis of the script, and creates a ``dist/<script>`` directory with all the required files to run the script.
-
-PyInstaller options:
-
-- ``--onefile`` to make a single .exe file instead of a directory.
-- ``--windowed`` to hide the console for GUI scripts.
-
-------
-
-PyInstaller
-...........
-
-On Windows:
-
-- Result is in ``dist/<script>``
-- Then you can use a tool such as `NSIS <http://nsis.sourceforge.net/>`_ to create an installer from the directory.
-
-.. On Mac OS X:
-   
-   - Always create a command line executable.
-   - With ``--windowed`` create a Mac Application (i.e., ``.app``).
-
-------
-
-PyInstaller
-...........
-
-Limitations:
-
-- It might include useless packages.
-- It might miss some dependencies, some external file resources...
-
-It uses a ``*.spec`` to configure the build, which can be tuned.
-See `doc <http://pythonhosted.org/PyInstaller/>`_.
 
 ------
 
@@ -115,7 +60,7 @@ cx_Freeze
 
 It is cross-platform.
 
-Install ``cx_Freeze``: ``pip install cx_Freeze``.
+Install cx_Freeze: ``pip install cx_Freeze``.
 
 ------
 
@@ -156,16 +101,16 @@ cx_Freeze
 First install your package and its dependencies.
 
 On Windows, run ``python cx_setup.py build_exe`` to build a directory with all required files.
-Then create an installer with a tool such as `NSIS <http://nsis.sourceforge.net/>`_.
+Then you can create an installer with a tool such as `NSIS <http://nsis.sourceforge.net/>`_.
 
-On Mac OS X, run ``python cx_setup.py bdist_dmg`` to build a .dmg with an .app included.
+On MacOS, run ``python cx_setup.py bdist_dmg`` to build a .dmg with an .app included.
 
 ------
 
 py2app
 ......
 
-MAC OS X specific *freezing* tool.
+MacOS specific *freezing* tool.
 
 py2app_setup.py:
 
@@ -186,10 +131,10 @@ Run ``python py2app_setup.py py2app`` to build an application bundle ``.app`` in
 
 ------
 
-Mac Application Bundle
-......................
+MacOS Application Bundle
+........................
 
-A Mac OS X application (``.app``) is a directory also called an *application bundle*.
+A MacOS application (``.app``) is a directory also called an *application bundle*.
 
 It contains::
 
@@ -210,5 +155,5 @@ Sum-up
 
 Different tools to freeze.
 
-Main issue: Making sure it is standalone and include everything required.
+Main issue: Making sure it is standalone and includes everything required.
 

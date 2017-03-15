@@ -22,7 +22,7 @@ Outline
 References:
 
 * https://packaging.python.org/
-* https://docs.python.org/3.5/distutils/index.html
+* https://docs.python.org/3.6/distutils/index.html
 
 ---------------
 
@@ -56,7 +56,7 @@ For now, just import the setup function for setuptools or distutils:
          version='0.0.1',
          )
 
-https://docs.python.org/3.5/distutils/apiref.html
+https://docs.python.org/3.6/distutils/apiref.html
 
 ---------------
 
@@ -74,7 +74,7 @@ The central registration point is the Python Package Index `PyPI <http://pypi.py
 
 Actual registration (1/2):
 --------------------------
-Add information about the author, emails and classifiers like:
+Add information about the author, emails and `classifiers <https://pypi.python.org/pypi?:action=list_classifiers>`_ like:
 
 .. code-block:: python
 
@@ -241,7 +241,11 @@ It may look contradictory to define dependencies at different places
    versions and URL to download wheels from).
   This is often organization specific or CI-tool specific: h5py==2.5.0
 
-Dependencies defined in the setup.py are naturally propagated to packages (Debian, windows, ...)
+  Usage::
+
+      pip install -r requirements.txt
+
+Dependencies defined in the setup.py are naturally propagated to packages (Debian, Windows, wheels...)
 
 ---------------
 
@@ -249,11 +253,11 @@ Building packages
 -----------------
 
 Packages are the best way to distribute a library, regardless of the operating system.
-For (graphical) applications, fat-binaries may be a better choice, especially under Windows and MacOSX and will be discussed in next chapter
+For (graphical) applications, fat-binaries may be a better choice, especially under Windows and MacOS.
 
 There are 2 kind of packages to be distinguished:
 
-* Operating system packages: RPM, DEB, ...
+* Operating system packages: RPM, DEB, MSI, ...
 * Python specific packages: Wheels (it obsoletes eggs)
 
 Advantages of packaging tools:
@@ -276,12 +280,12 @@ Advantages of wheels:
 
 #. Faster installation for pure python and native C extension packages.
 #. Avoids arbitrary code execution for installation. (Avoids setup.py)
-#. Installation of a C extension does not require a compiler on Windows or OS X.
+#. Installation of a C extension does not require a compiler on Windows or MacOS.
 #. Allows better caching for testing and continuous integration.
 #. Creates .pyc files as part of installation to ensure they match the Python interpreter used.
 #. More consistent installs across platforms and machines.
 
-They provide binary packages and a decent installer (pip) for Windows and MacOSX.
+They provide binary packages and a decent installer (pip) for Windows and MacOS.
 
 ---------------
 
@@ -298,7 +302,7 @@ or:
 
 .. code-block:: shell
 
-  pip install setuptools wheel --user
+  pip install setuptools wheel [--user]
 
 then:
 
@@ -310,10 +314,11 @@ Pitfalls:
 ---------
 External shared library (Qt, hdf5, ...)
 
-You can use the `delocate <https://github.com/matthew-brett/delocate>`_ utility
-on MacOSX to check which libraries your package is linked against.
+You can use utility software to check which libraries your package is linked against:
 
-TODO: Under Windows: depends 
+- MacOS: `delocate <https://github.com/matthew-brett/delocate>`_
+- Windows: `depends <http://www.dependencywalker.com/>`_
+- Linux: ldd
 
 .. For example, this is the result of running delocate-listdeps --all on a binary wheel for the pyqt library:
 
@@ -322,7 +327,7 @@ TODO: Under Windows: depends
 Debian packages
 ---------------
 
-To build debian packages we recommend an additionnal tool: *stdeb*
+To build debian packages we recommend an additionnal tool: `stdeb <https://pypi.python.org/pypi/stdeb/>`_
 
 .. code-block:: shell
 

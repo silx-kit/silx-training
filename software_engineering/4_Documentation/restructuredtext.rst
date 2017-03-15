@@ -130,12 +130,12 @@ Links
 
 External hyperlinks:
 
-- https://github.com/kif/SE_training
-- `SE_training repository <https://github.com/kif/SE_training>`_, syntax:
+- https://github.com/silx-kit/silx-training/
+- `SE_training repository <https://github.com/silx-kit/silx-training/>`_, syntax:
 
   .. code-block:: rst
 
-    `SE_training repository <https://github.com/kif/SE_training>`_
+    `training repository <https://github.com/silx-kit/silx-training/>`_
 
 Internal hyperlinks:
 

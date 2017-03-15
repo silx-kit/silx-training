@@ -92,7 +92,7 @@ Some rules for technical writing:
 
 Different types of documentation:
 
-- **Usage**: How to use the software from API to command line or GUI:
+- **Usage**: How to use the software from API, command line or GUI:
 
   - *Cookbooks*: how to *do* something specific,
   - *Tutorials*: how to *use* a feature step-by-step,

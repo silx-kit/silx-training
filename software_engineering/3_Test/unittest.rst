@@ -421,7 +421,7 @@ It is possible to chain tests from fully explicitly to fully automatically with 
 Running the tests
 .................
 
-- ``unittest.main`` to run each module independantly.
+- ``unittest.main`` to run each module independently.
 - Command line: ``python -m unittest ...``
 - With a ``run_tests.py`` script.
 
@@ -434,6 +434,8 @@ Minimal run_tests.py:
 
    runner = unittest.TextTestRunner()
    runner.run(mymodule.tests.suite())
+
+run_tests.py with more features: https://github.com/silx-kit/silx/blob/master/run_tests.py
 
 ------
 
@@ -587,7 +589,7 @@ Parametric tests for Python < 3.4
 
 - Use extra tools.
 - Use a compatibility class providing the same API:
-  `parametric_testcase.py <parametric_testcase.py>`_
+  E.g., `ParametricTestCase <https://github.com/silx-kit/silx/blob/master/silx/test/utils.py>`_
 
   - Advertise the failed test parameters.
   - Limitation: Stop at the first failure.
@@ -603,7 +605,7 @@ Need to separate (possibly huge) test data from python package.
 
 Download test data and store it in a temporary directory during the tests if not available.
 
-Example: `pyFAI <https://github.com/kif/pyFAI>`_/test/utilstest.py
+Example: `pyFAI/test/utilstest.py <https://github.com/silx-kit/pyFAI/blob/master/pyFAI/test/utilstest.py>`_
 
 ------
 

@@ -107,7 +107,7 @@ Summary.
 While we agree on the "*why ?*" basic software engineering practice is important,
 it does not address the "*how do I do ?*" question.
 
-We have tried to summarize all the needed information into a 1 day tutorial
+We have tried to summarize all the needed information into a tutorial
 which we hope, will save you a lot of time in your future:
 
 #. Structure your project

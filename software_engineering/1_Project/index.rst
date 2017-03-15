@@ -29,18 +29,20 @@
 Structure your code
 -------------------
 
-   - Separate library from scripts: 
+- Separate library from scripts:
 
-      * libraries are reuseable
+  * libraries are reuseable
 
-   - Separate GUI from calculation:
-      *  Otherwise maintenance becomes a nightmare
-      *  allows to change the front-end
+- Separate GUI from calculation:
 
-   - Define a license for your work.
+  *  Otherwise maintenance becomes a nightmare
+  *  allows to change the front-end
+
+- Separate I/O from calculation
+
+- Define a license for your work.
 
 ----
-
 
 A word about Licenses
 ---------------------
@@ -81,6 +83,11 @@ DAU strongly recommends a MIT license.
 
 ----
 
+Coding convention
+=================
+
+----
+
 Transition to Python3
 ---------------------
 
@@ -88,7 +95,7 @@ By 2020, the support of Python2 will end.
 Supporting Python3 is a must have today.
 
 Look at the download statistics of projects like
-`WinPython <https://sourceforge.net/projects/winpython/files/>`_: 3600 downloads/week for Python_3.5 vs 1600 for Python_2.7
+`WinPython <https://sourceforge.net/projects/winpython/files/>`_: about 7000 downloads/week for Python_3.x vs 1200 for Python_2.7
 
 Today, in 2017, one should not start a Python2 (only) project.
 To ensure a smoother transition, and acquire the Python3 requested practices:
@@ -106,18 +113,20 @@ runs both under Python2 and Python3.
 Coding convention: `PEP8 <https://www.python.org/dev/peps/pep-0008/>`_
 ----------------------------------------------------------------------
 
- - Wrap lines at 79 char.
- - Indent with 4 spaces.
- - Put spaces around arguments (except in function declaration).
- - English docstrings and triple quoted.
- - One single import per line.
- - Variable, method, modules name should be lower_case
-   (with underscore, only if needed).
- - Constant should be UPPER_CASE (with underscores).
- - Class names should be CamelCased.
- - Single letter variable should be limited to loop indexes.
- - One single statement per line
- - Two empty lines between top-level objects, only one later.
+- Wrap lines at 79 char.
+- Indent with 4 spaces.
+- Put spaces around arguments (except in function declaration).
+- English docstrings and triple quoted.
+- One single import per line.
+- Variable, method, modules name should be lower_case
+  (with underscore, only if needed).
+- Constant should be UPPER_CASE (with underscores).
+- Class names should be CamelCased.
+- Single letter variable should be limited to loop indexes.
+- One single statement per line
+- Two empty lines between top-level objects, only one later.
+
+`PEP 7 <https://www.python.org/dev/peps/pep-0007/>`_: Style Guide for C Code
 
 ----
 
@@ -155,10 +164,11 @@ Zen of Python: `PEP20 <https://www.python.org/dev/peps/pep-0020/>`_
 Tools
 -----
 
-* flake8
-* pylint
-* modernize
-
+* `flake8 <https://pypi.python.org/pypi/flake8>`_
+* `pylint <https://www.pylint.org/>`_
+* `modernize <https://pypi.python.org/pypi/modernize>`_
+* `autopep8 <https://pypi.python.org/pypi/autopep8>`_
+* `landscape.io <https://landscape.io/>`_: `Example <https://landscape.io/github/silx-kit/silx/>`_
 
 ----
 
@@ -178,8 +188,8 @@ Image from http://phdcomics.com/comics/archive_print.php?comicid=1531
 Git version control
 ...................
 
-Git is the current (2015) standard, it has replaced RCS, CVS, SVN, Bazaar and Hg.
-If you have heard any of them, the concepts in Git are similar while offering a lot of flexibility.
+Git is the current (2017) standard, it has replaced RCS, CVS, SVN, Bazaar and Hg.
+If you have heard of any of them, the concepts in Git are similar while offering a lot of flexibility.
 
 
 The usual workflow when working with Git is the following:
@@ -192,7 +202,7 @@ The usual workflow when working with Git is the following:
 The cycle 2-3-4 is the normal development cycle for a local project.
 
 Any git repository contains all the history of the project, i.e all
-commit with authors, data time, file changed, and the chain of commits called *branch*
+commits with authors, data time, file changed, and the chain of commits called *branch*
 
 ----
 
@@ -213,7 +223,7 @@ Tutorial on Git:
 ................
 
 * `Comprehensive tutorial <http://gitref.org>`_
-* `Cheat sheet from Github <https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf>`_
+* `Cheat sheet from Github <https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf>`_
 * `simple Cheat sheet <http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf>`_
 
 ----
@@ -225,7 +235,7 @@ The web service github.com provides free git-hosting for open-source project and
 encourages collaboration using forks of projects.
 The main advantages of GitHub are:
 
- - `Highest visibility compared to other hosting (in 2015) <http://software.ac.uk/resources/guides/choosing-repository-your-software-project>`_
+ - `Highest visibility compared to other hosting (in 2017) <http://software.ac.uk/resources/guides/choosing-repository-your-software-project>`_
  - `Offer a fixed pipeline based on *Pull request* <https://help.github.com/articles/using-pull-requests/>`_
  - `Many tutorials on GitHub <https://guides.github.com/>`_
  - Issue tracker
@@ -257,18 +267,24 @@ Public projects can be seen from outside: https://gitlab.esrf.fr/public
 Different types of workflow
 ...........................
 
-TODO: more on workflows ...
+They are different workflow with git:
 
-* `Centralized Workflow <https://www.atlassian.com/git/tutorials/comparing-workflows/centralized-workflow>`_
-* `Git Flow <https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow>`_
+* `Centralized Workflow <https://www.atlassian.com/git/tutorials/comparing-workflows#centralized-workflow>`_
+* `Git Flow <https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow>`_
 * `GitHub Flow <http://scottchacon.com/2011/08/31/github-flow.html>`_
+
+github facilitates a forking workflow.
+
+.. TODO slide on Forking worflow
 
 ----
 
 Contribution in OSS
 ...................
 
-If your project becomes popular, you may have external contributors ...
+If your project becomes popular, you may have external contributors...
+or you might want to contribute to other projects.
+
 How to contribute to an Open Source project is presented in
 `this document <http://scikit-image.org/docs/stable/contribute.html>`_
 for scikit-image.

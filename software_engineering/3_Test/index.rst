@@ -38,7 +38,7 @@ When to write tests?
 --------------------
 
 - Never
-- Always and before anything else: Test-Driven Development (*TDD*) [TDDwithPython]_ |br|
+- Always and before anything else: Test-Driven Development (*TDD*) [TDDwithPython] |br|
   Workflow:
 
   - First write a test, run it and check that it fails...
@@ -72,8 +72,8 @@ Separate tests from the source code:
 
 Tests folder structure:
 
-- In a separate ``tests/`` folder.
-- In ``tests`` sub-packages in each Python package/sub-package,
+- In a separate ``test/`` folder.
+- In ``test`` sub-packages in each Python package/sub-package,
   so that tests remain close to the source code.
   Tests are installed with the package and can be run from the installation.
 - A ``test_*.py`` for each module and script (an more if needed).
@@ -89,21 +89,21 @@ Tests folder structure:
       package/
           __init__.py
           module1.py
-          tests/
+          test/
               __init__.py
               test_module1.py
           subpackage/
               __init__.py
               module1.py
               module2.py
-              tests/
+              test/
                   __init__.py
                   test_module1.py
                   test_module2.py
       scripts/
           my_script.py
           my_other_script.py
-      tests/
+      test/
           test_my_script.py
           test_my_other_script.py
 
@@ -125,7 +125,7 @@ QTest
 
 For GUI based on ``PyQt``, ``PySide`` it is possible to use Qt's `QTest <http://doc.qt.io/qt-5/qtest.html>`_.
 
-It provides the basic functionnalities for GUI testing.
+It provides the basic functionalities for GUI testing.
 It allows to send keyboard and mouse events to widgets.
 
 .. code-block:: python
@@ -144,7 +144,7 @@ It allows to send keyboard and mouse events to widgets.
   ...
 
 Tighly coupled with the code it tests.
-It needs to know the widget instance and hard code the position of mouse events.
+It needs to know the widget's instance and hard coded position of mouse events.
 
 ------
 
@@ -215,8 +215,8 @@ In-house
 External
 --------
 
-- `Travis-CI <https://travis-ci.org/>`_: CI for Linux and Mac OS X
-- `AppVeyor <http://www.appveyor.com/>`_: CI for Windows
+- `Travis-CI <https://travis-ci.org/>`_: Linux and MacOS
+- `AppVeyor <http://www.appveyor.com/>`_: Windows
 
 Principle:
 
@@ -228,6 +228,7 @@ Principle:
 
 - Upon commit, clones the repository and runs the tests.
 - Displays the outcome on a web page.
+- Feedback github Pull Requests with test status.
 
 ------
 
@@ -236,5 +237,5 @@ Sum-up
 
 - Different test strategies.
 - Python ``unittest`` (and extra packages) to write and run the tests.
-- Additionnal tools to efficiently run the tests: Continuous Integration.
+- Additional tools to efficiently run the tests: Continuous Integration.
 - Next step: Continuous Deployment.

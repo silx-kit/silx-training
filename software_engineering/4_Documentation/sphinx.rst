@@ -92,7 +92,7 @@ Build the doc
 
 - ``make html`` in the ``doc/`` directory
 - ``sphinx-build -b html sourcedir builddir``
-- It is also possible build the doc with ``setup.py``
+- It is also possible build the doc with ``setup.py`` (Example: see `build_doc command <https://github.com/silx-kit/silx/blob/master/setup.py>`_)
 
 Warning: Sphinx might import the Python modules to be documented when building the documentation.
 So the modules must be installed (or at least in the path Python is searching for modules).
@@ -203,28 +203,6 @@ Alternative syntax: Sphinx extension `Napoleon <http://sphinxcontrib-napoleon.re
 
 ------
 
-Cython and C functions
-......................
-
-To document a `cython <http://cython.org/>`_ (C) function, the profile of the function can be given as the first line of the docstring.
-
-code.pyx:
-
-.. code-block:: python
-
-  def cython_function(arg1, arg2):
-      """cython_function(arg1, arg2)
-
-      Documentation of the function written in cython.
-
-      :param arg1:
-      :param arg2:
-      :return:
-      """
-      ...
-
-------
-
 Cross-referencing Python objects
 ................................
 
@@ -238,6 +216,33 @@ Cross-referencing Python objects
   - ...
 
 Also consider readability of the docstring in the source file.
+
+------
+
+Cython and C functions
+......................
+
+To document a `cython <http://cython.org/>`_ (C) function, the profile of the function can be given as the first line of the docstring.
+
+cython provides an ``embedsignature`` option that automatically embeds the signature in the docstring:
+`embedsignature <http://cython.readthedocs.io/en/latest/src/reference/compilation.html#compiler-directives>`_
+
+code.pyx:
+
+.. code-block:: python
+
+  cimport cython
+
+  @cython.embedsignature(True)
+  def cython_function(arg):
+      """Documentation of the function written in cython.
+
+      :param arg1:
+      :return:
+      """
+      ...
+
+This can also be enabled when calling ``cythonize`` through the ``compiler_directive`` argument.
 
 ------
 
