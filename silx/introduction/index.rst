@@ -32,7 +32,7 @@ Goals of the project
 
 - Release every 3 months
 
-- Free and open source project (MIT license).
+- Free and open source project: MIT + LGPL license.
 
 ----
 
