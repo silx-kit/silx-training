@@ -2,8 +2,6 @@
 Docstrings
 ----------
 
-\ 
-
 ------
 
 Docstrings

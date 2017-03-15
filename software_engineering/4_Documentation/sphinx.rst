@@ -2,8 +2,6 @@
 Sphinx
 ------
 
-\ 
-
 -----
 
 Introduction
@@ -29,40 +27,15 @@ Sphinx parses rst files and docstrings in source code to generate the documentat
 
 It uses a configuration file ``conf.py`` to control the way the documentation is built.
 
-------
-
-QuickStart
-..........
-
-
-Provided that your Python package and its dependencies are **installed** on your computer, the shortest way to Sphinx is the ``sphinx-apidoc`` command line tool:
-
-- At the root of your source project, run::
-
-    sphinx-apidoc -F -o doc/ <package_directory>
-
-  This creates and populates the ``doc/`` directory.
-- In the ``doc/`` directory, run ``make html`` and your documentation is generated in the ``_build/html/`` directory, starting with ``index.html``.
-
-`sphinx-apidoc documentation <http://sphinx-doc.org/invocation.html#invocation-apidoc>`_
+Building the documentation requires that your Python package and its dependencies can be imported.
 
 ------
 
 Set-up Sphinx for a project
 ...........................
 
-The longer story.
-
 ``sphinx-quickstart`` is a shell command line tool that sets-up a default documentation project.
 It asks you questions and generates ``conf.py`` and the entry point of the documentation ``index.rst``.
-
-You probably want to enable some Sphinx extensions:
-
-- **autodoc**: automatically insert docstrings from modules
-- *doctest*: automatically test code snippets in doctest blocks
-- *pngmath*: include math, rendered as PNG images
-- *mathjax*: include math, rendered in the browser by MathJax
-- *viewcode*: include links to source
 
 Edit ``index.rst`` and add ``*.rst`` files to write the documentation.
 
@@ -96,6 +69,47 @@ Build the doc
 
 Warning: Sphinx might import the Python modules to be documented when building the documentation.
 So the modules must be installed (or at least in the path Python is searching for modules).
+
+------
+
+Fast-food QuickStart
+....................
+
+The shortest way to Sphinx is the ``sphinx-apidoc`` command line tool:
+
+- At the root of your source project, run::
+
+    sphinx-apidoc -F -o doc/ <package_directory>
+
+  This creates and populates the ``doc/`` directory.
+- In the ``doc/`` directory, run ``make html`` and your documentation is generated in the ``_build/html/`` directory, starting with ``index.html``.
+
+`sphinx-apidoc documentation <http://sphinx-doc.org/invocation.html#invocation-apidoc>`_
+
+
+------
+
+Extensions
+..........
+
+You probably want to enable some extensions.
+
+Add them ``extensions`` list in ``conf.py``:
+
+.. code-block:: python
+
+    extensions = [
+        # automatically insert docstrings from modules
+        'sphinx.ext.autodoc',
+
+        # include math, rendered in the browser by MathJax
+        'sphinx.ext.mathjax',
+
+        # include links to source
+        'sphinx.ext.viewcode'
+    ]
+
+`Sphinx extensions <http://www.sphinx-doc.org/en/stable/extensions.html>`_
 
 ------
 
