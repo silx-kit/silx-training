@@ -12,8 +12,8 @@ Introduction
 
 ReStructuredText (`rst <http://docutils.sourceforge.net/rst.html>`_):
 
-- "Easy-to-read" text markup syntax.
-- Conversion to different formats (e.g., html, pdf).
+- *Easy-to-read* text markup syntax.
+- Conversion to different formats (e.g., **html**, pdf).
 - Version Control System friendly: Text files with one sentence per line.
 - Primarily for Python documentation.
 
@@ -26,8 +26,8 @@ Source:
 
   ReStructuredText (`rst <http://docutils.sourceforge.net/rst.html>`_):
 
-  - "Easy-to-read" text markup syntax.
-  - Conversion to different formats (e.g., html, pdf).
+  - *Easy-to-read* text markup syntax.
+  - Conversion to different formats (e.g., **html**, pdf).
   - ...
 
 ------
@@ -35,124 +35,42 @@ Source:
 Features
 ........
 
-- Paragraphs and sections
-- Lists
-- Inline markup
-- Links
+- Paragraphs are separated by blank lines
+- Sections: `Python documentation convention <https://docs.python.org/devguide/documenting.html#sections>`_
+- Lists: ``- * +``
+- Numbered lists: ``#.``
+- Inline markup: *\*Emphasis\**, **\*\*Strong emphasis\*\***, :literal:`\`\`Literal\`\``
+- Links: :literal:`\`example <https://example.com/>\`_`
 
 \ 
 
-- Code sample
-- Figure
-- Math formula
-- Tables
+- Code sample :rst:`.. code-block:: rst`
+- Figure: :rst:`.. figure:: image_filename`
+- Math formula: :literal:`:math:\`\\sqrt{\\frac{x^2}{3}}\`` => :math:`\sqrt{\frac{x^2}{3}}`
+- Tables: :rst:`.. csv-table::`
 - ...
 
 ------
 
-Paragraphs and sections
-.......................
-
-.. code-block:: rst
-
-  =====
-  Title
-  =====
-
-  Paragraphs are separated by blank lines.
-
-  This is another paragraph.
-
-  Chapter
-  =======
-
-  Titles have underlines and overlines.
-
-  Section headers have underlines.
-
-  Section
-  -------
-
-  Subsection
-  ..........
-
-  There is no specified heading levels.
-  Section levels are determined from the succession of section headers determines.
-
-`Sphinx Python documentation convention <http://sphinx-doc.org/rest.html#sections>`_
-
-------
-
-Lists
-.....
-
-.. code-block:: rst
-
-  Bullet list:
-
-  - Items start with ``- * +`` and a whitespace.
-    Multi-line text must be aligned.
-  - There is a blank line before and after the list.
-
-  Numbered list:
-
-  #. First item
-  #. Second item
-
-More lists: definitions, fields, options.
-
-------
-
-Inline markup
+Syntax: Roles
 .............
 
-- *\*Emphasis\**
-- **\*\*Strong emphasis\*\***
-- :literal:`\`\`Literal\`\``
-- **Roles**: :rst:`:role_name:`content``
+**Roles**: :rst:`:role_name:`content``
 
-  - :rst:`1\ :superscript:`st`` => 1\ :superscript:`st`
-  - :literal:`:math:\`\\sqrt{\\frac{x^2}{3}}\`` => :math:`\sqrt{\frac{x^2}{3}}`
-  - `... <http://docutils.sourceforge.net/docs/ref/rst/roles.html>`_
+- :rst:`1\ :superscript:`st`` => 1\ :superscript:`st`
+- :literal:`:math:\`\\sqrt{\\frac{x^2}{3}}\`` => :math:`\sqrt{\frac{x^2}{3}}`
 
-Limitations:
+`Roles documentation <http://docutils.sourceforge.net/docs/ref/rst/roles.html>`_
 
-- No nesting.
-- Whitespace around inline markup and no leading, trailing whitespaces inside.
-- Escape \* \` with \\: :rst:`\*B\*` => \*B\*.
+.. note inline markup limitations:
+   - No nesting.
+   - Whitespace around inline markup and no leading, trailing whitespaces inside.
+   - Escape \* \` with \\: :rst:`\*B\*` => \*B\*.
 
 ------
 
-Links
-.....
-
-External hyperlinks:
-
-- https://github.com/silx-kit/silx-training/
-- `SE_training repository <https://github.com/silx-kit/silx-training/>`_, syntax:
-
-  .. code-block:: rst
-
-    `training repository <https://github.com/silx-kit/silx-training/>`_
-
-Internal hyperlinks:
-
-.. code-block:: rst
-
-   =========
-   The title
-   =========
-
-   .. _link_target:
-
-   Link to link_target_ (note the single :).
-
-   Link to `The title`_.
-
-------
-
-Directives
-..........
+Syntax: Directives
+..................
 
 .. code-block:: rst
 
@@ -161,7 +79,7 @@ Directives
 
      Content: indented and separated by blank lines.
 
-**Code block** with syntax highlighting:
+Example: **Code block** with syntax highlighting:
 
 .. code-block:: rst
 
@@ -170,30 +88,16 @@ Directives
      def add(a, b):
          return a + b
 
-**Figure**:
-
-.. code-block:: rst
-
-  .. figure:: image_filename
-     :align: center
-     :width: 300
-
-     This is the caption.
-
 `Directives documentation <http://docutils.sourceforge.net/docs/ref/rst/directives.html>`_.
 
-------
-
-And more...
-...........
-
-This was just a primer:
-
-- More lists, roles and directives.
-- Tables, :rst:`.. csv-table::`.
-- :rst:`.. include:: file.rst` to include another rst file.
-- :rst:`.. raw:: [html|latex]` to include raw html or latex.
-- Extendable: It is possible to add roles and directives.
+.. And more...
+   ...........
+   This was just a primer:
+   - More lists, roles and directives.
+   - Tables, :rst:`.. csv-table::`.
+   - :rst:`.. include:: file.rst` to include another rst file.
+   - :rst:`.. raw:: [html|latex]` to include raw html or latex.
+   - Extendable: It is possible to add roles and directives.
 
 ------
 
@@ -203,9 +107,10 @@ QuickRef
 To find more information:
 
 - Sphinx reST Primer: http://sphinx-doc.org/rest.html
+- Documenting Python: https://docs.python.org/devguide/documenting.html
 - reST QuickRef: http://docutils.sourceforge.net/docs/user/rst/quickref.html
 
-Blank lines and indentation count.
+Blank lines and indentation count!
 
 ------
 
