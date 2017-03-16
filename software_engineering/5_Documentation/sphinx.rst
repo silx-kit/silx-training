@@ -89,8 +89,8 @@ The shortest way to Sphinx is the ``sphinx-apidoc`` command line tool:
 
 ------
 
-Extensions
-..........
+Sphinx Extensions
+.................
 
 You probably want to enable some extensions.
 
@@ -177,14 +177,6 @@ Warning: autodoc **imports** the modules to be documented.
 The modules must be installed or added to ``sys.path`` in ``conf.py``.
 Take care which version gets documented.
 
-------
-
-``autodoc`` configuration in ``conf.py``:
-
-- ``autoclass_content``: ``"class"``, ``"both"``, ``"init"``
-- ``autodoc_member_order``: ``"alphabetical"`` (default), ``"groupby"`` (by type), ``"bysource"``
-- ...
-
 See `sphinx.ext.autodoc documentation <http://sphinx-doc.org/ext/autodoc.html#module-sphinx.ext.autodoc>`_.
 
 ------
@@ -236,7 +228,7 @@ Also consider readability of the docstring in the source file.
 Cython and C functions
 ......................
 
-To document a `cython <http://cython.org/>`_ (C) function, the profile of the function can be given as the first line of the docstring.
+To document a `cython <http://cython.org/>`_ (or C) function, the profile of the function can be given as the first line of the docstring.
 
 cython provides an ``embedsignature`` option that automatically embeds the signature in the docstring:
 `embedsignature <http://cython.readthedocs.io/en/latest/src/reference/compilation.html#compiler-directives>`_
@@ -251,7 +243,7 @@ code.pyx:
   def cython_function(arg):
       """Documentation of the function written in cython.
 
-      :param arg1:
+      :param arg:
       :return:
       """
       ...

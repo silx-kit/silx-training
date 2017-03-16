@@ -15,6 +15,7 @@ Outline
 -------
 
 #. Introduction
+#. Readme
 #. Docstrings
 #. reStructuredText
 #. Sphinx
@@ -150,7 +151,48 @@ Text file with readable markup syntax. On github:
 
 ------
 
-.. include:: docstring.rst
+Docstrings
+----------
+
+.. code-block:: python
+
+   """This module provides a random generator."""  # Module docstring
+
+   RAND_SEED = 1
+   """Seed used by rand."""  # Module attribute docstring
+
+   def rand():
+       """Returns a random floating point number."""  # Function docstring
+       ...
+
+   class RandomGenerator(object):
+       """Pseudo random generator class.
+
+       It is based on the XORShift algorithm.
+       """  # Class docstring
+
+       DEFAULT_SEED = 1
+       """Default random generator seed."""  # Class attribute docstring
+
+       def __init__(self, seed=None):
+           self.seed = seed or self.DEFAULT_SEED
+           """The generator's seed."""  # Instance attribute docstring
+
+       def rand(self):
+           """Returns a pseudo-random float."""  # Method docstring
+           ...
+
+------
+
+Docstrings Content
+..................
+
+`PEP 257 <https://www.python.org/dev/peps/pep-0257/>`_ docstring content recommendation:
+
+- For **script**: Module docstring should be its **usage message** from the command line.
+- For **module**: List of the classes, exceptions and functions with a one-line summary of each.
+- For **class**: **Behavior summary**, list of the public method and instance variables.
+- For **function** and **method**: **Behavior summary**, documentation of **arguments**, **return value**, side effects, exceptions raised, restrictions.
 
 ------
 
@@ -173,9 +215,6 @@ It builds the documentation with Sphinx:
 - Install the package with ``setup.py install``.
 - Look for a ``conf.py`` file and use it to build the documentation.
 - Make documentation available: ``http://<project_name>.readthedocs.org/``.
-
-
-Documentation can be updated on commits with `Webhooks <https://read-the-docs.readthedocs.org/en/latest/webhooks.html>`_.
 
 `Documentation of Read the Docs <http://read-the-docs.readthedocs.org/>`_
 
