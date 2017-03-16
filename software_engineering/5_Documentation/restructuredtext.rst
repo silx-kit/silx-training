@@ -44,7 +44,7 @@ Features
 
 \ 
 
-- Code sample :rst:`.. code-block:: rst`
+- Code sample: :rst:`.. code-block:: rst`
 - Figure: :rst:`.. figure:: image_filename`
 - Math formula: :literal:`:math:\`\\sqrt{\\frac{x^2}{3}}\`` => :math:`\sqrt{\frac{x^2}{3}}`
 - Tables: :rst:`.. csv-table::`
@@ -55,17 +55,24 @@ Features
 Syntax: Roles
 .............
 
-**Roles**: :rst:`:role_name:`content``
+**Roles**:
+
+.. code-block:: rst
+
+   :role_name:`content`
+
+Examples:
 
 - :rst:`1\ :superscript:`st`` => 1\ :superscript:`st`
 - :literal:`:math:\`\\sqrt{\\frac{x^2}{3}}\`` => :math:`\sqrt{\frac{x^2}{3}}`
 
 `Roles documentation <http://docutils.sourceforge.net/docs/ref/rst/roles.html>`_
 
-.. note inline markup limitations:
-   - No nesting.
-   - Whitespace around inline markup and no leading, trailing whitespaces inside.
-   - Escape \* \` with \\: :rst:`\*B\*` => \*B\*.
+Inline markup limitations:
+
+- No nesting.
+- Whitespace around inline markup and no leading, trailing whitespaces inside.
+- Escape \* \` with \\: :rst:`\*B\*` => \*B\*.
 
 ------
 
@@ -88,6 +95,13 @@ Example: **Code block** with syntax highlighting:
      def add(a, b):
          return a + b
 
+=>
+
+.. code-block:: python
+
+   def add(a, b):
+       return a + b
+
 `Directives documentation <http://docutils.sourceforge.net/docs/ref/rst/directives.html>`_.
 
 .. And more...
@@ -106,9 +120,9 @@ QuickRef
 
 To find more information:
 
-- Sphinx reST Primer: http://sphinx-doc.org/rest.html
+- Sphinx RST Primer: http://sphinx-doc.org/rest.html
 - Documenting Python: https://docs.python.org/devguide/documenting.html
-- reST QuickRef: http://docutils.sourceforge.net/docs/user/rst/quickref.html
+- RST QuickRef: http://docutils.sourceforge.net/docs/user/rst/quickref.html
 
 Blank lines and indentation count!
 
@@ -122,16 +136,3 @@ Tools to convert rst
 - `pandoc <http://pandoc.org/>`_ a universal document converter:
   ``pandoc -s -t rst file.rst -o file.html``
 - `Sphinx <http://sphinx-doc.org/>`_.
-
-------
-
-Sum-up
-......
-
-reStructuredText is a text markup syntax:
-
-- Simple and readable for simple things.
-- Roles and directives.
-- Blank lines and indentation count.
-- Conversion to different formats.
-
