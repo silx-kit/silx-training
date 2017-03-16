@@ -1,3 +1,4 @@
+
 .. raw:: html
 
    <!-- Patch landslide slides background color --!>
@@ -275,7 +276,13 @@ They are different workflow with git:
 
 github facilitates a forking workflow.
 
-.. TODO slide on Forking worflow
+----
+
+Forking workflow
+................
+
+.. image:: images/github-workflow.png
+   :align: center
 
 ----
 

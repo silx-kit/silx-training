@@ -178,15 +178,6 @@ Install your package with
 
     python setup.py install  # or better: pip install . 
 
-Create a binary package with
-............................
-.. code-block:: shell
-
-    python setup.py bdist
-
-And also binary packages can be *exe* and *msi* under Windows, *zip* under MacOSX,
-*tar.gz* or *rpm* under linux, ...
-
 Nota:
 .....
 Only python files will be part of your source package for now.
@@ -327,7 +318,7 @@ You can use utility software to check which libraries your package is linked aga
 Debian packages
 ---------------
 
-To build debian packages we recommend an additionnal tool: `stdeb <https://pypi.python.org/pypi/stdeb/>`_
+To build debian packages we recommend an additional tool: `stdeb <https://pypi.python.org/pypi/stdeb/>`_
 
 .. code-block:: shell
 
@@ -344,9 +335,33 @@ To build both Python2 & Python3 packages use:
 
 .. code-block:: shell
 
-   python3 setup.py --command-packages=stdeb.command sdist_dsc --with-python2=True --with-python3=True --no-python3-scripts=True bdist_deb
+   python3 setup.py --command-packages=stdeb.command sdist_dsc
+                    --with-python2=True
+                    --with-python3=True
+                    --no-python3-scripts=True bdist_deb
 
-`Alternative to be considered <https://github.com/p1otr/pypi2deb>`_
+Alternative to be considered: `pypi2deb <https://github.com/p1otr/pypi2deb>`_
+
+------
+
+Advanced setup.py: numpy.distutils
+----------------------------------
+
+`numpy.distutils <https://docs.scipy.org/doc/numpy/reference/distutils.html>`_ provides a way to use a hierarchy of setup.py::
+
+  project/
+    setup.py  -> Effective setup.py
+    package/
+      __init__.py
+      setup.py      -> Handles main package build
+      subpackage/
+        __init__.py
+        setup.py    -> Handles subpackage build
+
+- Pros: Each sub-package is embedding its own build.
+- Cons: numpy becomes a build dependency.
+
+This is based on the `Configuration class <https://docs.scipy.org/doc/numpy/reference/distutils.html#numpy.distutils.misc_util.Configuration>`_.
 
 ------
 
