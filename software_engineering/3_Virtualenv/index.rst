@@ -1,9 +1,15 @@
 
+.. raw:: html
+
+   <!-- Patch landslide slides background color --!>
+   <style type="text/css">
+   div.slide {
+       background: #fff;
+   }
+   </style>
+
 Virtual environments for Python
 ===============================
-
-
-----
 
 What is a virtual environment
 -----------------------------
@@ -21,18 +27,21 @@ It's main purpose is to create an isolated environment.
 Specific purposes
 -----------------
 
-- Users and production servers:
+Users and production servers
+****************************
 
-  - installing new software with modern library dependencies, without breaking older software relying on older versions of the same libraries
-  - ensuring your installed libraries do not interfere with other users' libraries, when sharing a workstation and a user account (bad practice!)
-  - sharing an environment, isolated from the system and users libraries, between different users
+- installing new software with modern library dependencies, without breaking older software relying on older versions of the same libraries
+- sharing an environment, isolated from the system and users libraries, between different users
 
-- Developers:
+Using virtual environments is becoming our preferred way of installing new python software for users.
 
-  - testing installer scripts (are all necessary dependencies correctly installed on a blank system?)
-  - testing that your software works with different sets of libraries (e.g PyQt4, PyQt5, PySide), or different versions of a single library
+Developers
+**********
 
-Using virtualenv for testing is fine for a few specific tests and for prototyping, but in the long term this goal is better achieved with *continuous integration*.
+- testing installer scripts: are all necessary dependencies correctly installed on a blank system?
+- testing that your software works with different sets of libraries (e.g PyQt4, PyQt5, PySide), or different versions of a single library
+
+Testing usages can be automated with *continuous integration*.
 
 
 ----
@@ -58,18 +67,19 @@ Already shipped as a standard library (Python >= 3.3): ``venv``
 
 .. note::
 
-    ``pyvenv``, provided by the *python3-venv* debian package, was the Python 3 equivalent to
-    ``virtualenv``. It is now deprecated in favor of ``venv``, presented in next slide.
+    The package  *python3-venv* is required on Debian 8 for ``venv`` to work properly.
 
 ----
 
 Creating a virtualenv
 ---------------------
 
-This will create a new directory ``myvenv`` in the current directory.
+This will create a new directory ``myvenv`` in the current directory,
+containing the python interpreter with its standard library, *pip*,
+and a *site-packages* directory for installing additional libraries.
 
 Python 2
-*********
+********
 
 .. code-block:: shell
     
@@ -116,8 +126,8 @@ Activating a virtual env
 
 While this virtual environment is active:
 
-    - the command ``python`` calls the python installed in ``myvenv``, and it is not aware of user libraries outside the environment.
-    - the command ``pip`` installs new libraries inside the environment
+- the command ``python`` calls the python installed in ``myvenv``, and it is not aware of user libraries outside the environment.
+- the command ``pip`` installs new libraries inside the environment
 
 To deactivate the environment later, use the following command:
 
@@ -131,7 +141,12 @@ To deactivate the environment later, use the following command:
 Upgrade pip, setuptools and wheel
 ---------------------------------
 
-This step ensures that you will be able to install modern software and libraries, if your Python version is outdated.
+The *pip* command and the *setuptools* and *wheel* libraries in your new virtual environment
+are copies (or links to) the system's *pip*, *setuptools* and *wheel*.  They might be outdated.
+
+
+
+This step ensures that you will be able to install modern software and libraries.
 
 .. code-block:: shell
 
@@ -161,25 +176,21 @@ PyQt5 wheels are provided for some Python version (OK for Python 3.5 & 3.6):
 
     pip install PyQt5
 
-``pip`` preferably installs precompiled wheels when they are available
-for your platform.
-
 ----
 
 Installing from sources
 -----------------------
 
-Wheels are precompiled packages ready to install. 
-They remove th burden of having to install a compiler on systems like Windows (or MacOS)
-On linux, *manylinux wheels* are available and simplify the installation of packages. 
+``pip`` preferably installs pre-compiled wheels when they are available for your platform.
+Wheels remove the burden of having to install a compiler (great for Mac and Windows).
+
+On linux, *manylinux1 wheels* are available and simplify the installation of packages.
 These wheels are compiled with old tools and libraries, trading performances (~20% slower) for compatibility with any linux distributions.
 
-When performance matters, you should install packages by re-compiling their
-sources and all their dependencies (unless they are already installed).
+When performance matters, you should install packages by compiling their
+sources. This can be tricky.
 
-This can be complicated.
-
-Example for *numpy*:
+Example for *numpy* (https://pypi.python.org/pypi/numpy#downloads):
 
 .. code-block:: shell
 
@@ -187,17 +198,23 @@ Example for *numpy*:
     cd numpy-1.12.1rc1/
     pip install .
 
-(download *numpy-1.12.1rc1.zip* from https://pypi.python.org/pypi/numpy#downloads)
+Easier alternative (recent ``pip`` required):
+
+.. code-block:: shell
+
+    pip install --no-binary :all: numpy
+
 
 ----
 
 Symbolic link to library (linux)
 --------------------------------
 
-If no wheel is available for your environment, and compiling from scratch is too complicated, it can be simpler to
-just add symbolic links in the virtual environment, pointing to the libraries already installed on the system.
+**This is a hack!**
 
-You also need to add links for the dependencies of the required libraries.
+If no wheel is available for your environment, and compiling from scratch is too complicated, it can be simpler to
+just add symbolic links in the virtual environment, pointing to the libraries already installed on the system
+**and to their dependencies**.
 
 Example for *PyQt4* (depends on *sip*):
 
@@ -243,27 +260,30 @@ From sources
     cd /path/to/silx
     pip install .
 
-Run tests
-*********
+Test it
+*******
 
 .. code-block:: python
 
-    >>> import silx.test
-    >>> silx.test.run_tests()
+    >>> import silx
+    >>> print(silx.version)
+    0.5.0-dev0
+
+..    >>> import silx.test
+..    >>> silx.test.run_tests()
 
 ----
 
 
-Tools for virtual environments
+Managing multiple environments
 ------------------------------
 
-Managing multiple virtual environments
-
-- `Python Env Wrapper (pew) <https://pypi.python.org/pypi/pew>`_ (shell agnostic)
-- `virtualenvwrapper <https://pypi.python.org/pypi/virtualenvwrapper/>`_ (bourne shell only)
+`Python Env Wrapper (pew) <https://pypi.python.org/pypi/pew>`_  is a tool for managing
+multiple virtual environments.
 
 .. code-block:: shell
 
+    $ pew new venv3
     $ pew ls
     venv1 venv2 venv3
     $ pew workon venv1
@@ -272,11 +292,18 @@ Managing multiple virtual environments
     $ which python
     /home/arthur/.virtualenvs/venv1/bin/python
 
-More than 20 commands available
+Run a program that depends on a particular environment:
 
 .. code-block:: shell
 
-    $ pew help
+    $ pew in venv2 myscript.py
+
+
+More than 20 commands available:
+
+*help, inall, show, rm, cp, rename, mktmpenv, lssitepackages, restore, wipeenv, mkproject* ...
+
+
 
 ----
 
@@ -288,9 +315,17 @@ Alternatives: Anaconda
 Includes over 100 of the most popular Python, R and Scala packages for data science.
 
 Uses its own package manager (``conda install``), but can use ``pip`` as well for packages
-not managed by conda (e.g. *silx*).
+not managed by conda.
 
 Separating different environments: ``conda create -n myenv python``
+
+License issue: Anaconda is installed with `mkl <https://software.intel.com/en-us/intel-mkl>`_,
+which cannot be included if you want to package your application as a fat binary.
+
+.. code-block:: shell
+
+    conda install nomkl numpy scipy scikit-learn numexpr
+    conda remove mkl mkl-service
 
 
 `Miniconda <https://conda.io/miniconda.html>`_
