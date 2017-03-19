@@ -224,6 +224,15 @@ project one uses:
 
 The cycle 2-3 is the normal cycle for a remote project.
 
+----
+
+More on git
+................
+
+* *status* show the working tree status (branch name, file modified, added...)
+* *log* show commits logs
+* *diff* show changes between commits
+* *cherry-pick* apply the changes introduced by some existing commits
 
 Tutorial on Git:
 ................
