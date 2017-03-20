@@ -87,25 +87,22 @@ Add information about the author, emails and `classifiers <https://pypi.python.o
          author="data analysis unit",
          author_email="silx@esrf.fr",
          classifiers = ["Development Status :: 1 - Planning",
-                        "Environment :: Console",
-                        "Environment :: MacOS X",
-                        "Environment :: Win32 (MS Windows)",
-                        "Environment :: X11 Applications :: Qt",
-                        "Intended Audience :: Education",
-                        "Intended Audience :: Science/Research",
-                        "License :: OSI Approved :: MIT License",
-                        "Natural Language :: English",
-                        "Operating System :: Microsoft :: Windows",
-                        "Operating System :: POSIX",
-                        "Programming Language :: Cython",
-                        "Programming Language :: Python",
-                        "Programming Language :: Python :: Implementation :: CPython",
-                        "Topic :: Documentation :: Sphinx",
-                        "Topic :: Scientific/Engineering :: Physics",
-                        "Topic :: Software Development :: Libraries :: Python Modules",
-                        ]
-
-         )
+            "Environment :: Console",
+            "Environment :: MacOS X",
+            "Environment :: Win32 (MS Windows)",
+            "Environment :: X11 Applications :: Qt",
+            "Intended Audience :: Education",
+            "Intended Audience :: Science/Research",
+            "License :: OSI Approved :: MIT License",
+            "Natural Language :: English",
+            "Operating System :: Microsoft :: Windows",
+            "Operating System :: POSIX",
+            "Programming Language :: Cython",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: Implementation :: CPython",
+            "Topic :: Documentation :: Sphinx",
+            "Topic :: Scientific/Engineering :: Physics",
+            "Topic :: Software Development :: Libraries :: Python Modules"] )
 
 ---------------
 
@@ -141,8 +138,7 @@ List of available classifiers_; for our example we used:
                    "Programming Language :: Python :: Implementation :: CPython",
                    "Topic :: Documentation :: Sphinx",
                    "Topic :: Scientific/Engineering :: Physics",
-                   "Topic :: Software Development :: Libraries :: Python Modules",
-                   ]
+                   "Topic :: Software Development :: Libraries :: Python Modules",])
 
 ---------------
 
