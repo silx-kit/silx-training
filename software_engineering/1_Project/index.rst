@@ -174,7 +174,7 @@ Tools
 * IDE 
 
   - `pyDev (eclipse) <http://www.pydev.org/>`_
-  - `pycharm <https://www.jetbrains.com/pycharm/`_
+  - `pyCharm <https://www.jetbrains.com/pycharm/>`_
 
 ----
 
@@ -188,58 +188,95 @@ Version Control System
 
 Image from http://phdcomics.com/comics/archive_print.php?comicid=1531
 
-
 ----
 
 Git version control
 ...................
 
-Git is the current (2017) standard, it has replaced RCS, CVS, SVN, Bazaar and Hg.
+Git is the current (2017) standard, it has replaced SVN, CVS, Mercurial, ...
 If you have heard of any of them, the concepts in Git are similar while offering a lot of flexibility.
 
 
-The usual workflow when working with Git is the following:
+* starting commands
+    * git *clone* to copy another existing (remote) project
+    or
 
-1. initiate a project using *init* or *clone* to copy another (remote) project.
-2. *add* files to the list of tracked files
-3. *commit* the files, locally
-4. *push* your changes to a remote repository
+    * git *init* to initiate a new project
 
-The cycle 2-3-4 is the normal development cycle for a local project.
+----
+
+Different types of workflow
+...........................
+
+They are different workflows with git:
+
+* `Centralized Workflow <https://www.atlassian.com/git/tutorials/comparing-workflows#centralized-workflow>`_
+* `Git Flow <https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow>`_
+
+.. image:: images/gitflow-workflow.svg
+   :align: center
+   :width: 700
+
+----
+
+Git actions
+...........
+
+To made modification locally you will have to follow the current process :
+
+1. *add* files to the list of tracked files
+2. *commit* the files, locally
+3. *push* your changes to a remote repository
+
+The cycle 1-2-3 is the normal development cycle for a local project.
 
 Any git repository contains all the history of the project, i.e all
 commits with authors, data time, file changed, and the chain of commits called *branch*
 
+Some commands to interact with branches : 
+
+* *merge* change from a remote branch into the current branch
+* *checkout* : move to another branch. 
+* *checkout -b <branch>* : create a new branch
+
 ----
 
-Interact with another repository
-................................
+Some useful git commands
+........................
 
-To interact with a remote project, especially retrieve commits from a remote
-project one uses:
+* *status* : show the working tree status (branch name, file modified, added...)
+* *log* : show commits logs
+* *diff* : show changes between commits
 
-#. *remote add name url* to define the remote project
+----
+
+Different types of workflow
+...........................
+
+* `GitHub Flow <http://scottchacon.com/2011/08/31/github-flow.html>`_
+
+github facilitates a forking workflow.
+
+.. image:: images/github-workflow.png
+   :align: center
+
+----
+
+Git - Interact with another repository
+......................................
+
+To interact with a remote repository : 
+
+* *remote* : manage tracked repositories
+* *remote add name url* : Adds a remote named <name> for the repository at <url>
+  ( allows to use git fetch <name>/<branch> ...)
+
+Then you can retrieve commits from those repositories:
+
 #. *fetch* to retrieve the changes made on a remote repository
 #. *merge* to merge changes from a remote branch into the current branch
 
-The cycle 2-3 is the normal cycle for a remote project.
-
-----
-
-More on git
-................
-
-* *status* show the working tree status (branch name, file modified, added...)
-* *log* show commits logs
-* *diff* show changes between commits
-* *cherry-pick* apply the changes introduced by some existing commits
-
-Tutorial on Git:
-................
-
-* `Comprehensive tutorial <http://gitref.org>`_
-* `Cheat sheet from Github <https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf>`_
-* `simple Cheat sheet <http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf>`_
+The cycle 1-2 is the normal cycle to retrieve commits (grouped into the *pull* command).
 
 ----
 
@@ -261,7 +298,6 @@ Github is actually a social network, but unlike Linked'in or Facebook it
 focuses on code developers. Activities on Github are monitored by head-hunters
 and can be useful for professional placement.
 
-
 ----
 
 Alternatives
@@ -279,24 +315,12 @@ Public projects can be seen from outside: https://gitlab.esrf.fr/public
 
 ----
 
-Different types of workflow
-...........................
+Some tutorials git/github:
+..........................
 
-They are different workflow with git:
-
-* `Centralized Workflow <https://www.atlassian.com/git/tutorials/comparing-workflows#centralized-workflow>`_
-* `Git Flow <https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow>`_
-* `GitHub Flow <http://scottchacon.com/2011/08/31/github-flow.html>`_
-
-github facilitates a forking workflow.
-
-----
-
-Forking workflow
-................
-
-.. image:: images/github-workflow.png
-   :align: center
+* `Comprehensive tutorial <http://gitref.org>`_
+* `Cheat sheet from Github <https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf>`_
+* `simple Cheat sheet <http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf>`_
 
 ----
 
