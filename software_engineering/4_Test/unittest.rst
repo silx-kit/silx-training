@@ -25,93 +25,51 @@ It provides features to:
 TestCase
 ^^^^^^^^
 
-``unittest.TestCase`` is the base class for writting tests for Python code.
+The classe `unittest.TestCase` is the base class for writting tests for
+Python code.
 
 Usage:
 
-.. code-block:: python
+   .. code-block:: python
 
-   import unittest
+      import unittest
 
-   class ClassName(unittest.TestCase):
+      class ClassName(unittest.TestCase):
 
-       def test*(self):
-           ...  # Test code
+          def testFooBar1(self):
+              ...  # Test code
 
-       ...  # Other test* methods
-
-Example: Test Python built-in round function
-
-.. code-block:: python
-
-   # test_builtin_round.py
-   import unittest
-
-   class TestBuiltInRound(unittest.TestCase):
-
-       def test_round_positive(self):
-           ...  # Test code
-
-       def test_round_negative(self):
-           ...  # Test code
-
-       ...  # More test* methods
+          ...  # Other test methods
 
 ------
 
-TestCase.assert*
-^^^^^^^^^^^^^^^^
+TestCase assert methods
+^^^^^^^^^^^^^^^^^^^^^^^
 
-``TestCase.assert*(a, b, msg=None)`` or ``TestCase.assert*(x, msg=None)``:
+   .. code-block:: python
 
-- *a*, *b* or *x*: Argument(s) to compare/evaluate.
-- *msg*: Additional error message.
+      assertEqual(a, b, message=None)
+
+      assertTrue(x, message=None)
+
+- Argument(s) to compare/evaluate.
+- An additional error message.
 
 ========================= ==================== =======
 Method 	                  Checks that 	       New in
 ========================= ==================== =======
-assertEqual(a, b)         a == b 	 
-assertNotEqual(a, b)      a != b 	 
-assertTrue(x)             bool(x) is True 	 
-assertFalse(x)            bool(x) is False 	 
+assertEqual(a, b)         a == b
+assertNotEqual(a, b)      a != b
+assertTrue(x)             bool(x) is True
+assertFalse(x)            bool(x) is False
 assertIs(a, b)            a is b               2.7 3.1
-assertIsNot(a, b)         a is not b           2.7 3.1
 assertIsNone(x)           x is None            2.7 3.1
-assertIsNotNone(x)        x is not None        2.7 3.1
 assertIn(a, b)            a in b               2.7 3.1
-assertNotIn(a, b)         a not in b           2.7 3.1
 assertIsInstance(a, b)    isinstance(a, b)     2.7 3.2
-assertNotIsInstance(a, b) not isinstance(a, b) 2.7 3.2
 ========================= ==================== =======
 
-There's more, see `unittest.TestCase doc <https://docs.python.org/3/library/unittest.html#unittest.TestCase>`_.
-Numpy also provides some asserts: `numpy.testing <http://docs.scipy.org/doc/numpy/reference/routines.testing.html>`_.
-
-------
-
-test_round.py:
-
-.. code-block:: python
-
-   import unittest
-
-
-   class TestBuiltInRound(unittest.TestCase):
-
-       def test_round_positive(self):
-           result = round(1.3)
-           self.assertEqual(result, 1)
-
-       def test_round_negative(self):
-           result = round(-1.3)
-           self.assertEqual(result, -1)
-
-       def test_round_halfway_even(self):
-           result = round(2.5)
-           self.assertEqual(result, 2, msg="round(2.5) -> %f != 2" % result)
-
-       def test_round_returned_type(self):
-           self.assertIsInstance(round(0.), int)
+There's more, see `unittest TestCase documentation <https://docs.python.org/3/library/unittest.html#unittest.TestCase>`_.
+or `Numpy testing documentation <http://docs.scipy.org/doc/numpy/reference/routines.testing.html>`_.
 
 ------
 
@@ -120,14 +78,15 @@ Run the tests
 
 test_round.py:
 
-.. code-block:: python
+   .. code-block:: python
 
-   ...
+      ...
 
-   if __name__ == "__main__":  # True if run as a script
-       unittest.main()
+      if __name__ == "__main__":
+          unittest.main()
 
-``unittest.main()`` provides a command line interface to discover and run the tests.
+The function `unittest.main()` provides a command line interface to
+discover and run the tests.
 
 ------
 
@@ -140,29 +99,30 @@ test_round.py:
 
    import unittest
 
-
    class TestBuiltInRound(unittest.TestCase):
 
-       def test_round_positive(self):
+       def test_positive(self):
            result = round(1.3)
            self.assertEqual(result, 1)
 
-       def test_round_negative(self):
+       def test_negative(self):
            result = round(-1.3)
            self.assertEqual(result, -1)
 
-       def test_round_halfway_even(self):
+       def test_halfway_even(self):
            result = round(2.5)
            self.assertEqual(result, 2, msg="round(2.5) -> %f != 2" % result)
 
-       def test_round_returned_type(self):
+       def test_returned_type(self):
            self.assertIsInstance(round(0.), int)
 
-
-   if __name__ == "__main__":  # True if run as a script
+   if __name__ == "__main__":
        unittest.main()
 
 ------
+
+Example: Result in Python3
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Running tests from the command line on Python3::
 
@@ -176,23 +136,26 @@ Running tests from the command line on Python3::
 
 ------
 
-And on Python 2::
+Example: Result in Python2
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
 
   $ python2 test_builtin_round.py
   F..F
   ======================================================================
-  FAIL: test_round_halfway_even (__main__.TestBuiltInRound)
+  FAIL: test_halfway_even (__main__.TestRound)
   ----------------------------------------------------------------------
   Traceback (most recent call last):
-    File "test_builtin_round.py", line 16, in test_round_halfway_even
+    File "test_builtin_round.py", line 16, in test_halfway_even
       self.assertEqual(result, 2, msg="round(2.5) -> %f != 2" % result)
   AssertionError: round(2.5) -> 3.000000 != 2
 
   ======================================================================
-  FAIL: test_round_returned_type (__main__.TestBuiltInRound)
+  FAIL: test_returned_type (__main__.TestRound)
   ----------------------------------------------------------------------
   Traceback (most recent call last):
-    File "test_builtin_round.py", line 19, in test_round_returned_type
+    File "test_builtin_round.py", line 19, in test_returned_type
       self.assertIsInstance(round(0.), int)
   AssertionError: 0.0 is not an instance of <type 'int'>
 
@@ -203,34 +166,30 @@ And on Python 2::
 
 ------
 
-Running a specific ``TestCase``::
+Example: Command line arguments
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  $ python3 test_builtin_round.py TestBuiltInRound
-  ....
-  ----------------------------------------------------------------------
-  Ran 4 tests in 0.000s
+Running a specific ``TestCase``:
 
-  OK
+   .. code-block:: bash
 
-Running a specific test method::
+      $ python3 test_builtin_round.py TestBuiltInRound
+      ....
+      -------------------------------------------------------------
+      Ran 4 tests in 0.000s
 
-  $ python3 test_builtin_round.py TestBuiltInRound.test_round_positive
-  .
-  ----------------------------------------------------------------------
-  Ran 1 test in 0.000s
+      OK
 
-  OK
+Running a specific test method:
 
-------
+   .. code-block:: bash
 
-Sum-up
-^^^^^^
+      $ python3 test_builtin_round.py TestBuiltInRound.test_positive
+      .
+      -------------------------------------------------------------
+      Ran 1 test in 0.000s
 
-- Write tests in a ``unittest.TestCase`` sub-class.
-- Use ``TestCase.assert*`` in the tests.
-- Run the tests as a script from the command line.
-
-This was a quickstart, ``unittest`` provides more features and flexibility.
+      OK
 
 ------
 
@@ -239,52 +198,74 @@ Chaining tests
 
 How-to run tests from many ``TestCase`` and many files at once:
 
-- Explicit
-- Automatic
+- Explicit:
+
+  Full control, boilerplate code.
+
+- Automatic:
+
+  No control
+
+- Mixing approach
 
 ------
 
-TestSuite
-^^^^^^^^^
+Chaining tests: Suite
+^^^^^^^^^^^^^^^^^^^^^
 
 The `TestSuite <https://docs.python.org/3/library/unittest.html#unittest.TestSuite>`_ class aggregates test cases and test suites through:
 
-- ``TestSuite.addTest(test)``
-- ``TestSuite.addTests(tests)``
+- `TestSuite.addTest(test)`
+- `TestSuite.addTests(test)`
 
 Example:
 
-.. code-block:: python
+   .. code-block:: python
 
-   suite = unittest.TestSuite()
-   suite.addTest(TestBuiltInRound('test_round_positive'))
-   suite.addTest(TestBuiltInRound('test_round_negative'))
-   ...
+      suite = unittest.TestSuite()
+      suite.addTest(TestBuiltInRound('test_positive'))
+      ...
+      ...
+      ...
 
 ------
 
-Explicit chaining 1/3
-^^^^^^^^^^^^^^^^^^^^^
+Chaining tests: Loader
+^^^^^^^^^^^^^^^^^^^^^^
+
+`unittest.defaultTestLoader` (an instance of `unittest.TestLoader`) creates `TestSuite` from classes and modules.
+
+`TestLoader.loadTestsFromTestCase(testCaseClass)`` method creates a `TestSuite` from all `test*` method of a `TestCase` subclass.
+
+   .. code-block:: python
+
+       loadTests = unittest.defaultTestLoader.loadTestsFromTestCase
+       suite = unittest.TestSuite()
+       suite.addTest(loadTests(TestBuiltInRound))
+
+----
+
+Chaining tests: Module
+^^^^^^^^^^^^^^^^^^^^^^
 
 First, write a ``suite`` function for each module (i.e., file):
 
 .. code-block:: python
 
    # test_round.py
-   
+
    ...
 
    def suite():
+       loadTests = unittest.defaultTestLoader.loadTestsFromTestCase
        suite = unittest.TestSuite()
-       suite.addTest(TestBuiltInRound('test_round_positive'))
-       suite.addTest(TestBuiltInRound('test_round_negative'))
-       ...
+       suite.addTest(loadTests(TestBuiltInRound))
        return suite
 
 ------
 
-Explicit chaining 2/3
-^^^^^^^^^^^^^^^^^^^^^
+Chaining tests: Package
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Then a ``suite`` function collecting all tests in a package (i.e., directory).
 
@@ -308,8 +289,8 @@ This can be used to create a ``TestSuite`` from all tests in a project:
 
 ------
 
-Explicit chaining 3/3
-^^^^^^^^^^^^^^^^^^^^^
+Chaining tests: Runner
+^^^^^^^^^^^^^^^^^^^^^^
 
 To run the ``suite`` from command line:
 
@@ -325,105 +306,12 @@ To run the ``suite`` from command line:
 
 ------
 
-Automatic aggregation 1/3
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Project: Running tests
+^^^^^^^^^^^^^^^^^^^^^^
 
-``unittest.defaultTestLoader`` (an instance of ``unittest.TestLoader``) creates ``TestSuite`` from classes and modules.
-
-``TestLoader.loadTestsFromTestCase(testCaseClass)`` method creates a ``TestSuite`` from all ``test*`` method of a ``TestCase`` subclass.
-
-Exemple:
-
-.. code-block:: python
-
-   # test_round.py
-   
-   ...
-
-   def suite():
-       suite = unittest.TestSuite()
-       suite.addTest(
-           unittest.defaultTestLoader.loadTestsFromTestCase(TestBuiltInRound))
-       return suite
-
-------
-
-Automatic aggregation 2/3
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-``TestLoader.loadTestsFromModule(module)`` method creates a ``TestSuite`` from all ``TestCase`` subclass in a module.
-
-Exemple:
-
-.. code-block:: python
-
-   # __init__.py or test_all.py
-
-   from . import test_round  # or import test_round
-   ...
-
-   def suite():
-       suite = unittest.TestSuite()
-       suite.addTest(
-           unittest.defaultTestLoader.loadTestsFromModule(test_round))
-       ...
-       return suite
-
-Limitation: It is not always desirable to load tests this way.
-E.g., if using a hierarchy of subclass of ``TestCase`` to share some code between different tests.
-
-------
-
-Automatic aggregation 3/3
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-With Python >= 2.7 / 3.2, it is possible to customize ``TestLoader.loadTestsFromModule(module)`` through a function ``load_tests``.
-
-.. code-block:: python
-
-  def load_tests(loader, tests, pattern):
-      suite = unittest.TestSuite()
-      ...  # Add tests to the suite in a custom way
-      return suite
-
-See `load_tests protocol <https://docs.python.org/3/library/unittest.html#load-tests-protocol>`_.
-
-------
-
-Test discovery (Python >= 2.7/3.2)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-``unittest`` offers test discovery based on automatic test aggregation.
-
-From the command line::
-
-  python -m unittest discover [-s <start_directory=.>] [-p <pattern=test*.py>]
-
-From a script with the ``TestLoader.discover`` method.
-
-It has the limitation of automatic aggregation.
-
-It is customizable through the ``load_tests`` protocol.
-
-------
-
-Sum-up
-^^^^^^
-
-It is possible to chain tests from fully explicitly to fully automatically with test discovery:
-
-- Explicit: Full control, boilerplate code.
-- Mixing explicit and automatic.
-- Automatic: No control unless using ``load_tests``.
-
-------
-
-Running the tests
-.................
-
-- ``unittest.main`` to run each module independently.
-- Command line: ``python -m unittest ...``
-- With a ``run_tests.py`` script.
+- `unittest.main` to run each module independantly.
+- Command line: `python -m unittest ...`
+- With a `run_tests.py` script.
 
 Minimal run_tests.py:
 
@@ -435,14 +323,30 @@ Minimal run_tests.py:
    runner = unittest.TextTestRunner()
    runner.run(mymodule.tests.suite())
 
-run_tests.py with more features: https://github.com/silx-kit/silx/blob/master/run_tests.py
+------
+
+Sum-up
+^^^^^^
+
+- For each modules
+    - Write a test module with tests as `TestCase` sub-class
+    - Use `assert` methods in the tests
+    - Run the tests as a script from the command line
+
+- For packages and project
+    - Chain tests with `TestSuite`
+    - Create a script to run your tests
 
 ------
 
-More on TestCase
-................
+More features
+^^^^^^^^^^^^^
 
-\ 
+- Fixture
+- Testing exception
+- Skipping tests
+- Parametric tests
+- Test data
 
 ------
 
@@ -562,8 +466,8 @@ Problems:
 
 ------
 
-Parametric tests for Python >= 3.4
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Parametric tests: Python >= 3.4
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Using ``TestCase.subTest``:
 
@@ -584,8 +488,8 @@ Limitation: Require Python >= 3.4
 
 ------
 
-Parametric tests for Python < 3.4
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Parametric tests: Python < 3.4
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Use extra tools.
 - Use a compatibility class providing the same API:
@@ -606,14 +510,3 @@ Need to separate (possibly huge) test data from python package.
 Download test data and store it in a temporary directory during the tests if not available.
 
 Example: `pyFAI/test/utilstest.py <https://github.com/silx-kit/pyFAI/blob/master/pyFAI/test/utilstest.py>`_
-
-------
-
-Sum-up
-......
-
-``unittest``:
-
-- Write tests: ``TestCase``
-- Chain tests: ``TestSuite``, explicit to automatic
-- Run tests: ``main``, command line, script

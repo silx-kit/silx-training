@@ -16,7 +16,7 @@ Testing
 =======
 
 #. Introduction
-#. unittest
+#. Python `unittest` module
 #. Additional tools
 #. Continuous integration
 
@@ -26,10 +26,15 @@ What kinds of tests?
 --------------------
 
 - **Unit tests**: Test from the developer point of view.
+
   Test the code without the dependencies.
+
 - **Integration tests**: Test from the developer point of view.
+
   Test that the code is integrated correctly with some external system or libraries.
+
 - **Functional tests**: Test from a user point of view.
+
   Call a script, use the public API of a package, test from the GUI.
 
 ------
@@ -116,8 +121,6 @@ Tests folder structure:
 Extra tools
 -----------
 
-\ 
-
 ------
 
 QTest
@@ -202,18 +205,18 @@ Costs:
 
 ------
 
-In-house
---------
+Continuous integration: In-house
+--------------------------------
 
-`Jenkins <https://jenkins-ci.org/>`_:
+`Buildbot <http://buildbot.net/>`_:
 
-- 'Master' server with a web interface that controls the tests.
-- 'Slave' nodes that runs the tests.
+- `Master` server with a web interface that controls the tests.
+- `Slave` nodes that runs the tests.
 
 ------
 
-External
---------
+Continuous integration: Cloud
+-----------------------------
 
 - `Travis-CI <https://travis-ci.org/>`_: Linux and MacOS
 - `AppVeyor <http://www.appveyor.com/>`_: Windows
