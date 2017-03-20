@@ -27,7 +27,7 @@
 
 ----
 
-Have a clean Structure
+Have a clean structure
 ----------------------
 
 - Separate library from scripts:
@@ -213,7 +213,7 @@ They are different workflows with git:
 * `Centralized Workflow <https://www.atlassian.com/git/tutorials/comparing-workflows#centralized-workflow>`_
 * `Git Flow <https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow>`_
 
-.. image:: images/gitflow-workflow.svg
+.. image:: images/gitflow-workflow.png
    :align: center
    :width: 700
 
@@ -343,4 +343,3 @@ Take home message
 #. Define a license so that it can be re-used.
 #. Stick to the PEP8 so that it looks *Pythonic*
 #. Use a VCS: GitHub made *git* useable for human beings.
-
