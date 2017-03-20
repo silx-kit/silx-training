@@ -233,11 +233,15 @@ The cycle 1-2-3 is the normal development cycle for a local project.
 Any git repository contains all the history of the project, i.e all
 commits with authors, data time, file changed, and the chain of commits called *branch*
 
-Some commands to interact with branches : 
+Some commands to interact with branches
+.......................................
 
-* *merge* change from a remote branch into the current branch
-* *checkout* : move to another branch. 
+* *fetch <branch>* retrieve history from another branch
+* *merge <branch>* : merge history of <branch> into the current branch
+* *checkout <branch>* : move to another branch.
 * *checkout -b <branch>* : create a new branch
+
+Note : *pull* is grouping *fetch* and *merge* commands
 
 ----
 
@@ -269,14 +273,13 @@ To interact with a remote repository :
 
 * *remote* : manage tracked repositories
 * *remote add name url* : Adds a remote named <name> for the repository at <url>
-  ( allows to use git fetch <name>/<branch> ...)
 
 Then you can retrieve commits from those repositories:
 
-#. *fetch* to retrieve the changes made on a remote repository
-#. *merge* to merge changes from a remote branch into the current branch
+* *fetch <repository> <branch>* retrieve history from another branch
+* *merge <repository> <branch>* : merge history of <branch> into the current branch
 
-The cycle 1-2 is the normal cycle to retrieve commits (grouped into the *pull* command).
+The cycle 1-2 is the normal cycle to retrieve commits.
 
 ----
 
