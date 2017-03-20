@@ -171,7 +171,7 @@ Tools
 * `modernize <https://pypi.python.org/pypi/modernize>`_
 * `autopep8 <https://pypi.python.org/pypi/autopep8>`_
 * `landscape.io <https://landscape.io/>`_: `Example <https://landscape.io/github/silx-kit/silx/>`_
-* IDE 
+* IDE
 
   - `pyDev (eclipse) <http://www.pydev.org/>`_
   - `pyCharm <https://www.jetbrains.com/pycharm/>`_
