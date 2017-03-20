@@ -9,8 +9,8 @@ Standalone self-contained applications or installers.
 
 Beware:
 
-- Fat binaries are fat.
-- You are redistributing (many) other people's work, so take care about licences
+- Fat binaries are fat (500 Mb in average).
+- You are redistributing (many) other people's work, so take care about licenses
   (e.g., numpy compiled with Intel's Math Kernel Library).
 
 ------
@@ -42,7 +42,7 @@ Tools
 - `cx_Freeze <http://cx-freeze.readthedocs.org/>`_: Cross-platform
 - `py2app <https://pythonhosted.org/py2app/>`_: Mac OS X
 
-\ 
+\
 
 - `PyInstaller <http://www.pyinstaller.org/>`_: Cross-platform
 - `Platypus <http://www.sveinbjorn.org/platypus>`_: Mac OS X
@@ -155,5 +155,5 @@ Sum-up
 
 Different tools to freeze.
 
-Main issue: Making sure it is standalone and includes everything required.
+Main issue: Making sure it is stand-alone and includes everything required.
 

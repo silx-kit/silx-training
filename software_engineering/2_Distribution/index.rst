@@ -33,6 +33,9 @@ The core of the distribution: *setup.py*
    :align: center
    :width: 500
 
+As *setup.py* used to be doing to many things, other tools have been added:
+*pip* (the official Python package installer) and *twine* (for uploading distributions to PyPI).
+
 ----
 
 *setup.py*
@@ -109,13 +112,37 @@ Add information about the author, emails and `classifiers <https://pypi.python.o
 Actual registration (2/2):
 --------------------------
 
+The registering to PyPI is simply performed with:
+
 .. code-block:: shell
+
     python setup.py register
 
 All information should now be available online.
 It is advised to separate classifiers in a dedicated list.
 
-List of available `classifiers <https://pypi.python.org/pypi?%3Aaction=list_classifiers>`_
+List of available classifiers_; for our example we used:
+
+.. code-block:: python
+
+    classifiers = ["Development Status :: 1 - Planning",
+                   "Environment :: Console",
+                   "Environment :: MacOS X",
+                   "Environment :: Win32 (MS Windows)",
+                   "Environment :: X11 Applications :: Qt",
+                   "Intended Audience :: Education",
+                   "Intended Audience :: Science/Research",
+                   "License :: OSI Approved :: MIT License",
+                   "Natural Language :: English",
+                   "Operating System :: Microsoft :: Windows",
+                   "Operating System :: POSIX",
+                   "Programming Language :: Cython",
+                   "Programming Language :: Python",
+                   "Programming Language :: Python :: Implementation :: CPython",
+                   "Topic :: Documentation :: Sphinx",
+                   "Topic :: Scientific/Engineering :: Physics",
+                   "Topic :: Software Development :: Libraries :: Python Modules",
+                   ]
 
 ---------------
 
@@ -128,8 +155,16 @@ Create a directory of the name of your package and a *__init__.py* file in it.
 
   project/
      |---- setup.py
+     |---- MANIFEST.in
      |---- package/
      |       |----- __init__.py
+
+
+
+Often the *project*-name and the *package*-name can be the same. This is not an
+issue as long as there is not /project/__init__.py file.
+
+*MANIFEST.in* contains the list of non-python files to be shipped with the project build.
 
 ---------------
 
@@ -153,12 +188,29 @@ Modify your setup.py accordingly.
 In this example the *io*, *third_party* and *gui* sub-packages have also been
 declared.
 
+::
+
+  silx/
+     |---- setup.py
+     |---- MANIFEST.in
+     |---- silx/
+     |       |---- __init__.py
+     |       |---- gui
+     |       |      |---- __init__.py
+     |       |
+     |       |---- io
+     |       |      |---- __init__.py
+     |       |
+     |       |
+     |       |---- third_party
+     |       |      |---- __init__.py
+
 ----
 
 Define your package (3/3)
 -------------------------
 
-You can now build your module with:
+You can now build your package with:
 
 .. code-block:: shell
 
@@ -172,22 +224,30 @@ Create a source package with:
 
     python setup.py sdist
 
-Install your package with
-.........................
+Create a binary package with:
+.............................
 .. code-block:: shell
 
-    python setup.py install  # or better: pip install . 
+    python setup.py bdist_wheel
+
+
+Install your package with:
+..........................
+.. code-block:: shell
+
+    pip install .
+    # deprecated: python setup.py install   
 
 Nota:
 .....
-Only python files will be part of your source package for now.
-If you want to include additionnal files (like README, ...)
-declare them in the *MANIFEST.in*.
+Only Python files will be part of your source package for now.
+If you want to include additional files (like README, ...)
+declare them in the *MANIFEST.in*, at the project's top-level.
 
 ---------------
 
-Dependencies
-------------
+Dependencies (1/2)
+------------------
 
 Dependency management is available at 3 different levels:
 
@@ -229,7 +289,7 @@ It may look contradictory to define dependencies at different places
 
 * *setup.py* provides an abstract dependency (i.e. h5py)
 * *requirement.txt* provides concrete implementation (often with hard coded
-   versions and URL to download wheels from).
+  versions and URL to download wheels from).
   This is often organization specific or CI-tool specific: h5py==2.5.0
 
   Usage::
@@ -269,14 +329,16 @@ and have replaced *eggs*.
 
 Advantages of wheels:
 
-#. Faster installation for pure python and native C extension packages.
-#. Avoids arbitrary code execution for installation. (Avoids setup.py)
-#. Installation of a C extension does not require a compiler on Windows or MacOS.
-#. Allows better caching for testing and continuous integration.
-#. Creates .pyc files as part of installation to ensure they match the Python interpreter used.
+#. Avoids arbitrary code execution for installation (no *setup.py* executed).
+#. Does not require a compiler on the client side for binary extensions.
+#. Faster installation, especially for binary extensions.
+#. Allows better and faster testing and continuous integration.
+#. Creates *.pyc* files at installation, matching the Python interpreter used.
 #. More consistent installs across platforms and machines.
 
-They provide binary packages and a decent installer (pip) for Windows and MacOS.
+Wheels provide binary packages and a decent installer (pip) for Windows and MacOS.
+Under Linux, the reference platform (*manylinux1* aka *centos5*) is very old and binary
+wheels are much slower than native builds (~20%).
 
 ---------------
 
@@ -303,13 +365,13 @@ then:
 
 Pitfalls:
 ---------
-External shared library (Qt, hdf5, ...)
+External shared library (Qt, hdf5, ...) which needs to be incorporated in the wheel.
 
 You can use utility software to check which libraries your package is linked against:
 
 - MacOS: `delocate <https://github.com/matthew-brett/delocate>`_
 - Windows: `depends <http://www.dependencywalker.com/>`_
-- Linux: ldd
+- Linux: ldd, `auditwheel <https://github.com/pypa/auditwheel>`_
 
 .. For example, this is the result of running delocate-listdeps --all on a binary wheel for the pyqt library:
 
@@ -335,9 +397,9 @@ To build both Python2 & Python3 packages use:
 
 .. code-block:: shell
 
-   python3 setup.py --command-packages=stdeb.command sdist_dsc
-                    --with-python2=True
-                    --with-python3=True
+   python3 setup.py --command-packages=stdeb.command sdist_dsc \
+                    --with-python2=True \
+                    --with-python3=True \
                     --no-python3-scripts=True bdist_deb
 
 Alternative to be considered: `pypi2deb <https://github.com/p1otr/pypi2deb>`_
