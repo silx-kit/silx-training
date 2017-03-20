@@ -241,7 +241,7 @@ Some commands to interact with branches
 * *checkout <branch>* : move to another branch.
 * *checkout -b <branch>* : create a new branch
 
-Note : *pull* is grouping *fetch* and *merge* commands
+Note : *pull* command is grouping *fetch* and *merge*
 
 ----
 
@@ -277,9 +277,13 @@ To interact with a remote repository :
 Then you can retrieve commits from those repositories:
 
 * *fetch <repository> <branch>* retrieve history from another branch
-* *merge <repository> <branch>* : merge history of <branch> into the current branch
+* *merge <repository>/<branch>* : merge history of <branch> into the current branch
 
 The cycle 1-2 is the normal cycle to retrieve commits.
+
+Note : *fetch* and *merge* have default values for :
+    * repository --> origin
+    * branch  --> master
 
 ----
 
