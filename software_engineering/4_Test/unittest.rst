@@ -1,6 +1,6 @@
 
-unittest Python module
-----------------------
+`unittest` Python module
+------------------------
 
 #. QuickStart
 #. Chaining tests
@@ -199,12 +199,10 @@ Chaining tests
 How-to run tests from many ``TestCase`` and many files at once:
 
 - Explicit:
-
-  Full control, boilerplate code.
+    Full control, boilerplate code.
 
 - Automatic:
-
-  No control
+    No control
 
 - Mixing approach
 
