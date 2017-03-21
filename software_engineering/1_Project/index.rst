@@ -130,6 +130,11 @@ To ensure a smoother transition, and acquire the Python3 requested practices:
 Use the `six library <https://pypi.python.org/pypi/six>`_ to provide code that
 runs both under Python2 and Python3.
 
+Presenter Notes
+...............
+
+python-future is a higher-level compatibility layer than six that includes more backported functionality from Python 3, more forward-ported functionality from Python 2
+
 ----
 
 Coding convention: `PEP8 <https://www.python.org/dev/peps/pep-0008/>`_
