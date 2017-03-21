@@ -53,6 +53,8 @@ Will also help you to :
 - find back your code
 - avoid code duplication
 
+License : otherwise can't be distributed or reused
+
 ----
 
 A word about Licenses
