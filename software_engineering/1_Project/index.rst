@@ -95,7 +95,7 @@ DAU strongly recommends a MIT license.
 Presenter Notes
 ...............
 
-Warning : code under MIT license can be commercialized. 
+Warning : code under MIT/BSD/Apache licenses can be integrated under proprieteray licences, redistributed...
 
 Why MIT instead of GPL ?
     -> GPL enforce publication of any modification
