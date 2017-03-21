@@ -39,10 +39,19 @@ Have a clean structure
   *  Otherwise maintenance becomes a nightmare
   *  allows to change the front-end
   *  allows to access to core function without the GUI
+  *  simplify unit tests
 
 - Separate I/O from calculation
 
 - Define a license for your work.
+
+Presenter Notes
+...............
+
+Will also help you to :
+
+- find back your code
+- avoid code duplication
 
 ----
 
@@ -82,6 +91,18 @@ build code on top of unlicensed or proprietary work without explicit license
 agreement.
 
 DAU strongly recommends a MIT license.
+
+Presenter Notes
+...............
+
+Warning : code under MIT license can be commercialized. 
+
+Why MIT instead of GPL ?
+    -> GPL enforce publication of any modification
+Why MIT instead of BSD ?
+    -> Different version of BSD, complexify a bit
+Why MIT instead of Apache 2.0 ?
+    -> MIT is shorter and simpler
 
 ----
 
@@ -129,6 +150,16 @@ Coding convention: `PEP8 <https://www.python.org/dev/peps/pep-0008/>`_
 - Two empty lines between top-level objects, only one later.
 
 `PEP 7 <https://www.python.org/dev/peps/pep-0007/>`_: Style Guide for C Code
+
+Presenter Notes
+...............
+
+PEP : python enhancement proposal
+Why PEP ? :
+
+- insure code homogeneity
+- insure readability
+- insure maintenance / avoid some classical errors
 
 ----
 
@@ -217,6 +248,16 @@ They are different workflows with git:
    :align: center
    :width: 700
 
+Presenter Notes
+...............
+
+- centralized : a single point of entry 'central repository'. Let each users to deal with synchronization
+
+- gitflow : strict management of branches. One branch per:
+    - releases
+    - each feature
+    - fix
+
 ----
 
 Git actions
@@ -243,6 +284,11 @@ Some commands to interact with branches
 
 Note : *pull* command is grouping *fetch* and *merge*
 
+Presenter Notes
+...............
+
+Default parameters origin/master rot git actions
+
 ----
 
 Some useful git commands
@@ -264,6 +310,14 @@ github facilitates a forking workflow.
 .. image:: images/github-workflow.png
    :align: center
 
+Presenter Notes
+...............
+
+- simplify branch forking
+- Always keep upstream branch ready for deployement with features and fixes
+- Each new branch starts from the master (up to date)
+- Use merge request for each new feature
+
 ----
 
 Git - Interact with another repository
@@ -281,9 +335,15 @@ Then you can retrieve commits from those repositories:
 
 The cycle 1-2 is the normal cycle to retrieve commits.
 
-Note : *fetch* and *merge* have default values for :
-    * repository --> origin
-    * branch  --> master
+
+Presenter Notes
+...............
+
+git actions have defaults parameters in order to simplify commands and to fit sith workflows
+For example *fetch* and *merge* have default values for:
+
+- repository --> origin
+- branch  --> master
 
 ----
 
@@ -304,6 +364,14 @@ The main advantages of GitHub are:
 Github is actually a social network, but unlike Linked'in or Facebook it
 focuses on code developers. Activities on Github are monitored by head-hunters
 and can be useful for professional placement.
+
+
+Presenter Notes
+...............
+
+other web services:
+
+- CI : Travis, appVeyor, CircleCI (see 4_Test )
 
 ----
 
