@@ -18,12 +18,7 @@
    #. PEP8
    #. PEP20
 
-#. Version control system
-
-   #. Git version control
-   #. GitHub and alternatives
-   #. Different types of workflow
-
+#. Version control system - git
 
 ----
 
@@ -88,6 +83,7 @@ One can define 2 categories:
     (for scientific citation)
 
 The Python scientific stack has a BSD-like licenses.
+
 Defining licenses for your developments is important as the beamline can not
 build code on top of unlicensed or proprietary work without explicit license
 agreement.
@@ -123,6 +119,7 @@ Look at the download statistics of projects like
 `WinPython <https://sourceforge.net/projects/winpython/files/>`_: about 7000 downloads/week for Python_3.x vs 1200 for Python_2.7
 
 Today, in 2017, one should not start a Python2 (only) project.
+
 To ensure a smoother transition, and acquire the Python3 requested practices:
 
 .. code-block:: python
@@ -227,6 +224,7 @@ Git version control
 ...................
 
 Git is the current (2017) standard, it has replaced SVN, CVS, Mercurial, ...
+
 If you have heard of any of them, the concepts in Git are similar while offering a lot of flexibility.
 
 
@@ -302,6 +300,38 @@ Some useful git commands
 
 ----
 
+GitHub
+......
+
+The web service github.com provides free git-hosting for open-source project and
+encourages collaboration using forks of projects.
+
+The main advantages of GitHub are:
+
+ - `Highest visibility compared to other hosting (in 2017) <http://software.ac.uk/resources/guides/choosing-repository-your-software-project>`_
+ - `Offer a fixed pipeline based on *Pull request* <https://help.github.com/articles/using-pull-requests/>`_
+ - `Many tutorials on GitHub <https://guides.github.com/>`_
+ - Issue tracker
+ - Web page hosting for projects
+ - Download of releases
+
+Github is actually a social network, but unlike Linked'in or Facebook it
+focuses on code developers.
+
+Activities on Github are monitored by head-hunters
+and can be useful for professional placement.
+
+
+Presenter Notes
+...............
+
+other web services:
+
+- CI : Travis, appVeyor, CircleCI (see 4_Test )
+
+
+----
+
 Different types of workflow
 ...........................
 
@@ -346,34 +376,6 @@ For example *fetch* and *merge* have default values for:
 
 - repository --> origin
 - branch  --> master
-
-----
-
-GitHub
-......
-
-The web service github.com provides free git-hosting for open-source project and
-encourages collaboration using forks of projects.
-The main advantages of GitHub are:
-
- - `Highest visibility compared to other hosting (in 2017) <http://software.ac.uk/resources/guides/choosing-repository-your-software-project>`_
- - `Offer a fixed pipeline based on *Pull request* <https://help.github.com/articles/using-pull-requests/>`_
- - `Many tutorials on GitHub <https://guides.github.com/>`_
- - Issue tracker
- - Web page hosting for projects
- - Download of releases
-
-Github is actually a social network, but unlike Linked'in or Facebook it
-focuses on code developers. Activities on Github are monitored by head-hunters
-and can be useful for professional placement.
-
-
-Presenter Notes
-...............
-
-other web services:
-
-- CI : Travis, appVeyor, CircleCI (see 4_Test )
 
 ----
 
