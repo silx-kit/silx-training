@@ -1,11 +1,14 @@
 
 .. raw:: html
 
-   <!-- Patch landslide slides background color --!>
    <style type="text/css">
+   /* Patch landslide slides background color */
    div.slide {
        background: #fff;
    }
+
+   /* padding around images */
+   img {padding: 1.5em;}
    </style>
 
 .. |br| raw:: html
@@ -22,47 +25,84 @@ Testing
 
 ------
 
-What kinds of tests?
---------------------
+What is it?
+-----------
 
-- **Unit tests**: Test from the developer point of view.
+- A task consisting of checking that the **program** is working as expected
+- Manually written **tests** which can be automatically executed
+- Different methodologies: Always and before anything else (test-driven development, *TDD*, [TDDwithPython])
 
-  Test the code without the dependencies.
-
-- **Integration tests**: Test from the developer point of view.
-
-  Test that the code is integrated correctly with some external system or libraries.
-
-- **Functional tests**: Test from a user point of view.
-
-  Call a script, use the public API of a package, test from the GUI.
-
-------
-
-When to write tests?
---------------------
-
-- Never
-- Always and before anything else: Test-Driven Development (*TDD*) [TDDwithPython] |br|
-  Workflow:
-
-  - First write a test, run it and check that it fails...
-  - Only then write the code, and test it.
-  - Then eventually do some refactoring.
-
-*TDD* for maintenance: Reproduce bug in a test, then fix it.
-
-Anyway, having the structure set-up for testing encourages writing tests.
+.. image:: img/ttd-workflow.png
 
 .. [TDDwithPython] `Harry J.W. Percival. Test-Driven Development with Python. O'Reilly 2014. <http://chimera.labs.oreilly.com/books/1234000000754>`_
   (Oriented towards web development).
 
-------
+Presenter Notes
+...............
 
-For who?
+- Test inject input to the program, and check output
+- Answer valid or not
+- For maintenance: Reproduce bug in a test, then fix it.
+
+----
+
+Why testing?
+------------
+
+- Validate the code to the specifications
+- Find problems early
+- Facilitates change
+- Documentation
+- Code quality
+
+  - Better design
+  - Simplifies integration
+
+----
+
+Why not?
 --------
 
-Tests (and test coverage) are primarily for developers.
+- Extra work
+- Not perfect
+- Extra maintenance
+
+  - More difficult to refactoring
+  - Maintain environments
+
+- Delays integration
+
+Presenter Notes
+...............
+
+- 30% percent of the time of the project
+- Having the structure set-up for testing encourages writing tests.
+- Then... let's talk about the structure :-)
+
+----
+
+What kinds of tests?
+--------------------
+
+- **Functional tests**: Tests scripts, public API, GUI
+- **Integration tests**: Tests components, code correctly integrated
+- **Unit tests**: Tests independant pieces of code
+
+.. image:: img/test-pyramid.png
+
+.. [TestPyramid] Mike Cohn. Succeeding with Agile: Software Development Using Scrum. 2009.
+
+Presenter Notes
+...............
+
+The test pyramid is a concept developed by Mike Cohn, described in his book "Succeeding with Agile"
+
+- Unit tests (dev point of view, fast, low cost)
+- Integration tests
+- Functional tests (user point of view, but slow, and expensive)
+
+- Cost: unit << integration << functional
+- Fast to execute: unit >> integration >> functional
 
 ------
 
@@ -75,20 +115,23 @@ Separate tests from the source code:
 - Separate test code when distributing.
 - `... <https://docs.python.org/3/library/unittest.html#organizing-test-code>`_
 
-Tests folder structure:
+Folder structure:
 
-- In a separate ``test/`` folder.
-- In ``test`` sub-packages in each Python package/sub-package,
+- In a separate `test/` folder.
+- In `test` sub-packages in each Python package/sub-package,
   so that tests remain close to the source code.
   Tests are installed with the package and can be run from the installation.
-- A ``test_*.py`` for each module and script (an more if needed).
+- A `test_*.py` for each module and script (an more if needed).
 - Consider separating tests that are long to run from the others.
 
 ------
 
+Where to put the tests?
+-----------------------
+
 ::
 
-  project/
+   project
       setup.py
       run_tests.py
       package/
@@ -105,12 +148,16 @@ Tests folder structure:
                   __init__.py
                   test_module1.py
                   test_module2.py
-      scripts/
-          my_script.py
-          my_other_script.py
-      test/
-          test_my_script.py
-          test_my_other_script.py
+
+Presenter Notes
+...............
+
+   scripts/
+       my_script.py
+       my_other_script.py
+   test/
+       test_my_script.py
+       test_my_other_script.py
 
 ------
 
@@ -126,7 +173,7 @@ Extra tools
 QTest
 .....
 
-For GUI based on ``PyQt``, ``PySide`` it is possible to use Qt's `QTest <http://doc.qt.io/qt-5/qtest.html>`_.
+For GUI based on `PyQt`, `PySide` it is possible to use Qt's `QTest <http://doc.qt.io/qt-5/qtest.html>`_.
 
 It provides the basic functionalities for GUI testing.
 It allows to send keyboard and mouse events to widgets.
@@ -156,12 +203,12 @@ Test coverage
 
 Using `coverage.py <https://coverage.readthedocs.org>`_ to gather coverage statistics while running the tests:
 
-#. Install ``coverage.py`` package: ``pip install coverage``.
-#. Run the tests: ``python -m coverage run --source <package_dir> run_tests.py``
+#. Install `coverage.py` package: `pip install coverage`.
+#. Run the tests: `python -m coverage run --source <package_dir> run_tests.py`
 #. Show report:
 
-  - ``python -m coverage report``
-  - ``python -m coverage html``
+  - `python -m coverage report`
+  - `python -m coverage html`
 
 ::
 
@@ -179,7 +226,7 @@ Using `coverage.py <https://coverage.readthedocs.org>`_ to gather coverage stati
 Extra test tools
 ................
 
-Extending ``unittest``:
+Extending `unittest`:
 
 - `pytest <http://pytest.org/>`_
 - `nose <https://nose.readthedocs.org/>`_
@@ -208,8 +255,15 @@ Costs:
 Continuous integration: In-house
 --------------------------------
 
-`Buildbot <http://buildbot.net/>`_:
+- Cron
+- `Buildbot <http://buildbot.net/>`_:
 
+.. image:: img/buildbot-overview.png
+
+Presenter Notes
+...............
+
+Buildbot:
 - `Master` server with a web interface that controls the tests.
 - `Slave` nodes that runs the tests.
 
@@ -223,7 +277,7 @@ Continuous integration: Cloud
 
 Principle:
 
-- Add a ``.yml`` file to your repository describing:
+- Add a `.yml` file to your repository describing:
 
   - The test environment
   - Build and installation of the dependencies and the package
@@ -239,6 +293,6 @@ Sum-up
 ------
 
 - Different test strategies.
-- Python ``unittest`` (and extra packages) to write and run the tests.
+- Python `unittest` (and extra packages) to write and run the tests.
 - Additional tools to efficiently run the tests: Continuous Integration.
 - Next step: Continuous Deployment.
