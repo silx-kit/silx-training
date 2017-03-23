@@ -18,21 +18,26 @@ NOTEBOOK_V3_FROM_NOTEBOOK=$(shell find | grep '\.ipynb$$' | grep -v '\.v3\.' | g
 png: $(PNGS_FROM_SVGS)
 
 #
-# SLIDES
+# HTML
 #
 
 build/html/%.html: %/index.rst png
 	@mkdir -p build/html
 	cd $(dir $<);landslide --embed -d ../$@ index.rst
 
-build/pdf/%.pdf: %/index.rst
-	@mkdir -p build/pdf
-	cd $(dir $<);landslide -d ../$@ index.rst
-
 html: $(patsubst %,build/html/%.html, $(SLIDES))
 
-build/pdf/slides.pdf: $(patsubst %,build/pdf/%.pdf, $(SLIDES))
-	pdfunite $^ $@
+#
+# PDF
+#
+
+build/pdf/%.pdf: build/html/%.html
+	@mkdir -p build/pdf
+	prince $^ -o $@ -s prince.css
+
+build/pdf/slides.pdf: $(patsubst %,build/html/%.html, $(SLIDES))
+	@mkdir -p build/pdf
+	prince $^ -o $@ -s prince.css
 
 pdf: build/pdf/slides.pdf
 
