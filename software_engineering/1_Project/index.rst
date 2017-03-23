@@ -88,8 +88,6 @@ Defining licenses for your developments is important as the beamline can not
 build code on top of unlicensed or proprietary work without explicit license
 agreement.
 
-DAU strongly recommends a MIT license.
-
 Presenter Notes
 ...............
 
