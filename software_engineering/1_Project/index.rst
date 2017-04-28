@@ -96,7 +96,7 @@ Warning : code under MIT/BSD/Apache licenses can be integrated under proprietera
 
 Why MIT instead of GPL or LGPL?
     -> GPL enforce publication of any derived code
-    -> LGPL enforce publication of any modification
+    -> LGPL enforce publication of any modification of the original work
 Why MIT instead of BSD ?
     -> Different version of BSD, complexify a bit
 Why MIT instead of Apache 2.0 ?
