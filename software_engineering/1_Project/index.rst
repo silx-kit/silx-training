@@ -77,7 +77,8 @@ One can define 2 categories:
 
 - Open source licenses:
 
-  * GPL like which allows the distribution of modified code but enforces the
+  * GPL like enforces the publication of any derived work
+  * LGPL like which allows the distribution of modified code but enforces the
     publication of the modification
   * MIT/BSD which provides the name of the author for information
     (for scientific citation)
@@ -93,8 +94,9 @@ Presenter Notes
 
 Warning : code under MIT/BSD/Apache licenses can be integrated under proprieteray licences, redistributed...
 
-Why MIT instead of GPL ?
-    -> GPL enforce publication of any modification
+Why MIT instead of GPL or LGPL?
+    -> GPL enforce publication of any derived code
+    -> LGPL enforce publication of any modification
 Why MIT instead of BSD ?
     -> Different version of BSD, complexify a bit
 Why MIT instead of Apache 2.0 ?
