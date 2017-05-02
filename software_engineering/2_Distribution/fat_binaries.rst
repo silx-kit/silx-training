@@ -9,7 +9,7 @@ Standalone self-contained applications or installers.
 
 Beware:
 
-- Fat binaries are fat (500 Mb in average).
+- Fat binaries are fat (~150 Mb for projects involving GUIs).
 - You are redistributing (many) other people's work, so take care about licenses
   (e.g., numpy compiled with Intel's Math Kernel Library).
 
