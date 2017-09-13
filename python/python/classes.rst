@@ -12,7 +12,7 @@ Definition
         "Simple class inheriting from Myclass1"
         def __init__(self, param):
             Myclass1.__init__()
-            self.param=param
+            self.param = param
 
         def mymethod(self):
             print('value of my param is: %s'% self.param)
@@ -24,7 +24,7 @@ Instantiation
 .. code-block:: python
 
     # creation of a new class instance
-    >>>c2=myclass2(2)
+    >>>c2 = myclass2(2)
     # access to a class method
     >>>c2.mymethod()
     value of my param is: 2

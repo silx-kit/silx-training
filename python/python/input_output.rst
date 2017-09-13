@@ -12,7 +12,7 @@ Opening a file
 How to open a file ?
     .. code-block:: python
 
-        f=open(filename, mode='r')
+        f = open(filename, mode='r')
 
 modes can be:
     - “r” for read-only mode
@@ -125,9 +125,9 @@ Solution
 
     def questioner():
         print("What is your name ?")
-        name=input()
+        name = input()
         print("How old are you ? ")
-        age=input()
+        age = input()
         print("Your name is %s and you are %s years old" % (name, age))
 
 
@@ -151,7 +151,7 @@ Solution - writing
 
 .. code-block:: python
 
-    f=open('myoutputfile', mode='w')
+    f = open('myoutputfile', mode='w')
     f.write('Henri\n')
     import datetime
     f.write(str(datetime.datetime.now()))
@@ -165,12 +165,12 @@ Solution - reading
 .. code-block:: python
 
     # reading
-    f=open('myoutputfile', mode='r')
+    f = open('myoutputfile', mode='r')
     # read the first line with the name
-    firstline=f.readline()
+    firstline = f.readline()
     # read the second line with the date
-    secondline=f.readline()
-    month=secondline.split('-')[1]
+    secondline = f.readline()
+    month = secondline.split('-')[1]
     print("month is %s"%month)
     f.close()
 
@@ -205,24 +205,24 @@ Solution
         if not os.path.isfile(filepath):
             print("No such file %s"%filepath)
             return None
-        result=[]
-        xsize=0
-        ysize=0
+        result = []
+        xsize = 0
+        ysize = 0
         lines=open(filepath, 'r').readlines()
         for idx, line in enumerate(lines):
-            strippedline=line.strip()
+            strippedline = line.strip()
             # if this is a commented line
             if strippedline.startswith('#'):
                 continue
-            words=strippedline.split()
-            if(len(words)==8) and (words[2:6]==["Start", "pixel", "=", "("]):
-                xsize=int(words[0])
-                ysize=int(words[1])
+            words = strippedline.split()
+            if(len(words) == 8) and (words[2:6] == ["Start", "pixel", "=", "("]):
+                xsize = int(words[0])
+                ysize = int(words[1])
                 print("Dimensions of the size are (%s, %s)" %(xsize, ysize))
                 break
         if xsize is not None and ysize is not None:
             for line in lines[idx+1:]:
-                words=line.split()
+                words = line.split()
                 if len(words) != xsize:
                     print("Error !!! Expected entries are %s, got %s"%(xsize, len(words)))
                     return None
@@ -242,29 +242,29 @@ Solution - The same 'reading bytes'
         if not os.path.isfile(filepath):
             print("No such file %s"%filepath)
             return None
-        
-        result=[]
-        xsize=0
-        ysize=0
+        g
+        result = []
+        xsize = 0
+        ysize = 0
         lines=open(filepath, 'rb').readlines()
         for idx, line in enumerate(lines):
-            strippedline=line.decode('utf-8').strip()
+            strippedline = line.decode('utf-8').strip()
             # if this is a commented line
             if strippedline.startswith('#'):
                 continue
 
             words=strippedline.split()
-            if (len(words)==8) and (words[2:6]==["Start", "pixel", "=", "("]):
-                xsize=int(words[0])
-                ysize=int(words[1])
-                print("Dimensions of the size are (%s, %s)"%(xsize, ysize))
+            if (len(words) == 8) and (words[2:6] == ["Start", "pixel", "=", "("]):
+                xsize = int(words[0])
+                ysize = int(words[1])
+                print("Dimensions of the size are (%s, %s)" % (xsize, ysize))
                 break
                 
         if xsize is not None and ysize is not None:
             for line in lines[idx+1:]:
-                words=line.decode('utf-8').split()
+                words = line.decode('utf-8').split()
                 if len(words) != xsize:
-                    print("Error !!! Expected entries are %s, got %s"%(xsize, len(words)))
+                    print("Error !!! Expected entries are %s, got %s" % (xsize, len(words)))
                     return None
                 else:
                     result.append([float(i) for i in words])

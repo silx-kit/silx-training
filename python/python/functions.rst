@@ -23,7 +23,7 @@ Call of a function
 
 .. code-block:: python
 
-    res=myadd(myparam1=12, myparam1=6)
+    res = myadd(myparam1=12, myparam1=6)
 
 Documentation of the function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -48,11 +48,11 @@ first statement of the function:
 Hands on
 --------
 
-Write a function that takes a, b and c as imput and return the list of solutions (in :math:`\mathbf{R}`) for:
+Write a function taking a, b and c in input and return the list of solutions (in :math:`\mathbf{R}`) for:
 
 :math:`{a.x^2}+b.x+c=0` 
 
-Reminder :
+Reminder:
 
 - :math:`{\Delta}={b^2}-4*{ac}`
 - if :math:`{\Delta}>0` then the equation has two solutions
@@ -79,12 +79,12 @@ Definition of the function :
 
         def polynom(a, b, c):
             delta = b*b - 4.0*a*c
-            solutions=[]
+            solutions = []
             if delta > 0 :
                 solutions.append((-b - sqrt(delta)) / (2.0*a))
                 solutions.append((-b + sqrt(delta)) / (2.0*a))
             elif delta == 0 :
-                solutions.append(-b/(2.0*a))
+                solutions.append(-b / (2.0 * a))
             return solutions
 
 
@@ -127,15 +127,15 @@ function parameter (2)
     .. code-block:: python
 
         def myfunction(r, n=12, *arglist, **argdict):
-            print('r param = %s' %r)
-            print('n param = %s' %n)
+            print('r param = %s' % r)
+            print('n param = %s' % n)
             if len(arglist) > 0:
                 print('got %s unnamed argument ' %len(arglist))
-                for arg in arglist :
+                for arg in arglist:
                     print('- %s' % arg)
             if len(argdict) > 0:
-                print('got %s named argument ' %len(argdict))
-                for key in argdict :
+                print('got %s named argument ' % len(argdict))
+                for key in argdict:
                     print('- name = %s , value = %s ' % (key, argdict[key]))
 
 
@@ -191,7 +191,7 @@ You can defined anonymous functions :
 
     pow2=lambda x: x*x
     ...
-    plot(range(100), list(map(lambda x: numpy.log10(x), range(100)) ))
+    plot(range(100), list(map(lambda x: numpy.log10(x), range(100))))
 
 
 **Nota:** We don't expect you to use lambda, but this is just to explain why you can get the following error:
