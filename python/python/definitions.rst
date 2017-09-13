@@ -63,11 +63,6 @@ Basic operations
 ----------------
 
 - Primary operations: ``+ - * / % //``
-    - warning:
-        - Python 2: ``3 / 2 = 1``
-        - Python 3: ``3 / 2 = 1.5``
-        - Explicitely use ``//`` for integer division
-        - Get used to Python3 syntax
 
 - Power, absolute value, …
     - ``a**b``, ``pow(a, b)``, ``abs(a)``
@@ -218,35 +213,6 @@ Python formatting
 
         '{2} {1} {2} {0}'.format('a','b','c')
     return 'c b c a'
-
-----
-
-python2 vs python3
-""""""""""""""""""
-
-in python3 :
-
-- strings are Unicode by default
-- there is a clear separation between bytes and strings (not in python2)
-
-+-----------------------+-----------------------+
-| python2               | python3               |
-+=======================+=======================+
-| >>> print(type('a'))  | >>> print(type('a'))  |
-| <class 'str'>         | <class 'str'>         |
-|                       |                       |
-| >>> print(type(b'a')) | >>> print(type(b'a')) |
-| <type 'str'>          | <class 'bytes'>       |
-|                       |                       |
-| >>> '3' is b'3'       | >>> '3' is b'3'       |
-| True                  | False                 |
-|                       |                       |
-| >>> '3' is u'3'       | >>> '3' is u'3'       |
-| False                 | True                  |
-|                       |                       |
-| >>> list(b"abc")      | >>> list(b"abc")      |
-| ['a', 'b', 'c']       | [97, 98, 99]          |
-+-----------------------+-----------------------+
 
 ----
 

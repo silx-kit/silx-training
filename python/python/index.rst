@@ -13,6 +13,7 @@ Python for data analysis
 4. Modules
 5. Input and output
 6. Exceptions handling
+7. Python 2
 
 ----
 
@@ -46,6 +47,10 @@ http://calcul.math.cnrs.fr/Documents/Ecoles/2010/les_bases.pdf
 ----
 
 .. include:: exceptions.rst
+
+----
+
+.. include:: python2.rst
 
 ----
 
