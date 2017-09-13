@@ -231,7 +231,7 @@ If you have heard of any of them, the concepts in Git are similar while offering
 
 
 * starting commands
-    * git *clone* to copy another existing (remote) project
+    * git *clone <url>* to copy another existing (remote) project
     or
 
     * git *init* to initiate a new project
