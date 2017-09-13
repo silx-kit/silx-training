@@ -20,10 +20,19 @@ https://pythonclock.org/
 Tricky differences python2 - python3
 ------------------------------------
 
-Operator: ``/``
+- Operator: ``/``
     - Python 2: ``3 / 2 = 1``
     - Python 3: ``3 / 2 = 1.5``
     - Get used to Python3 syntax
+
+- print:
+
+    +-----------------------+-----------------------+
+    | python2               | python3               |
+    +=======================+=======================+
+    | >>> print "Bonjour"   | print("Bonjour")      |
+    | <class 'str'>         | <class 'str'>         |
+    +-----------------------+-----------------------+
 
 ----
 

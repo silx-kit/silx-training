@@ -81,9 +81,10 @@ Alternative consoles
 
 ----
 
-Integrated Development Environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IDE
+^^^
 
+- IDE = Integrated Development Environment
 - Python centric editors:
     - IDLE: Python/TK GUI oftently provided by default with python
     - Spyder Python/Qt designed to have a Matlab look & feel
@@ -93,7 +94,6 @@ Integrated Development Environment
     - vim, Emacs, nedit, ... have color highlighting for Python
     - PyDev module of Eclipse
     - PyCharm
-    - sublime-text
 
 ----
 
@@ -101,5 +101,5 @@ Zen of python
 -------------
 
 .. image:: img/zen_of_python.png
-    :width: 650px
+    :width: 600px
     :height: 600px
