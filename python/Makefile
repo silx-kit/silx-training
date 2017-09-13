@@ -7,22 +7,35 @@ PNGS_FROM_SVGS=$(shell find | grep \\.svg | sed -e 's/svg$$/png/g')
 %.png: %.svg
 	inkscape -z $< -e $@
 
+png: $(PNGS_FROM_SVGS)
+
+#
+# HTML
+#
+
 build/html/%.html: %/index.rst
 	@mkdir -p build/html
 	cd $(dir $<);landslide --embed -d ../$@ index.rst
 
-build/pdf/%.pdf: %/index.rst
-	@mkdir -p build/pdf
-	cd $(dir $<);landslide -d ../$@ index.rst
-
-png: $(PNGS_FROM_SVGS)
-
 html: build/html/python.html build/html/numpy.html build/html/io.html
 
-build/pdf/slides.pdf: build/pdf/python.pdf build/pdf/numpy.pdf build/pdf/io.pdf
-	pdfunite $^ $@
+#
+# PDF
+#
+
+build/pdf/%.pdf: build/html/%.html
+	@mkdir -p build/pdf
+	prince $^ -o $@ -s prince.css
+
+build/pdf/slides.pdf: build/html/python.html build/html/numpy.html build/html/io.html
+	@mkdir -p build/pdf
+	prince $^ -o $@ -s prince.css
 
 pdf: build/pdf/slides.pdf
+
+#
+# CLEAN
+#
 
 clean:
 	@rm -rf build
