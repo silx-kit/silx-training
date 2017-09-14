@@ -1,5 +1,5 @@
-Extra informations
-==================
+Extra Information
+=================
 
 ----
 
@@ -12,7 +12,7 @@ advanced options
 Some useful option for the C-Python interpreter:
 
 - \-d to switch to debug mode
-- \-i enter  interactive  mode  after executing  the command (can be suefull for debugging)
+- \-i enter  interactive  mode  after executing  the command (can be usefull for debugging)
 - \-v verbose mode (tells when modules are imported)
 - \-u to enforce stdout/stderr unbuffered (when multi-threaded)
 
@@ -24,7 +24,7 @@ under linux :
         python -v myscript.py
 
 
-more details and command at :
+more details and commands at :
     - https://docs.python.org/3/tutorial/interpreter.html
     - https://docs.python.org/3/using/cmdline.html#using-on-general
 
@@ -45,9 +45,8 @@ Interactive Python interpreter, the ancestor of Jupyter
 Pylab mode for ipython
 """"""""""""""""""""""
 
-- Integrated profiling tool: %timeit myfunction()
-
-- Pylab extenstion: '$ ipython --pylab' or '%pylab' directly in a ipython console
+- Integrated profiling tool: ``%timeit myfunction()``
+- Pylab extension: ``$ ipython --pylab`` or ``%pylab`` directly in a ipython console
     - Auto import many modules:
         - numpy as np
         - from pylab import *

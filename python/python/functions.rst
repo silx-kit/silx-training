@@ -99,7 +99,7 @@ Call of the function :
 function parameter (1)
 ----------------------
 
-- optional parameters
+- optional parameters / parameters with default values
 
     .. code-block:: python
 
@@ -110,16 +110,30 @@ function parameter (1)
     - ``myfunction()`` prints "my parameter is 5"
     - ``myfunction('toto')`` prints "my parameter is toto"
 
-- any parameters
-
-    - The parameter preceded by a star is a list containing all un-named arguments
-        - ``myfunction(*unamedargs)``
-    - The parameter preceded by two stars is a dictionary  containing all named arguments
-        - ``myfunction(**namedargs)``
-
 ----
 
 function parameter (2)
+----------------------
+
+- any parameters
+
+    - The parameter preceded by a star is a list containing all un-named arguments
+
+        .. code-block:: python
+
+            def myfunction(*unamedargs):
+                pass
+
+    - The parameter preceded by two stars is a dictionary  containing all named arguments
+
+        .. code-block:: python
+
+            def myfunction(**namedargs):
+                pass
+
+----
+
+function parameter (3)
 ----------------------
 
     Example of a function with 'any parameters'
@@ -146,7 +160,7 @@ function parameter (2)
 
 ----
 
-function parameter (2)
+function parameter (4)
 ----------------------
 
 

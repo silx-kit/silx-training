@@ -39,7 +39,7 @@ Exceptions are classes:
 - You can create your own exceptions
     - This is out of the scope of this training
 
-Raise exception:
+Raising an exception:
 
     .. code-block:: python
 

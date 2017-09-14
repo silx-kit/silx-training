@@ -136,7 +136,8 @@ Solution
 Exercise
 ^^^^^^^^
 
-write into a file :
+write into a file:
+
     - your name
     - the current date
 
