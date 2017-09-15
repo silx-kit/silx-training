@@ -13,8 +13,24 @@ https://pythonclock.org/
 .. image:: img/theEndIsNear.jpg
     :width: 500px
     :height: 500px
+	    
+----
 
+Integers:
+---------
 
+Python 2
+^^^^^^^^
+
+- Fixed length (32 or 64 bits): ``-2, 1, 6452``
+- Long integer (arbitrary length):
+  - ``-2L, 1L, 6452L, -9223372036854775808L (sys.maxsize + 1)``
+
+Python 3
+^^^^^^^^
+
+Single unified type (``int``) for all integers, no ``long`` type, ``3L`` notation not recgnized.
+	     
 ----
 
 Tricky differences python2 - python3
