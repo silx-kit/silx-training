@@ -32,8 +32,8 @@ Summary
 
 0. Introduction
 #. numpy
-#. Creation of arrays
-#. Array methods and functions
+#. Creating arrays
+#. Using arrays
 #. numpy modules
 
 -----
@@ -43,8 +43,8 @@ Introduction
 
 0. **Introduction**
 #. numpy
-#. Creation of arrays
-#. Array methods and functions
+#. Creating arrays
+#. Using arrays
 #. numpy modules
 
 -----
@@ -70,7 +70,7 @@ Python: Basic high level data types
 - Strings, bytes: ``"Hello World!", b"Hello World!"``
 - Lists: ``['abc', 3, "x"]``
 - Tuples: ``('abc', 3, 'x')``
-- Dictionnaries: ``{'key1':'abc', 'key2': 3, 'key3': 'x'}``
+- Dictionnaries: ``{'key1': 'abc', 'key2': 3, 'key3': 'x'}``
 
 -----
 
@@ -118,8 +118,8 @@ numpy
 
 0. Introduction
 #. **numpy**
-#. Creation of arrays
-#. Array methods and functions
+#. Creating arrays
+#. Using arrays
 #. numpy modules
 
 -----
@@ -160,14 +160,14 @@ It can be interfaced with other languages.
 
 -----
 
-Creation of arrays
-==================
+Creating arrays
+===============
 
 0. Introduction
 #. numpy
-#. **Creation of arrays**
-#. Array methods and functions
-#. Linear algebra
+#. **Creating arrays**
+#. Using arrays
+#. numpy modules
 
 -----
 
@@ -249,6 +249,11 @@ Array creation - 3
          [130., 131., 132.],
          [140., 141., 142.]])
 
+-----
+
+Array creation - 4
+------------------
+
 **From a file**: ``numpy.load`` (and ``numpy.save``)
 
 .. code-block:: python
@@ -256,6 +261,21 @@ Array creation - 3
   >>> a = numpy.ones((3, 5, 7))
   >>> numpy.save('data.npy', a)
   >>> b = numpy.load('data.npy')
+
+**From a text file**: ``numpy.loadtxt`` (and ``numpy.savetxt``)
+
+.. code-block:: python
+
+  >>> numpy.loadtxt(filename)
+  >>> numpy.savetxt(filename, array)
+
+Many more options::
+
+  loadtxt(fname, dtype=<type 'float'>, comments='#',
+          delimiter=None, converters=None, skiprows=0,
+          usecols=None, unpack=False, ndmin=0)
+
+Each row in the text file must have the same number of values.
 
 -----
 
@@ -299,7 +319,7 @@ Solution - 2
   array([2, 4, 6])
 
   >>> b / 2.0
-  array([0, 0.5, 1])
+  array([0.5, 1., 1.5])
 
 -----
 
@@ -350,6 +370,102 @@ Imagine your data being a spreadsheet, the field names would be the column headi
   ...    {'names': ('r','g','b'),
   ...     'formats': (numpy.float32, numpy.float32, numpy.float32)})
   >>> img['r'] = 10.
+
+-----
+
+Using arrays
+============
+
+0. Introduction
+#. numpy
+#. Creating arrays
+#. **Using arrays**
+#. numpy modules
+
+-----
+
+Indexing - 1
+------------
+
+One can select elements as with any other Python sequence:
+
+- Indexing starts at 0 for each array dimension
+- Indexes can be negative: x[-1] is the same as x[len(x) - 1]
+
+The output refers to the original array and usually it is not contiguous in memory.
+
+-----
+
+Indexing - 2
+------------
+
+Syntax similar to other python sequences:
+
+.. code-block:: python
+
+  >>> a = numpy.array([(1, 2, 3, 4),
+  ...                  (5, 6, 7, 8),
+  ...                  (9, 10, 11, 12)])
+  >>> a[1, 2]
+  7
+  >>> a[1:2, 2]
+  array([7])
+
+  >>> a[2]  # all the elements of the fourth row
+  >>> a[2, :]  # same as previous assuming a has at least two dimensions
+  >>> a[0, -1]  # last element of the first row
+  >>> a[0:2, 0:4:2]  # slicing allowed
+  >>> a[0:2, :] = 5  # assignation is also possible
+
+-----
+
+Indexing - 3
+------------
+
+The indexation argument is a list or an array:
+
+.. code-block:: python
+
+  >>> a = numpy.arange(10., 18.)
+  >>> a[[0, 3, 5]]
+  array([10., 13., 15.])
+
+The indexation argument can be a logical array:
+
+.. code-block:: python
+
+  >>>a[a>13]
+  array([14., 15., 16., 17.])
+
+-----
+
+Exercice - 3
+------------
+
+0. Calculate the element-wise difference between 2 arrays X and Y?
+#. Provide an expression to calculate the difference X[i+1]-X[i] for all the elements of the 1D array X.
+
+-----
+
+Solution - 3
+------------
+
+Calculate the element-wise difference between 2 arrays X and Y:
+
+.. code-block:: python
+
+  x = numpy.arange(10)
+  y = numpy.arange(1, 11)
+
+  difference = x - y
+
+Provide an expression to calculate the difference X[i+1]-X[i] for all the elements of the 1D array X:
+
+.. code-block:: python
+
+  x = numpy.arange(10)
+
+  difference = x[1:] - x[:-1]
 
 -----
 
@@ -420,105 +536,12 @@ Array attribues - 3
 
 -----
 
-Indexing - 1
-------------
-
-One can select elements as with any other Python sequence:
-
-- Indexing starts at 0 for each array dimension
-- Indexes can be negative: x[-1] is the same as x[len(x) - 1]
-
-The output refers to the original array and usually it is not contiguous in memory.
-
------
-
-Indexing - 2
-------------
-
-Syntax similar to other python sequences:
-
-.. code-block:: python
-
-  >>> a = numpy.arange(24).reshape((6, 4))
-  >>> a[3, 2]
-  14
-  >>> a[3:4, 2]
-  array([14])
-
-  >>> a[3]  # all the elements of the fourth row
-  >>> a[3, :]  # same as previous assuming a has at least two dimensions
-  >>> a[0, -1]  # last element of the first row
-  >>> a[0:2, 0:4:2]  # slicing allowed
-  >>> a[0:2, :] = 5  # assignation is also possible
-
------
-
-Indexing - 3
-------------
-
-The indexation argument is a list or an array:
-
-.. code-block:: python
-
-  >>> a = numpy.arange(10.) * 2
-  >>> a[[0, 3, 5]]
-  array([ 0., 4., 8])
-
-The indexation argument can be a logical array:
-
-.. code-block:: python
-
-  >>>a[a>3]
-  array([4., 5., 6., 7., 8., 9.])
-
------
-
-Exercice - 3
-------------
-
-0. Calculate the element-wise difference between 2 arrays X and Y?
-#. Provide an expression to calculate the difference X[i+1]-X[i] for all the elements of the 1D array X.
-
------
-
-Solution - 3
-------------
-
-Calculate the element-wise difference between 2 arrays X and Y:
-
-.. code-block:: python
-
-  x = numpy.arange(10)
-  y = numpy.arange(1, 11)
-
-  difference = x - y
-
-Provide an expression to calculate the difference X[i+1]-X[i] for all the elements of the 1D array X:
-
-.. code-block:: python
-
-  x = numpy.arange(10)
-
-  difference = x[1:] - x[:-1]
-
------
-
-Array methods and functions
-===========================
-
-0. Introduction
-#. numpy
-#. Creation of arrays
-#. **Array methods and functions**
-#. numpy modules
-
------
-
-Methods - 1
------------
+Methods
+-------
 
 There are methods associated to the arrays -> ``dir(a)`` where a is an array
 
+- ``a.reshape()`` Returns a view of the array with a different shape
 - ``a.min()`` Returns the minimum of the array
 - ``a.max()`` Returns the maximum of the array
 - ``a.sort()`` Sorts an array in-place: returns None
@@ -537,38 +560,6 @@ Many methods are available in both forms:
 
 -----
 
-Methods - 2
------------
-
-.. code-block:: python
-
-  >>> idx = numpy.argsort(a)
-
-Get the sorted indices, not the sorted the array.
-
-.. code-block:: python
-
-  >>> numpy.take(a, idx)
-
-Returns a new sorted array
-
-Complete function defined as ``argsort(a, axis=-1, kind=‘quicksort’, order=None)``
-
------
-
-Methods - 3
------------
-
-- ``numpy.loadtxt(filename)	 # Load data from a text file.``
-- ``numpy.savetxt(filename, array)``
-
-Many more options:
-
-- ``loadtxt(fname, dtype=<type 'float'>, comments='#', delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0)``
-  Each row in the text file must have the same number of values.
-
------
-
 Views
 -----
 
@@ -580,10 +571,10 @@ New object pointing to the same buffer:
   >>> a.shape = 2, 5
   >>> c = a.T
   >>> a[1, 2]
-  7
+  7.0
   >>> c[2, 1] = 10
   >>> a[1, 2]
-  10
+  10.0
 
   >>> b = a[:]
   >>> b.shape = -1  # makes whatever needed to get the matching number
@@ -592,7 +583,7 @@ New object pointing to the same buffer:
   2, 5
   >>> b[0] = 25
   >>> a[0, 0]
-  25
+  25.0
 
 -----
 
@@ -651,27 +642,6 @@ Solution - 4
   reshaped_data = data.reshape(height // 2, 2, width // 2, 2)
   binned = reshaped_data.sum(axis=3).sum(axis=1)
 
-
------
-
-Array operations
-----------------
-
-All standard operations when applied to arrays, operate element by element.
-
-Other common operations are:
-
-- ``numpy.dot(a, b)`` Standard linear algebra matrix multiplication
-- ``numpy.inner(a, b)`` Inner product
-- ``numpy.outer(a, b)`` Outer product
-
-
-- ``mean``, ``std``, ``median``, ``percentile``
-- ``sum``, ``cumsum``
-- ``cos``, ``sin``, ``arctan``, ...
-- ``interp``
-- ...
-
 -----
 
 numpy modules
@@ -679,9 +649,52 @@ numpy modules
 
 0. Introduction
 #. numpy
-#. Creation of arrays
-#. Array methods and functions
+#. Creating arrays
+#. Using arrays
 #. **numpy modules**
+
+
+Reference : http://docs.scipy.org/doc/numpy/reference/
+
+-----
+
+Array operations - 1
+--------------------
+
+.. code-block:: python
+
+  >>> idx = numpy.argsort(a)
+
+Get the sorted indices, not the sorted the array.
+
+.. code-block:: python
+
+  >>> numpy.take(a, idx)
+
+Returns a new sorted array
+
+Complete function defined as ``argsort(a, axis=-1, kind=‘quicksort’, order=None)``
+
+-----
+
+Array operations - 2
+--------------------
+
+All standard operations when applied to arrays, operate element by element.
+
+Common operations are:
+
+- Linear algebra:
+
+  - ``numpy.dot(a, b)`` Standard linear algebra matrix multiplication
+  - ``numpy.inner(a, b)`` Inner product
+  - ``numpy.outer(a, b)`` Outer product
+- Statistics: ``mean``, ``std``, ``median``, ``percentile``, ...
+- Sums: ``sum``, ``cumsum``
+- Trigonometric functions: ``cos``, ``sin``, ``arctan``, ...
+- Interpolation: ``interp``
+- Indexing, Logic functions, Sorting, ...
+- ...
 
 -----
 
@@ -697,6 +710,7 @@ The operations you will usually use:
 - ``numpy.linalg.inv(x)`` Inverse matrix of x
 - ``numpy.linalg.svd(x)`` Singular value decomposition of x
 
+|br|
 
 - ``numpy.dot(a, b)`` Standard linear algebra matrix multiplication
 - ``numpy.inner(a, b)`` Inner product
@@ -890,3 +904,4 @@ Thanks to Nicolas Rougier: https://github.com/rougier/numpy-100:
 #. Subtract the mean of each row of a matrix
 #. How to I sort an array by the nth column ?
 #. Find the nearest value from a given value in an array
+
