@@ -18,8 +18,9 @@ Integers:
 
 - Arbitrary length: ``-2, 1, 6452, -9223372036854775808``
 - Syntax for representation in other bases:
-  - binary: ``0b0101`` (5 in base 2)
-  - hexadecimal: ``0xF1`` (241 in base 16)
+    
+  - binary: ``0b0101``
+  - hexadecimal: ``0xF1``
 
 Floating point numbers:
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -58,11 +59,11 @@ Basic operations
 
 More on comparisons
 -------------------
-    
+
 - ```==``` compares the values of the objets.
 
   .. code-block:: python
-    
+
       >>> a, b = 5, 5.0
       >>> a == b
       True
@@ -72,17 +73,17 @@ More on comparisons
 
 
 - ```is``` checks that the objects are the same object (stored at the same place in memory)
-    
+
   .. code-block:: python
-		
+
       >>> a is 0b0101
-      True	
+      True
       >>> a is 5.0
       False
       >>> c, d = 5.0, 5.0
-      >>> c is d 
+      >>> c is d
       True
-     
+
 ----
 
 .. code-block:: python
@@ -108,7 +109,7 @@ More on comparisons
     >>> 1 >= 0.5 and (2 > 3 or 5 % 2 == 1)
     True
     >>> 3+4j > 1
-    TypeError: no ordering relation is defined for complex numbers  
+    TypeError: no ordering relation is defined for complex numbers
 
 ----
 
@@ -142,7 +143,7 @@ Strings
 .. code-block:: python
 
     >>> "Two words"[4:7]
-    'wor'	
+    'wor'
     >>> 'I like playing with strings'[-1::-1]
     'sgnirts htiw gniyalp ekil I'
 
@@ -331,10 +332,10 @@ Operations on lists
     >>> L1, L2 = [1, 3, 5], [2, 4, 6] 
     >>> L1 + L2
     [1, 3, 5, 2, 4, 6]
-		
+
     >>> L1 *3
     [1, 3, 5, 1, 3, 5, 1, 3, 5]
-		
+
     >>> list(zip(L1, L2))
     [(1, 2), (3, 4), (5, 6)]
  
@@ -489,7 +490,7 @@ Dictionaries: examples (2)
     >>> len(dico)
     3
     
-    >>> dico[math.e]     
+    >>> dico[math.e] 
     KeyError: 2.718281828459045    
     
     >>> dico.get(math.e, 2.7)  # returns a default value if key not in dict
@@ -671,7 +672,7 @@ For loop
     ...
 
 - when index is really needed, use ``enumerate``
-      
+
 .. code-block:: python
 
     >>> for i, food in enumerate(ingredients[::-1]):
@@ -680,7 +681,7 @@ For loop
     sausages is number 5 in my top 5 of foods
     spam is number 4 in my top 5 of foods
     ...
-  
+
 
 ----
 
