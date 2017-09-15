@@ -16,23 +16,6 @@ https://pythonclock.org/
 	    
 ----
 
-Integers:
----------
-
-Python 2
-^^^^^^^^
-
-- Fixed length (32 or 64 bits): ``-2, 1, 6452``
-- Long integer (arbitrary length):
-  - ``-2L, 1L, 6452L, -9223372036854775808L (sys.maxsize + 1)``
-
-Python 3
-^^^^^^^^
-
-Single unified type (``int``) for all integers, no ``long`` type, ``3L`` notation not recognized.
-	     
-----
-
 Tricky differences python2 - python3
 ------------------------------------
 
@@ -96,3 +79,38 @@ Some function now returning iterators
 | >>> list(r)           | >>> list(r)           |
 | [0, 1, 2, 3, 4]       | [0, 1, 2, 3, 4]       |
 +-----------------------+-----------------------+
+
+----
+
+Integers  python2  - python3
+----------------------------
+
+
+Python 2: two types
+^^^^^^^^^^^^^^^^^^^
+
+- Fixed length (32 or 64 bits): ``-2, 1, 6452``
+- Long integer (arbitrary length):
+  - ``-2L, 1L, 6452L, -9223372036854775808L (sys.maxsize + 1)``
+
+Python 3
+^^^^^^^^
+
+Single unified type (``int``) for all integers
+
++--------------------------+----------------------------------------+
+| python2                  | python3                                |
++==========================+========================================+
+| >>> isinstance(3L, long) | >>> 3L                                 |
+| True                     | SyntaxError: invalid syntax            |
+|                          |                                        |
+| >>> isinstance(3L, int)  | >>> isinstance(3, long)                |
+| False                    | NameError: name 'long' is not defined  |
+|                          |                                        |
+| >>> type(10**20)         | >>> type(10**999)                      |
+| long                     | int                                    |
+|                          |                                        |
+| >>> 3L is 3              |                                        |
+| False                    |                                        |
++--------------------------+----------------------------------------+
+
