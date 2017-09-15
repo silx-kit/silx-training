@@ -4,13 +4,23 @@
      See https://docs.scipy.org/doc/numpy/reference/index.html for classification
    - Make more 'realistic' exercices (e.g., substract 2 images instead of x-y)
 
+
+.. raw:: html
+
+   <!-- Patch landslide slides background color --!>
+   <style type="text/css">
+   div.slide {
+       background: #fff;
+   }
+   </style>
+
 .. |br| raw:: html
 
    <br />
 
 
 *********************
-Introduction to Numpy
+Introduction to numpy
 *********************
 
 Credits: V. A. Sole, ESRF Software Group
@@ -21,10 +31,10 @@ Summary
 =======
 
 0. Introduction
-#. Numpy
+#. numpy
 #. Creation of arrays
 #. Array methods and functions
-#. Numpy modules
+#. numpy modules
 
 -----
 
@@ -32,10 +42,10 @@ Introduction
 ============
 
 0. **Introduction**
-#. Numpy
+#. numpy
 #. Creation of arrays
 #. Array methods and functions
-#. Numpy modules
+#. numpy modules
 
 -----
 
@@ -57,7 +67,7 @@ Python: Basic high level data types
 -----------------------------------
 
 - Numbers: ``10, 10.0, 1.0e+01, ( 10.0+3j )``
-- Strings, Unicode: ``"Hello World!", u"Hello World!"``
+- Strings, bytes: ``"Hello World!", b"Hello World!"``
 - Lists: ``['abc', 3, "x"]``
 - Tuples: ``('abc', 3, 'x')``
 - Dictionnaries: ``{'key1':'abc', 'key2': 3, 'key3': 'x'}``
@@ -103,18 +113,18 @@ The ``numpy`` package
 
 -----
 
-Numpy
+numpy
 =====
 
 0. Introduction
-#. **Numpy**
+#. **numpy**
 #. Creation of arrays
 #. Array methods and functions
-#. Numpy modules
+#. numpy modules
 
 -----
 
-Numpy
+numpy
 -----
 
 
@@ -128,7 +138,7 @@ It extends Python providing tools for
 
 -----
 
-The Numpy ndarray objects
+The numpy ndarray objects
 -------------------------
 
 The (nd)array object:
@@ -142,7 +152,7 @@ Multi-dimensional, any type of data
 - Dimensions can be modified, flexible indexation
 - Internal optimization for 1D, 2D and 3D
 
-It can be interfaced with other languages
+It can be interfaced with other languages.
 
 .. code-block:: python
 
@@ -154,7 +164,7 @@ Creation of arrays
 ==================
 
 0. Introduction
-#. Numpy
+#. numpy
 #. **Creation of arrays**
 #. Array methods and functions
 #. Linear algebra
@@ -164,7 +174,7 @@ Creation of arrays
 Array creation - 1
 ------------------
 
-**Given its contents**:
+**Given its contents**: ``numpy.array``
 
 From a list of values:
 
@@ -176,7 +186,6 @@ From a list of values and dimensions:
 
 .. code-block:: python
 
-  a = numpy.array([0.1, 0.0, 0.2])
   b = numpy.array([[1, 2, 3], [4, 5, 6]])
 
 Also specifying the type of element:
@@ -193,42 +202,32 @@ Array creation - 2
 
 Besides using ``numpy.array``, one can create arrays using **dedicated methods**:
 
-numpy.empty(dimensions_tuple, dtype=numpy.float):
+``numpy.empty|zeros|ones``\ (dimensions_tuple, dtype=numpy.float):
 
 .. code-block:: python
 
   >>> a = numpy.empty((2, 4), dtype=numpy.float)
+  >>> b = numpy.zeros((2, 4, 3), dtype=numpy.float)
+  >>> c = numpy.ones((3,), dtype=numpy.int)
 
-numpy.zeros(dimensions_tuple, dtype=numpy.float):
-
-.. code-block:: python
-
-  >>> a = numpy.zeros((2, 4), dtype=numpy.float)
-
-numpy.ones(dimensions_tuple, dtype=numpy.float):
-
-.. code-block:: python
-
-  >>> a = numpy.ones((3, 5), dtype=numpy.int)
-
-numpy.arange(start, end, step):
+``numpy.arange``\ (start, end, step):
 
 .. code-block:: python
 
   >>> a = numpy.arange(10.)
   >>> b = numpy.arange(1, 10, 2)
 
-numpy.linspace(start, stop, num, endpoint=True):
+``numpy.linspace``\ (start, stop, num, endpoint=True):
 
 .. code-block:: python
 
   >>> a = numpy.linspace(-10, 10, 201)
 
-numpy.identity(n, dtype=numpy.float):
+``numpy.identity``\ (n, dtype=numpy.float):
 
 .. code-block:: python
 
-  >>> a = numpy.identity(3,dtype=numpy.int)
+  >>> a = numpy.identity(3, dtype=numpy.int)
 
 ------
 
@@ -242,7 +241,7 @@ Array creation - 3
   >>> def init_function(row, col):
   ...     return 100. + 10 * row + col
 
-  >>> c = numpy.fromfunction(init_function, (5,3))
+  >>> c = numpy.fromfunction(init_function, (5, 3))
   >>> c
   array([[100., 101., 102.],
          [110., 111., 112.],
@@ -250,7 +249,7 @@ Array creation - 3
          [130., 131., 132.],
          [140., 141., 142.]])
 
-**From a file**: ``numpy.load``
+**From a file**: ``numpy.load`` (and ``numpy.save``)
 
 .. code-block:: python
 
@@ -276,9 +275,10 @@ At the python prompt (``In [ ]:`` or ``>>>``), type:
 - What is the result of ``2 * a[2]``?
 - What is the result of ``2 * a``?
 
+|br|
+
 - What is the result of ``2 * b[2]``?
 - What is the result of ``2 * b``?
-- What is the result of ``b / 2``?
 - What is the result of ``b / 2.0``?
 
 -----
@@ -289,16 +289,16 @@ Solution - 2
 .. code-block:: python
 
   >>> import numpy
-
   >>> a = [1, 2, 3]
   >>> b = numpy.array(a)
+
   >>> a * 2
   [1, 2, 3, 1, 2, 3]
+
   >>> b * 2
   array([2, 4, 6])
-  >>> b/2
-  array([0, 0, 1])
-  >>> b/2.
+
+  >>> b / 2.0
   array([0, 0.5, 1])
 
 -----
@@ -319,7 +319,7 @@ WARNING: better specify the element type for portability, particularly for integ
 - ``numpy.int`` corresponds to a long integer (64 bit or 32 bit depending on platform)
 - ``numpy.complex64`` corresponds to two 32 bit floats (real and imaginary parts)
 
-Consider using the types ``numpy.float32``, ``numpy.float64``, ``numpy.int32``, ``numpy.int64``, ...
+Consider using the types ``numpy.float32``, ``numpy.float64``, ``numpy.int32``, ``numpy.uint64``, ...
 
 -----
 
@@ -332,9 +332,9 @@ The elements of an array may contain any other object. Try the following:
 
 .. code-block:: python
 
-  >>> a= {'dict':'a'}
-  >>> b= {'dict':'b'}
-  >>> c= {'dict':'c'}
+  >>> a = {'dict': 'a'}
+  >>> b = {'dict': 'b'}
+  >>> c = {'dict': 'c'}
   >>> v = numpy.array([a, b, c])
   >>> v
 
@@ -378,6 +378,7 @@ It is a Read and Write attribute.
   >>> a= numpy.ones((3, 5, 7))
   >>> a.shape
   (3, 5, 7)
+
   >>> a.shape = (21, 5)
   >>> numpy.shape(a)
   (21, 5)
@@ -445,7 +446,7 @@ Syntax similar to other python sequences:
   array([14])
 
   >>> a[3]  # all the elements of the fourth row
-  >>> a[3,:]  # same as previous assuming a has at least two dimensions
+  >>> a[3, :]  # same as previous assuming a has at least two dimensions
   >>> a[0, -1]  # last element of the first row
   >>> a[0:2, 0:4:2]  # slicing allowed
   >>> a[0:2, :] = 5  # assignation is also possible
@@ -506,10 +507,10 @@ Array methods and functions
 ===========================
 
 0. Introduction
-#. Numpy
+#. numpy
 #. Creation of arrays
 #. **Array methods and functions**
-#. Numpy modules
+#. numpy modules
 
 -----
 
@@ -583,6 +584,7 @@ New object pointing to the same buffer:
   >>> c[2, 1] = 10
   >>> a[1, 2]
   10
+
   >>> b = a[:]
   >>> b.shape = -1  # makes whatever needed to get the matching number
   >>> b.shape = 10  # equivalent to previous
@@ -672,14 +674,14 @@ Other common operations are:
 
 -----
 
-Numpy modules
+numpy modules
 =============
 
 0. Introduction
-#. Numpy
+#. numpy
 #. Creation of arrays
 #. Array methods and functions
-#. **Numpy modules**
+#. **numpy modules**
 
 -----
 
@@ -856,7 +858,7 @@ http://docs.scipy.org/doc/numpy/reference/
 
 numpy user guide:
 
-http://docs.scipy.org/doc/numpy/numpy-user.pdf
+https://docs.scipy.org/doc/numpy/user/
 
 Many recipes for different purposes:
 
