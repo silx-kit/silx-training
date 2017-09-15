@@ -3,48 +3,48 @@
 Python training
 ===============
 
-Training for beginner in Python.
+Training for beginners in Python.
 
 Contains:
 
 - ``python``:
 
-    Python basis using Python 3
+    Python 3 basics
 
 - ``numpy``:
 
-    How to use numpy to compute your data
+    How to use numpy for computing data
 
 - ``io``:
 
     How to read and write data at the ESRF
 
-Dependancies
+Dependencies
 ============
 
 To generate the document, you have to install
 
 - ``landslide``
 - ``princexml`` (http://princexml.com/) for the PDF output
-- ``inkscape`` to convert SVG to PNG
-- ``pdfunite`` to merge many PDF into a single one
+- ``inkscape`` to convert images from SVG to PNG
+- ``pdfunite`` to merge many PDF files into a single one
 
 Makefile
 ========
 
-There is 4 targets to the makefile
+There are 4 targets to the makefile
 
 - ``make png``:
 
-    Generate svg files into PNG (princexml do not allow to display SVG)
+    Generate PNG files from SVG (princexml does not support SVG)
 
 - ``make html``:
 
-    Generate HTML output into ``build/html``
+    Generate the HTML output in ``build/html``
 
 - ``make pdf``:
 
-    Generate single PDF for each part plus a master PDF ``build/html/slides.pdf``
+    Generate a single PDF for each part plus a master PDF in ``build/html/slides.pdf``
 
 - ``make clean``:
 
