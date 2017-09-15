@@ -1,3 +1,12 @@
+.. raw:: html
+
+   <!-- Patch landslide slides background color --!>
+   <style type="text/css">
+   div.slide {
+       background: #fff;
+   }
+   </style>
+
 ************
 Input/output
 ************
@@ -369,7 +378,7 @@ Example
    .. code-block:: python
 
       import silx.io
-      data = silx.io.open('data/ID16B_diatomee.h5')
+      data = silx.io.open('data/ID16B_diatomee.edf')
 
       # Access to the frames
       frames = data['/scan_0/instrument/detector_0/data']
