@@ -43,8 +43,8 @@ Examples of applications in Python
 - Scientific libraries:
     - Numpy, Scipy, (Scientific Python, numarray, Numeric, …)
 
-- More locally developed programs (ESRF driven):
-    - PyMca, PyHST, EDNA, MxCube, PyFAI, FabIO …
+- More locally developed programs anl libraries (ESRF driven):
+    - PyMca, PyHST, EDNA, MxCube, PyFAI, FabIO, silx …
 
 ----
 

@@ -29,7 +29,7 @@ Python 2
 Python 3
 ^^^^^^^^
 
-Single unified type (``int``) for all integers, no ``long`` type, ``3L`` notation not recgnized.
+Single unified type (``int``) for all integers, no ``long`` type, ``3L`` notation not recognized.
 	     
 ----
 
