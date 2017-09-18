@@ -31,7 +31,7 @@ Tricky differences python2 - python3
     | python2               | python3               |
     +=======================+=======================+
     | >>> print "Bonjour"   | >>> print("Bonjour")  |
-    | <class 'str'>         | <class 'str'>         |
+    | Bonjour               | Bonjour               |
     +-----------------------+-----------------------+
 
 ----
