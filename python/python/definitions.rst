@@ -16,47 +16,29 @@ Primitive types
 Integers:
 ^^^^^^^^^
 
-- Fixed length (32 or 64 bits): ``-2, 1, 6452``
-- Long integer (arbitrary length):
-    - ``-2L, 1L, 6452L, -9223372036854775808L (sys.maxsize + 1)``
+- Arbitrary length: ``-2, 1, 6452, -9223372036854775808``
+- Syntax for representation in other bases:
+    
+  - binary: ``0b0101``
+  - hexadecimal: ``0xF1``
 
 Floating point numbers:
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-- 64 bits (double-precision): 3.1415926535897931, 2.7182818284590451
+- 64 bits (double-precision): ``3.1415926535897931``, ``2.7182818284590451``
 
 Complex numbers:
 ^^^^^^^^^^^^^^^^
-- 3+4j
+- ``3 + 4j``
 
+  
 Booleans:
 ^^^^^^^^^
 - ``True`` and ``False``
 
 None
 ^^^^
-
-----
-
-.. code-block:: python
     
-    >>> a, b = 5, 5.0
-    >>> a == b
-    True
-
-    >>> type(a); type(b)
-    <type 'int'>
-    <type 'float'>
-
-    >>> a is b
-    False
-    
-    >>> a is None
-    False
-
-    >>> None is None
-    True
-
 ----
 
 Basic operations
@@ -67,12 +49,40 @@ Basic operations
 - Power, absolute value, …
     - ``a**b``, ``pow(a, b)``, ``abs(a)``
 
-- Comparison: ``is   ==   !=   is not  >  >=  <  <=``
+- Comparison: ``is   is not    ==    !=   >   >=   <   <=``
 
 - Logical operators: ``and   or   not``
 
 - Bitwise operators: ``&   ^   |   <<   >>``
 
+----
+
+More on comparisons
+-------------------
+
+- ```==``` compares the values of the objets.
+
+  .. code-block:: python
+
+      >>> a, b = 5, 5.0
+      >>> a == b
+      True
+      >>> type(a); type(b)
+      <type 'int'>
+      <type 'float'>
+
+
+- ```is``` checks that the objects are the same object (stored at the same place in memory)
+
+  .. code-block:: python
+
+      >>> a is 0b0101
+      True
+      >>> a is 5.0
+      False
+      >>> c, d = 5.0, 5.0
+      >>> c is d
+      True
 
 ----
 
@@ -121,9 +131,8 @@ Strings
 
 .. code-block:: python
     
-    >>> s + str(a); '%s %d' % (s, a)
+    >>> s + str(a)
     'a is equal to5'
-    'a is equal to 5'
     >>> s + a
     TypeError: cannot concatenate 'str' and 'int' objects
     >>> '*--*' * 5
@@ -132,7 +141,9 @@ Strings
 - String access:
 
 .. code-block:: python
-    
+
+    >>> "Two words"[4:7]
+    'wor'
     >>> 'I like playing with strings'[-1::-1]
     'sgnirts htiw gniyalp ekil I'
 
@@ -191,7 +202,7 @@ Useful string methods
     - returns ``True`` if the chain is alphanumeric, only letter or only numbers
 - ``str.strip(), str.rstrip(), lstrip()``
     - removes spaces at the extremites of the string (R and L variant for Right/Left)
-- ``str.upper(), str.lower, str.swapcase``
+- ``str.upper(), str.lower(), str.swapcase()``
     - Converts to all upper-case, all lowercase, swap case
 
 ----
@@ -219,17 +230,11 @@ Python formatting
 List
 ^^^^
 
-.. code-block:: python
-
-    >>> help(list)
-
 * Lists can contain any type of objects
 
 .. code-block:: python
     
     >>> a = ['my string',True, 5+7]
-    >>> print(a)
-    ['my string', True, 12]
     >>> print(len(a))
     3
     
@@ -251,7 +256,6 @@ List
     >>> print(''.join(l_str))
     'My string'
 
-    ...
 
 ----
 
@@ -328,12 +332,12 @@ Operations on lists
     >>> L1, L2 = [1, 3, 5], [2, 4, 6] 
     >>> L1 + L2
     [1, 3, 5, 2, 4, 6]
+
     >>> L1 *3
     [1, 3, 5, 1, 3, 5, 1, 3, 5]
+
     >>> list(zip(L1, L2))
     [(1, 2), (3, 4), (5, 6)]
-
-
  
 ----
 
@@ -389,10 +393,9 @@ List & tuple comprehension
 
 * An alternative to functional programming: ``lambda``,  ``map`` & ``filter``
 
-  - less *pythonic* and harder to read.
+  - less *pythonic*, harder to read, not faster
   - ``Lambda``, ``map`` and ``filter`` are reserved keywords, they should not be
     used as variable names.
-  - Functional programming is no more faster than list comprehension
 
 .. code-block:: python
    
@@ -419,7 +422,7 @@ Iterator
     >>> print(m)
     <map object at 0x7f9e719331d0>
 
-- Often, elements cannot be accessed by index (`range`, is an exception !)
+- Often, elements cannot be accessed by index (`range` is an exception!)
 
 .. code-block:: python
 
@@ -459,8 +462,8 @@ Dictionaries: examples (1)
 .. code-block:: python
 
     >>> dico = {'key1': 'value1', 
-                    2: 'val2',
-                    math.pi: 3.14}
+                2: 'val2',
+                math.pi: 3.14}
     
     >>> print(dico['key1'])
     'value1'
@@ -487,15 +490,15 @@ Dictionaries: examples (2)
     >>> len(dico)
     3
     
-    >>> dico[math.e]     
-        KeyError: 2.718281828459045    
+    >>> dico[math.e] 
+    KeyError: 2.718281828459045    
     
     >>> dico.get(math.e, 2.7)  # returns a default value if key not in dict
     2.7
     
     >>> myDict = dico.copy()
     
-    >>> myDict.pop('key1')  # return 'value1', remove 'key1':'value1'
+    >>> k1 = myDict.pop('key1')  # return 'value1', remove 'key1':'value1'
 
 ----
 
@@ -530,10 +533,10 @@ Everything is object (2/3)
      ['__class__', '__delattr__', '__dir__', '__doc__',...]
      
      >>> type(True)
-     <class `bool`>
+     bool
      
      >>> type(a)
-     <type 'object'>
+     object
      
      >>> id(a)
      140318487896256
@@ -654,19 +657,31 @@ Branching
 For loop
 ^^^^^^^^
 
-- iterate over a sequence (list, tuple, char in string, keys in dict, …)
+- iterate over a sequence (list, tuple, char in string, keys in dict, any iterator)
 - no indexes, directly the object in the sequence
 
 .. code-block:: python
     :emphasize-lines: 2
 
-    >>> ingredients = ["spam", "eggs", "ham", "sausages"]
+    >>> ingredients = ["spam", "eggs", "ham", "spam", "sausages"]
     >>> for food in ingredients:
     ...     print("I like %s" % food)
     ... 
     I like spam
     I like eggs
     ...
+
+- when index is really needed, use ``enumerate``
+
+.. code-block:: python
+
+    >>> for i, food in enumerate(ingredients[::-1]):
+    ...     print("%s is number %d in my top 5 of foods" % (food, 5 - i))
+    ... 
+    sausages is number 5 in my top 5 of foods
+    spam is number 4 in my top 5 of foods
+    ...
+
 
 ----
 
@@ -759,17 +774,17 @@ Solution 1:
 
     print(res[:-1])
 
-Solution 2: Shorter ... but is it faster ?
+Solution 2: Readable variable names (good practice)
 
 .. code-block:: python
 
-    res = [0, 1]
+    result = [0, 1]
     next_element = 1
     while next_element < 1000: 
-        res.append(next_element)
-        next_element = res[-2] + res[-1]
+        result.append(next_element)
+        next_element = result[-2] + result[-1]
 
-    print(res[:-1)
+    print(result[:-1])
 
 ----
 
