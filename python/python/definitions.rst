@@ -44,23 +44,37 @@ None
 Basic operations
 ----------------
 
-- Primary operations: ``+ - * / % //``
+Primary operations
+^^^^^^^^^^^^^^^^^^
 
-- Power, absolute value, …
-    - ``a**b``, ``pow(a, b)``, ``abs(a)``
+``+ - * / % //``
 
-- Comparison: ``is   is not    ==    !=   >   >=   <   <=``
+Power, absolute value
+^^^^^^^^^^^^^^^^^^^^^
 
-- Logical operators: ``and   or   not``
+``a**b``, ``pow(a, b)``, ``abs(a)``
 
-- Bitwise operators: ``&   ^   |   <<   >>``
+Comparison
+^^^^^^^^^^
+
+``is   is not    ==    !=   >   >=   <   <=``
+
+Logical operators
+^^^^^^^^^^^^^^^^^
+
+ ``and   or   not``
+
+Bitwise operators
+^^^^^^^^^^^^^^^^^
+
+``&   ^   |   <<   >>``
 
 ----
 
 More on comparisons
 -------------------
 
-- ```==``` compares the values of the objets.
+- ```==``` compares the values of the objects.
 
   .. code-block:: python
 
@@ -150,7 +164,7 @@ Strings
 ----
 
 
-- String are not mutables
+- Strings are not mutables
 
 .. code-block:: python
         
@@ -208,17 +222,17 @@ Useful string methods
 ----
 
 Formatting strings
-------------------
+""""""""""""""""""
 
 C type
-^^^^^^
+******
     .. code-block:: python
 
         '%s %i %d %f %8.3f'%(5,5,5,5,5)
     return '5 5 5 5.000000    5.000'
 
 Python formatting
-^^^^^^^^^^^^^^^^^
+*****************
 
     .. code-block:: python
 
@@ -260,7 +274,7 @@ List
 ----
 
 Useful methods for lists
-^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""
 
 .. code-block:: python
 
@@ -325,7 +339,7 @@ Useful methods for lists
 ----
 
 Operations on lists
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 
 .. code-block:: python
 
@@ -458,7 +472,7 @@ Mapping Types: Dictionaries
 ----
 
 Dictionaries: examples (1)
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 .. code-block:: python
 
     >>> dico = {'key1': 'value1', 
@@ -480,7 +494,7 @@ Dictionaries: examples (1)
 ----
 
 Dictionaries: examples (2)
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 
 .. code-block:: python
 
@@ -615,8 +629,6 @@ Many other programming languages uses braces { }.
     Block 1 continuation
     ...
 
-The advantage
-^^^^^^^^^^^^^
 
 - Clearly indicates the beginning of a block
 - Coding style is mostly uniform. Use **4 spaces**, never <tabs>
@@ -715,7 +727,7 @@ While loop
 ----
 
 Useful commands in loops
-""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 - ``continue``: go directly to the next iteration of the most inner loop
 
@@ -807,7 +819,7 @@ Solution 3: Without dropping the last element
 ----
 
 Enumerate and zip
-"""""""""""""""""
+^^^^^^^^^^^^^^^^^
 
 - use ``enumerate()`` to get the indices of an iterator (0-based!)
 
