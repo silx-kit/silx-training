@@ -48,7 +48,8 @@ first statement of the function:
 Hands on
 --------
 
-Write a function taking a, b and c in input and return the list of solutions (in :math:`\mathbf{R}`) for:
+Write a function solving the quadratic equation.
+This function will take a, b and c in input and return the list of solutions (in :math:`\mathbf{R}`) for:
 
 :math:`{a.x^2}+b.x+c=0` 
 
@@ -61,7 +62,16 @@ Reminder:
 - if :math:`{\Delta}=0` the the equation has one solution
     + :math:`\frac{-b}{2a}`
 - if :math:`{\Delta}<0` then there is no solution
+
+
+----
+
 - square root of x can be obtained by x**(0.5)
+
+    .. code-block:: python
+
+        def sqrt(x):
+            return x**(0.5)
 
 
 ----
