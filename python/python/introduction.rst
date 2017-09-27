@@ -70,6 +70,9 @@ Python for data-analysis
 Python in a notebook
 --------------------
 
+- if needed enter inside the esrf network:
+    - https://nx.esrf.fr/nxwebplayer
+    
 - Open a web browser and connect to:
     - http://scisoft12.esrf.fr:8000/
     - Login with your ESRF credentials
