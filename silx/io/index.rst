@@ -296,10 +296,14 @@ It is possible to convert it to HDF5
 
 .. code-block:: bash
 
-   $ silx convert --file-pattern diatomee_1_%d.edf -o output_file.h5::/scan1/instrument
-   $ silx convert --file-pattern dark.edf          -o output_file.h5::/scan1/dark       --mode a
-   $ silx convert --file-pattern refHST0000.edf    -o output_file.h5::/scan1/flat_000   --mode a
-   $ silx convert --file-pattern refHST0500.edf    -o output_file.h5::/scan1/flat_500   --mode a
+   $ silx convert --file-pattern diatomee_1_%d.edf -o diatomee.h5::/scan1/instrument
+   $ silx convert --file-pattern dark.edf          -o diatomee.h5::/scan1/dark
+                                                   --mode a
+   $ silx convert --file-pattern refHST0000.edf    -o diatomee.h5::/scan1/flat_000
+                                                   --mode a
+   $ silx convert --file-pattern refHST0500.edf    -o diatomee.h5::/scan1/flat_500
+                                                   --mode a
+
 
 Which create a single file
 
@@ -363,3 +367,5 @@ You can find it as notebook, or as Python files.
     - Compute the correction for a single image
 - **Exercise 4**:
     - Correct the stack of image and display it
+- **Exercise 5**:
+    - Save the result using h5py
