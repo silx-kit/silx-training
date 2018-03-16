@@ -1,4 +1,14 @@
 
+.. raw:: html
+
+   <!-- Patch landslide slides background color --!>
+   <style type="text/css">
+   div.slide {
+       background: #fff;
+   }
+   </style>
+
+
 *************************
 silx training: Conclusion
 *************************
@@ -6,27 +16,15 @@ silx training: Conclusion
 silx packages::
 
  silx
+     app
      gui
-         data
-         fit
-         hdf5
-         plot
-         plot3d
-         qt
-         widgets
-     images
-         sift
+     image
      io
-         fabioh5
-         spech5
-         spectoh5
      math
-         fit
-         histogram
-         marchingcubes
+     opencl
      sx
 
-On going development: release every 3 months
+On going development: release every 4 months
 
 ----
 
@@ -35,7 +33,7 @@ silx resources
 
 - Homepage: http://www.silx.org/
 
-  - Documentation: http://www.silx.org/doc/silx/dev/
+  - Documentation: http://www.silx.org/doc/silx/latest/
   - Code repository and issue tracker: https://github.com/silx-kit/silx
   - silx on PyPi: https://pypi.python.org/pypi/silx/
 
