@@ -1,7 +1,7 @@
 silx.gui.plot
 -------------
 
-Set of widgets to visualize 1D and 2D data:
+Set of widgets to visualise 1D and 2D data:
 
 - curves, histogram
 - images: data, RGB(A), image stack, complex image
@@ -179,8 +179,8 @@ Previous widgets share a common basis: ``silx.gui.plot.PlotWidget``
 
 It provides methods to:
 
-- control plot content: ``addCurve``, ``addImage``, ``addScatter``, ``remove``, ``clear``,...
-- control axes: ``resetZoom``, ``setKeepDataAspectRation``, ``getXAxis``, ``getYAxis``,...
+- control plot content: ``addCurve``, ``addImage``, ..., ``getCurve``, ..., ``remove``, ``clear``
+- control axes: ``resetZoom``, ``setKeepDataAspectRatio``, ``getXAxis``, ``getYAxis``,...
 - react on plot changes through Qt signals
 - ...
 
@@ -245,12 +245,4 @@ PlotWidget tools
 .. image:: img/plot/reusableWidgets.png
    :height: 500px
    :align: center
-
-----
-
-silx.gui.plot: Sum-up
----------------------
-
-- A set of specialized visualization widgets: ``Plot1D``, ``Plot2D``, ``ImageView``, ``ComplexImageView``, ``StackView`` based on a common basis ``PlotWidget``
-- A set of associated tools: curves ROI, mask, profile, tool buttons, toolbars...
 
