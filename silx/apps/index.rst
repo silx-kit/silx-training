@@ -7,14 +7,14 @@ Applications
 Introduction to data formats
 ============================
 
-HDF5 is going to be a major data format at the ESRF, and will likely
-replace many existing formats.
+- HDF5 is going to be a major data format at the ESRF, and will likely
+  replace many existing formats.
 
-The NeXus format adds a layer of standards to write data as HDF5
-(or any other hierarchical format) for neutron, x-ray, and muon science.
+- The NeXus format adds a layer of standards to write data as HDF5
+  (or any other hierarchical format) for neutron, x-ray, and muon science.
 
-*silx* applications interpret all supported data formats
-(EDF, SPEC...) as if they were NeXus + HDF5 data. 
+- *silx* applications interpret all supported data formats
+  (EDF, SPEC...) as if they were NeXus + HDF5 data.
 
 More on this subject later, in the IO section of the training.  
  
@@ -83,4 +83,15 @@ Converting a SPEC file and appending a stack of EDF images into a specific scan:
 Exercises
 =========
 
-?
+#. Display the help for both *silx view* and *silx convert* commands, an a shell terminal. (option *-h*)
+
+#. Display the data from detector *If4* in the scan *26.1* in file *31oct98.dat*, as a curve.
+
+   #. Find how to change the curve style to show the data points without the lines connecting them.
+   #. Try to fit the curve with 2 or 3 gaussian peaks.
+
+#. Merge a series of single frame EDF files into a 3D stack. EDF files are in the *ch09* folder.
+
+   #. Display the result as a stack of images, with dimension 0 as Y and dimension 1 as X.
+   #. Display frame number 886, modify the colormap to use a logarithmic scale
+   #. Do a horizontal profile in the middle, switch to "1D profile on visible image" mode.
