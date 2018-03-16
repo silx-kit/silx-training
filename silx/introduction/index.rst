@@ -1,4 +1,14 @@
 
+.. raw:: html
+
+   <!-- Patch landslide slides background color --!>
+   <style type="text/css">
+   div.slide {
+       background: #fff;
+   }
+   </style>
+
+
 *************
 silx training
 *************
@@ -24,7 +34,7 @@ silx project
 Goals of the project
 ====================
 
-- Scientific toolkit for all synchrotron radiation facilities
+- Scientific toolkit for synchrotron radiation facilities
 
 - Collaborative long term maintenance
 
@@ -32,7 +42,7 @@ Goals of the project
 
 - Release every 4 months
 
-- Free and open source project: MIT + LGPL license.
+- Free and open source project: MIT license.
 
 ----
 
@@ -43,19 +53,17 @@ Timeline
     - Structure of the project
 - 2015:
     - May: acceptation of the project within the EBS
-    - December: 1st engineer & 1st scientist
+    - December: 1st engineer
 - 2016:
     - Releases: silx v0.1 (March), v0.2 (July), v0.3 (October)
-    - Team: 2nd engineer & 2nd scientist (January),  3rd engineer (May)
-    - November: First training for scientists
+    - Team: 2nd engineer (January),  3rd engineer (May)
 
 - 2017:
     - Releases: silx v0.4 (February), v0.5 (May), v0.6 (October)
-    - March: Second training for scientists
 
 - 2018:
     - Releases: silx v0.7 (March)
-    - March: Third training for scientists
+    - March: Third training
 
 ----
 
@@ -118,24 +126,22 @@ Main features
 Today's training
 ================
 
-1. Applications
+0. Applications
     - silx view
     - silx convert
 
-2. Interactive usage (sx)
-
-3. Input/output
+#. Input/output
     - data structure
     - silx IO API
-    - other features
 
-4. Widgets
+#. Usage from [I]Python (silx.sx)
+
+#. Widgets
     - data file browsing
     - visualisation
     - other widgets
 
-5. Processing
-    - ...
+#. Processing
 
 ----
 
