@@ -39,6 +39,17 @@ silx.math
 
 ----
 
+silx.opencl
+===========
+
+- sift: SIFT algorithm
+- backprojection: Filtered back projection algorithm)
+- codec: CBF byte offset compression/decompression
+- image: Histogram
+- medfilt: median filter
+
+----
+
 Practice
 ========
 
