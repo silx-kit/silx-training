@@ -56,6 +56,11 @@ Visualisation
 - **silx.gui.plot3d**: 3D Visualisation widgets
 - **silx.gui.data**: Widgets for data visualization
 
+
+-----
+
+.. include:: plot.rst
+
 ----
 
 More widgets
