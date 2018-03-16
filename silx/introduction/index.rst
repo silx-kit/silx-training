@@ -127,7 +127,6 @@ Today's training
 3. Input/output
     - data structure
     - silx IO API
-    - other features
 
 4. Widgets
     - data file browsing
@@ -135,7 +134,6 @@ Today's training
     - other widgets
 
 5. Processing
-    - ...
 
 ----
 
