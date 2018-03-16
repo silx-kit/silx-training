@@ -1,5 +1,4 @@
-
-SLIDES = introduction io plot gui processing conclusion
+SLIDES = introduction apps io plot gui processing conclusion
 
 PNGS_FROM_SVGS=$(shell find | grep \\.svg | sed -e 's/svg$$/png/g')
 
