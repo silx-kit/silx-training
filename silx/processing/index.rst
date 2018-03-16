@@ -50,20 +50,25 @@ silx.opencl
 
 ----
 
-Practice
-========
+Practice and tutorial
+=====================
 
 - SIFT demo
+
   - find keypoints on two images
   - match the keypoints
   - align the images
 
+- Backprojection demo
+
+  - reconstruct from an absorption sinogram
+
 - Histogram exercise
+
   - Using a histogram to compute azimutal integration
 
 - Fit exercise
+
   - Curve fitting, background filters
   - using FitManager
   - using FitWidget
-
-
