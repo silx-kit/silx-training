@@ -7,13 +7,14 @@ Applications
 Introduction to data formats
 ============================
 
-HDF5 is the preferred data format at the ESRF.
+HDF5 is going to be a major data format at the ESRF, and will likely
+replace many existing formats.
 
-The NeXus format adds a layer of standard to write data as HDF5
+The NeXus format adds a layer of standards to write data as HDF5
 (or any other hierarchical format) for neutron, x-ray, and muon science.
 
-Applications provided by *silx* interpret all other supported data formats
-(EDF, SPEC...) as NeXus + HDF5 data. 
+*silx* applications interpret all supported data formats
+(EDF, SPEC...) as if they were NeXus + HDF5 data. 
 
 More on this subject later, in the IO section of the training.  
  
@@ -25,9 +26,9 @@ silx view
 - Visualisation of data formats used at the ESRF
 
   - Support HDF5 files, Spec files, EDF files (plus all formats supported by `FabIO`)
-  - All formats viewed through a hierarchical nexus-like lense
+  - All formats displayed in a HDF5-like structure with NeXus
   - HDF5 tree widget for selecting data items
-  - DataViewer for visualising datasets as curves, or images, 
+  - DataViewer widget for visualising datasets as curves, or images, 
     or stack of images, or raw values in a table
 
 
@@ -41,8 +42,8 @@ silx view
 
 ----
 
-silx convert
-============
+silx convert: Use cases
+=======================
 
 - Conversion of all supported data formats to HDF5 + NeXus.
 
@@ -57,19 +58,25 @@ silx convert
 silx convert: examples
 ======================
 
+Converting a single file:
 
 .. code-block:: bash
 
-    silx convert somefile.edf
+    silx convert somefile.edf -o output_file.h5
 
-.. code-block:: bash
-
-    silx convert spec_file.dat -o output_file.h5
-    silx convert image.edf -o output_file.h5::/27.1 --mode a
+Merging a series of EDF image files into a 3D stack:
     
 .. code-block:: bash
 
     silx convert --file-pattern ch09__mca_0005_0000_%d.edf -o ch09__mca_0005_0000_multiframe.h5
+
+Converting a SPEC file and appending a stack of EDF images into a specific scan:
+    
+.. code-block:: bash
+
+    silx convert spec_file.dat -o output_file.h5
+    silx convert --file-pattern scan27_%d.edf -o output_file.h5::/27.1/instrument --mode a
+    
 
 ----
 
