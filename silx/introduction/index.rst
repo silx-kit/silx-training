@@ -1,9 +1,17 @@
+.. raw:: html
 
-*************
+   <!-- Patch landslide slides background color --!>
+   <style type="text/css">
+   div.slide {
+       background: #fff;
+   }
+   </style>
+
+
 silx training
 *************
 
-15th March, 2017
+20th March, 2018
 ================
 
 .. image:: img/silx_logo.png
@@ -24,15 +32,15 @@ silx project
 Goals of the project
 ====================
 
-- Scientific toolkit for all synchrotron radiation facilities
+- Scientific toolkit for synchrotron radiation facilities
 
 - Collaborative long term maintenance
 
 - Easy installation (packaging, wheels)
 
-- Release every 3 months
+- Release every 4 months
 
-- Free and open source project: MIT + LGPL license.
+- Free and open source project: MIT license.
 
 ----
 
@@ -43,24 +51,26 @@ Timeline
     - Structure of the project
 - 2015:
     - May: acceptation of the project within the EBS
-    - December: 1st engineer & 1st scientist
+    - December: 1st engineer
 - 2016:
-    - Releases: silx v0.1 (March), v0.2 (July), v0.3 (October)
-    - Team: 2nd engineer & 2nd scientist (January),  3rd engineer (May)
-    - November: First training for scientists
+    - Releases: v0.1 (March), v0.2 (July), v0.3 (October)
+    - Team: 2nd engineer (January),  3rd engineer (May)
 
 - 2017:
-    - Releases: silx v0.4 (February), planned v0.5 (May)
-    - March: Second training for scientists
+    - Releases: v0.4 (February), v0.5 (May), v0.6 (October)
+
+- 2018:
+    - Release: v0.7 (March)
+    - March: Third training
 
 ----
 
 Resources and requirements
 ==========================
 
-Documentation of releases is available at https://pythonhosted.org/silx/
+Documentation of releases is available at http://www.silx.org/doc/silx/
 
-Latest documentation (nightly build) is available at http://www.silx.org/doc/silx/
+Latest documentation (nightly build) is available at http://www.silx.org/doc/silx/dev
 
     - silx@esrf.fr
 
@@ -84,68 +94,52 @@ Structure of the silx library
 ::
 
  silx
+     app
      gui
-         data
-         fit
-         hdf5
-         plot
-         plot3d
-         qt
-         widgets
-     images
-         sift
+     image
      io
-         fabioh5
-         spech5
-         spectoh5
      math
-         fit
-         histogram
-         marchingcubes
+     opencl
      sx
-
+    
 ----
 
 Main features
 =============
 
-Graphical User Interface widgets
---------------------------------
-    Plot, image display, mask, HDF5 tree view, fit configuration, Plot3d, Periodic table
 
-Image processing tools
-----------------------
-    Image interpolation, registration and drawing primitives, image alignment
-
-Input / Output
---------------
-    Support for spec, HDF5 and image formats
-
-Math
-----
-    Least-squares fit, volume isosurface, histograms, ...
-
-Sx
----
-    Imports all silx in one go: aim at replacing pylab
+- A set of applications:
+    - a unified viewer for HDF5, SPEC and image file formats
+    - a unified converter to HDF5 format
+- Support of HDF5, SPEC and FabIO images file formats.
+- A set of Qt widgets, including:
+    - 1D and 2D visualization widgets with a set of associated tools using multiple backends (matplotlib or OpenGL)
+    - OpenGL-based widgets to visualize data in 3D (scalar field with isosurface and cut plane, scatter plot)
+    - a unified browser for HDF5, SPEC and image file formats supporting inspection and visualization of n-dimensional datasets.
+- OpenCL-based data processing: image alignment (SIFT), image processing (median filter, histogram), filtered backprojection for tomography
+- Data reduction: histogramming, fitting, median filter
 
 ----
 
 Today's training
 ================
 
-1. Input/output
+0. Applications
+    - silx view
+    - silx convert
+
+#. Input/output
     - data structure
     - silx IO API
-    - data widgets: HDF5 tree and DataViewer
-2. Plot widgets
-    - Plot1D, Plot2D,
-    - ImageView, StackView
-    - plot3d widgets
-3. Processing
-    - SIFT (image alignment)
-    - histogram
-    - fit
+
+#. Usage from [I]Python (silx.sx)
+
+#. Widgets
+    - data file browsing
+    - visualisation
+    - other widgets
+
+#. Processing
 
 ----
 
@@ -176,7 +170,7 @@ Training resources
 
 Exercices:
 
-https://github.com/silx-kit/silx-training
+https://github.com/silx-kit/silx-training/silx
 
 Training data:
 
