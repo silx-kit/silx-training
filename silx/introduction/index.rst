@@ -1,4 +1,3 @@
-
 .. raw:: html
 
    <!-- Patch landslide slides background color --!>
@@ -9,7 +8,6 @@
    </style>
 
 
-*************
 silx training
 *************
 
@@ -141,7 +139,11 @@ Today's training
     - visualisation
     - other widgets
 
+<<<<<<< HEAD
 #. Processing
+=======
+5. Processing
+>>>>>>> 45c3d95f491ee7486c43b0f93c9eec38beb4f8b2
 
 ----
 

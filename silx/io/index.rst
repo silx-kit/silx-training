@@ -1,4 +1,12 @@
-************
+.. raw:: html
+
+   <!-- Patch landslide slides background color --!>
+   <style type="text/css">
+   div.slide {
+       background: #fff;
+   }
+   </style>
+
 Input/output
 ************
 
@@ -11,7 +19,7 @@ Silx IO
 
   - Accessible as HDF5-like objects
   - In read-only
-  - Support HDF5 files, Spec files, EDF files (plus format supported by `FabIO`)
+  - Support HDF5 files, Spec files, EDF files (plus format supported by `FabIO`), numpy files
 
 - In symbiosis with our widgets
 
@@ -20,10 +28,10 @@ Silx IO
 
 - Also contains
 
-  - Maintained `specfilewrapper` class
-  - Maintained TIFF and EdfFile reader and writer
-  - Spec to HDF5 converter
+  - HDF5 converter
   - Dictionary dump
+  - Legacy `specfilewrapper` code
+  - Legacy TIFF and EdfFile reader and writer
 
 ----
 
@@ -115,7 +123,7 @@ Open a file
       # or using context manager
       with silx.io.open(filename) as obj:
          # do your stuff here
-         # the close is called for you at the end of the with
+         # the file will be closed automatically at the end of the `with`
 
 ----
 
@@ -242,7 +250,7 @@ EDF example
 
    .. code-block:: python
 
-      import silx.io.utils
+      import silx.io
 
       h5like = silx.io.open("data/medipix.edf")
 
@@ -266,90 +274,98 @@ EDF example
 
 ----
 
-HDF5 tree
-=========
+Silx IO API
+===========
 
-Tree view which allow to browse HDF5 file content.
+Example of data from ESRF
+-------------------------
 
-.. image:: img/hdf5tree_legend.png
-
-Provides:
-
-- Mouse click event
-- Customable content menu
-- Customable columns
+.. image:: img/tomo-edf-files.png
+   :height: 500px
+   :align: center
 
 ----
 
-HDF5 tree
-=========
+Silx IO API
+===========
 
-Example
--------
+Example of data from ESRF
+-------------------------
 
-Tree view which allow to browse HDF5 file content.
+It is possible to convert it to HDF5
+
+.. code-block:: bash
+
+   $ silx convert --file-pattern diatomee_1_%d.edf -o diatomee.h5::/scan1/instrument
+   $ silx convert --file-pattern dark.edf          -o diatomee.h5::/scan1/dark
+                                                   --mode a
+   $ silx convert --file-pattern refHST0000.edf    -o diatomee.h5::/scan1/flat_000
+                                                   --mode a
+   $ silx convert --file-pattern refHST0500.edf    -o diatomee.h5::/scan1/flat_500
+                                                   --mode a
+
+
+Which create a single file
+
+.. image:: img/tomo-h5-files.png
+
+----
+
+Silx IO API
+===========
+
+Example of data from ESRF
+-------------------------
+
+With this content
+
+.. image:: img/tomo-h5-tree.png
+   :height: 400px
+   :align: center
+
+----
+
+Silx IO API
+===========
+
+Example of data from ESRF
+-------------------------
 
    .. code-block:: python
 
-      import silx.gui.hdf5
-      tree = silx.gui.hdf5.Hdf5TreeView()
-      model = tree.findHdf5TreeModel()
-
-      # Insert a filename
-      model.insertFile("data/test.h5")
-
-      # Insert an HDF5 node
-      h5 = silx.io.open("data/test.h5")
-      model.insertH5pyObject(h5)
-
-----
-
-DataViewer
-==========
-
-.. image:: img/dataviewer_legend.png
-
-----
-
-DataViewer
-==========
-
-Example
--------
-
-   .. code-block:: python
-
-      import silx.gui.data.DataViewerFrame
-      viewer = silx.gui.data.DataViewerFrame.DataViewerFrame()
-      viewer.setVisible(True)
-
-
-      # Let's display a random cube
-      import numpy
-      data = numpy.random.rand(100, 100, 100)
-      viewer.setData(data)
-
-
-      # Let's display an HDF5 dataset
       import silx.io
-      h5like = silx.io.open("data/ID16B_diatomee.h5")
-      dataset = h5like["/data/0299"]
-      viewer.setData(dataset)
+
+      h5 = silx.io.open("ID16B_diatomee.h5")
+
+      # here is the data as a cube using numpy array
+      # it's a cube of images * number of frames
+      data = h5["/scan_1/instrument/data"]
+
+      # here is the first image
+      print(data[0])
+
+      # here is the size of the image
+      print(data[0].shape)
+
+      # here is other group names
+      print(h5["/scan_1"].keys())
 
 ----
 
 Exercises
 =========
 
-This exercises are based on phase contrast acquisition data.
+Based on this phase contrast acquisition data, here is few exercises.
 
 You can find it as notebook, or as Python files.
 
 - **Exercise 1**:
-    - Browse the data file
+    - Access to the image/flat/dark data
 - **Exercise 2**:
-    - Compute the correction
+    - Display it using sx
 - **Exercise 3**:
-    - Create a viewer
+    - Compute the correction for a single image
 - **Exercise 4**:
-    - Custom the viewer to display corrected images
+    - Correct the stack of image and display it
+- **Exercise 5**:
+    - Save the result using h5py

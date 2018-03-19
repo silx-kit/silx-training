@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-from silx.gui.plot.PlotActions import PlotAction 
+from silx.gui.plot.actions import PlotAction
 from silx.math.histogram import Histogramnd 
 from silx.gui.plot import Plot1D
 from silx.gui import qt
@@ -69,7 +69,7 @@ def main():
     # 
     # - using silx.gui.plot.PlotActions.PlotAction
     # 
-    # - doc@ http://www.silx.org/doc/silx/dev/modules/gui/plot/plotactions_examples.html
+    # - doc@ http://www.silx.org/doc/silx/dev/modules/gui/plot/actions/examples.html
     #     
 
     myaction=ComputeHistogramAction(image)

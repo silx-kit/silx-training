@@ -1,4 +1,3 @@
-
 .. raw:: html
 
    <!-- Patch landslide slides background color --!>
@@ -9,7 +8,6 @@
    </style>
 
 
-*************************
 silx training: Conclusion
 *************************
 
