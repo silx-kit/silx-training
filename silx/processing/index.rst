@@ -66,6 +66,9 @@ Fit exercise
 
 - Tips:
     - API documentation: http://www.silx.org/doc/silx/0.7.0/modules/
-    - fitting algorithm: *silx.math.fit.leastsq* 
+    - fitting algorithm: *silx.math.fit.leastsq*
     - multi-gaussians function: *silx.math.fit.functions.sum_gauss*
     - peak search and peak width estimation module *silx.math.fit.peaks.peak_search*
+    - you can set reasonable constraints
+        - height and fwhm must be positive, xmin < center < xmax
+    - increase the sensitivity threhold parameter in the peak-search to avoid false positives
