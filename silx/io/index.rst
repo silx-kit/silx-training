@@ -304,7 +304,6 @@ It is possible to convert it to HDF5
    $ silx convert --file-pattern refHST0500.edf    -o diatomee.h5::/scan1/flat_500
                                                    --mode a
 
-
 Which create a single file
 
 .. image:: img/tomo-h5-files.png
@@ -355,17 +354,23 @@ Example of data from ESRF
 Exercises
 =========
 
-Based on this phase contrast acquisition data, here is few exercises.
+We provide to you a smallest file of this phase contrast acquisition: `ID16B_diatomee.h5`.
 
-You can find it as notebook, or as Python files.
+Using `Python` or `ipython`, here is some exercises.
 
 - **Exercise 1**:
     - Access to the image/flat/dark data
 - **Exercise 2**:
-    - Display it using sx
-- **Exercise 3**:
-    - Compute the correction for a single image
-- **Exercise 4**:
-    - Correct the stack of image and display it
-- **Exercise 5**:
-    - Save the result using h5py
+    - Apply a flatfield correction to a single image
+
+
+Equation of the correction:
+
+.. image:: img/equation-correction.png
+   :height: 80px
+   :align: center
+
+.. code-block:: python
+
+   def corrected(raw, background, flatfield):
+       return (raw - background) / (flatfield - background)
