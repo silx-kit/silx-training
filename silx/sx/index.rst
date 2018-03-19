@@ -24,11 +24,18 @@ Using silx from [I]Python console
    >>> from silx import sx
 
 
-- provide access to different features of silx (e.g., plotting, accessing files) in a single module.
-- load and initialize (Py)Qt (except in notebooks)
-- load numpy and matplotlib in IPython
+- provides access to different features of silx (e.g., plotting, accessing files) in a single module.
+- loads and initialize (Py)Qt (except in notebooks)
+- From IPython, loads numpy and matplotlib
 
 Doc: http://www.silx.org/doc/silx/latest/modules/sx.html
+
+----
+
+Accessing files
+---------------
+
+``silx.sx`` also provides functions from ``silx.io`` (e.g., ``open``)
 
 ----
 
@@ -77,6 +84,5 @@ silx.sx extra content
 ---------------------
 
 - Widgets from ``silx.gui.plot``
-- ``open`` and ``get_data`` from ``silx.io``
 - Some features from ``silx.math``
 
