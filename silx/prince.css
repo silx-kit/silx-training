@@ -1,3 +1,4 @@
 @page {
-    @bottom-center { content: counter(page) }
+    margin: 0.5cm;
+    @bottom-center { content: counter(page) "/" counter(pages) }
 }

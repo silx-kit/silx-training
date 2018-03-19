@@ -19,9 +19,9 @@ silx.gui
 
 Set of widgets based on (Py)Qt:
 
-- Data files browsing
-- Visualisation
-- Convenient widgets
+0. Data files browsing
+#. Visualisation
+#. Convenient widgets
 
 Dependencies:
 
@@ -37,24 +37,70 @@ Data files browsing
 -------------------
 
 - **silx.gui.dialog**: Dialog widgets to select data from files
-   .. image:: img/imagefiledialog_edf.png
-      :width: 295px
-      :height: 175px
 
+.. image:: img/imagefiledialog_edf.png
+   :height: 350px
+   :align: center
+
+----
+
+Data files browsing
+-------------------
 
 - **silx.gui.hdf5**: Widgets to browse HDF5 files structure
-   .. image:: img/Hdf5TreeView.png
-      :width: 320px
-      :height: 203px
+
+.. image:: img/Hdf5TreeView.png
+   :height: 350px
+   :align: center
 
 ----
 
 Visualisation
 -------------
 
-- **silx.gui.plot**: 1D and 2D Plot widgets
-- **silx.gui.plot3d**: 3D Visualisation widgets
-- **silx.gui.data**: Widgets for data visualization
+0. **silx.gui.plot**: 1D and 2D Plot widgets
+#. **silx.gui.plot3d**: 3D Visualisation widgets
+#. **silx.gui.data**: Widgets for data visualisation
+
+-----
+
+.. include:: plot.rst
+
+----
+
+Visualisation
+-------------
+
+**silx.gui.plot3d**: Widgets to visualize data in 3D with OpenGL.
+
+.. list-table::
+   :header-rows: 1
+
+   * - ScalarFieldView
+     - SceneWindow
+   * - .. image:: img/scalarFieldView.png
+          :height: 200px
+          :align: center
+     - .. image:: img/sceneWindow.png
+          :height: 200px
+          :align: center
+   * - ``viewer3DVolume.py``
+     - ``plot3dSceneWindow.py``
+
+Doc: http://www.silx.org/doc/silx/latest/modules/gui/plot3d/
+
+----
+
+Visualisation
+-------------
+
+**silx.gui.data**: Widgets selecting view depending on the kind of data
+
+.. image:: img/DataViewerFrame.png
+   :height: 300px
+   :align: center
+
+This is the basis of the ``silx view`` application.
 
 ----
 
@@ -113,13 +159,21 @@ More widgets
 ------------
 
 - **silx.gui.fit**: Fit widget
-   .. image:: img/FitWidget.png
-      :height: 200px
-      :align: center
+
+.. image:: img/FitWidget.png
+   :height: 300px
+   :align: center
+
+----
+
+More widgets
+------------
+
 - **silx.gui.console**: IPython console widgets
-   .. image:: img/IPythonWidget.png
-      :height: 200px
-      :align: center
+
+.. image:: img/IPythonWidget.png
+   :height: 300px
+   :align: center
 
 ----
 
@@ -143,8 +197,8 @@ Qt utils
 Resources
 ---------
 
-- Documentation: http://www.silx.org/doc/silx/latest/modules/gui/index.html
+- Documentation: http://www.silx.org/doc/silx/latest/modules/gui/
 - Widgt gallery: http://www.silx.org/doc/silx/latest/modules/gui/gallery.html
-- Sample code: http://www.silx.org/doc/silx/latest/sample_code/index.html
+- Sample code: http://www.silx.org/doc/silx/latest/sample_code/
 
 
