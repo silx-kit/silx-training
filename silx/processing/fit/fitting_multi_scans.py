@@ -12,27 +12,30 @@ with silx.io.open("data/31oct98.dat") as specfile:
                  "27.1"]:
         print("Processing scan %s" % scan)
         measurement_group = specfile["/" + scan + "/measurement"]
-        xdata = measurement_group["TZ3"][()]
-        ydata = measurement_group["If2"][()]
+        xdata = measurement_group["TZ3"]
+        xmin, xmax = min(xdata), max(xdata)
+        ydata = measurement_group["If2"]
 
         guessed_fwhm = guess_fwhm(ydata) * ((xdata[-1] - xdata[0]) / len(xdata))
-        peaks_indices = peak_search(ydata, guessed_fwhm, sensitivity=10)
+        peaks_indices = peak_search(ydata, guessed_fwhm, sensitivity=100)
 
-        print("\tFound %d peaks" % len(peaks_indices))
 
         positions = [xdata[int(i)] for i in peaks_indices]
         heights = [ydata[int(i)] for i in peaks_indices]
+        print("\tFound %d peaks: %s" % (len(peaks_indices), positions))
          
         estimated_params = []
         constraints = []
         for h, p in zip(heights, positions):
             estimated_params += [h, p, guessed_fwhm]
-            constraints += [[], [], []]
+            #                positive    quoted         positive 
+            constraints += [[1, 0, 0], [2, xmin, xmax], [1, 0, 0]]
         
         try:
-            fitted_params, cov_matrix = leastsq(model=sum_gauss, 
+            fitted_params, cov_matrix = leastsq(model=sum_gauss,
                                                 xdata=xdata, ydata=ydata, 
-                                                p0=estimated_params)
+                                                p0=estimated_params,
+                                                constraints=constraints)
         except LinAlgError:
             print("\tUnable to fit the data")
         else:
