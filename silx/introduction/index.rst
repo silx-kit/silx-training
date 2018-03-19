@@ -53,14 +53,14 @@ Timeline
     - May: acceptation of the project within the EBS
     - December: 1st engineer
 - 2016:
-    - Releases: silx v0.1 (March), v0.2 (July), v0.3 (October)
+    - Releases: v0.1 (March), v0.2 (July), v0.3 (October)
     - Team: 2nd engineer (January),  3rd engineer (May)
 
 - 2017:
-    - Releases: silx v0.4 (February), v0.5 (May), v0.6 (October)
+    - Releases: v0.4 (February), v0.5 (May), v0.6 (October)
 
 - 2018:
-    - Releases: silx v0.7 (March)
+    - Release: v0.7 (March)
     - March: Third training
 
 ----
@@ -109,7 +109,7 @@ Main features
 
 
 - A set of applications:
-    - a unified viewerfor HDF5, SPEC and image file formats
+    - a unified viewer for HDF5, SPEC and image file formats
     - a unified converter to HDF5 format
 - Support of HDF5, SPEC and FabIO images file formats.
 - A set of Qt widgets, including:
@@ -139,11 +139,7 @@ Today's training
     - visualisation
     - other widgets
 
-<<<<<<< HEAD
 #. Processing
-=======
-5. Processing
->>>>>>> 45c3d95f491ee7486c43b0f93c9eec38beb4f8b2
 
 ----
 
@@ -174,7 +170,7 @@ Training resources
 
 Exercices:
 
-https://github.com/silx-kit/silx-training
+https://github.com/silx-kit/silx-training/silx
 
 Training data:
 
