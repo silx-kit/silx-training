@@ -51,8 +51,21 @@ Practice
   - Using a histogram to compute azimutal integration
 
 - Fit exercise
-  - Curve fitting, background filters
-  - using FitManager
-  - using FitWidget
+  - Fitting data for a detector across multiple scans
 
+----
 
+Fit exercise
+============
+
+- Read detectors *TZ3* and *If2* in scans *21.1* to *27.1*, in SPEC file `31oct98.dat`
+- Fit :math:`If2 = f(TZ3)` with a gaussian distributions.
+    - find the peaks' positions
+    - estimate the gaussian parameters (*height, center position, full-width at half-maximum*), used as initial input for the iterative fit
+    - run the fit and print the results
+
+- Tips:
+    - API documentation: http://www.silx.org/doc/silx/0.7.0/modules/
+    - fitting algorithm: *silx.math.fit.leastsq* 
+    - multi-gaussians function: *silx.math.fit.functions.sum_gauss*
+    - peak search and peak width estimation module *silx.math.fit.peaks.peak_search*
