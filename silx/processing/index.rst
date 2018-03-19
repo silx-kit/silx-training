@@ -98,6 +98,5 @@ Fit exercise
     - fitting algorithm: *silx.math.fit.leastsq*
     - multi-gaussians function: *silx.math.fit.functions.sum_gauss*
     - peak search and peak width estimation module *silx.math.fit.peaks.peak_search*
-    - you can set reasonable constraints
-        - height and fwhm must be positive, xmin < center < xmax
+    - you can set reasonable constraints (height and fwhm must be positive, xmin < center < xmax)
     - increase the sensitivity threhold parameter in the peak-search to avoid false positives
