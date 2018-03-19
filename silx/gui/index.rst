@@ -37,15 +37,21 @@ Data files browsing
 -------------------
 
 - **silx.gui.dialog**: Dialog widgets to select data from files
-   .. image:: img/imagefiledialog_edf.png
-      :width: 295px
-      :height: 175px
 
+.. image:: img/imagefiledialog_edf.png
+   :height: 350px
+   :align: center
+
+----
+
+Data files browsing
+-------------------
 
 - **silx.gui.hdf5**: Widgets to browse HDF5 files structure
-   .. image:: img/Hdf5TreeView.png
-      :width: 320px
-      :height: 203px
+
+.. image:: img/Hdf5TreeView.png
+   :height: 350px
+   :align: center
 
 ----
 
@@ -94,7 +100,7 @@ Visualisation
    :height: 300px
    :align: center
 
-This is the basis of the `silx view` application.
+This is the basis of the ``silx view`` application.
 
 ----
 
@@ -153,13 +159,21 @@ More widgets
 ------------
 
 - **silx.gui.fit**: Fit widget
-   .. image:: img/FitWidget.png
-      :height: 200px
-      :align: center
+
+.. image:: img/FitWidget.png
+   :height: 300px
+   :align: center
+
+----
+
+More widgets
+------------
+
 - **silx.gui.console**: IPython console widgets
-   .. image:: img/IPythonWidget.png
-      :height: 200px
-      :align: center
+
+.. image:: img/IPythonWidget.png
+   :height: 300px
+   :align: center
 
 ----
 

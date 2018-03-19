@@ -28,6 +28,7 @@ With associated tools:
 - Region of interest
 - Mask
 - Profile
+- Fit
 - ...
 
 .. list-table::
