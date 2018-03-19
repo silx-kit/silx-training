@@ -337,7 +337,7 @@ Example of data from ESRF
 
       # here is the data as a cube using numpy array
       # it's a cube of images * number of frames
-      data = h5["/scan_1/instrument/data"]
+      data = h5["/scan1/instrument/data"]
 
       # here is the first image
       print(data[0])
@@ -346,7 +346,7 @@ Example of data from ESRF
       print(data[0].shape)
 
       # here is other group names
-      print(h5["/scan_1"].keys())
+      print(list(h5["/scan1"].keys()))
 
 ----
 
