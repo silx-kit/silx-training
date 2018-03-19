@@ -303,7 +303,7 @@ It is possible to convert it to HDF5
    $ silx convert --file-pattern refHST0500.edf    -o diatomee.h5::/scan1/flat_500
                                                    --mode a
 
-Which create a single file
+Which creates a single file
 
 .. image:: img/tomo-h5-files.png
 
@@ -353,7 +353,7 @@ Example of data from ESRF
 Exercises
 =========
 
-We provide to you a smallest file of this phase contrast acquisition: `ID16B_diatomee.h5`.
+We provide you with a smaller file of this phase contrast acquisition: `ID16B_diatomee.h5`.
 
 Using `Python` or `ipython`, here is some exercises.
 
