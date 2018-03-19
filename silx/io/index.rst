@@ -31,7 +31,6 @@ Silx IO
   - HDF5 converter
   - Dictionary dump
   - Legacy `specfilewrapper` code
-  - Legacy TIFF and EdfFile reader and writer
 
 ----
 
@@ -305,7 +304,7 @@ It is possible to convert it to HDF5
                                                    --mode a
 
 
-Which create a single file
+Which creates a single file
 
 .. image:: img/tomo-h5-files.png
 
@@ -355,7 +354,7 @@ Example of data from ESRF
 Exercises
 =========
 
-Based on this phase contrast acquisition data, here is few exercises.
+Based on this phase contrast acquisition data, here are a few exercises.
 
 You can find it as notebook, or as Python files.
 
@@ -366,6 +365,6 @@ You can find it as notebook, or as Python files.
 - **Exercise 3**:
     - Compute the correction for a single image
 - **Exercise 4**:
-    - Correct the stack of image and display it
+    - Correct the stack of images and display it
 - **Exercise 5**:
     - Save the result using h5py
