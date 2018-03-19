@@ -20,12 +20,13 @@ silx.image
 
   - Bilinear interpolator (used by ``silx.gui.plot`` when computing profiles)
   - 2D shapes drawing (used by ``silx.gui.plot`` when drawing masks)
+  - Backprojection (FBP)
   - 2D image alignemnt (SIFT)
 
     
 The first 2 modules are written in cython (~ C) to offer good performances.
 
-SIFT uses OpenCl kernels, for parallel computation on GPU and CPU.
+SIFT and FBP are using OpenCl kernels, for parallel computation on GPU and CPU.
 
 ----
 
@@ -46,13 +47,15 @@ silx.math
 
 - Marching cubes: algorithm to compute iso-surface in a 3D volume (used in ``silx.gui.plot3d``)
 
+- Median filter
+
 ----
 
 silx.opencl
 ===========
 
 - sift: SIFT algorithm
-- backprojection: Filtered back projection algorithm)
+- backprojection: Filtered back projection algorithm
 - codec: CBF byte offset compression/decompression
 - image: Histogram
 - medfilt: median filter
@@ -70,11 +73,11 @@ Practice and tutorial
 
 - Backprojection demo
 
-  - reconstruct from an absorption sinogram
+  - reconstruction from an absorption sinogram
 
 - Histogram exercise
 
-  - Using a histogram to compute azimutal integration
+  - Using histograms to compute azimutal integration
 
 - Fit exercise
 
