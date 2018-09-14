@@ -31,11 +31,11 @@ http://calcul.math.cnrs.fr/Documents/Ecoles/2010/les_bases.pdf
 
 ----
 
-.. include:: introduction.rst
+.. include:: 0_introduction.rst
 
 ----
 
-.. include:: definitions.rst  
+.. include:: 1_definitions.rst  
 
 ----
 
