@@ -1,4 +1,17 @@
+# coding: utf-8
+
+"""
+Contain solution for the python/numpy training
+"""
+
+__authors__ = ["Pierre Knobel", "Jerome Kieffer", "Henri Payno",
+               "Armando Sole", "Valentin Valls", "Thomas Vincent"]
+__date__ = "18/09/2018"
+__license__ = "MIT"
+
+
 import numpy
+
 
 def ex3_1():
     """ Simple example of an element wise comparaison"""
@@ -17,6 +30,7 @@ def ex3_2():
     difference = x[1:] - x[:-1]
     return difference
 
+
 def ex4_1():
     """Generate a 1D array of [1..99] then operate a binning 1 2 3 4 -> 1+2 3+4
     """
@@ -32,6 +46,7 @@ def ex4_2():
     data = data + 1
     binned = data[::2, ::2] + data[::2, 1::2] + data[1::2, ::2] + data[1::2, 1::2]
     return data, binned
+
 
 def ex4_2_alt():
     """Generate a 2D array of [1..9999] then operate a 2x2 binning using numpy
