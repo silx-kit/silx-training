@@ -32,20 +32,19 @@ There is many ways to import modules / from module
     .. code-block:: python
 
         import mymodule
-        mymodule.myfunction()
+        mymodule.pow2(3)
 
         import mymodule as module
-        module.myfunction()
+        module.pow2(4)
 
         from mymodule import pow2
-        pow2()
+        pow2(5)
 
         # ! import all from a module can be dangerous because
         # it will pollutes the local name-space
         from mymodule import *
-        pow2()
-        anyfunction()
-
+        pow2(6)
+        
 
 You can also access to the attributes of the module
 
@@ -62,9 +61,9 @@ Exercise - write a module
 -------------------------
 
 
-0. create a new file mymodule.py, set file encoding and documentation
+0. create a new file exercise.py, set file encoding and documentation
 
-1. add a function into this file like polynom(a, b, c) defined previously
+1. add a function into this file like polynom(a, b, c) defined previously (+ a test)
 
 2. execute this file as a script:
     - using:
@@ -74,10 +73,10 @@ Exercise - write a module
         if __name__ == '__main__':
             # operations to be executed
 
-    - execute python mymodule.py
+    - execute python exercise.py
 
-3. load this module from a python console (ipython, jupyter-notebook ... ) and import your module. 
-4. execute the function from the console.
+3. load this module from a python console (jupyter-notebook, ipython console ... ) and import your module. 
+4. execute the function from the console and run the test.
 
 ----
 
