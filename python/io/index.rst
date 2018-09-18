@@ -39,13 +39,6 @@ Libraries
 
 Python modules for data access
 
-- ``silx``
-
-  - Started in 2015
-  - Will provide input/output for PyMCA
-  - Also provides fitting, image processing, plotting, a set of widgets…
-  - Managed by the DAU
-
 - ``FabIO``
 
   - Provides access to several image data formats
@@ -55,6 +48,13 @@ Python modules for data access
 - ``h5py``
 
   - Access to HDF5 files
+
+- ``silx``
+
+  - Started in 2015
+  - Will provide input/output for PyMCA
+  - Also provides fitting, image processing, plotting, a set of widgets…
+  - Managed by the DAU
 
 ----
 
