@@ -39,7 +39,7 @@ http://calcul.math.cnrs.fr/Documents/Ecoles/2010/les_bases.pdf
 
 ----
 
-.. include:: functions.rst
+.. include:: 2_functions.rst
 
 ----
 
