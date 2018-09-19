@@ -59,3 +59,48 @@ def ex4_2_alt():
     reshaped_data = data.reshape(height // 2, 2, width // 2, 2)
     binned = reshaped_data.sum(axis=3).sum(axis=1)
     return data, binned
+
+
+def ex5_inefficient_fill(height, width):
+    data = numpy.zeros((height, width), dtype=numpy.float)
+    for row in range(int(height)):
+        for col in range(int(width)):
+            data[row, col] = numpy.cos(row) * numpy.sin(col)
+    return data
+
+
+def ex5_naive_fill(height, width):
+    width_sin = numpy.sin(numpy.arange(width))
+    height_cos = numpy.cos(numpy.arange(height))
+    data = numpy.zeros((height, width), numpy.float)
+    for row in range(int(height)):
+        for col in range(int(width)):
+            data[row, col] = height_cos[row] * width_sin[col]
+    return data
+
+
+def ex5_clever_fill(height, width):
+    width_sin = numpy.sin(numpy.arange(width))
+    height_cos = numpy.cos(numpy.arange(height))
+    cos_loop = numpy.outer(height_cos, numpy.ones(width))
+    sin_loop = numpy.outer(numpy.ones(height), width_sin)
+    return cos_loop * sin_loop
+
+
+def ex5_practical_fill(height, width):
+    width_sin = numpy.sin(numpy.arange(width))
+    height_cos = numpy.cos(numpy.arange(height))
+    sin_loop, cos_loop = numpy.meshgrid(width_sin, height_cos)
+    return sin_loop * cos_loop
+
+
+def ex5_optimized_fill(height, width):
+    width_sin = numpy.sin(numpy.arange(width))
+    height_cos = numpy.cos(numpy.arange(height))
+    return numpy.outer(height_cos, width_sin)
+
+
+def ex5_atleast_2d_fill(height, width):
+    sine = numpy.sin(numpy.arange(width))
+    cosine = numpy.cos(numpy.arange(height))
+    return numpy.atleast_2d(sine) * numpy.atleast_2d(cosine).T
