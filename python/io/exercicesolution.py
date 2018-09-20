@@ -58,9 +58,9 @@ def save_data(mask, proc_data, raw_data, output_file):
     """
     import h5py
     with h5py.File(output_file, "w") as h5_file:
-        h5_file['mask'] = mask
-        h5_file['result'] = proc_data
-        h5_file['raw'] = raw_data
+        h5_file['/mask'] = mask
+        h5_file['/result'] = proc_data
+        h5_file['/raw'] = raw_data
 
 
 def list_root(file_path):
@@ -69,4 +69,4 @@ def list_root(file_path):
     assert os.path.exists(file_path)
     h5_file = h5py.File(file_path)
     print('root level:')
-    print(list(h5_file.keys()))
+    print(list(h5_file['/'].keys()))
