@@ -56,3 +56,9 @@ To run the notebooks and display the slides, you need:
 - ``jupyter``
 - ``rise``
 
+How-to install rise::
+
+  pip install rise
+  jupyter-nbextension install rise --py --sys-prefix
+  jupyter-nbextension enable rise --py --sys-prefix
+
