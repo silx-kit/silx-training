@@ -1,51 +1,64 @@
 
-
-Python training
-===============
+=================
+ Python training
+=================
 
 Training for beginners in Python.
 
-Contains:
+Content
+=======
 
-- ``python``:
+0. Python: the programming language
+-----------------------------------
 
-    Python 3 basics
+This part is a general introduction to the Python 3 programming language.
 
-- ``numpy``:
+It covers:
 
-    How to use numpy for computing data
+- Available primitives, basic operations and containers (list, tuple, dictionary, iterator)
+- Control structures: if/then/else, for and while loops
+- Defining functions and modules
 
-- ``io``:
+1. Array manipulation using NumPy
+---------------------------------
 
-    How to read and write data at the ESRF
+This part is an introduction to the numpy library.
+
+It covers:
+
+- the creation of numpy arrays,
+- access and manipulation of such arrays, and
+- an overview of the different features available in numpy.
+
+2. Accessing ESRF data files: HDF5, specfile, EDF
+-------------------------------------------------
+
+This part provides:
+
+- an introduction to HDF5, EDF and spec file formats, and
+- a presentation of the h5py, silx and fabio libraries to read and write such files.
+
 
 Dependencies
 ============
 
-To generate the document, you have to install
+The content of the training depends on:
 
-- ``landslide``
-- ``princexml`` (http://princexml.com/) for the PDF output
-- ``inkscape`` to convert images from SVG to PNG
-- ``pdfunite`` to merge many PDF files into a single one
+- Python 3.x
+- ``numpy``
+- ``h5py``
+- ``fabio``
+- ``silx``
+- ``matplotlib``
 
-Makefile
-========
+To run the notebooks and display the slides, you need:
 
-There are 4 targets to the makefile
+- ``jupyter``
+- ``rise``
 
-- ``make png``:
+How-to install rise::
 
-    Generate PNG files from SVG (princexml does not support SVG)
+  pip install rise
+  jupyter-nbextension install rise --py --sys-prefix
+  jupyter-nbextension enable rise --py --sys-prefix
 
-- ``make html``:
-
-    Generate the HTML output in ``build/html``
-
-- ``make pdf``:
-
-    Generate a single PDF for each part plus a master PDF in ``build/html/slides.pdf``
-
-- ``make clean``:
-
-    Clean up generated files
