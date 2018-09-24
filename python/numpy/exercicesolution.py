@@ -10,7 +10,15 @@ __date__ = "18/09/2018"
 __license__ = "MIT"
 
 
+import inspect
+
 import numpy
+
+
+def show(exercice_name):
+    function = globals()[exercice_name]
+    print(inspect.getsource(function))
+    return function()
 
 
 def ex3_1():
@@ -61,7 +69,8 @@ def ex4_2_alt():
     return data, binned
 
 
-def ex5_inefficient_fill(height, width):
+def ex5_inefficient_fill(height=1000, width=1000):
+    """Inefficient fill using 2 for loops"""
     data = numpy.zeros((height, width), dtype=numpy.float)
     for row in range(int(height)):
         for col in range(int(width)):
@@ -69,7 +78,8 @@ def ex5_inefficient_fill(height, width):
     return data
 
 
-def ex5_naive_fill(height, width):
+def ex5_naive_fill(height=1000, width=1000):
+    """Fill using 2 for loops but pre-computing sin and cos"""
     width_sin = numpy.sin(numpy.arange(width))
     height_cos = numpy.cos(numpy.arange(height))
     data = numpy.zeros((height, width), numpy.float)
@@ -79,7 +89,8 @@ def ex5_naive_fill(height, width):
     return data
 
 
-def ex5_clever_fill(height, width):
+def ex5_clever_fill(height=1000, width=1000):
+    """Fill using 2 outer products"""
     width_sin = numpy.sin(numpy.arange(width))
     height_cos = numpy.cos(numpy.arange(height))
     cos_loop = numpy.outer(height_cos, numpy.ones(width))
@@ -87,20 +98,23 @@ def ex5_clever_fill(height, width):
     return cos_loop * sin_loop
 
 
-def ex5_practical_fill(height, width):
+def ex5_practical_fill(height=1000, width=1000):
+    """Fill using meshgrid"""
     width_sin = numpy.sin(numpy.arange(width))
     height_cos = numpy.cos(numpy.arange(height))
     sin_loop, cos_loop = numpy.meshgrid(width_sin, height_cos)
     return sin_loop * cos_loop
 
 
-def ex5_optimized_fill(height, width):
+def ex5_optimized_fill(height=1000, width=1000):
+    """Fill using outer product"""
     width_sin = numpy.sin(numpy.arange(width))
     height_cos = numpy.cos(numpy.arange(height))
     return numpy.outer(height_cos, width_sin)
 
 
-def ex5_atleast_2d_fill(height, width):
+def ex5_atleast_2d_fill(height=1000, width=1000):
+    """Fill using atleast_2d and transpose"""
     sine = numpy.sin(numpy.arange(width))
     cosine = numpy.cos(numpy.arange(height))
     return numpy.atleast_2d(sine) * numpy.atleast_2d(cosine).T
