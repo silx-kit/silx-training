@@ -36,19 +36,21 @@ def process_data(data):
     Process the data The goal of the processing is to clamp the pixels values
     to a new range of values ([10%, 90%] of the existing one). To do so:
 
-    * Create a mask to detect pixel which are below 10% or above 90% of the
-      current range.
-    * With the above mask, set the affected pixels to 10% 'low value'.
+    * Create a mask to detect pixel which are below 10% 
+    * With the above mask, set the affected pixels to the 10% 'low value'.
+    * do the same for value above 90%
+    * create the mask of all the modify pixel
 
     """
-    percentile_10 = (data.max() - data.min()) * 0.1
-    percentile_90 = (data.max() - data.min()) * 0.9
-    mask_10 = data <= percentile_10
-    mask_90 = data >= percentile_90
+    val_10 = (data.max() - data.min()) * 0.1 + data.min()
+    val_90 = (data.max() - data.min()) * 0.9 + data.min()
+    mask_10 = data <= val_10
+    mask_90 = data >= val_90
     mask = numpy.logical_or(mask_10, mask_90)
 
     proc_data = numpy.copy(data)
-    proc_data[mask == True] = percentile_10
+    proc_data[mask_10 == True] = val_10
+    proc_data[mask_90 == True] = val_90
     return proc_data, mask
 
 
