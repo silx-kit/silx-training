@@ -42,15 +42,18 @@ def process_data(data):
     * create the mask of all the modify pixel
 
     """
-    val_10 = (data.max() - data.min()) * 0.1 + data.min()
-    val_90 = (data.max() - data.min()) * 0.9 + data.min()
-    mask_10 = data <= val_10
-    mask_90 = data >= val_90
+    maxi = data.max()
+    mini = data.min()
+    
+    val_10 = 0.9*mini + 0.1*maxi
+    val_90 = 0.1*mini + 0.9*maxi
+    mask_10 = (data <= val_10)
+    mask_90 = (data >= val_90)
     mask = numpy.logical_or(mask_10, mask_90)
 
     proc_data = numpy.copy(data)
-    proc_data[mask_10 == True] = val_10
-    proc_data[mask_90 == True] = val_90
+    proc_data[mask_10] = val_10
+    proc_data[mask_90] = val_90
     return proc_data, mask
 
 
