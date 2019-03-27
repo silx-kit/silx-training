@@ -27,7 +27,7 @@ Have a clean structure
 
 - Separate library from scripts:
 
-  * libraries are reuseable
+  * libraries are reusable
 
 - Separate GUI from calculation:
 
@@ -108,25 +108,18 @@ Coding convention
 
 ----
 
-Transition to Python3
----------------------
+Python 2 end of support
+-----------------------
 
-By 2020, the support of Python2 will end.
+By 2020, the `support of Python2 will end <https://pythonclock.org/>_`.
+All your projects should be python3 based.
+
 Supporting Python3 is a must have today.
 
 Look at the download statistics of projects like
-`WinPython <https://sourceforge.net/projects/winpython/files/>`_: about 7000 downloads/week for Python_3.x vs 1200 for Python_2.7
+`WinPython <https://sourceforge.net/projects/winpython/files/>`_: about 5900 downloads/week for Python_3.x vs 324 for Python_2.7
 
-Today, in 2017, one should not start a Python2 (only) project.
-
-To ensure a smoother transition, and acquire the Python3 requested practices:
-
-.. code-block:: python
-
-   from __future__ import division, absolute_import, \
-       print_function #, unicode_literals
-
-Use the `six library <https://pypi.python.org/pypi/six>`_ to provide code that
+You can use the `six library <https://pypi.python.org/pypi/six>`_ to provide code that
 runs both under Python2 and Python3.
 
 Presenter Notes
@@ -227,7 +220,7 @@ Image from http://phdcomics.com/comics/archive_print.php?comicid=1531
 Git version control
 ...................
 
-Git is the current (2017) standard, it has replaced SVN, CVS, ...
+Git is the current (2019) standard, it has replaced SVN, CVS, ...
 
 If you have heard of any of them, the concepts in Git are similar while offering a lot of flexibility.
 
@@ -240,17 +233,44 @@ If you have heard of any of them, the concepts in Git are similar while offering
 
 ----
 
+
+github and gitlab
+.................
+
+**github.com** and **gitlab.esrf.fr** provides free git-hosting for open-source project and
+encourages collaboration using forks of projects.
+
+The main advantages are:
+
+ - `Offer a fixed pipeline based on *Pull request* <https://help.github.com/articles/using-pull-requests/>`_
+ - Many tutorials on `gitHub <https://guides.github.com/>`_ and `gitlab <https://docs.gitlab.com/ee/gitlab-basics/>`_
+ - Web page hosting for projects
+ - over the years a cluster of services, directly have pop up to help developers (`Travis <https://github.com/marketplace/travis-ci>`_, `AppVeyor <https://github.com/marketplace/appveyor>`_)
+
+----
+
+github vs gitlab
+................
+
+- github should bring to your project an `Higher visibility compared to other hosting (in 2017) <http://software.ac.uk/resources/guides/choosing-repository-your-software-project>`_
+- github is usually one step ahead of gitlab on features and usability
+- Activities on github are monitored by head-hunters and can be useful for professional placement.
+- You can select a privacy level for your gitlab projects. Public projects can be seen from outside: https://gitlab.esrf.fr/public
+
+.. image:: images/gitlab_privacy.png
+    :align: center
+
+----
+
 Different types of workflow
 ...........................
 
 They are different workflows with git:
 
-* `Centralized Workflow <https://www.atlassian.com/git/tutorials/comparing-workflows#centralized-workflow>`_
-* `Git Flow <https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow>`_
-
-.. image:: images/gitflow-workflow.png
-   :align: center
-   :width: 700
+* `centralized workflow  <https://www.atlassian.com/git/tutorials/comparing-workflows#centralized-workflow>`_
+* `feature branch workflow <https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow>`_
+* `gitflow workflow <https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow>`_
+* `forking workflow <https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow>`_
 
 Presenter Notes
 ...............
@@ -261,6 +281,187 @@ Presenter Notes
     - releases
     - each feature
     - fix
+
+----
+
+Different types of workflow
+...........................
+
+This is not the goal today to see all the different type of workflows.
+But for the hands on session today we will consider to be in the 'forking flow'.
+
+
+.. image:: images/fork_workflow_remote.png
+    :align: center
+
+
+Presenter Notes
+...............
+
+The idea is that each developer can interact with other from his own fork.
+Each developer can request to merge some modifications (feature, bug fix...) with others: this is a pull request
+
+Presenter Notes
+...............
+
+- simplify branch forking
+- Always keep upstream branch ready for deployment with features and fixes
+- Each new branch starts from the master (up to date)
+- Use merge request for each new feature
+
+
+----
+
+
+Hands on: create a new git project
+----------------------------------
+
+Test case: project life.
+
+--- initial project ---
+
+We create a simple git project only containing one file: polynom.py. We now want to
+modify it.
+
+In order to create this git project we just:
+
+create an empty folder to create the project
+
+
+.. code-block:: bash
+
+    mkdir pypolynom
+    cd pypolynom
+
+create the directory which will contains the source code
+
+
+.. code-block:: bash
+
+    mkdir pypolynom
+
+create one source code file
+
+
+.. code-block:: bash
+
+    touch pypolynom/polynom.py
+
+
+----
+
+Hands on: create a new git project(2)
+-------------------------------------
+
+then add code to the file
+
+.. code-block:: bash
+
+    ...
+
+init the git project file
+
+.. code-block:: bash
+
+    git init
+
+then create a new project from `gitlab <http://gitlab.esrf.fr/>`_ or `github <http://github.com/>`_
+
+.. code-block:: bash
+    ...
+
+you can now register the gitlab / github project url to the current git project
+
+.. code-block:: bash
+
+    git remote add origin git@gitlab.esrf.fr:silx/silx-trainings/pypolynom.git
+    git push origin master
+
+
+----
+
+
+Hands on: fork an existing project
+..................................
+
+fork the project from the webinterface of gitlab or github.
+This will provide you an url to the fork.
+
+.. class:: center
+
+    |fork-gitlab| |fork-github|
+
+.. |fork-gitlab| image:: images/gitlab-fork.png
+   :width: 45%
+
+.. |fork-github| image:: images/github-fork.png
+   :width: 45%
+
+
+Then clone the project:
+
+.. code-block:: bash
+
+    git clone git@gitlab.esrf.fr:[my_id]/pypolynom_completed.git
+
+
+And add some remote repository:
+
+
+.. code-block:: bash
+
+    git remote add upstream git@gitlab.esrf.fr:silx/silx-trainings/pypolynom.git
+
+
+----
+
+
+branch
+......
+
+new features / bug fix / improvements will be developed in a dedicated branch.
+You can have an infinite number of branch on each repository.
+
+The history of the branch evolve with commits (see next slides).
+Once the modifications are made they can be proposed to be merged on `upstream` repository and merge into a branch.
+
+
+.. image:: images/git_branch.png
+    :align: center
+
+----
+
+Branches commands
+.................
+
+* *fetch <branch>* retrieve history from another branch
+* *merge <branch>* : merge history of <branch> into the current branch
+* *checkout <branch>* : move to another branch.
+* *checkout -b <branch>* : create a new branch
+
+Note : *pull* command is grouping *fetch* and *merge*
+
+Presenter Notes
+...............
+
+Default parameters origin/master rot git actions
+
+----
+
+Hands on: create a new branch
+.............................
+
+The goal is to create a new branch for making some modifications on the source code and propose those modification into the upstream repository.
+
+create a new branch branch_my_name
+
+.. code-block:: bash
+
+    git checkout -b branch_my_name
+
+Then modify the source code, creating a new function using `polynom` function for example.
+
+
 
 ----
 
@@ -278,21 +479,6 @@ The cycle 1-2-3 is the normal development cycle for a local project.
 Any git repository contains all the history of the project, i.e all
 commits with authors, data time, file changed, and the chain of commits called *branch*
 
-Some commands to interact with branches
-.......................................
-
-* *fetch <branch>* retrieve history from another branch
-* *merge <branch>* : merge history of <branch> into the current branch
-* *checkout <branch>* : move to another branch.
-* *checkout -b <branch>* : create a new branch
-
-Note : *pull* command is grouping *fetch* and *merge*
-
-Presenter Notes
-...............
-
-Default parameters origin/master rot git actions
-
 ----
 
 Some useful git commands
@@ -304,55 +490,23 @@ Some useful git commands
 
 ----
 
-GitHub
-......
-
-The web service github.com provides free git-hosting for open-source project and
-encourages collaboration using forks of projects.
-
-The main advantages of GitHub are:
-
- - `Highest visibility compared to other hosting (in 2017) <http://software.ac.uk/resources/guides/choosing-repository-your-software-project>`_
- - `Offer a fixed pipeline based on *Pull request* <https://help.github.com/articles/using-pull-requests/>`_
- - `Many tutorials on GitHub <https://guides.github.com/>`_
- - Issue tracker
- - Web page hosting for projects
- - Download of releases
-
-Github is actually a social network, but unlike Linked'in or Facebook it
-focuses on code developers.
-
-Activities on Github are monitored by head-hunters
-and can be useful for professional placement.
+Hands on: create a pull request
+...............................
 
 
-Presenter Notes
-...............
+* check the current status of your project
 
-other web services:
+.. code-block:: bash
 
-- CI : Travis, appVeyor, CircleCI (see 4_Test )
+    git status ./
 
+* create your first commit:
+    * add the modification you want to embed
+    * create a commit from those
 
-----
-
-Different types of workflow
-...........................
-
-* `GitHub Flow <http://scottchacon.com/2011/08/31/github-flow.html>`_
-
-github facilitates a forking workflow.
-
-.. image:: images/github-workflow.png
-   :align: center
-
-Presenter Notes
-...............
-
-- simplify branch forking
-- Always keep upstream branch ready for deployement with features and fixes
-- Each new branch starts from the master (up to date)
-- Use merge request for each new feature
+* push those modifications to the upstream repository and create a pull-request
+* ask one of your neighbour to review this PR and merge it on the upstream repository
+* retrieve the modifications to your own master branch
 
 ----
 
@@ -383,27 +537,22 @@ For example *fetch* and *merge* have default values for:
 
 ----
 
-Alternatives
-------------
 
-The alternative to github for ESRF projects is
-`GitLab <https://gitlab.esrf.fr>`_ which offers similar feature to GitHub.
+Hands on: remote repository
+...........................
 
-You can select a privacy level for your projects.
-
-.. image:: images/gitlab_privacy.png
-    :align: center
-
-Public projects can be seen from outside: https://gitlab.esrf.fr/public
+* add one an other `fork repository` and fetch it.
+* move to one of its branch and log history of the branch.
 
 ----
 
-Some tutorials git/github:
-..........................
+Some tutorials and utils for git/github
+.......................................
 
 * `Comprehensive tutorial <http://gitref.org>`_
 * `Cheat sheet from Github <https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf>`_
 * `simple Cheat sheet <http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf>`_
+* `list of default .gitignore for several languages <https://github.com/github/gitignore>`_
 
 ----
 
