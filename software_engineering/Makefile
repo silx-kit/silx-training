@@ -1,5 +1,5 @@
 
-SLIDES = 0_Introduction 1_Project 2_Distribution 3_Virtualenv 4_Test 5_Documentation
+SLIDES = 0_Introduction 1_Architecture 2_Git 3_Distribution 4_Virtualenv 5_Test 6_Documentation
 
 PNGS_FROM_SVGS=$(shell find | grep \\.svg | sed -e 's/svg$$/png/g')
 
