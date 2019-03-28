@@ -441,35 +441,23 @@ the one from the other developers.
     git remote add upstream git@gitlab.esrf.fr:silx/silx-trainings/pypolynom.git
     # git remote add co-worker git@gitlab.esrf.fr:<co-worker>/pypolynom.git
 
-2. fetch modifications of the 'upstream' repository
-
-.. code-block:: bash
-
-    git fetch upstream <branch>
-
-3. merge those modification on your master branch
+2. merge those modification on your master branch
 
 .. code-block:: bash
 
     git checkout master
     git merge upstream/master
 
-you are now ready for a new development cycle.
-
-----
-
-Hands on: retrieve modifications (2)
-....................................
-
-.. note:: on the practice we usually don't care keeping the master branch of our personal registry up to date.
-And we directly start a new branch from the upstream/master
+or
 
 .. code-block:: bash
 
-    git fetch upstream master
-    git checkout upstream/master
-    git checkout -b new_branch
+    git checkout master
+    git fetch upstream <branch>
+    git merge upstream/master
 
+
+you are now ready for a new development cycle.
 
 ----
 
@@ -477,7 +465,7 @@ Some tutorials and utils for git/github
 .......................................
 
 * `Comprehensive tutorial <http://gitref.org>`_
-* `Cheat sheet from Github <https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf>`_
+* `Cheat sheet from Github <https://education.github.com/git-cheat-sheet-education.pdf>`_
 * `simple Cheat sheet <http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf>`_
 * `list of default .gitignore for several languages <https://github.com/github/gitignore>`_
 
