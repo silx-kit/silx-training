@@ -38,7 +38,7 @@ Have a clean structure
 
 - Separate I/O from calculation
 
-- Define a license for your work.
+- avoid code duplication
 
 Presenter Notes
 ...............
@@ -48,12 +48,17 @@ Will also help you to :
 - find back your code
 - avoid code duplication
 
-License : otherwise can't be distributed or reused
+----
+
+example
+-------
+
+TODO
 
 ----
 
-A word about Licenses
----------------------
+Define a license for your work !!!
+----------------------------------
 
 According to the French law, one should distinguish authorship from ownership:
 
@@ -64,6 +69,8 @@ According to the French law, one should distinguish authorship from ownership:
 
 Licenses define how a piece of software can be used (and sometimes what for).
 None of them claim any liability of the author.
+
+If there is not license on your code he cannot be distributed or reused
 
 ----
 
@@ -111,7 +118,7 @@ Coding convention
 Python 2 end of support
 -----------------------
 
-By 2020, the `support of Python2 will end <https://pythonclock.org/>_`.
+By 2020, the `support of Python2 will end <https://pythonclock.org/>`_.
 All your projects should be python3 based.
 
 Supporting Python3 is a must have today.
@@ -272,20 +279,21 @@ They are different workflows with git:
 * `gitflow workflow <https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow>`_
 * `forking workflow <https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow>`_
 
+
 Presenter Notes
 ...............
 
 - centralized : a single point of entry 'central repository'. Let each users to deal with synchronization
-
-- gitflow : strict management of branches. One branch per:
+- feature branch workflow: each new feature should take place in a dedicated branch
+- gitflow : strict management of branches designed for releases. One branch per:
     - releases
     - each feature
     - fix
 
 ----
 
-Different types of workflow
-...........................
+forking workflow
+................
 
 This is not the goal today to see all the different type of workflows.
 But for the hands on session today we will consider to be in the 'forking flow'.
@@ -293,6 +301,10 @@ But for the hands on session today we will consider to be in the 'forking flow'.
 
 .. image:: images/fork_workflow_remote.png
     :align: center
+
+.. image:: images/github-workflow.png
+    :align: center
+
 
 
 Presenter Notes
@@ -309,23 +321,16 @@ Presenter Notes
 - Each new branch starts from the master (up to date)
 - Use merge request for each new feature
 
-
 ----
 
+Example: create a new git project
+---------------------------------
 
-Hands on: create a new git project
-----------------------------------
+The goal is to create a git project from a single source file: polynom.py
 
-Test case: project life.
+In order to create this git project we:
 
---- initial project ---
-
-We create a simple git project only containing one file: polynom.py. We now want to
-modify it.
-
-In order to create this git project we just:
-
-create an empty folder to create the project
+1. create an empty folder where to create the project
 
 
 .. code-block:: bash
@@ -333,14 +338,14 @@ create an empty folder to create the project
     mkdir pypolynom
     cd pypolynom
 
-create the directory which will contains the source code
+2. create the directory which will contains the source code file(s)
 
 
 .. code-block:: bash
 
     mkdir pypolynom
 
-create one source code file
+3. add your source code file(s)
 
 
 .. code-block:: bash
@@ -348,18 +353,15 @@ create one source code file
     touch pypolynom/polynom.py
 
 
+.. note:: For those which intend to create a new git project from existing source code you can follow the same procedure.
+
+
 ----
 
-Hands on: create a new git project(2)
+Example: create a new git project (2)
 -------------------------------------
 
-then add code to the file
-
-.. code-block:: bash
-
-    ...
-
-init the git project file
+init the git project file (from the root directory)
 
 .. code-block:: bash
 
@@ -377,15 +379,26 @@ you can now register the gitlab / github project url to the current git project
     git remote add origin git@gitlab.esrf.fr:silx/silx-trainings/pypolynom.git
     git push origin master
 
-
 ----
 
+Hands on: fork an existing project
+..................................
+
+
+Now each person will create his own repository.
+
+
+.. image:: images/github-workflow.png
+    :align: center
+
+
+----
 
 Hands on: fork an existing project
 ..................................
 
 fork the project from the webinterface of gitlab or github.
-This will provide you an url to the fork.
+This will provide you an url to your personal repository.
 
 .. class:: center
 
@@ -405,26 +418,25 @@ Then clone the project:
     git clone git@gitlab.esrf.fr:[my_id]/pypolynom_completed.git
 
 
-And add some remote repository:
+And add the gitlab / github repository:
 
 
 .. code-block:: bash
 
     git remote add upstream git@gitlab.esrf.fr:silx/silx-trainings/pypolynom.git
 
-
 ----
 
+branches
+........
 
-branch
-......
+We will consider the case where each new features, bug fix or improvements will be developed in a dedicated branch.
 
-new features / bug fix / improvements will be developed in a dedicated branch.
-You can have an infinite number of branch on each repository.
+The history of the branch evolve with a serie of commits (see next slides).
 
-The history of the branch evolve with commits (see next slides).
-Once the modifications are made they can be proposed to be merged on `upstream` repository and merge into a branch.
+Once the modifications are made they can be proposed to be merged on an other branch. This is a Pull request.
 
+The branch can be part of different repositories.
 
 .. image:: images/git_branch.png
     :align: center
@@ -444,24 +456,25 @@ Note : *pull* command is grouping *fetch* and *merge*
 Presenter Notes
 ...............
 
-Default parameters origin/master rot git actions
+Default parameters are usually origin/master
 
 ----
 
 Hands on: create a new branch
 .............................
 
-The goal is to create a new branch for making some modifications on the source code and propose those modification into the upstream repository.
+The goal is to:
 
-create a new branch branch_my_name
+* create a new branch
+* make some modifications on the source code
+
+1. create a new branch branch_my_name
 
 .. code-block:: bash
 
     git checkout -b branch_my_name
 
-Then modify the source code, creating a new function using `polynom` function for example.
-
-
+2. Then modify the source code, creating a new function using `polynom` function for example.
 
 ----
 
@@ -490,8 +503,8 @@ Some useful git commands
 
 ----
 
-Hands on: create a pull request
-...............................
+Hands on: create a commit
+.........................
 
 
 * check the current status of your project
@@ -503,6 +516,53 @@ Hands on: create a pull request
 * create your first commit:
     * add the modification you want to embed
     * create a commit from those
+
+----
+
+Hands on: create pull request
+.............................
+
+Now we want to merge those modifications into the original gitlab/github repository.
+
+
+.. image:: images/github-workflow.png
+    :align: center
+    :width: 40%
+
+1. Push those modifications on your personal repository.
+
+.. code-block:: bash
+    git push origin <branch>
+
+you can now see the branch on your personal directory.
+
+.. image:: images/new_branch_git_push.png
+    :align: center
+    :width: 40%
+
+----
+
+Hands on: create pull request (2)
+.................................
+
+
+2. create a merge request to an other branch (original gitlab / github repository)
+
+.. image:: images/create_merge_request.png
+    :align: center
+
+.. image:: images/merge_request_1.png
+    :align: center
+
+.. image:: images/merge_request_1.png
+    :align: center
+
+.. image:: images/merge_request_2.png
+    :align: center
+
+3. ask one of your neighbour to review and merge the PR
+
+----
 
 * push those modifications to the upstream repository and create a pull-request
 * ask one of your neighbour to review this PR and merge it on the upstream repository
@@ -517,6 +577,8 @@ To interact with a remote repository :
 
 * *remote* : manage tracked repositories
 * *remote add name url* : Adds a remote named <name> for the repository at <url>
+
+.. note:: all this information is stored in .git/config file
 
 Then you can retrieve commits from those repositories:
 
