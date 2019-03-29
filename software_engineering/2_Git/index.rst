@@ -34,7 +34,7 @@ Presenter Notes
 ----
 
 Git version control
-...................
+-------------------
 
 Git is the current (2019) standard, it has replaced SVN, CVS, ...
 
@@ -54,7 +54,7 @@ Mercurial seems simpler but a little less powerful (API). Git seems to have less
 
 
 github and gitlab
-.................
+-----------------
 
 **github.com** and **gitlab.esrf.fr** provides git-hosting for project and
 encourage collaboration using forks of projects.
@@ -71,7 +71,7 @@ The main advantages are:
 ----
 
 github vs gitlab
-................
+````````````````
 
 * github should bring to your project an `Higher visibility compared to other hosting (in 2017) <http://software.ac.uk/resources/guides/choosing-repository-your-software-project>`_.
 * github is usually one step ahead of gitlab on features and usability.
@@ -85,7 +85,7 @@ github vs gitlab
 ----
 
 Different types of workflow
-...........................
+---------------------------
 
 git permits several workflows:
 
@@ -108,7 +108,7 @@ Presenter Notes
 ----
 
 forking workflow
-................
+----------------
 
 This is not the goal today to see the advantages of the different type of workflows.
 But for the hands on session today we will focus in the 'forking workflow'.
@@ -122,9 +122,6 @@ Presenter Notes
 Why the 'forking flow' ? ==> commonly used. The one of silx for example.
 The idea is that each developer can interact with other from his own fork.
 Each developer can request to merge some modifications (feature, bug fix...) with others: this is a pull request
-
-Presenter Notes
-...............
 
 - simplify branch forking
 - Always keep upstream branch ready for deployment with features and fixes
@@ -165,7 +162,7 @@ To create the git project:
 ----
 
 Example: create a new git project (2)
--------------------------------------
+`````````````````````````````````````
 
 4. init the git project file (from the root directory)
 
@@ -198,7 +195,7 @@ Example: create a new git project (2)
 ----
 
 Hands on: fork an existing project
-..................................
+----------------------------------
 
 
 Now each person will create his personal repository of the project.
@@ -211,7 +208,7 @@ Now each person will create his personal repository of the project.
 ----
 
 Hands on: fork an existing project
-..................................
+``````````````````````````````````
 
 1 .fork the project from the webinterface of gitlab or github.
 
@@ -241,7 +238,7 @@ Hands on: fork an existing project
 ----
 
 branches
-........
+--------
 
 **master** branch: default / 'main' branch.
 
@@ -257,7 +254,7 @@ branches
 ----
 
 Branches commands
-.................
+`````````````````
 
 * *git checkout <branch>* : move to another branch.
 * *git checkout -b <branch>* : create a new branch
@@ -274,7 +271,7 @@ Default parameters are usually origin/master
 ----
 
 Git actions
-...........
+-----------
 
 To made modification locally you will have to follow the current process:
 
@@ -293,7 +290,7 @@ commits with authors, data time, file changed, and the chain of commits called *
 ----
 
 Some useful git commands
-........................
+------------------------
 
 * *git status* : show the working tree status (branch name, file modified, added...)
 * *git log* : show commits logs
@@ -303,7 +300,7 @@ Some useful git commands
 ----
 
 Hands on: propose modifications
-...............................
+-------------------------------
 
 For this exercise you can use a `git Cheat sheet <https://education.github.com/git-cheat-sheet-education.pdf>`_ if you like.
 
@@ -319,7 +316,7 @@ We need to:
 ----
 
 Hands on: propose modifications (2)
-...................................
+```````````````````````````````````
 
 
 1. create a new branch branch_my_name
@@ -348,7 +345,7 @@ once done you can check the current status of your project
 ----
 
 Hands on: propose modifications (3)
-...................................
+```````````````````````````````````
 
 Now we want to merge those modifications into the original gitlab/github repository.
 
@@ -371,7 +368,7 @@ you can now see the branch on your personal directory.
 ----
 
 Hands on: propose modifications (4)
-...................................
+```````````````````````````````````
 
 
 5. connect you to your personal repository and from the web interface create a merge request to the original gitlab / github repository.
@@ -400,9 +397,9 @@ Hands on: propose modifications (4)
 
 
 Git - Interact with a third repository
-......................................
+--------------------------------------
 
-To interact with a remote repository : 
+To interact with a remote repository :
 
 * *remote* : manage tracked repositories
 * *remote add name url* : Adds a remote named <name> for the repository at <url>
@@ -429,7 +426,7 @@ For example *fetch* and *merge* have default values for:
 ----
 
 Hands on: retrieve modifications
-................................
+--------------------------------
 
 We now want to keep the clone up to date. To get our modifications and more importantly,
 the one from the other developers.
@@ -462,7 +459,7 @@ you are now ready for a new development cycle.
 ----
 
 Some tutorials and utils for git/github
-.......................................
+---------------------------------------
 
 * `Comprehensive tutorial <http://gitref.org>`_
 * `Cheat sheet from Github <https://education.github.com/git-cheat-sheet-education.pdf>`_
@@ -472,7 +469,7 @@ Some tutorials and utils for git/github
 ----
 
 Contribution in OSS
-...................
+-------------------
 
 If your project becomes popular, you may have external contributors...
 or you might want to contribute to other projects.
