@@ -110,10 +110,13 @@ it does not address the "*how do I do ?*" question.
 We have tried to summarize all the needed information into a tutorial
 which we hope, will save you a lot of time in your future:
 
-#. Structure your project
-#. Distribution and packaging
-#. Testing and validation
-#. Documentation
+#. Structure your project: minimalistic architecture of a Python project
+#. Version control system: how *git* becomes your best friend 
+#. Package your code to distribute it efficiently
+#. Virtual environments: how to test many setups
+#. Testing and validation: turn bugs into non-regression tests
+#. Continuous integration: when the *cloud* tests your code four you
+#. Documentation: tools for generting the documentation for you.
 
 This training is focusing on Python only ... and presents a deliberately
 simplified view:

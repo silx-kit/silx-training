@@ -1,4 +1,3 @@
-
 .. raw:: html
 
    <!-- Patch landslide slides background color --!>
@@ -18,7 +17,7 @@
    #. PEP8
    #. PEP20
 
-#. Version control system - git
+#. Structure of a minimalistic project
 
 ----
 
@@ -119,12 +118,10 @@ Python 2 end of support
 -----------------------
 
 By 2020, the `support of Python2 will end <https://pythonclock.org/>`_.
-All your projects should be python3 based.
+All your projects must be python3 based, supporting Python2 becomes optional.
 
-Supporting Python3 is a must have today.
 
-Look at the download statistics of projects like
-`WinPython <https://sourceforge.net/projects/winpython/files/>`_: about 5900 downloads/week for Python_3.x vs 324 for Python_2.7
+Look at the `developer statistics <https://www.jetbrains.com/research/python-developers-survey-2018/#python-3-adoption>`_
 
 You can use the `six library <https://pypi.python.org/pypi/six>`_ to provide code that
 runs both under Python2 and Python3.
@@ -209,3 +206,18 @@ Tools
 
   - `pyDev (eclipse) <http://www.pydev.org/>`_
   - `pyCharm <https://www.jetbrains.com/pycharm/>`_
+
+---- 
+
+Scafold of a minimalistic Python project
+----------------------------------------
+
+.. code-block:: shell
+
+   pet_project/
+       pet_project/
+           __init__.py
+       LICENSE.txt
+       README.txt
+       setup.py
+
