@@ -36,8 +36,8 @@ What is this function doing?
 
 ------
 
-Introduction
-------------
+Introduction (2)
+----------------
 
 What is this function doing?
 
@@ -48,8 +48,8 @@ What is this function doing?
 
 ------
 
-Introduction
-------------
+Introduction (3)
+----------------
 
 What is this function doing?
 
@@ -194,6 +194,10 @@ Docstrings Content
 - For **class**: **Behavior summary**, list of the public method and instance variables.
 - For **function** and **method**: **Behavior summary**, documentation of **arguments**, **return value**, side effects, exceptions raised, restrictions.
 
+-----
+
+TODO: spinx, speak about directives and roles
+
 ------
 
 .. include:: restructuredtext.rst
@@ -203,6 +207,17 @@ Docstrings Content
 .. include:: sphinx.rst
 
 ------
+
+Embed a jupyter notebook in the documentation
+---------------------------------------------
+
+TODO: use nbsphinx + add a jupyter note book in the source code and associate
+documentation with it,
+
+https://nbsphinx.readthedocs.io/en/0.4.2/
+
+----
+
 
 Continuous documentation
 ------------------------
