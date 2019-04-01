@@ -19,7 +19,13 @@ separate places, by creating virtual Python environments for them.
 
 Each can have a different version of Python, and a different set of libraries.
 
-It's main purpose is to create an isolated environment.
+Its main purpose is to create an isolated environment.
+
+A virtual environment is a folder containing :
+
+- The python executable
+- The environment python libraries
+- Executables (scripts, modules entry points)
 
 ----
 
@@ -33,7 +39,7 @@ Users and production servers
 - installing new software with modern library dependencies, without breaking older software relying on older versions of the same libraries
 - sharing an environment, isolated from the system and users libraries, between different users
 
-Using virtual environments is becoming our preferred way of installing new python software for users.
+Using virtual environments is our preferred way of installing new python software for users.
 
 Developers
 **********
@@ -43,85 +49,50 @@ Developers
 
 Testing usages can be automated with *continuous integration*.
 
-
 ----
 
-Installing:
------------
+## Creating a virtualenv
 
-Python 2
-********
+From Python 3, virtualenv is already shipped as a standard libray: ``venv``.
 
-.. code-block:: shell
-    
-    pip install virtualenv --user
-
-.. note::
-
-    On Debian 8 and some Ubuntu versions, ``virtualenv`` is provided by the package *python-virtualenv*.
-
-Python 3
-********
-
-Already shipped as a standard library (Python >= 3.3): ``venv``
-
-.. note::
-
-    The package  *python3-venv* is required on Debian 8 for ``venv`` to work properly.
-
-----
 
 Creating a virtualenv
 ---------------------
+
+Simple case
+************
 
 This will create a new directory ``myvenv`` in the current directory,
 containing the python interpreter with its standard library, *pip*,
 and a *site-packages* directory for installing additional libraries.
 
-Python 2
-********
 
 .. code-block:: shell
     
-    virtualenv myvenv
+    python3 -m venv path_to_myvenv_folder
 
-Python 3
-*********
+More advanced case
+********************
 
-.. code-block:: shell
-    
-    python3 -m venv myvenv
+The virtualenv is created by the system's Python. However, the python version of the virtualenv can be different.
 
-
-----
-
-Creating a virtualenv (alternatives)
-------------------------------------
-
-Alternative using Python 2's virtualenv for Python3 environment:
+*Example : create a "python 3.6" virtual environment using system's python 3.5*
 
 .. code-block:: shell
 
-    # pip install virtualenv --user
-    virtualenv --python=/usr/bin/python3.4 myvenv
-
-Alternative by installing pip separately from ``myvenv``, if the regular method
-causes an error (try installing *python3-venv* first, if you can):
-
-.. code-block:: shell
-
-    python3 -m venv --without-pip myvenv
-    source myvenv/bin/activate
-    # install pip
-    curl https://bootstrap.pypa.io/get-pip.py | python
+    python3 -V # Python 3.5.3
+    python3 -m venv -p /path/to/python3.6 my_virtualenv_folder
 
 ----
 
 Activating a virtual env
 ------------------------
 
+*Activating* a virtual env means using the Python version (and related libraries) of the virtual environment.  
+
 .. code-block:: shell
     
+
     source myvenv/bin/activate
 
 While this virtual environment is active:
@@ -135,9 +106,8 @@ To deactivate the environment later, use the following command:
 
     deactivate
 
-
 ----
-        
+
 Upgrade pip, setuptools and wheel
 ---------------------------------
 
@@ -154,7 +124,8 @@ This step ensures that you will be able to install modern software and libraries
    pip install setuptools --upgrade
    pip install wheel --upgrade
 
-    
+Note that although you are (likely) not root, you don't need the ``--user`` flag anymore. This is because the modules are installed in your virtualenv folder.
+
 ----
 
 Installing libraries
@@ -167,14 +138,7 @@ Some dependencies can simply be installed from pypi:
 .. code-block:: shell
 
     pip install numpy cython
-    pip install matplotlib fabio h5py qtconsole pyopencl mako
-
-
-PyQt5 wheels are provided for some Python version (OK for Python 3.5 & 3.6):
-
-.. code-block:: shell
-
-    pip install PyQt5
+    pip install matplotlib fabio h5py qtconsole pyopencl mako PyQt5
 
 ----
 
@@ -204,40 +168,18 @@ Easier alternative (recent ``pip`` required):
 
     pip install --no-binary :all: numpy
 
-
 ----
 
-Symbolic link to library (linux)
---------------------------------
+Installing from sources (2)
+----------------------------
 
-**This is a hack!**
+``pip`` also supports installing from a git repository (as well as Mercurial, Bazaar and SVN).
 
-If no wheel is available for your environment, and compiling from scratch is too complicated, it can be simpler to
-just add symbolic links in the virtual environment, pointing to the libraries already installed on the system
-**and to their dependencies**.
-
-Example for *PyQt4* (depends on *sip*):
-
-Python 2.7
-**********
+Example: install an old version (0.8) of ``silx``:
 
 .. code-block:: shell
 
-    ln -s /usr/lib/python2.7/dist-packages/PyQt4 \
-        myvenv/lib/python2.7/site-packages/
-    ln -s /usr/lib/python2.7/dist-packages/sip.so \
-        myvenv/lib/python2.7/site-packages/
-
-
-Python 3.4
-**********
-
-.. code-block:: shell
-
-    ln -s /usr/lib/python3/dist-packages/PyQt4 \
-        myvenv/lib/python3.4/site-packages/
-    ln -s /usr/lib/python3/dist-packages/sip.cpython-34m-x86_64-linux-gnu.so \
-        myvenv/lib/python3.4/site-packages/
+    pip install git+https://github.com/silx-kit/silx@0.8
 
 
 ----
@@ -274,6 +216,39 @@ Test it
 
 ----
 
+Symbolic link to library (linux)
+--------------------------------
+
+**This is a hack!**
+
+If no wheel is available for your environment, and compiling from scratch is too complicated, it can be simpler to
+just add symbolic links in the virtual environment, pointing to the libraries already installed on the system
+**and to their dependencies**.
+
+Example for *PyQt4* (depends on *sip*):
+
+Python 2.7
+**********
+
+.. code-block:: shell
+
+    ln -s /usr/lib/python2.7/dist-packages/PyQt4 \
+        myvenv/lib/python2.7/site-packages/
+    ln -s /usr/lib/python2.7/dist-packages/sip.so \
+        myvenv/lib/python2.7/site-packages/
+
+
+Python 3.4
+**********
+
+.. code-block:: shell
+
+    ln -s /usr/lib/python3/dist-packages/PyQt4 \
+        myvenv/lib/python3.4/site-packages/
+    ln -s /usr/lib/python3/dist-packages/sip.cpython-34m-x86_64-linux-gnu.so \
+        myvenv/lib/python3.4/site-packages/
+
+----
 
 Managing multiple environments
 ------------------------------
@@ -303,9 +278,10 @@ More than 20 commands available:
 
 *help, inall, show, rm, cp, rename, mktmpenv, lssitepackages, restore, wipeenv, mkproject* ...
 
-
+`pipenv <https://github.com/pypa/pipenv>`_ aims at combining the features of pip, virtualenv and pew. It also brings deterministic builds through a declarative configuration.
 
 ----
+
 
 Alternatives: Anaconda
 ----------------------
