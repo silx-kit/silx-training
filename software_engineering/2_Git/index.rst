@@ -49,6 +49,8 @@ Presenter Notes
 
 Mercurial is the main concurrent of git with a close design.
 Mercurial seems simpler but a little less powerful (API). Git seems to have less 'corner cases'.
+CVS: concurrent version system
+SVN: Apache Subversion
 
 ----
 
@@ -62,10 +64,10 @@ encourage collaboration using forks of projects.
 The main advantages are:
 
 * simplify contribution.
-* `offer a fixed pipeline based on *Pull request* <https://help.github.com/articles/using-pull-requests/>`_.
 * many tutorials for `gitHub <https://guides.github.com/>`_ and `gitlab <https://docs.gitlab.com/ee/gitlab-basics/>`_.
 * web page hosting for projects.
 * over the years a cluster of services have pop up to help developers like `Travis <https://github.com/marketplace/travis-ci>`_ and `AppVeyor <https://github.com/marketplace/appveyor>`_).
+* `offer a fixed pipeline based on *Pull request* <https://help.github.com/articles/using-pull-requests/>`_.
 * lead to some 'normalization' of projects.
 
 ----
@@ -74,13 +76,20 @@ github vs gitlab
 ````````````````
 
 * github should bring to your project an `Higher visibility compared to other hosting (in 2017) <http://software.ac.uk/resources/guides/choosing-repository-your-software-project>`_.
-* github is usually one step ahead of gitlab on features and usability.
+* github is usually one step ahead of gitlab regarding features and usability.
 * activities on github are monitored by head-hunters and can be useful for professional placement.
 * gitlab allows you to select a privacy level for your projects. Public projects can be seen from outside: https://gitlab.esrf.fr/public not private projects.
 * github is free for open-source project.
+* github has been acquire by Microsoft in 2018 for 7.5 billion dollars
 
 .. image:: images/gitlab_privacy.png
     :align: center
+
+Presenter Notes
+...............
+
+The amount of the acquirement by Microsoft show the importance of github on the today life of the developer.
+As a consequence thousands of project has move from github to gitlab. (50000 after a week)
 
 ----
 
@@ -133,7 +142,7 @@ Each developer can request to merge some modifications (feature, bug fix...) wit
 Example: create a new git project
 ---------------------------------
 
-The goal is to create a git project from a single source file: polynom.py
+This example presents how to create a git project from a single source file: polynom.py
 
 .. note:: *For those which intend to create a new git project from existing source code you can follow the same procedure.*
 
@@ -158,6 +167,7 @@ To create the git project:
 .. code-block:: bash
 
     touch pypolynom/polynom.py
+
 
 ----
 
@@ -210,7 +220,13 @@ Now each person will create his personal repository of the project.
 Hands on: fork an existing project
 ``````````````````````````````````
 
-1 .fork the project from the webinterface of gitlab or github.
+1 fork the project from the webinterface of gitlab or github.
+
+    1.1 login to github / gitlab
+
+    1.2 look for the 'https://gitlab.esrf.fr/silx/silx-trainings/pypolynom_completed' project
+
+    1.3 fork the project and go to the homepage of the fork you just created
 
 .. include:: <isonum.txt>
 
@@ -251,6 +267,13 @@ branches
 .. image:: images/git_branch.png
     :align: center
 
+
+Presenter Notes
+```````````````
+
+Eah commit has an 'ID': SHA-1 checksum from modifications + commit message + author + date
+
+
 ----
 
 Branches commands
@@ -263,10 +286,13 @@ Branches commands
 
 Note : *pull* command is grouping *fetch* and *merge*
 
+
 Presenter Notes
 ...............
 
 Default parameters are usually origin/master
+
+TODO: make a small demo of how to move from one branch to an other...
 
 ----
 
@@ -285,7 +311,7 @@ Any git repository contains all the history of the project, i.e all
 commits with authors, data time, file changed, and the chain of commits called *branch*
 
 
-.. note:: *graphic tools as* `git-gui <https://git-scm.com/docs/git-gui>`_ *and* `gitk <https://git-scm.com/docs/gitk>`_ *might help you during the process.*
+.. note:: *graphic tools as* `git-gui <https://git-scm.com/docs/git-gui>`_ *and* `gitk <https://git-scm.com/docs/gitk>`_ *might help you for commits and to have a graphic representation of the tree view.*
 
 ----
 
@@ -298,6 +324,12 @@ Some useful git commands
 * *git tag* : add a tag at a specific point of the history
 
 ----
+
+Presenter Notes
+...............
+
+git tag can help you to retrieve some milestone
+git reflog
 
 Hands on: propose modifications
 -------------------------------
@@ -340,7 +372,7 @@ once done you can check the current status of your project
     * create a commit
 
 
-.. note:: a .gitignore file can help you to specify untracked files to.
+.. note:: a .gitignore file can help you to specify files to untrack.
 
 ----
 
@@ -399,17 +431,17 @@ Hands on: propose modifications (4)
 Git - Interact with a third repository
 --------------------------------------
 
-To interact with a remote repository :
+To interact with a remote repository from a local clone :
 
-* *remote* : manage tracked repositories
-* *remote add name url* : Adds a remote named <name> for the repository at <url>
+* *git remote* : manage tracked repositories
+* *git remote add name url* : Adds a remote named <name> for the repository at <url>
 
 .. note:: all this information is stored in .git/config file
 
 Then you can retrieve commits from those repositories:
 
-* *fetch <repository> <branch>* retrieve history from another branch
-* *merge <repository>/<branch>* : merge history of <branch> into the current branch
+* *git fetch <repository> <branch>* retrieve history from another branch
+* *git merge <repository>/<branch>* : merge history of <branch> into the current branch
 
 The cycle 1-2 is the normal cycle to retrieve commits.
 
