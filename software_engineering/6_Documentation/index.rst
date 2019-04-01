@@ -461,8 +461,28 @@ See `sphinx.ext.autodoc documentation <http://sphinx-doc.org/ext/autodoc.html#mo
 
 ----
 
-Info field list
-...............
+autodoc (2)
+...........
+
+For example a simple polynom.rst can look like:
+
+.. code-block:: rst
+
+  .. currentmodule:: pypolynom.polynom
+
+  :mod:`polynom`: Polynom
+  -----------------------
+
+  .. automodule:: pypolynom.polynom
+      :members: polynom
+
+----
+
+Info field lists
+................
+
+Info field list are sequences of fields marked up.
+They are usefull in order to document functions for example:
 
 .. code-block:: python
 
@@ -492,13 +512,13 @@ Alternative syntax from `Napoleon extension <http://sphinxcontrib-napoleon.readt
 Hands on
 --------
 
-1. Generate and read the html documentation of your master branch.
+1. Generate the html documentation of your master branch. Open it using a web browser.
 
-2. Embed documentation of the polynom module. Should also contain documentation of the polynom function.
+2. Embed documentation of the polynom module. Make sure it contains the documentation of the polynom function.
 
 3. Document the mathutil module with (rst) docstring and regenerate documentation
 
-    |rarr| add docstring (rst format) to the mathutil.py file
+    |rarr| add docstrings (rst format) to the mathutil.py file
 
     |rarr| add a mathutil.rst file to embed documentation about the mathutil module
 
@@ -506,12 +526,18 @@ Hands on
 
     |rarr| include the mathutil.rst file into the index.rst file
 
+    |rarr| regenerate the documentation
+
 ----
 
 Sphinx
 ------
 
-.. note:: *.rst files can be generated automatically using `sphinx-apidoc -o doc/ ./ <https://www.sphinx-doc.org/en/master/man/sphinx-autogen.html>`_.
+.. note:: *.rst files can be generated automatically using **sphinx-apidoc**. See https://www.sphinx-doc.org/en/master/man/sphinx-autogen.html
+
+.. code-block:: bash
+
+   sphinx-apidoc -o doc/ ./
 
 ----
 
@@ -521,7 +547,7 @@ sphinx extensions
 
 Sphinx is including several extensions like:
 
-* mathjax: include math, rendered in the browser by MathJax
+* mathjax: for math formula, rendered in the browser by MathJax
 * autodoc: automatically insert docstrings from modules
 * viewcode: include links to source
 
@@ -547,7 +573,7 @@ Sphinx is including several extensions like:
 sphinx extensions (2)
 ---------------------
 
-several library are also defining there own directives / roles.
+several third party libraries are also defining there own directives and/or roles.
 rst format is fairly easy to extend.
 
 * `matplotlib plot <https://matplotlib.org/devel/plot_directive.html>`_
@@ -562,6 +588,8 @@ Embed a jupyter notebook into doc
 
 You can also embed jupyter notebooks into documentation using `'nbsphinx' extension <https://nbsphinx.readthedocs.io/en/0.4.2/>`_.
 
+Especially if tutorials are already existing, no need for duplicate code.
+
 see: https://gitlab.esrf.fr/silx/pypolynom_completed/blob/master/doc/source/index.rst which embed the tutorial.ipynb notebook.
 
 ----
@@ -569,7 +597,7 @@ see: https://gitlab.esrf.fr/silx/pypolynom_completed/blob/master/doc/source/inde
 Continuous documentation
 ------------------------
 
-Building documentation automatically: `Read the Docs <https://readthedocs.org/>`_.
+Building documentation automatically from `Read the Docs <https://readthedocs.org/>`_.
 
 It builds the documentation with Sphinx:
 
@@ -580,14 +608,17 @@ It builds the documentation with Sphinx:
 
 `Documentation of Read the Docs <http://read-the-docs.readthedocs.org/>`_
 
+gitlab also offer the feature `'pages' <https://docs.gitlab.com/ee/user/project/pages/>`_. which allows you to publish static websites that can be generated from CI.
+see the `gitlab-ci.yml file <https://gitlab.esrf.fr/silx/pypolynom_completed/blob/master/.gitlab-ci.yml>`_ and the `gitlab project pages <https://gitlab.esrf.fr/silx/pypolynom_completed/pages>`_
+
 ------
 
 Conclusion
 ----------
 
+* README file matter
 * Different documentation for different purposes.
-* Tools to ease the process.
-* Very modular (no need to use everything, e.g., making your own template).
+* Use tools to ease the process.
 * Having a build system that generates the documentation encourages writing it.
 * Documentation becomes out-dated, keeping it with the source code helps maintaining it: update the code and the documentation at the same time.
 
