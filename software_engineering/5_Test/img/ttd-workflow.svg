@@ -9,11 +9,11 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="654.58539"
+   width="689.64081"
    height="213.27"
    id="svg3874"
    version="1.1"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.48.5 r10040"
    sodipodi:docname="ttd-workflow.svg">
   <defs
      id="defs3876" />
@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="358.26591"
-     inkscape:cy="108.38849"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="160.17407"
+     inkscape:cy="126.6609"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -34,8 +34,8 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1206"
-     inkscape:window-height="502"
+     inkscape:window-width="1621"
+     inkscape:window-height="1008"
      inkscape:window-x="108"
      inkscape:window-y="136"
      inkscape:window-maximized="0" />
@@ -47,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -55,53 +55,55 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-78.239969,-220.84491)">
+     transform="translate(-56.016613,-220.84491)">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       style="font-style:normal;font-weight:normal;text-align:center;line-height:0%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif"
        x="229.18399"
        y="255.11249"
-       id="text3882"><tspan
+       id="text3882"
+       sodipodi:linespacing="0%"><tspan
          sodipodi:role="line"
          id="tspan3884"
          x="229.18399"
          y="255.11249"
-         style="font-size:40px;line-height:1;font-family:sans-serif">Write</tspan><tspan
+         style="font-size:40px;font-weight:bold;line-height:1;font-family:sans-serif">Write</tspan><tspan
          sodipodi:role="line"
          x="229.18399"
          y="295.11249"
          id="tspan3890"
-         style="font-size:40px;line-height:1;font-family:sans-serif">failing</tspan><tspan
+         style="font-size:40px;font-weight:bold;line-height:1;font-family:sans-serif">failing</tspan><tspan
          sodipodi:role="line"
          x="229.18399"
          y="335.11249"
          id="tspan3888"
-         style="font-size:40px;line-height:1;font-family:sans-serif">tests</tspan></text>
+         style="font-size:40px;font-weight:bold;line-height:1;font-family:sans-serif">tests</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       style="font-style:normal;font-weight:normal;text-align:center;line-height:0%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif"
        x="646.7121"
        y="251.23553"
-       id="text3882-2"><tspan
+       id="text3882-2"
+       sodipodi:linespacing="0%"><tspan
          sodipodi:role="line"
          id="tspan3884-9"
          x="646.7121"
          y="251.23553"
-         style="font-size:40px;line-height:1;font-family:sans-serif">Make</tspan><tspan
+         style="font-size:40px;font-weight:bold;line-height:1;font-family:sans-serif">Make</tspan><tspan
          sodipodi:role="line"
          x="646.7121"
          y="291.23553"
          id="tspan3888-2"
-         style="font-size:40px;line-height:1;font-family:sans-serif">the tests</tspan><tspan
+         style="font-size:40px;font-weight:bold;line-height:1;font-family:sans-serif">the tests</tspan><tspan
          sodipodi:role="line"
          x="646.7121"
          y="331.23553"
          id="tspan3976"
-         style="font-size:40px;line-height:1;font-family:sans-serif">pass</tspan></text>
+         style="font-size:40px;font-weight:bold;line-height:1;font-family:sans-serif">pass</tspan></text>
     <flowRoot
        xml:space="preserve"
        id="flowRoot3957"
-       style="font-style:normal;font-weight:normal;line-height:0.01%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
+       style="font-style:normal;font-weight:normal;line-height:0.01%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif"><flowRegion
          id="flowRegion3959"
          style="font-family:sans-serif"><rect
            id="rect3961"
@@ -113,29 +115,30 @@
          id="flowPara3963"
          style="font-size:40px;line-height:1.25;font-family:sans-serif"> </flowPara></flowRoot>    <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       x="312.05325"
+       style="font-style:normal;font-weight:normal;line-height:0%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif"
+       x="324.83044"
        y="425.72745"
-       id="text3882-2-7"><tspan
+       id="text3882-2-7"
+       sodipodi:linespacing="0%"><tspan
          sodipodi:role="line"
-         x="312.05325"
+         x="324.83044"
          y="425.72745"
          id="tspan3888-2-3"
-         style="font-size:40px;line-height:1.25;font-family:sans-serif">Refactoring</tspan></text>
+         style="font-size:40px;font-weight:bold;line-height:1.25;font-family:sans-serif">Refactor</tspan></text>
     <path
        style="fill:#b8b800;fill-opacity:1;stroke-width:3.74114633"
-       d="m 636.38491,352.77899 v 58.88867 h -58.89062 v -14.96484 l -22.44532,18.70703 22.44532,18.70507 v -14.96484 h 58.89062 7.48242 v -7.48242 -58.88867 z"
+       d="m 646.54735,352.77899 v 58.88867 h -58.89062 v -14.96484 l -22.44532,18.70703 22.44532,18.70507 v -14.96484 h 58.89062 7.48242 v -7.48242 -58.88867 z"
        id="path5041-3"
        inkscape:connector-curvature="0" />
     <path
        style="fill:#ee5aa0;fill-opacity:1;stroke-width:3.74114633"
-       d="m 153.76515,280.20136 -22.44532,-18.70703 v 14.96484 H 78.239969 v 7.48241 h 53.079861 v 14.96485 z"
+       d="m 131.54179,280.20136 -22.44532,-18.70703 v 14.96484 H 56.016613 v 7.48241 h 53.079857 v 14.96485 z"
        id="path5041-3-1"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccc" />
     <path
        style="fill:#19bdcd;fill-opacity:1;stroke-width:3.74114633"
-       d="m 544.38893,280.20136 -22.44532,-18.70703 v 14.96484 H 308.86375 v 7.48241 h 213.07986 v 14.96485 z"
+       d="m 520.14527,280.20136 -22.44532,-18.70703 0,14.96484 -172.16868,0 0,7.48241 172.16868,0 0,14.96485 z"
        id="path5041-3-1-4"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccc" />
