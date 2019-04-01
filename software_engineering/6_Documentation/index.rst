@@ -41,7 +41,7 @@ What is this function doing?
    def p(x):
        return (x & (x - 1)) == 0
 
-------
+----
 
 Introduction (2)
 ----------------
@@ -53,7 +53,7 @@ What is this function doing?
    def is_power_of_two(value):
        return (value & (value - 1)) == 0
 
-------
+----
 
 Introduction (3)
 ----------------
@@ -88,29 +88,29 @@ https://tarekziade.files.wordpress.com/2008/09/chapter-10.pdf
 
 Main rules for technical writing:
 
-- Write in two steps: Ideas first, then organisation and style.
-- Target the readership.
-- Use a simple style.
-- Limit the scope of the information: One concept at a time.
-- Use realistic code examples.
-- Choose which documentation to write and avoid endless document.
-- (Re)Use templates.
+* Write in two steps: Ideas first, then organisation and style.
+* Target the readership.
+* Use a simple style.
+* Limit the scope of the information: One concept at a time.
+* Use realistic code examples.
+* Choose which documentation to write and avoid endless document.
+* (Re)Use templates.
 
 -----
 
 Different types of documentation:
 
-- **Usage**: How to use the software from API, command line or GUI:
+* **Usage**: How to use the software from API, command line or GUI:
 
-  - *Cookbooks*: how to *do* something specific,
-  - *Tutorials*: how to *use* a feature step-by-step,
-  - *module API*.
+  * *Cookbooks*: how to *do* something specific,
+  * *Tutorials*: how to *use* a feature step-by-step,
+  * *module API*.
 
-- **Design**: How the software works, how code is organized.
+* **Design**: How the software works, how code is organized.
 
   Intended audience: developers, advanced users looking for insights.
 
-- **Operation**: Installation, FAQ
+* **Operation**: Installation, FAQ
 
 Structure all the documents: Index page, tree structure.
 
@@ -129,6 +129,59 @@ wikipedia definition:
 * Primarily for Python documentation.
 
 .. note:: All this presentation has been made using only rst.
+
+
+------
+
+
+rst roles
+---------
+
+.. code-block:: rst
+
+   :role_name:`content`
+
+Examples:
+
+- :rst:`1\ :superscript:`st`` |rarr| 1\ :superscript:`st`
+- :literal:`:math:\`\\sqrt{\\frac{x^2}{3}}\`` |rarr| :math:`\sqrt{\frac{x^2}{3}}`
+
+`Documentation relative to roles <http://docutils.sourceforge.net/docs/ref/rst/roles.html>`_
+
+----
+
+rst directive
+-------------
+
+.. code-block:: rst
+
+  .. directive_type:: arguments
+     :option: value
+
+     Content: indented and separated by blank lines.
+
+Example: **Code block** with syntax highlighting:
+
+.. code-block:: rst
+
+  .. code-block:: python
+
+     def add(a, b):
+         return a + b
+
+|rarr| This directive will produce:
+
+.. code-block:: python
+
+   def add(a, b):
+       return a + b
+
+`Documentation relative to directives <http://docutils.sourceforge.net/docs/ref/rst/directives.html>`_.
+
+Presenter Notes
+...............
+
+Now we will see in practice how we can use this rst format.
 
 ----
 
@@ -223,7 +276,6 @@ Docstrings
 
    class RandomGenerator(object):
        """Pseudo random generator class.
-
        It is based on the XORShift algorithm.
        """  # Class docstring
 
@@ -238,6 +290,11 @@ Docstrings
            """Returns a pseudo-random float."""  # Method docstring
            ...
 
+Presenter Notes
+...............
+
+The docstring are accessible from python using help() or __doc__
+
 ------
 
 Docstrings Content
@@ -245,10 +302,10 @@ Docstrings Content
 
 `PEP 257 <https://www.python.org/dev/peps/pep-0257/>`_ docstring content recommendation:
 
-- For **script**: Module docstring should be its **usage message** from the command line.
-- For **module**: List of the classes, exceptions and functions with a one-line summary of each.
-- For **class**: **Behavior summary**, list of the public method and instance variables.
-- For **function** and **method**: **Behavior summary**, documentation of **arguments**, **return value**, side effects, exceptions raised, restrictions.
+* For **script**: Module docstring should be its **usage message** from the command line.
+* For **module**: List of the classes, exceptions and functions with a one-line summary of each.
+* For **class**: **Behavior summary**, list of the public method and instance variables.
+* For **function** and **method**: **Behavior summary**, documentation of **arguments**, **return value**, side effects, exceptions raised, restrictions.
 
 -----
 
@@ -259,7 +316,8 @@ Wikipedia definition:
 
 "Sphinx is a documentation generator written and used by the Python community. It is written in Python, and also used in other environments."
 
-Sphinx is using rst.
+Sphinx is parsing docstrings to build html / pdf / latex documentation(s).
+Sphinx is also sensible to rst format.
 
 .. code-block:: python
 
@@ -276,93 +334,237 @@ Sphinx is using rst.
 
 .. image:: images/is_power_of_two_doc_screenshot.png
 
-------
+Presenter Notes
+...............
 
+sphinx is able to produce html / pdf documentation from docstring and a valid synthax based on rst.
 
-Roles
------
-
-.. code-block:: rst
-
-   :role_name:`content`
-
-Examples:
-
-- :rst:`1\ :superscript:`st`` |rarr| 1\ :superscript:`st`
-- :literal:`:math:\`\\sqrt{\\frac{x^2}{3}}\`` |rarr| :math:`\sqrt{\frac{x^2}{3}}`
-
-`Documentation relative to roles <http://docutils.sourceforge.net/docs/ref/rst/roles.html>`_
+This mean that you can add some rst information to be interpreted by sphinx.
 
 ----
 
-Directive
----------
+Sphinx
+------
+
+install sphinx using:
+
+.. code-block:: bash
+
+    pip install sphinx
+
+
+.. note:: `First steps with Sphinx <http://sphinx-doc.org/tutorial.html>`_.
+
+----
+
+Start up Sphinx
+---------------
+
+Sphinx documentation generation is based on a configuration file (conf.py)
+Steps to create the sphinx configuration file
+
+1. create a doc folder at the root level
+2. execute
+
+.. code-block:: bash
+
+    sphinx-quickstart
+
+this will create a source directory and a Makefile. To build the documentation just:
+
+.. code-block:: bash
+
+    make html
+
+you can also call
+
+.. code-block:: bash
+
+    python setup.py build_sphinx -b html
+
+or
+
+.. code-block:: bash
+
+    sphinx-build -b html sourcedir builddir
+
+----
+
+Start up Sphinx (2)
+-------------------
+
+|rarr| the doc/source directory contains the 'master document' file. By default the name is 'index.rst'.
+
+|rarr| index.rst file is the entry point of the documentation.
+
+|rarr| you can include other ``*.rst`` files to write the documentation.
+
+
+index.rst file contains:
+
+Table of content
+................
 
 .. code-block:: rst
 
-  .. directive_type:: arguments
-     :option: value
+  Contents:
 
-     Content: indented and separated by blank lines.
+  .. toctree::
+     :maxdepth: 2
 
-Example: **Code block** with syntax highlighting:
+     polynom.rst
+     mathutils.rst
+
+----
+
+Start up Sphinx (3)
+-------------------
+
+The different *.rst files are used to
+
+* To structure the documentation.
+* To select what is documented.
+* To avoid pollution of the source code with too much documentation.
+
+----
+
+Start up Sphinx (4)
+-------------------
+
+autodoc
+.......
+
+The sphinx extension ``sphinx.ext.autodoc`` includes docstrings from source code in the generated documentation.
+
+This will allow you to define what should be included in the documentation and what shouldn't
 
 .. code-block:: rst
 
-  .. code-block:: python
+  .. autofunction:: <function_name>
 
-     def add(a, b):
-         return a + b
+  .. automodule:: <module_name>
+     :members: <optional: list of members>
+     :undoc-members:
 
-|rarr| This directive will produce:
+  .. autoclass:: <class_name>
+     :members: <optional: list of members>
+     :undoc-members:
+     :inherited-members:
+
+And more: ``autoexception, autodata, automethod, autoattribute``
+
+Warning: autodoc **imports** the modules to be documented.
+The modules must be installed or added to ``sys.path`` in ``conf.py``.
+Take care which version gets documented.
+
+See `sphinx.ext.autodoc documentation <http://sphinx-doc.org/ext/autodoc.html#module-sphinx.ext.autodoc>`_.
+
+----
+
+Info field list
+...............
 
 .. code-block:: python
 
-   def add(a, b):
-       return a + b
+   def random_xorshift32(last_value, shift_triple=(13, 17, 5)):
+       """32 bits pseudo-random generator.
 
-`Documentation relative to directives <http://docutils.sourceforge.net/docs/ref/rst/directives.html>`_.
+       :param numpy.uint32 last_value: Previously returned number or the seed.
+       :param shift_triple: Bit shifts to use.
+       :type shift_triple: 3-tuple of int
+       :return: The generated random number.
+       :rtype: numpy.uint32
+       :raises ValueError: if x is not a numpy.uint32
+       """
+       x = numpy.uint32(last_value)  # Work with 32bits unsigned integer
+       x ^= numpy.uint32(last_value) << shift_triple[0]
+       x ^= x >> shift_triple[1]
+       x ^= x << shift_triple[2]
+       return x
+
+Alternative syntax from `Napoleon extension <http://sphinxcontrib-napoleon.readthedocs.org>`_
+
+- `Google style <http://sphinxcontrib-napoleon.readthedocs.org/en/latest/example_google.html>`_
+- `Numpy style <http://sphinxcontrib-napoleon.readthedocs.org/en/latest/example_numpy.html#example-numpy>`_
 
 ----
 
-Extensions:
+Hands on
+--------
 
-several library are defining there own directives / roles
+1. Generate and read the html documentation of your master branch.
+
+2. Embed documentation of the polynom module. Should also contain documentation of the polynom function.
+
+3. Document the mathutil module with (rst) docstring and regenerate documentation
+
+    |rarr| add docstring (rst format) to the mathutil.py file
+
+    |rarr| add a mathutil.rst file to embed documentation about the mathutil module
+
+    |rarr| specify the class, function... to include in the documentation
+
+    |rarr| include the mathutil.rst file into the index.rst file
+
+----
+
+Sphinx
+------
+
+.. note:: *.rst files can be generated automatically using `sphinx-apidoc -o doc/ ./ <https://www.sphinx-doc.org/en/master/man/sphinx-autogen.html>`_.
+
+----
+
+
+sphinx extensions
+-----------------
+
+Sphinx is including several extensions like:
+
+* mathjax: include math, rendered in the browser by MathJax
+* autodoc: automatically insert docstrings from modules
+* viewcode: include links to source
+
+.. note:: the extensions to use has to be registred on your sphinx conf.py file
+
+.. code-block:: python
+
+    extensions = [
+        # automatically insert docstrings from modules
+        'sphinx.ext.autodoc',
+
+        # include math, rendered in the browser by MathJax
+        'sphinx.ext.mathjax',
+
+        # include links to source
+        'sphinx.ext.viewcode'
+    ]
+
+`see more sphinx extensions <http://www.sphinx-doc.org/en/stable/extensions.html>`_
+
+----
+
+sphinx extensions (2)
+---------------------
+
+several library are also defining there own directives / roles.
+rst format is fairly easy to extend.
 
 * `matplotlib plot <https://matplotlib.org/devel/plot_directive.html>`_
 * `embed video <https://github.com/sphinx-contrib/video>`_
 * `list of reference contribution <https://www.sphinx-doc.org/en/master/develop.html>`_
 * `github sphinx contrib <https://github.com/sphinx-contrib>`_
 
-
-.. note:: the extensions to use has to be registred on your sphinx conf.py file
 ----
 
+Embed a jupyter notebook into doc
+---------------------------------
+
+You can also embed jupyter notebooks into documentation using `'nbsphinx' extension <https://nbsphinx.readthedocs.io/en/0.4.2/>`_.
+
+see: https://gitlab.esrf.fr/silx/pypolynom_completed/blob/master/doc/source/index.rst which embed the tutorial.ipynb notebook.
 
 ----
-
-Building documentation
-
-html
-pdf
-
-
-Hands on
---------
-
-Generate the documentation of your clone.
-
-
-Embed a jupyter notebook in the documentation
----------------------------------------------
-
-TODO: use nbsphinx + add a jupyter note book in the source code and associate
-documentation with it,
-
-https://nbsphinx.readthedocs.io/en/0.4.2/
-
-----
-
 
 Continuous documentation
 ------------------------
@@ -371,10 +573,10 @@ Building documentation automatically: `Read the Docs <https://readthedocs.org/>`
 
 It builds the documentation with Sphinx:
 
-- Install dependencies defined in a *requirements file*.
-- Install the package with ``setup.py install``.
-- Look for a ``conf.py`` file and use it to build the documentation.
-- Make documentation available: ``http://<project_name>.readthedocs.org/``.
+* Install dependencies defined in a *requirements file*.
+* Install the package with ``setup.py install``.
+* Look for a ``conf.py`` file and use it to build the documentation.
+* Make documentation available: ``http://<project_name>.readthedocs.org/``.
 
 `Documentation of Read the Docs <http://read-the-docs.readthedocs.org/>`_
 
@@ -383,11 +585,11 @@ It builds the documentation with Sphinx:
 Conclusion
 ----------
 
-- Different documentation for different purposes.
-- Tools to ease the process.
-- Very modular (no need to use everything, e.g., making your own template).
-- Having a build system that generates the documentation encourages writing it.
-- Documentation becomes out-dated, keeping it with the source code helps maintaining it: update the code and the documentation at the same time.
+* Different documentation for different purposes.
+* Tools to ease the process.
+* Very modular (no need to use everything, e.g., making your own template).
+* Having a build system that generates the documentation encourages writing it.
+* Documentation becomes out-dated, keeping it with the source code helps maintaining it: update the code and the documentation at the same time.
 
 
 This presentation is written in reStructuredText_.
