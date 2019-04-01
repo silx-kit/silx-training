@@ -8,6 +8,9 @@
    }
    </style>
 
+.. include:: <isonum.txt>
+
+
 GIT
 ===
 
@@ -238,7 +241,6 @@ Hands on: fork an existing project
 
     1.3 fork the project and go to the homepage of the fork you just created
 
-.. include:: <isonum.txt>
 
 |rarr| This will provide you an url to your personal repository.
 
