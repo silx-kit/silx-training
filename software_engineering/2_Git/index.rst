@@ -200,7 +200,7 @@ Example: create a new git project (2)
 
 .. code-block:: bash
 
-    git remote add origin git@gitlab.esrf.fr:silx/silx-trainings/pypolynom.git
+    git remote add origin git@gitlab.esrf.fr:silx/pypolynom.git
 
 7. add files to a commit (detail later)
 
@@ -237,7 +237,7 @@ Hands on: fork an existing project
 
     1.1 login to github / gitlab
 
-    1.2 look for the 'https://gitlab.esrf.fr/silx/silx-trainings/pypolynom_completed' project
+    1.2 look for the 'https://gitlab.esrf.fr/silx/pypolynom' project
 
     1.3 fork the project and go to the homepage of the fork you just created
 
@@ -259,7 +259,7 @@ Hands on: fork an existing project
 
 .. code-block:: bash
 
-    git clone git@gitlab.esrf.fr:[my_id]/pypolynom_completed.git
+    git clone git@gitlab.esrf.fr:[my_id]/pypolynom.git
 
 |rarr| You are now ready for making some modifications and share them with others.
 
@@ -479,7 +479,7 @@ the one from the other developers.
 
 .. code-block:: bash
 
-    git remote add upstream git@gitlab.esrf.fr:silx/silx-trainings/pypolynom.git
+    git remote add upstream git@gitlab.esrf.fr:silx/pypolynom.git
     # git remote add co-worker git@gitlab.esrf.fr:<co-worker>/pypolynom.git
 
 2. merge those modification on your master branch
