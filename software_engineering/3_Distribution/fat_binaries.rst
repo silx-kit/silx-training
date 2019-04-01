@@ -40,16 +40,14 @@ Tools
 .....
 
 - `cx_Freeze <http://cx-freeze.readthedocs.org/>`_: Cross-platform
-- `py2app <https://pythonhosted.org/py2app/>`_: Mac OS X
-
-\
-
+- `py2app <https://pythonhosted.org/py2app/>`_: macOS
 - `PyInstaller <http://www.pyinstaller.org/>`_: Cross-platform
-- `Platypus <http://www.sveinbjorn.org/platypus>`_: Mac OS X
-- `pynsist <https://pypi.python.org/pypi/pynsist>`_: Windows
-- `py2exe <https://pypi.python.org/pypi/py2exe/>`_: Windows
-- `bbFreeze <https://pypi.python.org/pypi/bbfreeze>`_: Windows, Linux
-- `pex <https://github.com/pantsbuild/pex>`_: Linux, Mac OS X
+
+`Platypus <http://www.sveinbjorn.org/platypus>`_ (macOS),
+`pynsist <https://pypi.python.org/pypi/pynsist>`_ (Windows),
+`py2exe <https://pypi.python.org/pypi/py2exe/>`_ (Windows),
+`bbFreeze <https://pypi.python.org/pypi/bbfreeze>`_ (Windows, Linux),
+`pex <https://github.com/pantsbuild/pex>`_ (Linux, macOS)
 
 ------
 
@@ -147,6 +145,13 @@ It contains::
           ...
 
 See `bundle doc <https://developer.apple.com/library/mac/documentation/CoreFoundation/Conceptual/CFBundles/BundleTypes/BundleTypes.html>`_.
+
+------
+
+pyInstaller
+...........
+
+Limitation: Currently support only one executable
 
 ------
 
