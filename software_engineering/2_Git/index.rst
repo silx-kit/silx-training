@@ -77,11 +77,16 @@ encourage collaboration using forks of projects.
 The main advantages are:
 
 * simplify contribution.
-* many tutorials for `gitHub <https://guides.github.com/>`_ and `gitlab <https://docs.gitlab.com/ee/gitlab-basics/>`_.
+* many tutorials for `github <https://guides.github.com/>`_ and `gitlab <https://docs.gitlab.com/ee/gitlab-basics/>`_.
 * web page hosting for projects.
 * over the years a cluster of services have pop up to help developers like `Travis <https://github.com/marketplace/travis-ci>`_ and `AppVeyor <https://github.com/marketplace/appveyor>`_).
 * `offer a fixed pipeline based on *Pull request* <https://help.github.com/articles/using-pull-requests/>`_.
-* lead to some 'normalization' of projects.
+* lead to some 'standardization' of projects.
+
+Presenter Notes
+...............
+
+github and gitlab are part of the git eco-system
 
 ----
 
@@ -101,8 +106,9 @@ github vs gitlab
 Presenter Notes
 ...............
 
-The amount of the acquirement by Microsoft show the importance of github on the today life of the developer.
-As a consequence thousands of project has move from github to gitlab. (50000 after a week)
+* github intend to open itself to services, gitlab intend to embed them. Usage is the same but philosophy is different.
+* The amount of the acquirement by Microsoft show the importance of github on the today life of the developer.
+  As a consequence thousands of project has move from github to gitlab. (50000 after a week)
 
 ----
 

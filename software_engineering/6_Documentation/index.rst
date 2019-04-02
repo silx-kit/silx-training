@@ -29,6 +29,11 @@ Outline
 #. Sphinx
 #. Continuous Documentation
 
+Presenter Notes
+...............
+
+Hands on on the ReadMe file and sphinx
+
 ------
 
 Introduction
