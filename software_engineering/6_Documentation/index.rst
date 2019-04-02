@@ -132,7 +132,7 @@ Structure all the documents: Index page, tree structure.
 
 ------
 
-\(7\) Main rules for technical writing:
+Main rules for technical writing:
 
 * Write in two steps: Ideas first, then organisation and style.
 * Target the readership.
@@ -446,7 +446,7 @@ this will create a source directory and a Makefile. To build the documentation j
 
     make html
 
-you can also call
+you can also call from the root dir:
 
 .. code-block:: bash
 
