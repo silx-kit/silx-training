@@ -338,6 +338,11 @@ commits with authors, data time, file changed, and the chain of commits called *
 
 .. note:: *graphic tools as* `git-gui <https://git-scm.com/docs/git-gui>`_ *and* `gitk <https://git-scm.com/docs/gitk>`_ *might help you for commits and to have a graphic representation of the tree view.*
 
+Presenter Notes
+```````````````
+
+git add / git commit can be repeated
+
 ----
 
 Some useful git commands
@@ -348,20 +353,21 @@ Some useful git commands
 * *git diff* : show changes between commits
 * *git tag* : add a tag at a specific point of the history
 
-----
-
 Presenter Notes
 ...............
 
 git tag can help you to retrieve some milestone
 git reflog
 
+----
+
 Hands on: propose modifications
 -------------------------------
 
 For this exercise you can use a `git Cheat sheet <https://education.github.com/git-cheat-sheet-education.pdf>`_ if you like.
 
-Now we want to make some modifications on the source code (for a bug fix for example).
+The goal is to make some modifications on the source code (for a bug fix for example).
+
 We need to:
 
 * create a new branch relative to the bug fix
