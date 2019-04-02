@@ -23,9 +23,9 @@ Outline
 .......
 
 #. Introduction
-#. Readme
-#. Docstrings
 #. reStructuredText
+#. Readme file
+#. Docstrings
 #. Sphinx
 #. Continuous Documentation
 
@@ -84,21 +84,13 @@ Expert Python Programming. Chapter 10: Documenting your project.
 September 2008, PACKT Publishing.
 https://tarekziade.files.wordpress.com/2008/09/chapter-10.pdf
 
-------
-
-Main rules for technical writing:
-
-* Write in two steps: Ideas first, then organisation and style.
-* Target the readership.
-* Use a simple style.
-* Limit the scope of the information: One concept at a time.
-* Use realistic code examples.
-* Choose which documentation to write and avoid endless document.
-* (Re)Use templates.
+See also `software documentation <https://en.wikipedia.org/wiki/Software_documentation>`_.
 
 -----
 
 Different types of documentation:
+
+* **Operation**: Installation, FAQ
 
 * **Usage**: How to use the software from API, command line or GUI:
 
@@ -110,9 +102,20 @@ Different types of documentation:
 
   Intended audience: developers, advanced users looking for insights.
 
-* **Operation**: Installation, FAQ
 
 Structure all the documents: Index page, tree structure.
+
+------
+
+Main rules for technical writing:
+
+* Write in two steps: Ideas first, then organisation and style.
+* Target the readership.
+* Use a simple style.
+* Limit the scope of the information: One concept at a time.
+* Use realistic code examples.
+* Choose which documentation to write and avoid endless document.
+* (Re)Use templates.
 
 ------
 
@@ -128,11 +131,35 @@ wikipedia definition:
 * Version Control System friendly: Text files with one sentence per line.
 * Primarily for Python documentation.
 
-.. note:: All this presentation has been made using only rst.
+.. note:: All this presentation has been made using rst.
 
 
 ------
 
+rst inline markup
+-----------------
+
+Allows character style and functionality:
+
++-----------------------------------------------------+-----------------------------------------------+
+| rst                                                 | result                                        |
++=====================================================+===============================================+
+| .. code-block:: text                                |                                               |
+|                                                     |                                               |
+|       *emphasis*                                    |     *emphasis*                                |
++-----------------------------------------------------+-----------------------------------------------+
+| .. code-block:: text                                |                                               |
+|                                                     |                                               |
+|       **strong emphasis**                           |     **strong emphasis**                       |
++-----------------------------------------------------+-----------------------------------------------+
+| .. code-block:: text                                |                                               |
+|                                                     | `Python hyperlink <http://www.python.org/>`_. |
+|    `Python hyperlink <http://www.python.org/>`_.    |                                               |
++-----------------------------------------------------+-----------------------------------------------+
+
+for more inline markup: http://docutils.sourceforge.net/docs/user/rst/quickref.html#inline-markup
+
+----
 
 rst roles
 ---------
@@ -143,12 +170,14 @@ rst roles
 
 Examples:
 
-- :rst:`1\ :superscript:`st`` |rarr| 1\ :superscript:`st`
 - :literal:`:math:\`\\sqrt{\\frac{x^2}{3}}\`` |rarr| :math:`\sqrt{\frac{x^2}{3}}`
+- `1\\ :superscript:`st`` |rarr| 1\ :superscript:`st`
 
 `Documentation relative to roles <http://docutils.sourceforge.net/docs/ref/rst/roles.html>`_
 
 ----
+
+roles are presented with colon, role name, colon, content
 
 rst directive
 -------------
@@ -198,11 +227,17 @@ It should contains:
 * Documentation: Getting started and/or link to documentation.
 * License
 * Authors
-* ...
+* More if you think it is relevant
 
 You can start from an existing template file:
     * https://github.com/konstantint/python-boilerplate-template/blob/master/README.rst
     * https://github.com/rtfd/template/blob/master/README.rst
+
+Presenter Notes
+...............
+
+README is also commonly write in a .md file: markdown format.
+Markdown is the format adopted by Doxygen. Both are very close.
 
 ------
 
@@ -211,7 +246,7 @@ Hands-on
 
 Write the README.rst of the project.
 
-It should at include the project name, description, installation, license and author.
+It should include the project name, description, installation, license and author.
 
 You can use a `rst cheat sheet <https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst>`_ and create/edit the README.rst file directly from github / gitlab (result preview can help you)
 
@@ -256,7 +291,6 @@ You can use a `rst cheat sheet <https://github.com/ralsina/rst-cheatsheet/blob/m
 .. |                                                     |                                               |
 .. |           res = pypolynom.polymom(a=2, b=-6, c=1)   |                                               |
 .. +-----------------------------------------------------+-----------------------------------------------+
-
 
 ----
 
@@ -317,7 +351,7 @@ Wikipedia definition:
 "Sphinx is a documentation generator written and used by the Python community. It is written in Python, and also used in other environments."
 
 Sphinx is parsing docstrings to build html / pdf / latex documentation(s).
-Sphinx is also sensible to rst format.
+Sphinx is also sensible to rst format. So using the default rst syntax:
 
 .. code-block:: python
 
