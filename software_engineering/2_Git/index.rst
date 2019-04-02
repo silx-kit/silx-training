@@ -83,10 +83,6 @@ The main advantages are:
 * `offer a fixed pipeline based on *Pull request* <https://help.github.com/articles/using-pull-requests/>`_.
 * lead to some 'standardization' of projects.
 
-Presenter Notes
-...............
-
-github and gitlab are part of the git eco-system
 
 ----
 
@@ -94,7 +90,7 @@ github vs gitlab
 ````````````````
 
 * github should bring to your project an `Higher visibility compared to other hosting (in 2017) <http://software.ac.uk/resources/guides/choosing-repository-your-software-project>`_.
-* github is usually one step ahead of gitlab regarding features and usability.
+* github is usually one step ahead compare to gitlab regarding features and usability.
 * activities on github are monitored by head-hunters and can be useful for professional placement.
 * gitlab allows you to select a privacy level for your projects. Public projects can be seen from outside: https://gitlab.esrf.fr/public not private projects.
 * github is free for open-source project.
@@ -109,6 +105,7 @@ Presenter Notes
 * github intend to open itself to services, gitlab intend to embed them. Usage is the same but philosophy is different.
 * The amount of the acquirement by Microsoft show the importance of github on the today life of the developer.
   As a consequence thousands of project has move from github to gitlab. (50000 after a week)
+* gitlab is free and open source. But has big compamies behind (nas, bayer, siemens...)
 
 ----
 
@@ -126,9 +123,9 @@ git permits several workflows:
 Presenter Notes
 ...............
 
-- centralized : a single point of entry 'central repository'. Let each users to deal with synchronization
-- feature branch workflow: each new feature should take place in a dedicated branch
-- gitflow : strict management of branches designed for releases. One branch per:
+* centralized : a single point of entry 'central repository'. Let each users to deal with synchronization
+* feature branch workflow: each new feature should take place in a dedicated branch
+* gitflow : strict management of branches designed for releases. One branch per:
     - releases
     - each feature
     - fix
@@ -148,13 +145,14 @@ Presenter Notes
 ...............
 
 Why the 'forking flow' ? ==> commonly used. The one of silx for example.
+This schema is very important ant we will follow it during all along training
 The idea is that each developer can interact with other from his own fork.
 Each developer can request to merge some modifications (feature, bug fix...) with others: this is a pull request
 
-- simplify branch forking
-- Always keep upstream branch ready for deployment with features and fixes
-- Each new branch starts from the master (up to date)
-- Use merge request for each new feature
+* simplify branch forking
+* Always keep upstream branch ready for deployment with features and fixes
+* Each new branch starts from the master (up to date)
+* Use merge request for each new feature
 
 ----
 
@@ -282,15 +280,24 @@ branches
 
 |rarr| Two branches can be merge together.
 
+The case we will consider:
+
 .. image:: images/git_branch.png
     :align: center
+    :width: 50%
 
+A more realistic case:
+
+.. image:: images/branches_real.png
+    :align: center
+    :width: 28%
 
 Presenter Notes
 ```````````````
 
 Eah commit has an 'ID': SHA-1 checksum from modifications + commit message + author + date
 
+To simplify thinks, we will consider the master branch to be the develop branch.
 
 ----
 
