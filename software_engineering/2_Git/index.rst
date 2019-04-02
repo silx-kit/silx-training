@@ -540,3 +540,9 @@ or you might want to contribute to other projects.
 How to contribute to an Open Source project is presented in
 `this document <http://scikit-image.org/docs/stable/contribute.html>`_
 for scikit-image.
+
+
+Presenter Notes
+...............
+
+I hope you where happy to meet your new best friend
