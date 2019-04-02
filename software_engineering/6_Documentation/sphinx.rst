@@ -32,7 +32,7 @@ Building the documentation requires that your Python package and its dependencie
 ------
 
 Set-up Sphinx for a project
-...........................
+...........................n
 
 ``sphinx-quickstart`` is a shell command line tool that sets-up a default documentation project.
 It asks you questions and generates ``conf.py`` and the entry point of the documentation ``index.rst``.

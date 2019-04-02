@@ -18,6 +18,10 @@ png: $(PNGS_FROM_SVGS)
 # SLIDES
 #
 
+build/html/%.html: %/notebook.ipynb
+	@mkdir -p build/html
+	cd $(dir $<);jupyter nbconvert --to html notebook.ipynb --output=../$@
+
 build/html/%.html: %/index.rst png
 	@mkdir -p build/html
 	cd $(dir $<);landslide --embed -d ../$@ index.rst
