@@ -46,6 +46,12 @@ What is this function doing?
    def p(x):
        return (x & (x - 1)) == 0
 
+
+Presenter Notes
+...............
+
+Can you guess what is this function
+
 ----
 
 Introduction (2)
@@ -76,6 +82,19 @@ What is this function doing?
        Limitation: Returns True for 0.
        """
        return (value & (value - 1)) == 0
+
+
+Presenter Notes
+...............
+
+This is why you should consider documenting your code.
+If you have no documentation yet. You should start it.
+
+It will be easier today than tomorrow.
+
+You can start by documenting each function you use for you new development.
+It is faster that you can expect.
+
 
 ------
 
@@ -110,9 +129,10 @@ Different types of documentation:
 
 Structure all the documents: Index page, tree structure.
 
+
 ------
 
-Main rules for technical writing:
+\(7\) Main rules for technical writing:
 
 * Write in two steps: Ideas first, then organisation and style.
 * Target the readership.
@@ -121,6 +141,14 @@ Main rules for technical writing:
 * Use realistic code examples.
 * Choose which documentation to write and avoid endless document.
 * (Re)Use templates.
+
+
+Presenter Notes
+...............
+
+Tarek Ziadé.
+Expert Python Programming. Chapter 10: Documenting your project.
+September 2008, PACKT Publishing.
 
 ------
 
@@ -222,7 +250,7 @@ Now we will see in practice how we can use this rst format.
 README
 ------
 
-It will be the 'front door' of your project.
+It will be the 'first look' at your project.
 
 It should contains:
 
@@ -234,9 +262,11 @@ It should contains:
 * Authors
 * More if you think it is relevant
 
+
 You can start from an existing template file:
-    * https://github.com/konstantint/python-boilerplate-template/blob/master/README.rst
-    * https://github.com/rtfd/template/blob/master/README.rst
+
+* https://github.com/konstantint/python-boilerplate-template/blob/master/README.rst
+* https://github.com/rtfd/template/blob/master/README.rst
 
 Presenter Notes
 ...............
@@ -356,7 +386,7 @@ Wikipedia definition:
 "Sphinx is a documentation generator written and used by the Python community. It is written in Python, and also used in other environments."
 
 Sphinx is parsing docstrings to build html / pdf / latex documentation(s).
-Sphinx is also sensible to rst format. So using the default rst syntax:
+Sphinx is also able to interpret the rst format.
 
 .. code-block:: python
 
@@ -400,6 +430,7 @@ Start up Sphinx
 ---------------
 
 Sphinx documentation generation is based on a configuration file (conf.py)
+
 Steps to create the sphinx configuration file
 
 1. create a doc folder at the root level
@@ -407,7 +438,7 @@ Steps to create the sphinx configuration file
 
 .. code-block:: bash
 
-    sphinx-quickstart
+    sphinx-quickstart ./
 
 this will create a source directory and a Makefile. To build the documentation just:
 
@@ -653,13 +684,11 @@ see the `gitlab-ci.yml file <https://gitlab.esrf.fr/silx/pypolynom_completed/blo
 Conclusion
 ----------
 
+* If no documentation yet |rarr| start it right away !
 * README file matter
-* Different documentation for different purposes.
-* Use tools to ease the process.
+* Different documentation for different purposes
+* Powerful tools exist to ease the process
+* You should document your project  !!!
 * Having a build system that generates the documentation encourages writing it.
 * Documentation becomes out-dated, keeping it with the source code helps maintaining it: update the code and the documentation at the same time.
-
-
-This presentation is written in reStructuredText_.
-
-.. _reStructuredText: http://docutils.sourceforge.net/rst.html
+* You really should document your project !!!
