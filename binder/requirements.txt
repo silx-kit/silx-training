@@ -1,0 +1,13 @@
+numpy
+fabio
+h5py
+h5glance
+matplotlib
+scipy
+silx
+
+# jupyter environment
+bash_kernel
+ipywidgets
+ipympl
+rise
