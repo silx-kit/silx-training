@@ -25,12 +25,12 @@ import numpy
 
 from PyQt5 import Qt
 
-import laue  # Simulation code: No dependency on the GUI code
+import laue
 
 
 class LaueFormWidget(Qt.QWidget):
-    def __init__(self, *args, **kwargs):
-        super(LaueFormWidget, self).__init__(*args, **kwargs)
+    def __init__(self, parent=None):
+        super(LaueFormWidget, self).__init__(parent)
         layout = Qt.QFormLayout(self)
 
         self._nCellsLineEdit = Qt.QLineEdit(self)
@@ -46,10 +46,10 @@ class LaueFormWidget(Qt.QWidget):
         layout.addRow("K:", self._kLineEdit)
 
         pushButton = Qt.QPushButton("Run and Save", self)
-        pushButton.clicked.connect(self._runAndSaveClicked)
+        pushButton.clicked.connect(self.compute)
         layout.addRow(pushButton)
 
-    def _runAndSaveClicked(self, checked=False):
+    def compute(self):
         # Open file dialog
         filename, selectedFilter = Qt.QFileDialog.getSaveFileName(
             self,
@@ -77,8 +77,6 @@ if __name__ == '__main__':
     app = Qt.QApplication([])
 
     widget = LaueFormWidget()
-    widget.setAttribute(Qt.Qt.WA_DeleteOnClose)
     widget.show()
 
     app.exec_()
-    del app
