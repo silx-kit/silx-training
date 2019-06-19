@@ -5,6 +5,7 @@ h5glance
 matplotlib
 scipy
 silx
+pyqt5
 
 # jupyter environment
 bash_kernel
