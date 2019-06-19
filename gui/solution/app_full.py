@@ -28,7 +28,7 @@ import numpy
 from PyQt5 import Qt
 
 import laue  # Simulation code: No dependency on the GUI code
-import colormap
+from imageplot import ImagePlot
 
 
 class ProcessingThread(threading.Thread):
@@ -171,10 +171,8 @@ class LaueMainWindow(Qt.QMainWindow):
         label = Qt.QLabel("Result preview:", centralWidget)
         layout.addRow(label)
 
-        self._resultLabel = Qt.QLabel(centralWidget)
-        self._resultLabel.setText("<i>Press run to generate data</i>")
-        self._resultLabel.setAlignment(Qt.Qt.AlignHCenter)
-        layout.addRow(self._resultLabel)
+        self._resultPlot = ImagePlot()
+        layout.addRow(self._resultPlot)
 
         self._saveButton = Qt.QPushButton("Save", centralWidget)
         self._saveButton.clicked.connect(self._save)
@@ -218,9 +216,7 @@ class LaueMainWindow(Qt.QMainWindow):
         self._resultData = result
         self._processingThread = None
 
-        pixmap = colormap.gray_log(self._resultData)
-        self._resultLabel.setPixmap(pixmap)
-        self._resultLabel.setText("")
+        self._resultPlot.setData(self._resultData)
 
         self._saveButton.setEnabled(True)
         self._saveAction.setEnabled(True)
