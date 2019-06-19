@@ -28,8 +28,6 @@ import numpy
 from PyQt5 import Qt, uic
 
 import laue  # Simulation code: No dependency on the GUI code
-import colormap
-import intLineEdit
 
 
 class ProcessingThread(threading.Thread):
@@ -107,9 +105,7 @@ class LaueMainWindow(Qt.QMainWindow):
         self._resultData = result
         self._processingThread = None
 
-        pixmap = colormap.gray_log(self._resultData)
-        self._resultLabel.setPixmap(pixmap)
-        self._resultLabel.setText("")
+        self._resultPlot.setData(self._resultData)
 
         self._saveButton.setEnabled(True)
         self._saveAction.setEnabled(True)

@@ -164,22 +164,7 @@
      </widget>
     </item>
     <item row="9" column="0" colspan="2">
-     <widget class="QLabel" name="_resultLabel">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string>&lt;i&gt;Press run to generate data&lt;/i&gt;</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
+     <widget class="ImagePlot" name="_resultPlot">
      </widget>
     </item>
     <item row="6" column="0" colspan="2">
@@ -246,6 +231,11 @@
    <class>IntLineEdit</class>
    <extends>QLineEdit</extends>
    <header>intLineEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ImagePlot</class>
+   <extends>QWidget</extends>
+   <header>imageplot.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
