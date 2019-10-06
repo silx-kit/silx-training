@@ -23,11 +23,16 @@ Outline
 .......
 
 #. Introduction
-#. Readme
-#. Docstrings
 #. reStructuredText
+#. Readme file
+#. Docstrings
 #. Sphinx
 #. Continuous Documentation
+
+Presenter Notes
+...............
+
+Hands on on the ReadMe file and sphinx
 
 ------
 
@@ -40,6 +45,12 @@ What is this function doing?
 
    def p(x):
        return (x & (x - 1)) == 0
+
+
+Presenter Notes
+...............
+
+Can you guess what is this function
 
 ----
 
@@ -72,6 +83,19 @@ What is this function doing?
        """
        return (value & (value - 1)) == 0
 
+
+Presenter Notes
+...............
+
+This is why you should consider documenting your code.
+If you have no documentation yet. You should start it.
+
+It will be easier today than tomorrow.
+
+You can start by documenting each function you use for you new development.
+It is faster that you can expect.
+
+
 ------
 
 Different types of documentations
@@ -83,6 +107,28 @@ Tarek Ziadé.
 Expert Python Programming. Chapter 10: Documenting your project.
 September 2008, PACKT Publishing.
 https://tarekziade.files.wordpress.com/2008/09/chapter-10.pdf
+
+See also `software documentation <https://en.wikipedia.org/wiki/Software_documentation>`_.
+
+-----
+
+Different types of documentation:
+
+* **Operation**: Installation, FAQ
+
+* **Usage**: How to use the software from API, command line or GUI:
+
+  * *Cookbooks*: how to *do* something specific,
+  * *Tutorials*: how to *use* a feature step-by-step,
+  * *module API*.
+
+* **Design**: How the software works, how code is organized.
+
+  Intended audience: developers, advanced users looking for insights.
+
+
+Structure all the documents: Index page, tree structure.
+
 
 ------
 
@@ -96,23 +142,13 @@ Main rules for technical writing:
 * Choose which documentation to write and avoid endless document.
 * (Re)Use templates.
 
------
 
-Different types of documentation:
+Presenter Notes
+...............
 
-* **Usage**: How to use the software from API, command line or GUI:
-
-  * *Cookbooks*: how to *do* something specific,
-  * *Tutorials*: how to *use* a feature step-by-step,
-  * *module API*.
-
-* **Design**: How the software works, how code is organized.
-
-  Intended audience: developers, advanced users looking for insights.
-
-* **Operation**: Installation, FAQ
-
-Structure all the documents: Index page, tree structure.
+Tarek Ziadé.
+Expert Python Programming. Chapter 10: Documenting your project.
+September 2008, PACKT Publishing.
 
 ------
 
@@ -128,11 +164,35 @@ wikipedia definition:
 * Version Control System friendly: Text files with one sentence per line.
 * Primarily for Python documentation.
 
-.. note:: All this presentation has been made using only rst.
+.. note:: All this presentation has been made using rst.
 
 
 ------
 
+rst inline markup
+-----------------
+
+Allows character style and functionality:
+
++-----------------------------------------------------+-----------------------------------------------+
+| rst                                                 | result                                        |
++=====================================================+===============================================+
+| .. code-block:: text                                |                                               |
+|                                                     |                                               |
+|       *emphasis*                                    |     *emphasis*                                |
++-----------------------------------------------------+-----------------------------------------------+
+| .. code-block:: text                                |                                               |
+|                                                     |                                               |
+|       **strong emphasis**                           |     **strong emphasis**                       |
++-----------------------------------------------------+-----------------------------------------------+
+| .. code-block:: text                                |                                               |
+|                                                     | `Python hyperlink <http://www.python.org/>`_. |
+|    `Python hyperlink <http://www.python.org/>`_.    |                                               |
++-----------------------------------------------------+-----------------------------------------------+
+
+for more inline markup: http://docutils.sourceforge.net/docs/user/rst/quickref.html#inline-markup
+
+----
 
 rst roles
 ---------
@@ -143,12 +203,14 @@ rst roles
 
 Examples:
 
-- :rst:`1\ :superscript:`st`` |rarr| 1\ :superscript:`st`
 - :literal:`:math:\`\\sqrt{\\frac{x^2}{3}}\`` |rarr| :math:`\sqrt{\frac{x^2}{3}}`
+- `1\\ :superscript:`st`` |rarr| 1\ :superscript:`st`
 
 `Documentation relative to roles <http://docutils.sourceforge.net/docs/ref/rst/roles.html>`_
 
 ----
+
+roles are presented with colon, role name, colon, content
 
 rst directive
 -------------
@@ -188,7 +250,7 @@ Now we will see in practice how we can use this rst format.
 README
 ------
 
-It will be the 'front door' of your project.
+It will be the 'first look' at your project.
 
 It should contains:
 
@@ -198,11 +260,19 @@ It should contains:
 * Documentation: Getting started and/or link to documentation.
 * License
 * Authors
-* ...
+* More if you think it is relevant
+
 
 You can start from an existing template file:
-    * https://github.com/konstantint/python-boilerplate-template/blob/master/README.rst
-    * https://github.com/rtfd/template/blob/master/README.rst
+
+* https://github.com/konstantint/python-boilerplate-template/blob/master/README.rst
+* https://github.com/rtfd/template/blob/master/README.rst
+
+Presenter Notes
+...............
+
+README is also commonly write in a .md file: markdown format.
+Markdown is the format adopted by Doxygen. Both are very close.
 
 ------
 
@@ -211,7 +281,7 @@ Hands-on
 
 Write the README.rst of the project.
 
-It should at include the project name, description, installation, license and author.
+It should include the project name, description, installation, license and author.
 
 You can use a `rst cheat sheet <https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst>`_ and create/edit the README.rst file directly from github / gitlab (result preview can help you)
 
@@ -256,7 +326,6 @@ You can use a `rst cheat sheet <https://github.com/ralsina/rst-cheatsheet/blob/m
 .. |                                                     |                                               |
 .. |           res = pypolynom.polymom(a=2, b=-6, c=1)   |                                               |
 .. +-----------------------------------------------------+-----------------------------------------------+
-
 
 ----
 
@@ -317,7 +386,7 @@ Wikipedia definition:
 "Sphinx is a documentation generator written and used by the Python community. It is written in Python, and also used in other environments."
 
 Sphinx is parsing docstrings to build html / pdf / latex documentation(s).
-Sphinx is also sensible to rst format.
+Sphinx is also able to interpret the rst format.
 
 .. code-block:: python
 
@@ -361,6 +430,7 @@ Start up Sphinx
 ---------------
 
 Sphinx documentation generation is based on a configuration file (conf.py)
+
 Steps to create the sphinx configuration file
 
 1. create a doc folder at the root level
@@ -368,7 +438,7 @@ Steps to create the sphinx configuration file
 
 .. code-block:: bash
 
-    sphinx-quickstart
+    sphinx-quickstart ./
 
 this will create a source directory and a Makefile. To build the documentation just:
 
@@ -376,7 +446,7 @@ this will create a source directory and a Makefile. To build the documentation j
 
     make html
 
-you can also call
+you can also call from the root dir:
 
 .. code-block:: bash
 
@@ -420,11 +490,11 @@ Table of content
 Start up Sphinx (3)
 -------------------
 
-The different *.rst files are used to
+The different \*.rst files are used to
 
-* To structure the documentation.
-* To select what is documented.
-* To avoid pollution of the source code with too much documentation.
+* structure the documentation.
+* select what is documented.
+* avoid pollution of the source code with too much documentation.
 
 ----
 
@@ -467,8 +537,6 @@ autodoc (2)
 For example a simple polynom.rst can look like:
 
 .. code-block:: rst
-
-  .. currentmodule:: pypolynom.polynom
 
   :mod:`polynom`: Polynom
   -----------------------
@@ -513,9 +581,7 @@ Hands on
 --------
 
 1. Generate the html documentation of your master branch. Open it using a web browser.
-
 2. Embed documentation of the polynom module. Make sure it contains the documentation of the polynom function.
-
 3. Document the mathutil module with (rst) docstring and regenerate documentation
 
     |rarr| add docstrings (rst format) to the mathutil.py file
@@ -581,6 +647,8 @@ rst format is fairly easy to extend.
 * `list of reference contribution <https://www.sphinx-doc.org/en/master/develop.html>`_
 * `github sphinx contrib <https://github.com/sphinx-contrib>`_
 
+.. note:: those extensions has to be installed independently of sphinx
+
 ----
 
 Embed a jupyter notebook into doc
@@ -588,7 +656,7 @@ Embed a jupyter notebook into doc
 
 You can also embed jupyter notebooks into documentation using `'nbsphinx' extension <https://nbsphinx.readthedocs.io/en/0.4.2/>`_.
 
-Especially if tutorials are already existing, no need for duplicate code.
+Especially if tutorials are already existing, no need to duplicate code.
 
 see: https://gitlab.esrf.fr/silx/pypolynom_completed/blob/master/doc/source/index.rst which embed the tutorial.ipynb notebook.
 
@@ -597,18 +665,18 @@ see: https://gitlab.esrf.fr/silx/pypolynom_completed/blob/master/doc/source/inde
 Continuous documentation
 ------------------------
 
-Building documentation automatically from `Read the Docs <https://readthedocs.org/>`_.
+1. Building documentation automatically from `Read the Docs <https://readthedocs.org/>`_.
 
-It builds the documentation with Sphinx:
+  It builds the documentation with Sphinx:
 
-* Install dependencies defined in a *requirements file*.
-* Install the package with ``setup.py install``.
-* Look for a ``conf.py`` file and use it to build the documentation.
-* Make documentation available: ``http://<project_name>.readthedocs.org/``.
+  * Install dependencies defined in a *requirements file*.
+  * Install the package with ``setup.py install``.
+  * Look for a ``conf.py`` file and use it to build the documentation.
+  * Make documentation available: ``http://<project_name>.readthedocs.org/``.
 
-`Documentation of Read the Docs <http://read-the-docs.readthedocs.org/>`_
+  `Documentation of Read the Docs <http://read-the-docs.readthedocs.org/>`_
 
-gitlab also offer the feature `'pages' <https://docs.gitlab.com/ee/user/project/pages/>`_. which allows you to publish static websites that can be generated from CI.
+2. gitlab also offer the feature `'pages' <https://docs.gitlab.com/ee/user/project/pages/>`_. which allows you to publish static websites that can be generated from CI.
 see the `gitlab-ci.yml file <https://gitlab.esrf.fr/silx/pypolynom_completed/blob/master/.gitlab-ci.yml>`_ and the `gitlab project pages <https://gitlab.esrf.fr/silx/pypolynom_completed/pages>`_
 
 ------
@@ -616,13 +684,11 @@ see the `gitlab-ci.yml file <https://gitlab.esrf.fr/silx/pypolynom_completed/blo
 Conclusion
 ----------
 
+* If no documentation yet |rarr| start it right away !
 * README file matter
-* Different documentation for different purposes.
-* Use tools to ease the process.
+* Different documentation for different purposes
+* Powerful tools exist to ease the process
+* You should document your project  !!!
 * Having a build system that generates the documentation encourages writing it.
 * Documentation becomes out-dated, keeping it with the source code helps maintaining it: update the code and the documentation at the same time.
-
-
-This presentation is written in reStructuredText_.
-
-.. _reStructuredText: http://docutils.sourceforge.net/rst.html
+* You really should document your project !!!

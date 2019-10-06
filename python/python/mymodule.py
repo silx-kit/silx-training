@@ -1,11 +1,15 @@
+#!/usr/bin/env python
 # coding: utf-8
 
 """This is a simple demonstration library"""
 
-__authors__ = ["Pierre Knobel", "Jerome Kieffer", "Henri Payno",
+__authors__ = ["Pierre Knobel", "Jerome Kieffer", "Pierre Paleo", "Henri Payno",
                "Armando Sole", "Valentin Valls", "Thomas Vincent"]
 __date__ = "17/11/2016"
 __license__ = "MIT"
+
+
+version = '0.1.0'
 
 
 def sqrt(x):
@@ -15,12 +19,14 @@ def sqrt(x):
 
 def polynom(a, b, c):
     """Compute the polygon of order two
+
     :param a:a value of the polynom
     :type a: float
     :param b: b value of the polynom
     :type b: float
     :param c: c value of the polynom
-    :type c: float """
+    :type c: float
+    """
     delta = pow2(b) - 4.0 * a * c
     solutions = []
     if delta > 0:
@@ -32,9 +38,12 @@ def polynom(a, b, c):
 
 
 def pow2(x):
-    """Return the square of x
+    """
+
     :param x: input value
-    :type x: float"""
+    :type x: float
+    :return: the square of x
+    """
     return x*x
 
 

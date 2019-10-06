@@ -14,6 +14,11 @@ silx_ trainings:
 - Features of the silx_ toolkit
 - Introduction to Fable Input/Output (aka. fabio_) library
 
+Run training notebooks in a binder environment: |binder button|
+
+.. |binder button| image:: https://mybinder.org/badge_logo.svg
+ :target: https://mybinder.org/v2/gh/silx-kit/silx-training/master
+
 
 Usage
 -----

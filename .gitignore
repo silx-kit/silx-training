@@ -20,3 +20,9 @@ io/data/*.ini
 # ignore hidden files
 .*
 
+
+#Generated files from the notebooks
+/python/io/*.h5
+/python/io/*.edf
+/python/io/*.tif
+

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Setup jupyter bash kernel
+python -m bash_kernel.install
+
+# Setup rise
+jupyter-nbextension install rise --py --sys-prefix
+jupyter-nbextension enable rise --py --sys-prefix

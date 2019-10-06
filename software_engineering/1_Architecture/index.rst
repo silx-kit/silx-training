@@ -11,12 +11,13 @@
 =========================
 
 #. Have a clean structure
+#. Get ready for the future
 #. A word about licenses
 #. Coding convention
 
    #. PEP8
    #. PEP20
-
+#. Tools 
 #. Structure of a minimalistic project
 
 ----
@@ -28,12 +29,13 @@ Have a clean structure
 
   * libraries are reusable
 
-- Separate GUI from calculation:
+- Separate user interface from calculation:
 
   *  Otherwise maintenance becomes a nightmare
   *  allows to change the front-end
   *  allows to access to core function without the GUI
   *  simplify unit tests
+  *  ease collaboration
 
 - Separate I/O from calculation
 
@@ -49,10 +51,31 @@ Will also help you to :
 
 ----
 
-example
--------
+Python 2 end of life
+--------------------
 
-TODO
+By 2020, the `support of Python2 will end <https://pythonclock.org/>`_.
+All your projects must be python3 based, supporting Python2 has become optional.
+
+
+Look at the `developer statistics <https://www.jetbrains.com/research/python-developers-survey-2018/#python-3-adoption>`_
+
+----
+
+Nice features of Python 3
+-------------------------
+
+Python3 prevents you from mixing tab and space indentation in your code.
+
+Python3 enforces you to decode early your data to avoid mixing *bytes* and *unicode*
+
+You can use the `six library <https://pypi.python.org/pypi/six>`_ to provide code that
+runs both under Python2 and Python3.
+
+Presenter Notes
+...............
+
+python-future is a higher-level compatibility layer than six that includes more backported functionality from Python 3, more forward-ported functionality from Python 2
 
 ----
 
@@ -109,27 +132,24 @@ Why MIT instead of Apache 2.0 ?
 
 ----
 
-Coding convention
-=================
+Coding convention:
+==================
 
-----
+Set of guidelines for a specific programming language that recommend: programming style, practices, and methods for each aspect of a program written in that language. It contains:
 
-Python 2 end of support
------------------------
+* File organization, 
+* indentation, 
+* comments, 
+* declarations, 
+* statements, 
+* white space, 
+* naming conventions, 
+* programming practices, 
+* programming principles, 
+* programming rules of thumb, 
+* architectural best practices, 
 
-By 2020, the `support of Python2 will end <https://pythonclock.org/>`_.
-All your projects must be python3 based, supporting Python2 becomes optional.
-
-
-Look at the `developer statistics <https://www.jetbrains.com/research/python-developers-survey-2018/#python-3-adoption>`_
-
-You can use the `six library <https://pypi.python.org/pypi/six>`_ to provide code that
-runs both under Python2 and Python3.
-
-Presenter Notes
-...............
-
-python-future is a higher-level compatibility layer than six that includes more backported functionality from Python 3, more forward-ported functionality from Python 2
+Why ? reduce cost of software maintenance.
 
 ----
 
@@ -197,16 +217,18 @@ Zen of Python: `PEP20 <https://www.python.org/dev/peps/pep-0020/>`_
 Tools
 -----
 
-* `flake8 <https://pypi.python.org/pypi/flake8>`_
-* `pylint <https://www.pylint.org/>`_
-* `modernize <https://pypi.python.org/pypi/modernize>`_
-* `autopep8 <https://pypi.python.org/pypi/autopep8>`_
-* `landscape.io <https://landscape.io/>`_: `Example <https://landscape.io/github/silx-kit/silx/>`_
-* IDE
+* Use an Integrated Development Environments (IDE) like:
 
-  - `pyDev (eclipse) <http://www.pydev.org/>`_
-  - `pyCharm <https://www.jetbrains.com/pycharm/>`_
+  - `pyCharm <https://www.jetbrains.com/pycharm/>`_ Probably the best IDE for Python
+  - `pyDev <http://www.pydev.org/>`_ Eclipse plugin
 
+* Other tools to improve your code:
+
+  -  `pylint <https://www.pylint.org/>`_: Validation of Python code, syntax, variable names
+  -  `flake8 <https://pypi.python.org/pypi/flake8>`_: Validation of code style (PEP8)
+  -  `modernize <https://pypi.python.org/pypi/modernize>`_: Helps you upgrade to Python3
+  -  `autopep8 <https://pypi.python.org/pypi/autopep8>`_: rewrites your code in PEP8 !
+  
 ---- 
 
 Scafold of a minimalistic Python project
@@ -217,7 +239,9 @@ Scafold of a minimalistic Python project
    pet_project/
        pet_project/
            __init__.py
+           
        LICENSE.txt
        README.txt
+       [requirements.txt]
        setup.py
 
