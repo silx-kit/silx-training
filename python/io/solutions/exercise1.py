@@ -5,10 +5,8 @@ Exercise 1
 """
 
 import h5py
-
-# Read the data
-
 import numpy
+
 
 def flatfield_correction(raw, flat, dark):
     """
@@ -21,6 +19,7 @@ def flatfield_correction(raw, flat, dark):
     dark = dark.astype(numpy.float32)
     # To the computation
     return (raw - dark) / (flat - dark)
+
 
 def imshowmany(*args, **kwargs):
     """
@@ -44,29 +43,29 @@ def imshowmany(*args, **kwargs):
     nbcols = len(kwargs) // nbrows
     for i, (key, value) in enumerate(kwargs.items()):
         a = fig.add_subplot(nbrows, nbcols, i + 1)
-        imgplot = plt.imshow(value)
+        imgplot = pyplot.imshow(value)
         a.set_title(key)
+    pyplot.show()
 
 
+def solution():
+    with h5py.File("data/ID16B_diatomee.h5", "r") as h5:
+        raw = h5["/data/0000"][...]
+        dark = h5["/background/0000"][...]
+        flat = h5["/flatfield/0000"][...]
 
+    # Compute the result
+    normalized = flatfield_correction(raw, flat, dark)
 
-with h5py.File("data/ID16B_diatomee.h5", "r") as h5:
-    raw = h5["/data/0000"][...]
-    dark = h5["/background/0000"][...]
-    flat = h5["/flatfield/0000"][...]
+    # Save the result
+    with h5py.File("exercise1.h5", "w") as h5out:
+        h5out["result"] = normalized
 
-# Compute the result
+    # Check the saved result
+    with h5py.File("exercise1.h5", "r") as h5out:
+        saved = h5out["result"][...]
+    imshowmany(Before=raw, After=saved)
 
-normalized = flatfield_correction(raw, flat, dark)
-
-# Save the result
-
-with h5py.File("exercise1.h5", "w") as h5out:
-    h5out["result"] = normalized
-
-# Check the saved result
-
-with h5py.File("exercise1.h5", "r") as h5out:
-    saved = h5out["result"][...]
-imshowmany(Before=raw, After=saved)
-
+    
+if __name__ == '__main__':
+    solution()

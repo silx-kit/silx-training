@@ -42,35 +42,40 @@ def imshowmany(*args, **kwargs):
     nbcols = len(kwargs) // nbrows
     for i, (key, value) in enumerate(kwargs.items()):
         a = fig.add_subplot(nbrows, nbcols, i + 1)
-        imgplot = plt.imshow(value)
+        imgplot = pyplot.imshow(value)
         a.set_title(key)
+    pyplot.show()
 
 
+def solution():
+    with h5py.File("data/ID16B_diatomee.h5", "r") as h5:
 
-with h5py.File("data/ID16B_diatomee.h5", "r") as h5:
+        # Load the data always needed
 
-    # Load the data always needed
+        dark = h5["/background/0000"][...].astype(numpy.float32)
+        flat = h5["/flatfield/0000"][...].astype(numpy.float32)
 
-    dark = h5["/background/0000"][...].astype(numpy.float32)
-    flat = h5["/flatfield/0000"][...].astype(numpy.float32)
+        with h5py.File("exercise2.h5", "w") as h5out:
 
-    with h5py.File("exercise2.h5", "w") as h5out:
+            data_group = h5["/data"]
 
-        data_group = h5["/data"]
+            # Compute the result image per image
 
-        # Compute the result image per image
+            for name in data_group:
+                raw = data_group[name][...]
+                normalized = flatfield_correction(raw, flat, dark)
 
-        for name in data_group:
-            raw = data_group[name][...]
-            normalized = flatfield_correction(raw, flat, dark)
-            
-            # Save the result
-            h5out[name] = normalized
+                # Save the result
+                h5out[name] = normalized
 
-# Check the saved result
-import collections
-result = collections.OrderedDict()
-with h5py.File("exercise2.h5", "r") as h5out:
-    for name in h5out:
-        result[name] = h5out[name][...]
-imshowmany(result)
+    # Check the saved result
+    import collections
+    result = collections.OrderedDict()
+    with h5py.File("exercise2.h5", "r") as h5out:
+        for name in h5out:
+            result[name] = h5out[name][...]
+    imshowmany(result)
+
+    
+if __name__ == '__main__':
+    solution()
