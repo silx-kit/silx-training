@@ -12,3 +12,4 @@ bash_kernel
 ipywidgets
 ipympl
 rise
+jupyter-server-desktop
