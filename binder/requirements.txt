@@ -12,4 +12,4 @@ bash_kernel
 ipywidgets
 ipympl
 rise
-jupyter-desktop-server
+-e git://github.com/yuvipanda/jupyter-desktop-server.git#egg=jupyter-desktop-server
