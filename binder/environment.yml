@@ -1,0 +1,4 @@
+channels:
+  - manics
+dependencies:
+  - websockify
