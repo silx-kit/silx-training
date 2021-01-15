@@ -14,10 +14,22 @@ silx_ trainings:
 - Features of the silx_ toolkit
 - Introduction to Fable Input/Output (aka. fabio_) library
 
-Run training notebooks in a binder environment: |binder button|
+Run training notebooks with `Binder <https://jupyter.org/binder>`_:
 
-.. |binder button| image:: https://mybinder.org/badge_logo.svg
- :target: https://mybinder.org/v2/gh/silx-kit/silx-training/master
+* |myBinder Launcher| on `mybinder <https://mybinder.org/>`_ service.
+* |BinderPanoscFedCloud Launcher| on `PaNOSC fedcloud <https://binder-panosc.fedcloud-tf.fedcloud.eu>`_ service.
+* |gesisBinder Launcher| on `gesis <https://notebooks.gesis.org>`_ service.
+
+
+.. |myBinder Launcher| image:: https://mybinder.org/badge_logo.svg
+   :target: https://mybinder.org/v2/gh/silx-kit/silx-training/master
+
+.. |BinderPanoscFedCloud Launcher| image:: https://binder-panosc.fedcloud-tf.fedcloud.eu/badge_logo.svg
+   :target: https://binder-panosc.fedcloud-tf.fedcloud.eu/v2/gh/silx-kit/silx-training/master
+
+.. |gesisBinder Launcher| image:: https://notebooks.gesis.org/binder/badge_logo.svg
+   :target: https://notebooks.gesis.org/binder/v2/gh/silx-kit/silx-training/master
+
 
 
 Usage
