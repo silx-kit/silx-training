@@ -1,0 +1,6 @@
+line-profiler
+numexpr
+numba
+Cython
+py-cpuinfo
+RunSnakeRun
