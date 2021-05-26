@@ -1,6 +1,8 @@
 line-profiler
+memory_profiler
 numexpr
 numba
-Cython
+Cython>=3.0a1
 py-cpuinfo
-RunSnakeRun
+#RunSnakeRun
+SnakeViz
