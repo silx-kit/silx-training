@@ -1,0 +1,19 @@
+numpy
+rise
+
+# Distribution
+build
+setuptools
+wheel
+
+# Test
+coverage
+ipytest
+pytest
+
+# Documentation
+myst-parser
+nbsphinx
+sphinx
+sphinx-autobuild
+sphinxcontrib-napoleon
