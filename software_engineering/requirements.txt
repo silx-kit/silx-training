@@ -1,0 +1,14 @@
+# Distribution
+build
+setuptools
+wheel
+
+# Test
+coverage
+ipytest
+pytest
+
+# Documentation
+myst-parser
+sphinx
+sphinxcontrib-napoleon
