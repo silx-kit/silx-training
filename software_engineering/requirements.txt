@@ -12,5 +12,6 @@ pytest
 
 # Documentation
 myst-parser
+nbsphinx
 sphinx
 sphinxcontrib-napoleon
