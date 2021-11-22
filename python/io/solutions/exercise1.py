@@ -51,7 +51,7 @@ def imshowmany(*args, **kwargs):
 def solution():
     with h5py.File("data/ID16B_diatomee.h5", "r") as h5:
         raw = h5["/data/0000"][...]
-        dark = h5["/background/0000"][...]
+        dark = h5["/dark/0000"][...]
         flat = h5["/flatfield/0000"][...]
 
     # Compute the result

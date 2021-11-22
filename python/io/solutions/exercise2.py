@@ -52,7 +52,7 @@ def solution():
 
         # Load the data always needed
 
-        dark = h5["/background/0000"][...].astype(numpy.float32)
+        dark = h5["/dark/0000"][...].astype(numpy.float32)
         flat = h5["/flatfield/0000"][...].astype(numpy.float32)
 
         with h5py.File("exercise2.h5", "w") as h5out:

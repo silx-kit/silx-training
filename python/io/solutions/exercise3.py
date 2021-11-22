@@ -67,7 +67,7 @@ def solution():
 
         # Load the data always needed
 
-        dark = h5["/background/0000"][...].astype(numpy.float32)
+        dark = h5["/dark/0000"][...].astype(numpy.float32)
         flat1 = h5["/flatfield/0000"][...].astype(numpy.float32)
         flat2 = h5["/flatfield/0500"][...].astype(numpy.float32)
 
