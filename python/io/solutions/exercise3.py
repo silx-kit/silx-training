@@ -24,13 +24,12 @@ def flatfield_correction(raw, flat, dark):
 def imshowmany(*args, **kwargs):
     """
     Dispaly as image all array provided as argument.
-    
+
     The image title is defined using the argument name.
     """
     from matplotlib import pyplot
     if len(kwargs) == 0:
-        import collections
-        kwargs = collections.OrderedDict()
+        kwargs = {}
     for i, arg in enumerate(args):
         if isinstance(arg, dict):
             kwargs.update(arg)
@@ -92,13 +91,12 @@ def solution():
                 h5out[name] = normalized
 
     # Check the saved result
-    import collections
-    result = collections.OrderedDict()
+    result = {}
     with h5py.File("exercise3.h5", "r") as h5out:
         for name in h5out:
             result[name] = h5out[name][...]
     imshowmany(result)
 
-    
+
 if __name__ == '__main__':
     solution()
