@@ -1,7 +1,6 @@
 #!/usr/bin/env python
-# coding: utf-8
 
-"""This is a simple demonstration library"""
+"""This is a simple module."""
 
 __authors__ = [
     "Pierre Knobel",
@@ -20,12 +19,22 @@ version = "0.1.0"
 
 
 def sqrt(x):
-    "Return the square root of x"
-    return x ** 0.5
+    "Return the square root of x."
+    return x**0.5
+
+
+def pow2(x):
+    """Return the square of x.
+
+    :param x: input value
+    :type x: float
+    :return: the square of x
+    """
+    return x * x
 
 
 def polynom(a, b, c):
-    """ Compute solutions for the quadratic equation a*x^2 + b*x + c = 0
+    """Compute solutions for the quadratic equation a*x^2 + b*x + c = 0.
 
     :param a:a value of the polynom
     :type a: float
@@ -42,16 +51,6 @@ def polynom(a, b, c):
     elif delta == 0:
         solutions.append(-b / (2.0 * a))
     return solutions
-
-
-def pow2(x):
-    """
-
-    :param x: input value
-    :type x: float
-    :return: the square of x
-    """
-    return x * x
 
 
 def test():
