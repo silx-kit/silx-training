@@ -4,25 +4,32 @@
 import numpy
 
 
-XORSHIFT32_DEFAULT_SHIFTS = 13, 17, 5
+DEFAULT_SHIFTS = 13, 17, 5
 """Default triple for xorshift32."""  # Attribute docstring
 
 
-def xorshift32(last_value, shift_triple=None):
-    """Returns the next pseudo-random uint32 from current value and triple.
+def random_xorshift32(
+    last_value: numpy.uint32, shifts: tuple[int, int, int]=None
+) -> numpy.uint32:
+    """Returns the next pseudo-random uint32 given previous value and shifts
 
     See Marsaglia, G. Xorshift RNGs: http://www.jstatsoft.org/v08/i14/paper
+
+    :param last_value: Previously returned number or the seed.
+    :param shift_triple: Bit shifts to use.
+    :return: The generated random number.
+    :raises ValueError: if x is not a numpy.uint32
     """  # Function docstring
 
     x = numpy.uint32(last_value)  # Work with 32bits integer
-    a, b, c = shift_triple or XORSHIFT32_DEFAULT_SHIFTS
+    a, b, c = shifts or XORSHIFT32_DEFAULT_SHIFTS
     x ^= x << a
     x ^= x >> b
     x ^= x << c
     return x
 
 
-class RandomGenerator32(object):
+class RandomGenerator32:
     """Xorshift-based uint32 pseudo-random generator."""  # Class docstring
 
     DEFAULT_SHIFTS = 13, 17, 5
