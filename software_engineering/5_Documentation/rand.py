@@ -16,7 +16,7 @@ def random_xorshift32(
     See Marsaglia, G. Xorshift RNGs: http://www.jstatsoft.org/v08/i14/paper
 
     :param last_value: Previously returned number or the seed.
-    :param shift_triple: Bit shifts to use.
+    :param shifts: Bit shifts to use.
     :return: The generated random number.
     :raises ValueError: if x is not a numpy.uint32
     """  # Function docstring
