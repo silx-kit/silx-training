@@ -7,6 +7,7 @@ __authors__ = [
     "Jerome Kieffer",
     "Pierre Paleo",
     "Henri Payno",
+    "Marius Retegan",
     "Armando Sole",
     "Valentin Valls",
     "Thomas Vincent",
