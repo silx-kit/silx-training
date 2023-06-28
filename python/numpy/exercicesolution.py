@@ -71,7 +71,7 @@ def ex4_2_alt():
 
 def ex5_inefficient_fill(height=1000, width=1000):
     """Inefficient fill using 2 for loops"""
-    data = numpy.zeros((height, width), dtype=numpy.float)
+    data = numpy.zeros((height, width), dtype=float)
     for row in range(int(height)):
         for col in range(int(width)):
             data[row, col] = numpy.cos(row) * numpy.sin(col)
@@ -82,7 +82,7 @@ def ex5_naive_fill(height=1000, width=1000):
     """Fill using 2 for loops but pre-computing sin and cos"""
     width_sin = numpy.sin(numpy.arange(width))
     height_cos = numpy.cos(numpy.arange(height))
-    data = numpy.zeros((height, width), numpy.float)
+    data = numpy.zeros((height, width), float)
     for row in range(int(height)):
         for col in range(int(width)):
             data[row, col] = height_cos[row] * width_sin[col]
