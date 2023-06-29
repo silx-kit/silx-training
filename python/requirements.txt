@@ -1,0 +1,6 @@
+silx
+h5glance
+hdf5plugin
+fabio
+matplotlib
+ipympl
