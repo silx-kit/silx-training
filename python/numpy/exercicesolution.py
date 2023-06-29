@@ -82,7 +82,7 @@ def ex5_naive_fill(height=1000, width=1000):
     """Fill using 2 for loops but pre-computing sin and cos"""
     width_sin = numpy.sin(numpy.arange(width))
     height_cos = numpy.cos(numpy.arange(height))
-    data = numpy.zeros((height, width), float)
+    data = numpy.zeros((height, width), dtype=numpy.float64)
     for row in range(int(height)):
         for col in range(int(width)):
             data[row, col] = height_cos[row] * width_sin[col]
