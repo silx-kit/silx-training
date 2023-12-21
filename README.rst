@@ -17,15 +17,12 @@ silx_ trainings:
 Run training notebooks with `Binder <https://jupyter.org/binder>`_:
 
 * |myBinder Launcher| on `mybinder <https://mybinder.org/>`_ service.
-* |BinderPanoscFedCloud Launcher| on `PaNOSC fedcloud <https://binder-panosc.fedcloud-tf.fedcloud.eu>`_ service.
 * |gesisBinder Launcher| on `gesis <https://notebooks.gesis.org>`_ service.
 
 
 .. |myBinder Launcher| image:: https://mybinder.org/badge_logo.svg
    :target: https://mybinder.org/v2/gh/silx-kit/silx-training/main
 
-.. |BinderPanoscFedCloud Launcher| image:: https://binder-panosc.fedcloud-tf.fedcloud.eu/badge_logo.svg
-   :target: https://binder-panosc.fedcloud-tf.fedcloud.eu/v2/gh/silx-kit/silx-training/main
 
 .. |gesisBinder Launcher| image:: https://notebooks.gesis.org/binder/badge_logo.svg
    :target: https://notebooks.gesis.org/binder/v2/gh/silx-kit/silx-training/main

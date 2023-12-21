@@ -15,5 +15,5 @@ dependencies:
   - rise
   - websockify
   - pip:
-    - h5glance
-    - -e git://github.com/yuvipanda/jupyter-desktop-server.git#egg=jupyter-desktop-server
+      - h5glance
+      - jupyter-remote-desktop-proxy
