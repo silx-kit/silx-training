@@ -1,6 +1,10 @@
-silx
+silx[full]
 h5glance
 hdf5plugin
 fabio
 matplotlib
 ipympl
+jupyterlab_h5web
+
+# for io-spec tutorial on jupyter-lab
+nodejs-bin
