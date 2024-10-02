@@ -1,5 +1,3 @@
-# coding: utf-8
-#
 # Copyright (c) 2019 European Synchrotron Radiation Facility
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,30 +23,28 @@
 import numpy
 
 
-def laue_array_size(ncells, oversampling):
+def laue_array_size(ncells: int, oversampling: int) -> int:
     """Compute the output array size in each dimension
 
-    :param int ncells:
+    :param ncells:
         Number of unit cells in both directions
-    :param int oversampling: Oversampling factor
-    :rtype: int
+    :param oversampling: Oversampling factor
     """
     return ncells * oversampling
 
 
-def laue_image(ncells, h, k, oversampling):
+def laue_image(ncells: int, h: float, k: float, oversampling: int) -> numpy.ndarray:
     """
 
-    :param int ncells:
+    :param ncells:
         Number of unit cells in both directions
-    :param int h:
+    :param h:
         H Miller index of reflection where to sample space
-    :param int k:
+    :param k:
         K Miller index of reflection where to sample space
-    :param int oversampling:
+    :param oversampling:
         Oversampling factor
     :return: 2D array
-    :rtype: numpy.ndarray
     """
     size = laue_array_size(ncells, oversampling)
 
@@ -65,4 +61,3 @@ def laue_image(ncells, h, k, oversampling):
 
     # Sum over the unit-cells (last axis of the array) and take the squared modulus
     return numpy.abs(numpy.exp(2j*numpy.pi*(h*n + k*m)).sum(axis=(2,3)))**2
-
