@@ -1,5 +1,3 @@
-# coding: utf-8
-#
 # Copyright (c) 2019 European Synchrotron Radiation Facility
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,14 +24,13 @@ from PyQt5 import Qt
 import numpy
 
 
-def _gray_log(data):
+def _gray_log(data: numpy.ndarray) -> Qt.QPixmap:
     """Returns the 2D data converted to an image.
 
     It uses an autoscale gray colormap and log normalization.
 
-    :param numpy.ndarray data: Data array
+    :param data: Data array
     :return: The corresponding RGB image as a pixmap
-    :rtype: QPixmap
     """
     # Get strictly positive range
     valid_data = data[numpy.logical_and(numpy.isfinite(data), data > 0.)]
@@ -73,36 +70,31 @@ class ImagePlot(Qt.QLabel):
     It is using a grayscale colormap, autoscaling and logarithmic scale.
     """
 
-    def __init__(self, parent=None):
+    def __init__(self, parent: Qt.QWidget | None = None):
         super(ImagePlot, self).__init__(parent)
         self.setText('No data')
         self._data = None
         self.setAlignment(Qt.Qt.AlignCenter)
-        
-    def setData(self, data):
-        """Set the data 2 display.
 
-        :param numpy.ndarray data: 
-        """
+    def setData(self, data: numpy.ndarray):
+        """Set the data to display"""
         if data is None:
             self.setText('No data')
             self.setPixmap(None)
-        else:
-            data = numpy.array(data, copy=False)
-            if data.ndim != 2 and data.size > 0:
-                self.setText('Cannot display data')
-                self.setPixmap(None)
-            else:
-                pixmap = _gray_log(data)
-                self.setPixmap(pixmap)
-                self.setText('')
-                
-    def data(self):
-        """Returns the data currently being displayed
+            return
 
-        :rtype: Union[None,numpy.ndarray]
-        """
+        data = numpy.array(data, copy=False)
+        if data.ndim != 2 and data.size > 0:
+            self.setText('Cannot display data')
+            self.setPixmap(None)
+            return
+
+        pixmap = _gray_log(data)
+        self.setPixmap(pixmap)
+        self.setText('')
+
+    def data(self) -> numpy.ndarray | None:
+        """Returns the data currently being displayed"""
         if self._data is None:
             return None
-        else:
-            return numpy.array(self._data, copy=True)
+        return numpy.array(self._data, copy=True)
