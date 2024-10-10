@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.2" viewBox="-502 -2 25505 16393" preserveAspectRatio="xMidYMid" fill-rule="evenodd" stroke-width="28.222" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" xmlns:ooo="http://xml.openoffice.org/svg/export" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:presentation="http://sun.com/xmlns/staroffice/presentation" xmlns:smil="http://www.w3.org/2001/SMIL20/" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xml:space="preserve">
+<svg version="1.2" width="297mm" height="210mm" viewBox="0 0 29700 21000" preserveAspectRatio="xMidYMid" fill-rule="evenodd" stroke-width="28.222" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" xmlns:ooo="http://xml.openoffice.org/svg/export" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:presentation="http://sun.com/xmlns/staroffice/presentation" xmlns:smil="http://www.w3.org/2001/SMIL20/" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xml:space="preserve">
+ <defs class="ClipPathGroup">
+  <clipPath id="presentation_clip_path" clipPathUnits="userSpaceOnUse">
+   <rect x="0" y="0" width="29700" height="21000"/>
+  </clipPath>
+  <clipPath id="presentation_clip_path_shrink" clipPathUnits="userSpaceOnUse">
+   <rect x="29" y="21" width="29641" height="20958"/>
+  </clipPath>
+ </defs>
  <defs>
   <font id="EmbeddedFont_1" horiz-adv-x="2048">
    <font-face font-family="Liberation Sans embedded" units-per-em="2048" font-weight="normal" font-style="normal" ascent="1852" descent="423"/>
@@ -27,10 +35,12 @@
    <glyph unicode="P" horiz-adv-x="1112" d="M 1258,985 C 1258,852 1215,746 1128,667 1041,588 922,549 773,549 L 359,549 359,0 168,0 168,1409 761,1409 C 919,1409 1041,1372 1128,1298 1215,1224 1258,1120 1258,985 Z M 1066,983 C 1066,1165 957,1256 738,1256 L 359,1256 359,700 746,700 C 959,700 1066,794 1066,983 Z"/>
    <glyph unicode="O" horiz-adv-x="1430" d="M 1495,711 C 1495,564 1467,435 1411,324 1354,213 1273,128 1168,69 1063,10 938,-20 795,-20 650,-20 526,9 421,68 316,127 235,212 180,323 125,434 97,563 97,711 97,936 159,1113 282,1240 405,1367 577,1430 797,1430 940,1430 1065,1402 1170,1345 1275,1288 1356,1205 1412,1096 1467,987 1495,859 1495,711 Z M 1300,711 C 1300,886 1256,1024 1169,1124 1081,1224 957,1274 797,1274 636,1274 511,1225 423,1126 335,1027 291,889 291,711 291,534 336,394 425,291 514,187 637,135 795,135 958,135 1083,185 1170,286 1257,386 1300,528 1300,711 Z"/>
    <glyph unicode="N" horiz-adv-x="1165" d="M 1082,0 L 328,1200 333,1103 338,936 338,0 168,0 168,1409 390,1409 1152,201 C 1144,332 1140,426 1140,485 L 1140,1409 1312,1409 1312,0 1082,0 Z"/>
+   <glyph unicode="M" horiz-adv-x="1377" d="M 1366,0 L 1366,940 C 1366,1044 1369,1144 1375,1240 1342,1121 1313,1027 1287,960 L 923,0 789,0 420,960 364,1130 331,1240 334,1129 338,940 338,0 168,0 168,1409 419,1409 794,432 C 807,393 820,351 833,306 845,261 853,228 857,208 862,235 874,275 891,330 908,384 919,418 925,432 L 1293,1409 1538,1409 1538,0 1366,0 Z"/>
    <glyph unicode="J" horiz-adv-x="848" d="M 457,-20 C 218,-20 77,103 32,350 L 219,381 C 231,304 258,243 300,200 342,157 395,135 458,135 527,135 582,159 622,207 662,254 682,324 682,416 L 682,1253 411,1253 411,1409 872,1409 872,420 C 872,283 835,176 761,98 687,19 586,-20 457,-20 Z"/>
    <glyph unicode="I" horiz-adv-x="213" d="M 189,0 L 189,1409 380,1409 380,0 189,0 Z"/>
    <glyph unicode="G" horiz-adv-x="1377" d="M 103,711 C 103,940 164,1117 287,1242 410,1367 582,1430 804,1430 960,1430 1087,1404 1184,1351 1281,1298 1356,1214 1409,1098 L 1227,1044 C 1187,1124 1132,1182 1062,1219 991,1256 904,1274 799,1274 636,1274 512,1225 426,1127 340,1028 297,890 297,711 297,533 343,393 434,290 525,187 652,135 813,135 905,135 991,149 1071,177 1150,205 1215,243 1264,291 L 1264,545 843,545 843,705 1440,705 1440,219 C 1365,143 1274,84 1166,43 1057,1 940,-20 813,-20 666,-20 539,9 432,68 325,127 244,211 188,322 131,432 103,562 103,711 Z"/>
    <glyph unicode="F" horiz-adv-x="1006" d="M 359,1253 L 359,729 1145,729 1145,571 359,571 359,0 168,0 168,1409 1169,1409 1169,1253 359,1253 Z"/>
+   <glyph unicode="D" horiz-adv-x="1218" d="M 1381,719 C 1381,574 1353,447 1296,338 1239,229 1159,145 1055,87 951,29 831,0 695,0 L 168,0 168,1409 634,1409 C 873,1409 1057,1349 1187,1230 1316,1110 1381,940 1381,719 Z M 1189,719 C 1189,894 1141,1027 1046,1119 950,1210 811,1256 630,1256 L 359,1256 359,153 673,153 C 776,153 867,176 946,221 1024,266 1084,332 1126,417 1168,502 1189,603 1189,719 Z"/>
    <glyph unicode="C" horiz-adv-x="1324" d="M 792,1274 C 636,1274 515,1224 428,1124 341,1023 298,886 298,711 298,538 343,400 434,295 524,190 646,137 800,137 997,137 1146,235 1245,430 L 1401,352 C 1343,231 1262,138 1157,75 1052,12 930,-20 791,-20 649,-20 526,10 423,69 319,128 240,212 186,322 131,431 104,561 104,711 104,936 165,1112 286,1239 407,1366 575,1430 790,1430 940,1430 1065,1401 1166,1342 1267,1283 1341,1196 1388,1081 L 1207,1021 C 1174,1103 1122,1166 1050,1209 977,1252 891,1274 792,1274 Z"/>
    <glyph unicode="A" horiz-adv-x="1377" d="M 1167,0 L 1006,412 364,412 202,0 4,0 579,1409 796,1409 1362,0 1167,0 Z M 685,1265 L 676,1237 C 659,1182 635,1111 602,1024 L 422,561 949,561 768,1026 C 749,1072 731,1124 712,1182 L 685,1265 Z"/>
    <glyph unicode="/" horiz-adv-x="583" d="M 0,-20 L 411,1484 569,1484 162,-20 0,-20 Z"/>
@@ -57,11 +67,14 @@
    <glyph unicode="m" horiz-adv-x="1562" d="M 780,0 L 780,607 C 780,797 725,892 616,892 559,892 513,863 478,805 442,747 424,672 424,580 L 424,0 143,0 143,840 C 143,898 142,946 141,983 139,1020 137,1053 135,1082 L 403,1082 C 405,1069 408,1036 411,981 414,926 416,888 416,867 L 420,867 C 455,950 498,1010 550,1047 601,1084 663,1103 735,1103 900,1103 1001,1024 1036,867 L 1042,867 C 1079,951 1123,1011 1174,1048 1225,1085 1291,1103 1370,1103 1475,1103 1556,1067 1611,996 1666,924 1694,821 1694,687 L 1694,0 1415,0 1415,607 C 1415,797 1360,892 1251,892 1196,892 1152,866 1117,813 1082,760 1062,686 1059,593 L 1059,0 780,0 Z"/>
    <glyph unicode="l" horiz-adv-x="292" d="M 143,0 L 143,1484 424,1484 424,0 143,0 Z"/>
    <glyph unicode="i" horiz-adv-x="292" d="M 143,1277 L 143,1484 424,1484 424,1277 143,1277 Z M 143,0 L 143,1082 424,1082 424,0 143,0 Z"/>
+   <glyph unicode="h" horiz-adv-x="1007" d="M 420,866 C 458,949 506,1009 563,1046 620,1083 689,1102 768,1102 883,1102 971,1067 1032,996 1093,925 1124,822 1124,686 L 1124,0 844,0 844,606 C 844,796 780,891 651,891 583,891 528,862 487,804 445,745 424,670 424,579 L 424,0 143,0 143,1484 424,1484 424,1079 C 424,1006 421,935 416,866 L 420,866 Z"/>
    <glyph unicode="g" horiz-adv-x="1033" d="M 596,-434 C 464,-434 358,-409 278,-359 197,-308 148,-236 129,-143 L 410,-110 C 420,-153 442,-187 475,-212 508,-237 551,-249 604,-249 682,-249 739,-225 775,-177 811,-129 829,-58 829,37 L 829,94 831,201 829,201 C 767,68 651,2 481,2 355,2 257,49 188,144 119,239 84,374 84,550 84,727 120,863 191,959 262,1055 366,1103 502,1103 659,1103 768,1038 829,908 L 834,908 C 834,931 836,963 839,1003 842,1043 845,1069 848,1082 L 1114,1082 C 1110,1010 1108,927 1108,832 L 1108,33 C 1108,-121 1064,-237 977,-316 890,-395 763,-434 596,-434 Z M 831,556 C 831,667 811,754 772,817 732,879 675,910 602,910 452,910 377,790 377,550 377,315 451,197 600,197 675,197 732,228 772,291 811,353 831,441 831,556 Z"/>
    <glyph unicode="e" horiz-adv-x="1007" d="M 586,-20 C 423,-20 298,28 211,125 124,221 80,361 80,546 80,725 124,862 213,958 302,1054 427,1102 590,1102 745,1102 864,1051 946,948 1028,845 1069,694 1069,495 L 1069,487 375,487 C 375,382 395,302 434,249 473,195 528,168 600,168 699,168 762,211 788,297 L 1053,274 C 976,78 821,-20 586,-20 Z M 586,925 C 520,925 469,902 434,856 398,810 379,746 377,663 L 797,663 C 792,750 771,816 734,860 697,903 648,925 586,925 Z"/>
    <glyph unicode="d" horiz-adv-x="1033" d="M 844,0 C 841,10 838,35 835,76 831,116 829,149 829,176 L 825,176 C 764,45 649,-20 479,-20 353,-20 256,29 187,128 118,226 84,363 84,540 84,719 120,858 193,956 265,1053 367,1102 500,1102 577,1102 643,1086 699,1054 754,1022 797,974 827,911 L 829,911 827,1089 827,1484 1108,1484 1108,236 C 1108,169 1111,91 1116,0 L 844,0 Z M 831,547 C 831,664 812,754 773,817 734,880 676,911 600,911 525,911 469,881 432,820 395,759 377,665 377,540 377,295 451,172 598,172 672,172 729,205 770,270 811,335 831,427 831,547 Z"/>
+   <glyph unicode="c" horiz-adv-x="1007" d="M 594,-20 C 430,-20 303,29 214,127 125,224 80,360 80,535 80,714 125,853 215,953 305,1052 433,1102 598,1102 725,1102 831,1070 914,1006 997,942 1050,854 1071,741 L 788,727 C 780,782 760,827 728,860 696,893 651,909 592,909 447,909 375,788 375,546 375,297 449,172 596,172 649,172 694,189 730,223 766,256 788,306 797,373 L 1079,360 C 1069,286 1043,220 1000,162 957,104 900,59 830,28 760,-4 681,-20 594,-20 Z"/>
    <glyph unicode="b" horiz-adv-x="1033" d="M 1167,545 C 1167,366 1131,228 1060,129 988,30 885,-20 752,-20 675,-20 609,-3 553,30 497,63 454,111 424,174 L 422,174 C 422,151 421,119 418,78 415,37 411,11 408,0 L 135,0 C 140,62 143,144 143,247 L 143,1484 424,1484 424,1070 420,894 424,894 C 487,1033 603,1102 770,1102 898,1102 996,1054 1065,957 1133,860 1167,722 1167,545 Z M 874,545 C 874,668 856,759 820,818 784,877 728,907 653,907 577,907 519,875 480,812 440,748 420,656 420,536 420,421 440,332 479,268 518,204 575,172 651,172 800,172 874,296 874,545 Z"/>
    <glyph unicode="a" horiz-adv-x="1112" d="M 393,-20 C 288,-20 207,9 148,66 89,123 60,203 60,306 60,418 97,503 170,562 243,621 348,651 487,652 L 720,656 720,711 C 720,782 708,834 683,869 658,903 618,920 562,920 510,920 472,908 448,885 423,861 408,822 402,767 L 109,781 C 127,886 175,966 254,1021 332,1075 439,1102 574,1102 711,1102 816,1068 890,1001 964,934 1001,838 1001,714 L 1001,320 C 1001,259 1008,218 1022,195 1035,172 1058,160 1090,160 1111,160 1132,162 1152,166 L 1152,14 C 1135,10 1120,6 1107,3 1094,0 1080,-3 1067,-5 1054,-7 1040,-9 1025,-10 1010,-11 992,-12 972,-12 901,-12 849,5 816,40 782,75 762,126 755,193 L 749,193 C 670,51 552,-20 393,-20 Z M 720,501 L 576,499 C 511,496 464,489 437,478 410,466 389,448 375,424 360,400 353,368 353,328 353,277 365,239 389,214 412,189 444,176 483,176 527,176 567,188 604,212 640,236 668,269 689,312 710,354 720,399 720,446 L 720,501 Z"/>
+   <glyph unicode="T" horiz-adv-x="1245" d="M 773,1181 L 773,0 478,0 478,1181 23,1181 23,1409 1229,1409 1229,1181 773,1181 Z"/>
    <glyph unicode="S" horiz-adv-x="1244" d="M 1286,406 C 1286,268 1235,163 1133,90 1030,17 880,-20 682,-20 501,-20 360,12 257,76 154,140 88,237 59,367 L 344,414 C 363,339 401,285 457,252 513,218 591,201 690,201 896,201 999,264 999,389 999,429 987,462 964,488 940,514 907,536 864,553 821,570 738,591 616,616 511,641 437,661 396,676 355,691 317,708 284,729 251,749 222,773 199,802 176,831 158,864 145,903 132,942 125,986 125,1036 125,1163 173,1261 269,1329 364,1396 503,1430 686,1430 861,1430 992,1403 1080,1348 1167,1293 1224,1203 1249,1077 L 963,1038 C 948,1099 919,1144 874,1175 829,1206 764,1221 680,1221 501,1221 412,1165 412,1053 412,1016 422,986 441,963 460,940 488,920 525,904 562,887 638,867 752,842 887,813 984,787 1043,763 1101,738 1147,710 1181,678 1215,645 1241,607 1259,562 1277,517 1286,465 1286,406 Z"/>
    <glyph unicode="P" horiz-adv-x="1165" d="M 1296,963 C 1296,872 1275,791 1234,720 1193,649 1134,594 1057,555 980,516 888,496 782,496 L 432,496 432,0 137,0 137,1409 770,1409 C 939,1409 1069,1370 1160,1293 1251,1215 1296,1105 1296,963 Z M 999,958 C 999,1106 912,1180 737,1180 L 432,1180 432,723 745,723 C 826,723 889,743 933,784 977,824 999,882 999,958 Z"/>
    <glyph unicode="O" horiz-adv-x="1430" d="M 1507,711 C 1507,564 1478,435 1420,324 1362,213 1279,128 1171,69 1063,10 937,-20 793,-20 572,-20 398,45 273,176 147,306 84,484 84,711 84,937 147,1113 272,1240 397,1367 572,1430 795,1430 1018,1430 1193,1366 1319,1238 1444,1110 1507,934 1507,711 Z M 1206,711 C 1206,863 1170,982 1098,1069 1026,1155 925,1198 795,1198 663,1198 561,1155 489,1070 417,984 381,864 381,711 381,556 418,435 492,346 565,257 666,212 793,212 925,212 1027,255 1099,342 1170,429 1206,552 1206,711 Z"/>
@@ -75,6 +88,7 @@
    <glyph unicode="-" horiz-adv-x="531" d="M 80,409 L 80,653 600,653 600,409 80,409 Z"/>
   </font>
  </defs>
+ <defs class="TextShapeIndex"/>
  <defs class="EmbeddedBulletChars">
   <g id="bullet-char-template-57356" transform="scale(0.00048828125,-0.00048828125)">
    <path d="M 580,1141 L 1163,571 580,0 -4,571 580,1141 Z"/>
@@ -107,134 +121,161 @@
    <path d="M 173,740 C 173,903 231,1043 346,1159 462,1274 601,1332 765,1332 928,1332 1067,1274 1183,1159 1299,1043 1357,903 1357,740 1357,577 1299,437 1183,322 1067,206 928,148 765,148 601,148 462,206 346,322 231,437 173,577 173,740 Z"/>
   </g>
  </defs>
- <g ooo:name="page1" class="Page">
-  <g class="com.sun.star.drawing.TableShape">
-   <g>
-    <rect class="BoundingBox" stroke="none" fill="none" x="-502" y="-2" width="25505" height="16393"/>
-    <path fill="rgb(179,179,179)" stroke="none" d="M -500,0 L 3247,0 3247,1819 -500,1819 -500,0 Z"/>
-    <path fill="rgb(179,179,179)" stroke="none" d="M 3247,0 L 5914,0 5914,1819 3247,1819 3247,0 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="3876" y="1130"><tspan fill="rgb(0,0,0)" stroke="none">Host</tspan></tspan></tspan></text>
-    <path fill="rgb(179,179,179)" stroke="none" d="M 5914,0 L 8470,0 8470,1819 5914,1819 5914,0 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="6206" y="1130"><tspan fill="rgb(0,0,0)" stroke="none">Kernel</tspan></tspan></tspan></text>
-    <path fill="rgb(179,179,179)" stroke="none" d="M 8470,0 L 12713,0 12713,1819 8470,1819 8470,0 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="8754" y="1130"><tspan fill="rgb(0,0,0)" stroke="none">Compilation</tspan></tspan></tspan></text>
-    <path fill="rgb(179,179,179)" stroke="none" d="M 12713,0 L 18825,0 18825,1819 12713,1819 12713,0 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="14942" y="775"><tspan fill="rgb(0,0,0)" stroke="none">Meta-</tspan></tspan><tspan class="TextPosition" x="13722" y="1486"><tspan fill="rgb(0,0,0)" stroke="none">programming</tspan></tspan></tspan></text>
-    <path fill="rgb(179,179,179)" stroke="none" d="M 18825,0 L 25000,0 25000,1819 18825,1819 18825,0 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="20469" y="1130"><tspan fill="rgb(0,0,0)" stroke="none">Hardware</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M -500,1819 L 3247,1819 3247,3638 -500,3638 -500,1819 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="580" y="2949"><tspan fill="rgb(0,0,0)" stroke="none">Cuda</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M 3247,1819 L 5914,1819 5914,3638 3247,3638 3247,1819 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="3980" y="2949"><tspan fill="rgb(0,0,0)" stroke="none">C++</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M 5914,1819 L 8470,1819 8470,3638 5914,3638 5914,1819 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="6591" y="2949"><tspan fill="rgb(0,0,0)" stroke="none">C++</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M 8470,1819 L 12713,1819 12713,3638 8470,3638 8470,1819 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="9938" y="2949"><tspan fill="rgb(0,0,0)" stroke="none">AOT</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M 12713,1819 L 18825,1819 18825,3638 12713,3638 12713,1819 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="15663" y="2949"><tspan fill="rgb(0,0,0)" stroke="none">-</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M 18825,1819 L 25000,1819 25000,3638 18825,3638 18825,1819 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="20046" y="2949"><tspan fill="rgb(0,0,0)" stroke="none">GPU (Nvidia)</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M -500,3638 L 3247,3638 3247,5457 -500,5457 -500,3638 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="138" y="4768"><tspan fill="rgb(0,0,0)" stroke="none">OpenCL</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M 3247,3638 L 5914,3638 5914,5457 3247,5457 3247,3638 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="4352" y="4768"><tspan fill="rgb(0,0,0)" stroke="none">C</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M 5914,3638 L 8470,3638 8470,5457 5914,5457 5914,3638 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="6964" y="4768"><tspan fill="rgb(0,0,0)" stroke="none">C</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M 8470,3638 L 12713,3638 12713,5457 8470,5457 8470,3638 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="10149" y="4768"><tspan fill="rgb(0,0,0)" stroke="none">JIT</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M 12713,3638 L 18825,3638 18825,5457 12713,5457 12713,3638 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="15663" y="4768"><tspan fill="rgb(0,0,0)" stroke="none">-</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M 18825,3638 L 25000,3638 25000,5457 18825,5457 18825,3638 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="19512" y="4768"><tspan fill="rgb(0,0,0)" stroke="none">CPU/GPU/FPGA</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M -500,5457 L 3247,5457 3247,7276 -500,7276 -500,5457 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="563" y="6587"><tspan fill="rgb(0,0,0)" stroke="none">SyCL</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M 3247,5457 L 5914,5457 5914,7276 3247,7276 3247,5457 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="3980" y="6587"><tspan fill="rgb(0,0,0)" stroke="none">C++</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M 5914,5457 L 8470,5457 8470,7276 5914,7276 5914,5457 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="6591" y="6587"><tspan fill="rgb(0,0,0)" stroke="none">C++</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M 8470,5457 L 12713,5457 12713,7276 8470,7276 8470,5457 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="9938" y="6587"><tspan fill="rgb(0,0,0)" stroke="none">AOT</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M 12713,5457 L 18825,5457 18825,7276 12713,7276 12713,5457 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="15663" y="6587"><tspan fill="rgb(0,0,0)" stroke="none">-</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M 18825,5457 L 25000,5457 25000,7276 18825,7276 18825,5457 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="19512" y="6587"><tspan fill="rgb(0,0,0)" stroke="none">CPU/GPU/FPGA</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M -500,7276 L 3247,7276 3247,9095 -500,9095 -500,7276 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="193" y="8406"><tspan fill="rgb(0,0,0)" stroke="none">PyCuda</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M 3247,7276 L 5914,7276 5914,9095 3247,9095 3247,7276 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="3594" y="8406"><tspan fill="rgb(0,0,0)" stroke="none">Python</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M 5914,7276 L 8470,7276 8470,9095 5914,9095 5914,7276 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="6591" y="8406"><tspan fill="rgb(0,0,0)" stroke="none">C++</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M 8470,7276 L 12713,7276 12713,9095 8470,9095 8470,7276 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="10149" y="8406"><tspan fill="rgb(0,0,0)" stroke="none">JIT</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M 12713,7276 L 18825,7276 18825,9095 12713,9095 12713,7276 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="12984" y="8406"><tspan fill="rgb(0,0,0)" stroke="none">Reduct/scan/sort/… </tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M 18825,7276 L 25000,7276 25000,9095 18825,9095 18825,7276 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="20046" y="8406"><tspan fill="rgb(0,0,0)" stroke="none">GPU (Nvidia)</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M -500,9095 L 3247,9095 3247,10914 -500,10914 -500,9095 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="634px" font-weight="700"><tspan class="TextPosition" x="-250" y="10225"><tspan fill="rgb(128,0,128)" stroke="none">PyOpenCL</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M 3247,9095 L 5914,9095 5914,10914 3247,10914 3247,9095 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="634px" font-weight="400"><tspan class="TextPosition" x="3594" y="10225"><tspan fill="rgb(128,0,128)" stroke="none">Python</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M 5914,9095 L 8470,9095 8470,10914 5914,10914 5914,9095 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="634px" font-weight="400"><tspan class="TextPosition" x="6964" y="10225"><tspan fill="rgb(128,0,128)" stroke="none">C</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M 8470,9095 L 12713,9095 12713,10914 8470,10914 8470,9095 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="634px" font-weight="400"><tspan class="TextPosition" x="10149" y="10225"><tspan fill="rgb(128,0,128)" stroke="none">JIT</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M 12713,9095 L 18825,9095 18825,10914 12713,10914 12713,9095 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="634px" font-weight="400"><tspan class="TextPosition" x="12984" y="10225"><tspan fill="rgb(128,0,128)" stroke="none">Reduct/scan/sort/… </tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M 18825,9095 L 25000,9095 25000,10914 18825,10914 18825,9095 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="634px" font-weight="400"><tspan class="TextPosition" x="19512" y="10225"><tspan fill="rgb(128,0,128)" stroke="none">CPU/GPU/FPGA</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M -500,10914 L 3247,10914 3247,12733 -500,12733 -500,10914 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="650" y="12044"><tspan fill="rgb(0,0,0)" stroke="none">Julia</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M 3247,10914 L 5914,10914 5914,12733 3247,12733 3247,10914 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="3931" y="12044"><tspan fill="rgb(0,0,0)" stroke="none">Julia</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M 5914,10914 L 8470,10914 8470,12733 5914,12733 5914,10914 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="6542" y="12044"><tspan fill="rgb(0,0,0)" stroke="none">Julia</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M 8470,10914 L 12713,10914 12713,12733 8470,12733 8470,10914 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="10149" y="12044"><tspan fill="rgb(0,0,0)" stroke="none">JIT</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M 12713,10914 L 18825,10914 18825,12733 12713,12733 12713,10914 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="15663" y="12044"><tspan fill="rgb(0,0,0)" stroke="none">-</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M 18825,10914 L 25000,10914 25000,12733 18825,12733 18825,10914 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="21225" y="12044"><tspan fill="rgb(0,0,0)" stroke="none">GPU</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M -500,12733 L 3247,12733 3247,14552 -500,14552 -500,12733 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="193" y="13508"><tspan fill="rgb(0,0,0)" stroke="none">Numba-</tspan></tspan><tspan class="TextPosition" x="580" y="14219"><tspan fill="rgb(0,0,0)" stroke="none">Cuda</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M 3247,12733 L 5914,12733 5914,14552 3247,14552 3247,12733 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="3594" y="13863"><tspan fill="rgb(0,0,0)" stroke="none">Python</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M 5914,12733 L 8470,12733 8470,14552 5914,14552 5914,12733 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="6206" y="13863"><tspan fill="rgb(0,0,0)" stroke="none">Python</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M 8470,12733 L 12713,12733 12713,14552 8470,14552 8470,12733 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="10149" y="13863"><tspan fill="rgb(0,0,0)" stroke="none">JIT</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M 12713,12733 L 18825,12733 18825,14552 12713,14552 12713,12733 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="15663" y="13863"><tspan fill="rgb(0,0,0)" stroke="none">-</tspan></tspan></tspan></text>
-    <path fill="rgb(204,204,204)" stroke="none" d="M 18825,12733 L 25000,12733 25000,14552 18825,14552 18825,12733 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="20046" y="13863"><tspan fill="rgb(0,0,0)" stroke="none">GPU (Nvidia)</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M -500,14552 L 3247,14552 3247,16388 -500,16388 -500,14552 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="563" y="15691"><tspan fill="rgb(0,0,0)" stroke="none">CuPy</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M 3247,14552 L 5914,14552 5914,16388 3247,16388 3247,14552 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="3594" y="15691"><tspan fill="rgb(0,0,0)" stroke="none">Python</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M 5914,14552 L 8470,14552 8470,16388 5914,16388 5914,14552 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="6591" y="15691"><tspan fill="rgb(0,0,0)" stroke="none">C++</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M 8470,14552 L 12713,14552 12713,16388 8470,16388 8470,14552 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="10149" y="15691"><tspan fill="rgb(0,0,0)" stroke="none">JIT</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M 12713,14552 L 18825,14552 18825,16388 12713,16388 12713,14552 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="14345" y="15691"><tspan fill="rgb(0,0,0)" stroke="none">Reduction</tspan></tspan></tspan></text>
-    <path fill="rgb(230,230,230)" stroke="none" d="M 18825,14552 L 25000,14552 25000,16388 18825,16388 18825,14552 Z"/>
-    <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="20046" y="15691"><tspan fill="rgb(0,0,0)" stroke="none">GPU (Nvidia)</tspan></tspan></tspan></text>
-    <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M -513,0 L 25013,0"/>
-    <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M -500,-13 L -500,16401"/>
-    <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 3247,-13 L 3247,16401"/>
-    <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 5914,-13 L 5914,16401"/>
-    <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 8470,-13 L 8470,16401"/>
-    <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 12713,-13 L 12713,16401"/>
-    <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 18825,-13 L 18825,16401"/>
-    <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 25000,-13 L 25000,16401"/>
-    <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M -513,1819 L 25013,1819"/>
-    <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M -513,3638 L 25013,3638"/>
-    <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M -513,5457 L 25013,5457"/>
-    <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M -513,7276 L 25013,7276"/>
-    <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M -513,9095 L 25013,9095"/>
-    <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M -513,10914 L 25013,10914"/>
-    <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M -513,12733 L 25013,12733"/>
-    <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M -513,14552 L 25013,14552"/>
-    <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M -513,16388 L 25013,16388"/>
+ <g>
+  <g id="id2" class="Master_Slide">
+   <g id="bg-id2" class="Background"/>
+   <g id="bo-id2" class="BackgroundObjects"/>
+  </g>
+ </g>
+ <g class="SlideGroup">
+  <g>
+   <g id="container-id1">
+    <g id="id1" class="Slide" clip-path="url(#presentation_clip_path)">
+     <g class="Page">
+      <g class="com.sun.star.drawing.TableShape">
+       <g>
+        <rect class="BoundingBox" stroke="none" fill="none" x="799" y="699" width="26004" height="11147"/>
+        <path fill="rgb(179,179,179)" stroke="none" d="M 801,701 L 4621,701 4621,2384 801,2384 801,701 Z"/>
+        <path fill="rgb(179,179,179)" stroke="none" d="M 4621,701 L 7340,701 7340,2384 4621,2384 4621,701 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="5276" y="1407"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Host</tspan></tspan></tspan></text>
+        <path fill="rgb(179,179,179)" stroke="none" d="M 7340,701 L 9946,701 9946,2384 7340,2384 7340,701 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="7657" y="1407"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Kernel</tspan></tspan></tspan></text>
+        <path fill="rgb(179,179,179)" stroke="none" d="M 9946,701 L 14272,701 14272,2384 9946,2384 9946,701 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="10272" y="1407"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Compilation</tspan></tspan></tspan></text>
+        <path fill="rgb(179,179,179)" stroke="none" d="M 14272,701 L 20503,701 20503,2384 14272,2384 14272,701 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="16560" y="1407"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Meta-</tspan></tspan><tspan class="TextPosition" x="15341" y="2118"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">programming</tspan></tspan></tspan></text>
+        <path fill="rgb(179,179,179)" stroke="none" d="M 20503,701 L 26800,701 26800,2384 20503,2384 20503,701 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="22208" y="1407"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Hardware</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 801,2384 L 4621,2384 4621,3356 801,3356 801,2384 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="1917" y="3090"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Cuda</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 4621,2384 L 7340,2384 7340,3356 4621,3356 4621,2384 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="5380" y="3090"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">C++</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 7340,2384 L 9946,2384 9946,3356 7340,3356 7340,2384 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="8042" y="3090"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">C++</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 9946,2384 L 14272,2384 14272,3356 9946,3356 9946,2384 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="11455" y="3090"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">AOT</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 14272,2384 L 20503,2384 20503,3356 14272,3356 14272,2384 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="17282" y="3090"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">-</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 20503,2384 L 26800,2384 26800,3356 20503,3356 20503,2384 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="21785" y="3090"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">GPU (Nvidia)</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 801,3356 L 4621,3356 4621,4328 801,4328 801,3356 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="1475" y="4062"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">OpenCL</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 4621,3356 L 7340,3356 7340,4328 4621,4328 4621,3356 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="5752" y="4062"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">C</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 7340,3356 L 9946,3356 9946,4328 7340,4328 7340,3356 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="8415" y="4062"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">C</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 9946,3356 L 14272,3356 14272,4328 9946,4328 9946,3356 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="11667" y="4062"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">JIT</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 14272,3356 L 20503,3356 20503,4328 14272,4328 14272,3356 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="17282" y="4062"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">-</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 20503,3356 L 26800,3356 26800,4328 20503,4328 20503,3356 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="21251" y="4062"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">CPU/GPU/FPGA</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 801,4328 L 4621,4328 4621,5300 801,5300 801,4328 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="1901" y="5034"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">SyCL</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 4621,4328 L 7340,4328 7340,5300 4621,5300 4621,4328 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="5380" y="5034"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">C++</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 7340,4328 L 9946,4328 9946,5300 7340,5300 7340,4328 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="8042" y="5034"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">C++</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 9946,4328 L 14272,4328 14272,5300 9946,5300 9946,4328 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="11455" y="5034"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">AOT</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 14272,4328 L 20503,4328 20503,5300 14272,5300 14272,4328 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="17282" y="5034"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">-</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 20503,4328 L 26800,4328 26800,5300 20503,5300 20503,4328 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="21251" y="5034"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">CPU/GPU/FPGA</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 801,5300 L 4621,5300 4621,6272 801,6272 801,5300 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="1530" y="6006"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">PyCuda</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 4621,5300 L 7340,5300 7340,6272 4621,6272 4621,5300 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="4994" y="6006"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Python</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 7340,5300 L 9946,5300 9946,6272 7340,6272 7340,5300 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="8042" y="6006"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">C++</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 9946,5300 L 14272,5300 14272,6272 9946,6272 9946,5300 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="11667" y="6006"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">JIT</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 14272,5300 L 20503,5300 20503,6272 14272,6272 14272,5300 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="14602" y="6006"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Reduct/scan/sort/… </tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 20503,5300 L 26800,5300 26800,6272 20503,6272 20503,5300 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="21785" y="6006"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">GPU (Nvidia)</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 801,6272 L 4621,6272 4621,7244 801,7244 801,6272 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="1088" y="6978"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">PyOpenCL</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 4621,6272 L 7340,6272 7340,7244 4621,7244 4621,6272 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="4994" y="6978"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Python</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 7340,6272 L 9946,6272 9946,7244 7340,7244 7340,6272 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="8415" y="6978"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">C</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 9946,6272 L 14272,6272 14272,7244 9946,7244 9946,6272 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="11667" y="6978"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">JIT</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 14272,6272 L 20503,6272 20503,7244 14272,7244 14272,6272 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="14602" y="6978"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Reduct/scan/sort/… </tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 20503,6272 L 26800,6272 26800,7244 20503,7244 20503,6272 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="21251" y="6978"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">CPU/GPU/FPGA</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 801,7244 L 4621,7244 4621,8216 801,8216 801,7244 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="1987" y="7950"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Julia</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 4621,7244 L 7340,7244 7340,8216 4621,8216 4621,7244 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="5331" y="7950"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Julia</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 7340,7244 L 9946,7244 9946,8216 7340,8216 7340,7244 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="7993" y="7950"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Julia</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 9946,7244 L 14272,7244 14272,8216 9946,8216 9946,7244 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="11667" y="7950"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">JIT</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 14272,7244 L 20503,7244 20503,8216 14272,8216 14272,7244 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="17282" y="7950"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">-</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 20503,7244 L 26800,7244 26800,8216 20503,8216 20503,7244 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="22964" y="7950"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">GPU</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 801,8216 L 4621,8216 4621,9899 801,9899 801,8216 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="1530" y="8922"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Numba-</tspan></tspan><tspan class="TextPosition" x="1917" y="9633"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Cuda</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 4621,8216 L 7340,8216 7340,9899 4621,9899 4621,8216 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="4994" y="8922"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Python</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 7340,8216 L 9946,8216 9946,9899 7340,9899 7340,8216 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="7657" y="8922"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Python</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 9946,8216 L 14272,8216 14272,9899 9946,9899 9946,8216 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="11667" y="8922"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">JIT</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 14272,8216 L 20503,8216 20503,9899 14272,9899 14272,8216 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="17282" y="8922"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">-</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 20503,8216 L 26800,8216 26800,9899 20503,9899 20503,8216 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="21785" y="8922"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">GPU (Nvidia)</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 801,9899 L 4621,9899 4621,10871 801,10871 801,9899 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="1901" y="10605"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">CuPy</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 4621,9899 L 7340,9899 7340,10871 4621,10871 4621,9899 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="4994" y="10605"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Python</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 7340,9899 L 9946,9899 9946,10871 7340,10871 7340,9899 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="8042" y="10605"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">C++</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 9946,9899 L 14272,9899 14272,10871 9946,10871 9946,9899 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="11667" y="10605"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">JIT</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 14272,9899 L 20503,9899 20503,10871 14272,10871 14272,9899 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="15963" y="10605"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Reduction</tspan></tspan></tspan></text>
+        <path fill="rgb(230,230,230)" stroke="none" d="M 20503,9899 L 26800,9899 26800,10871 20503,10871 20503,9899 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="21785" y="10605"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">GPU (Nvidia)</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 801,10871 L 4621,10871 4621,11843 801,11843 801,10871 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="700"><tspan class="TextPosition" x="1467" y="11577"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">PyTorch</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 4621,10871 L 7340,10871 7340,11843 4621,11843 4621,10871 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="4994" y="11577"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Python</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 7340,10871 L 9946,10871 9946,11843 7340,11843 7340,10871 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="8537" y="11577"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">-</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 9946,10871 L 14272,10871 14272,11843 9946,11843 9946,10871 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="11667" y="11577"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">JIT</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 14272,10871 L 20503,10871 20503,11843 14272,11843 14272,10871 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="15009" y="11577"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">Reduct/scan/sort</tspan></tspan></tspan></text>
+        <path fill="rgb(204,204,204)" stroke="none" d="M 20503,10871 L 26800,10871 26800,11843 20503,11843 20503,10871 Z"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="635px" font-weight="400"><tspan class="TextPosition" x="20991" y="11577"><tspan fill="rgb(0,0,0)" stroke="none" style="white-space: pre">GPU (Nvidia/AMD)</tspan></tspan></tspan></text>
+        <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 788,701 L 26813,701"/>
+        <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 801,688 L 801,11856"/>
+        <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 4621,688 L 4621,11856"/>
+        <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 7340,688 L 7340,11856"/>
+        <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 9946,688 L 9946,11856"/>
+        <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 14272,688 L 14272,11856"/>
+        <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 20503,688 L 20503,11856"/>
+        <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 26800,688 L 26800,11856"/>
+        <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 788,2384 L 26813,2384"/>
+        <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 788,3356 L 26813,3356"/>
+        <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 788,4328 L 26813,4328"/>
+        <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 788,5300 L 26813,5300"/>
+        <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 788,6272 L 26813,6272"/>
+        <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 788,7244 L 26813,7244"/>
+        <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 788,8216 L 26813,8216"/>
+        <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 788,9899 L 26813,9899"/>
+        <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 788,10871 L 26813,10871"/>
+        <path fill="none" stroke="rgb(255,255,255)" stroke-width="26" stroke-linejoin="round" d="M 788,11843 L 26813,11843"/>
+       </g>
+      </g>
+     </g>
+    </g>
    </g>
   </g>
  </g>
