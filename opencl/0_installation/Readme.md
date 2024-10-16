@@ -16,7 +16,7 @@ Install miniforge from:
 wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
 bash Miniforge3-Linux-x86_64.sh
 
-mamba install ipykernel pyopencl ocl-icd clinfo clpeak pillow matplotlib ipympl
+mamba install ipykernel pyopencl ocl-icd clinfo clpeak pillow matplotlib ipympl oclgrind
 python -m ipykernel install --user --name=opencl
 
 ## Clone the working directory
