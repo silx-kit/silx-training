@@ -4,6 +4,7 @@ hdf5plugin
 fabio
 matplotlib
 ipympl
+jupyterlab_rise
 jupyterlab_h5web
 
 # for io-spec tutorial on jupyter-lab
