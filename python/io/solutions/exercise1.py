@@ -5,7 +5,7 @@ Exercise 1
 """
 
 import h5py
-import numpy
+import numpy as np
 
 
 def flatfield_correction(raw, flat, dark):
@@ -14,9 +14,9 @@ def flatfield_correction(raw, flat, dark):
     """
     # Make sure that the computation is done using float
     # to avoid type overflow or lose of precision
-    raw = raw.astype(numpy.float32)
-    flat = flat.astype(numpy.float32)
-    dark = dark.astype(numpy.float32)
+    raw = raw.astype(np.float32)
+    flat = flat.astype(np.float32)
+    dark = dark.astype(np.float32)
     # To the computation
     return (raw - dark) / (flat - dark)
 
