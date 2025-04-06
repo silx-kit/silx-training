@@ -47,6 +47,18 @@ def ex4_1():
     return data, binned
 
 
+def ex4_2_0():
+    """Generate a 2D array of [1..9999] then operate a 2x2 binning with loops.
+    """
+    data = numpy.arange(10000).reshape(100, 100)
+    data = data + 1
+    binned = numpy.zeros((50,50))
+    for i in range(50):
+        for j in range(50):
+            binned[i,j] = data[2*i,2*j] + data[2*i + 1,2*j] + data[2*i,2*j + 1] + data[2*i + 1,2*j + 1]
+    return binned
+    
+    
 def ex4_2():
     """Generate a 2D array of [1..9999] then operate a 2x2 binning
     """
