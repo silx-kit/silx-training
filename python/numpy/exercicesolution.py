@@ -21,7 +21,7 @@ def show(exercice_name):
     return function()
 
 
-def ex3_1():
+def ex1_1():
     """ Simple example of an element wise comparaison"""
     x = numpy.arange(10)
     y = numpy.arange(1, 11)
@@ -30,7 +30,7 @@ def ex3_1():
     return difference
 
 
-def ex3_2():
+def ex1_2():
     """ Simple way to compute the difference x[i+1]-x[i] for all the elements
     of the 1D array"""
     x = numpy.arange(10)
@@ -39,7 +39,7 @@ def ex3_2():
     return difference
 
 
-def ex4_1():
+def ex2_1():
     """Generate a 1D array of [1..99] then operate a binning 1 2 3 4 -> 1+2 3+4
     """
     data = numpy.arange(100) + 1
@@ -47,7 +47,7 @@ def ex4_1():
     return data, binned
 
 
-def ex4_2_0():
+def ex2_2_0():
     """Generate a 2D array of [1..9999] then operate a 2x2 binning with loops.
     """
     data = numpy.arange(10000).reshape(100, 100)
@@ -59,7 +59,7 @@ def ex4_2_0():
     return binned
     
     
-def ex4_2():
+def ex2_2():
     """Generate a 2D array of [1..9999] then operate a 2x2 binning
     """
     data = numpy.arange(10000).reshape(100, 100)
@@ -68,7 +68,7 @@ def ex4_2():
     return data, binned
 
 
-def ex4_2_alt():
+def ex2_2_alt():
     """Generate a 2D array of [1..9999] then operate a 2x2 binning using numpy
     sum and moving the array to 4D
     """
@@ -81,7 +81,7 @@ def ex4_2_alt():
     return data, binned
 
 
-def ex5_inefficient_fill(height=1000, width=1000):
+def ex3_inefficient_fill(height=1000, width=1000):
     """Inefficient fill using 2 for loops"""
     data = numpy.zeros((height, width), dtype=float)
     for row in range(int(height)):
@@ -90,7 +90,7 @@ def ex5_inefficient_fill(height=1000, width=1000):
     return data
 
 
-def ex5_naive_fill(height=1000, width=1000):
+def ex3_naive_fill(height=1000, width=1000):
     """Fill using 2 for loops but pre-computing sin and cos"""
     width_sin = numpy.sin(numpy.arange(width))
     height_cos = numpy.cos(numpy.arange(height))
@@ -101,7 +101,7 @@ def ex5_naive_fill(height=1000, width=1000):
     return data
 
 
-def ex5_clever_fill(height=1000, width=1000):
+def ex3_clever_fill(height=1000, width=1000):
     """Fill using 2 outer products"""
     width_sin = numpy.sin(numpy.arange(width))
     height_cos = numpy.cos(numpy.arange(height))
@@ -110,7 +110,7 @@ def ex5_clever_fill(height=1000, width=1000):
     return cos_loop * sin_loop
 
 
-def ex5_practical_fill(height=1000, width=1000):
+def ex3_practical_fill(height=1000, width=1000):
     """Fill using meshgrid"""
     width_sin = numpy.sin(numpy.arange(width))
     height_cos = numpy.cos(numpy.arange(height))
@@ -118,14 +118,14 @@ def ex5_practical_fill(height=1000, width=1000):
     return sin_loop * cos_loop
 
 
-def ex5_optimized_fill(height=1000, width=1000):
+def ex3_optimized_fill(height=1000, width=1000):
     """Fill using outer product"""
     width_sin = numpy.sin(numpy.arange(width))
     height_cos = numpy.cos(numpy.arange(height))
     return numpy.outer(height_cos, width_sin)
 
 
-def ex5_atleast_2d_fill(height=1000, width=1000):
+def ex3_atleast_2d_fill(height=1000, width=1000):
     """Fill using atleast_2d and transpose"""
     sine = numpy.sin(numpy.arange(width))
     cosine = numpy.cos(numpy.arange(height))
